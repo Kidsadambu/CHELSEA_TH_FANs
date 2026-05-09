@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2007 FA Cup — CHELSEA TH FANs</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px; 
+    }
+
+    /* RESET & BASE STYLES */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    /* TOP NAVIGATION BAR */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar__arrow {
+      width: 8px; height: 8px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 0.75rem;
+    }
+    .top-bar img { height: 32px; }
+
+    /* ARTICLE STRUCTURE */
+    .article-container {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    header.article-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .article-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 8vw, 3.5rem);
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .article-header .subtitle {
+      font-size: 1.2rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    /* CONTENT COMPONENTS */
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif; 
+      color: var(--blue); 
+      margin: 3rem 0 1.5rem; 
+      font-size: 1.8rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.5rem;
+    }
+
+    .article-img {
+      margin: 2.5rem 0;
+      text-align: center;
+    }
+    .article-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .highlight-box {
+      background-color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .timeline-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 2rem;
+    }
+    .timeline-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .timeline-list li::before {
+      content: '⚽';
+      position: absolute;
+      left: -5px;
+      top: 0;
+    }
+
+    /* SITE FOOTER */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .site-footer__logo { height: 60px; margin-bottom: 1rem; }
+
+    /* CLOCK WIDGET */
+    #th-time {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--blue-dark);
+      color: var(--gold);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .article-container { padding: 2rem 1.25rem; }
+      .article-header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-bar">
+    <a href="Trophy.html"><div class="top-bar__arrow"></div> กลับสู่ทำเนียบแชมป์</a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Logo">
+  </nav>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>🏆 2007 FA Cup</h1>
+      <p class="subtitle">ทีมแรกที่คว้าแชมป์ FA Cup ณ สนาม New Wembley</p>
+    </header>
+
+    <figure class="article-img">
+      <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,h_700,g_faces,ar_16:9,q_90/site-sections/about-chelsea/history/2021/trophy-cabinet/thumbnails/Mens_FA_Cup_2007.jpg" alt="2007 FA Cup Trophy">
+    </figure>
+
+    <div class="article-body">
+      <h2>ประวัติศาสตร์หน้าใหม่ที่ New Wembley</h2>
+      <p>หลังจากได้รับเกียรติอันทรงเกียรติในการเป็นทีมสุดท้ายที่คว้าแชมป์ <strong>FA Cup</strong> ที่สนาม <strong>Wembley</strong> เก่า จากชัยชนะเหนือ <strong>Aston Villa</strong> ในปี <strong>2000</strong> เราได้กลายเป็นทีมแรกที่คว้าแชมป์ tournament นี้ที่สนามโฉมใหม่ในปี <strong>2007</strong> เมื่อเราเอาชนะ <strong>Manchester United</strong> ไปได้ 1-0</p>
+
+      <p>ก่อน <strong>kick off</strong> มีพิธีเปิด (inauguration ceremony) สำหรับ <strong>Cup Final</strong> ในสนามแห่งใหม่พร้อมการบินโชว์จาก <strong>Red Arrows</strong> ก่อนที่อดีตผู้ชนะของ tournament นี้ รวมถึง <strong>Ron Harris</strong>, <strong>Dennis Wise</strong> และ <strong>Marcel Desailly</strong> จะเดินพาเหรดต่อหน้าฝูงชน</p>
+
+      <h2>เกมที่รัดกุมและการต่อสู้ใน Extra Time</h2>
+      <p>นอกเหนือจากผลสกอร์สุดท้ายแล้ว รูปเกมถือว่าค่อนข้างน่าผิดหวัง เนื่องจากสองทีมที่ดีที่สุดในประเทศต่างเล่นแบบรัดกุมจนทำอะไรกันไม่ได้มากนัก</p>
+
+      <p><strong>Jose Mourinho</strong> จำเป็นต้องส่ง <strong>Michael Essien</strong> ลงเล่นเคียงข้าง <strong>John Terry</strong> ในตำแหน่ง <strong>central defence</strong> เนื่องจากปัญหาอาการบาดเจ็บของนักเตะในทีม แต่นักเตะชาวกานาก็สามารถปรับตัวได้อย่างสบายๆ และแทบจะไม่ถูกกดดันเลย ขณะที่ <strong>Paulo Ferreira</strong> ก็ทำผลงานได้อย่างยอดเยี่ยมในการปิดกั้นความอันตรายจาก <strong>Cristiano Ronaldo</strong> เพื่อนร่วมชาติของเขา</p>
+
+      <p><strong>Arjen Robben</strong> ลงมาแทน <strong>Joe Cole</strong> ในช่วง <strong>half time</strong> ขณะที่เราต้องการเพิ่มความสร้างสรรค์ในเกมรุกของเรา และแม้ว่าทั้ง <strong>Wayne Rooney</strong> และ <strong>Didier Drogba</strong> จะมีโอกาสใกล้เคียง แต่จบ 90 นาทีสกอร์ยังคงเป็น 0-0 ทำให้ต้องไปลุยกันต่อในช่วง <strong>extra time</strong></p>
+
+      <div class="highlight-box">
+        <p>แมตช์นี้ถูกตัดสินในที่สุดในนาทีที่ 116 เมื่อ <strong>Drogba</strong> เข้าชาร์จจังหวะ <strong>flick-on</strong> ของ <strong>Frank Lampard</strong> ส่งบอลผ่านมือ <strong>Edwin van der Sar</strong> เข้าไป นั่นหมายความว่าเราคว้าแชมป์ <strong>domestic cup</strong> ได้ทั้งสองรายการในปีนั้น!</p>
+      </div>
+
+      <h2>เส้นทางสู่นัดชิงชนะเลิศ (Road to the Final)</h2>
+      <p>แคมเปญ <strong>FA Cup</strong> ของเราเริ่มต้นขึ้นตั้งแต่เดือนมกราคม เมื่อ <strong>hat trick</strong> จาก <strong>Lampard</strong> และประตูของ <strong>Shaun Wright-Phillips</strong> รวมถึงประตูจาก <strong>Salomon Kalou</strong> และลูกยิงไกลสุดสวยจาก <strong>Ricardo Carvalho</strong> บวกกับลูกยิงของ <strong>John Mikel Obi</strong> เป็นส่วนหนึ่งของเส้นทางที่พาเราทำผลงานยอดเยี่ยม รวมถึงการเอาชนะ <strong>Nottingham Forest</strong> ไปได้ 3-0</p>
+
+      <p>จากนั้น <strong>Norwich</strong> ก็ถูกถล่ม 4-0 ที่ <strong>Stamford Bridge</strong> นำไปสู่การได้เล่นในบ้านอีกครั้ง คราวนี้พบกับ <strong>Tottenham</strong> ของ <strong>Martin Jol</strong></p>
+
+      <div class="highlight-box" style="border-left-color: var(--blue-dark);">
+        <h3 style="color: var(--blue-dark); font-family: 'Playfair Display', serif; margin-bottom: 0.5rem;">คัมแบ็คสุดมันส์กับ Tottenham</h3>
+        <p>หลังจากตกเป็นรองจากประตูตั้งแต่ต้นเกมของ <strong>Dimitar Berbatov</strong>, <strong>Lampard</strong> ก็ทำประตู <strong>equaliser</strong> ได้ในเวลาไม่นาน แต่เมื่อ <strong>Hossam Ghaly</strong> ฉวยโอกาสจากความผิดพลาดในแนวรับเพื่อทำประตู และ <strong>Essien</strong> สกัดบอลเข้าประตูตัวเอง (own net) ทำให้ทีม <strong>Blues</strong> จบ <strong>half time</strong> ด้วยการตามหลัง 3-1</p>
+        <p>ด้วยการขาดกัปตันทีม <strong>John Terry</strong> จากอาการบาดเจ็บ แฟนบอล <strong>Blues</strong> ต่างกังวลว่าจะเกิดเหตุการณ์เลวร้ายที่สุด แต่ <strong>Lampard</strong> ก็มาทำประตูที่สองของตัวเองในเกมนี้เพื่อสร้างความหวัง ก่อนที่ <strong>Salomon Kalou</strong> จะวอลเลย์เป็น <strong>equaliser</strong> ช่วยให้ต้องไปลุยต่อในนัดรีเพลย์ที่ <strong>White Hart Lane</strong></p>
+      </div>
+
+      <p>ท่ามกลางบรรยากาศที่ไม่เป็นมิตร (hostile atmosphere) ในเกมนัดรีเพลย์ที่ <strong>White Hart Lane</strong> เกมนี้เป็นไปอย่างสูสี แต่ <strong>Andriy Shevchenko</strong> ก็ทำให้แฟนบอล <strong>Chelsea</strong> ที่เดินทางมาเชียร์ต้องคลั่งไคล้ด้วยลูกยิงสุดสวยก่อน <strong>half time</strong> ทำให้เราขึ้นนำ</p>
+
+      <p>ในช่วงกลางของ <strong>second half</strong> เกมดูเหมือนจะจบลงเมื่อ <strong>Shaun Wright-Phillips</strong> จบสกอร์อย่างยอดเยี่ยมจากมุมแคบ และแม้ว่า <strong>penalty</strong> ช่วงท้ายเกมของ <strong>Robbie Keane</strong> จะทำให้ช่วงท้ายเกมมีความตึงเครียด แต่ทีมของ <strong>Mourinho</strong> ก็สามารถรักษาสกอร์และคว้าชัยชนะครั้งสำคัญมาได้</p>
+
+      <h2>การต่อสู้ใน Semi-final</h2>
+      <p>นัด <strong>semi-final</strong> กับ <strong>Blackburn</strong> ลงเล่นกันที่ <strong>Old Trafford</strong> และเมื่อ <strong>Lampard</strong> ทำประตูได้ตั้งแต่นาทีที่ 16 เราดูเหมือนจะเป็นฝ่ายคุมเกมไว้ได้ แต่ <strong>Jason Roberts</strong> ก็มาตีเสมอในช่วงกลางของ <strong>second half</strong> ทำให้ผลการแข่งขันกลับมาไม่แน่นอนอีกครั้ง</p>
+
+      <p>อย่างไรก็ตาม เมื่อเกมเข้าสู่ <strong>extra time</strong> เราเริ่มที่จะกลับมาคุมเกมได้ และ <strong>Michael Ballack</strong> ก็กลายเป็น <strong>match-winner</strong> ในท้ายที่สุด โดยยิงประตูชัยจากการเปิดบอลของ <strong>Wright-Phillips</strong> ส่งทีมเข้าสู่นัดชิงชนะเลิศที่ <strong>Wembley</strong> ได้สำเร็จ</p>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
+    <p>CHELSEA TH FANs — Kann Krung Nan News</p>
+    <p style="font-size: 0.8rem; opacity: 0.7;">ผู้เขียน: อิอิแอแอ</p>
+  </footer>
+
+  <div id="th-time">BKK: --:--:--</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const applyLionTheme = (s) => s.replace(/0/g, '🦁');
+      const timeStr = new Intl.DateTimeFormat('th-TH', { 
+        hour:'2-digit', minute:'2-digit', second:'2-digit', 
+        hour12:false, timeZone:'Asia/Bangkok' 
+      }).format(now);
+      document.getElementById('th-time').textContent = "BKK: " + applyLionTheme(timeStr);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

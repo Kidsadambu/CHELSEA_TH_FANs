@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — บทที่ 9 ภารกิจตามล่า Holy Grail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; width: 100%; height: 100vh;
+      min-height: 600px; overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://img.chelseafc.com/image/upload/f_auto,c_fill,h_700,g_faces,ar_16:9,q_90/site-sections/about-chelsea/history/2021/story_of_chelsea/History_Chapter9_2870x645_V4.jpg');
+      background-size: cover; background-position: center 30%;
+      filter: brightness(0.45) saturate(0.8);
+      transform: scale(1.03); transition: transform 8s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.06); }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(3,12,30,0.3) 40%,
+        rgba(3,12,30,0.85) 80%, rgba(3,12,30,0.97) 100%);
+    }
+    .hero__content {
+      position: relative; z-index: 2; width: 100%;
+      padding: 0 clamp(20px,6vw,80px) clamp(48px,8vh,90px);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+    }
+    .hero__logo {
+      width: clamp(80px,12vw,140px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.5));
+      margin-bottom: 28px; animation: fadeDown 1s ease both;
+    }
+    .hero__kicker {
+      font-weight: 600; font-size: clamp(10px,1.2vw,13px);
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.4rem,6.5vw,5.5rem); line-height: 1.08;
+      color: var(--white); letter-spacing: -0.01em; max-width: 900px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__subtitle {
+      font-size: clamp(14px,1.8vw,17px);
+      color: rgba(245,242,236,0.65); margin-top: 22px;
+      letter-spacing: 0.04em; animation: fadeDown 1s 0.35s ease both;
+    }
+    .hero__rule {
+      width: 60px; height: 2px; background: var(--gold);
+      margin: 32px auto 0; animation: fadeDown 1s 0.45s ease both;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── SCROLL HINT ── */
+    .scroll-hint {
+      position: absolute; bottom: 30px; left: 50%;
+      transform: translateX(-50%); z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: float 2.4s ease-in-out infinite;
+    }
+    .scroll-hint span {
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(245,242,236,0.4);
+    }
+    .scroll-hint__arrow {
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg); opacity: 0.7;
+    }
+    @keyframes float {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── ARTICLE ── */
+    .article { background: var(--paper); position: relative; }
+    .article::before {
+      content: ''; display: block; width: 100%; height: 6px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+    }
+    .article__inner {
+      max-width: var(--col-max); margin: 0 auto;
+      padding: clamp(48px,8vw,90px) clamp(20px,5vw,40px);
+    }
+
+    /* ── CHAPTER HEADING ── */
+    .chapter-heading { text-align: center; margin-bottom: 52px; }
+    .chapter-heading__number {
+      display: inline-block; font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+      padding: 6px 16px; margin-bottom: 20px;
+    }
+    .chapter-heading h1 {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(1.6rem,4vw,2.8rem); line-height: 1.2;
+      color: var(--ink); letter-spacing: -0.01em;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 4px solid var(--gold); padding: 24px 32px;
+      margin: 0 0 48px;
+      background: linear-gradient(to right, rgba(200,168,75,0.06), transparent);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1rem,2vw,1.15rem); color: var(--ink-soft); line-height: 1.7;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 14px; font-family: 'Sarabun', sans-serif;
+      font-style: normal; font-size: 12px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+    }
+
+    /* ── BODY ── */
+    .article__inner p { margin-bottom: 1.6em; color: var(--ink-soft); }
+    .article__inner p em { color: var(--ink); font-style: italic; }
+    .drop-cap::first-letter {
+      float: left; font-family: 'Playfair Display', serif;
+      font-size: 4.2em; line-height: 0.78; margin: 6px 10px 0 0;
+      color: var(--blue); font-weight: 900;
+    }
+
+    /* ── H2 ── */
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(1.25rem,2.8vw,1.7rem); color: var(--blue);
+      margin: 56px 0 24px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule); letter-spacing: -0.01em;
+    }
+
+    /* ── IMAGES ── */
+    .img-block { margin: 40px 0; }
+    .img-block img {
+      width: 100%; height: auto; display: block; object-fit: cover;
+      border-radius: 2px; box-shadow: 0 4px 24px rgba(26,20,16,0.15);
+    }
+    .img-block figcaption {
+      margin-top: 12px; font-size: 12.5px; color: var(--ink-muted);
+      letter-spacing: 0.04em; font-style: italic; line-height: 1.5;
+    }
+    .img-block--wide {
+      margin: 48px calc(-1 * clamp(20px,5vw,40px));
+    }
+    .img-block--wide figcaption { padding: 0 clamp(20px,5vw,40px); }
+
+    /* ── BLOCKQUOTE ── */
+    .article__inner blockquote {
+      margin: 36px 0; padding: 24px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue); color: var(--ink); font-style: italic;
+    }
+
+    /* ── ANECDOTE BOX (เรื่องเล่า) ── */
+    .anecdote {
+      margin: 40px 0; padding: 28px 32px;
+      background: var(--ink); color: rgba(245,242,236,0.85);
+      border-radius: 2px;
+      font-size: clamp(0.95rem,1.8vw,1.05rem);
+      line-height: 1.8;
+    }
+    .anecdote__header {
+      display: flex; flex-direction: column; gap: 4px;
+      margin-bottom: 20px; padding-bottom: 16px;
+      border-bottom: 1px solid rgba(200,168,75,0.25);
+    }
+    .anecdote__label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .anecdote__name {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1rem,2vw,1.2rem); color: var(--gold-light);
+    }
+    .anecdote__sub {
+      font-size: 12px; color: rgba(245,242,236,0.4); letter-spacing: 0.05em;
+    }
+    .anecdote p { color: rgba(245,242,236,0.8); margin-bottom: 1.2em; }
+    .anecdote p:last-child { margin-bottom: 0; }
+
+    /* ── CHAPTER END ── */
+    .chapter-end {
+      text-align: center; margin: 64px 0 0;
+      padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    .chapter-end__ornament { font-size: 28px; color: var(--gold); letter-spacing: 0.3em; }
+    .chapter-end__text {
+      display: block; margin-top: 12px; font-size: 12px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink); color: rgba(245,242,236,0.5);
+      text-align: center; padding: 40px 20px;
+      font-size: 13px; letter-spacing: 0.08em;
+    }
+    .site-footer__logo { width: 50px; filter: brightness(0.6); margin-bottom: 16px; }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 6px; font-size: 14px; letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 500px) {
+      .pull-quote { padding: 18px 20px; }
+      .anecdote { padding: 20px 18px; }
+    }
+  
+    /* ============================================
+       NAVIGATION MENU STYLES (เมนูนำทาง)
+    ============================================ */
+    .main-nav {
+      background-color: var(--blue, #034694);
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav-list li a {
+      color: var(--white, #f5f2ec);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Sarabun', sans-serif;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 14px;
+    }
+    .nav-list li a:hover {
+      background-color: var(--gold, #c8a84b);
+      color: var(--ink, #1a1410);
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="Chapter1.html">บทที่ 1</a></li>
+      <li><a href="Chapter2.html">บทที่ 2</a></li>
+      <li><a href="Chapter3.html">บทที่ 3</a></li>
+      <li><a href="Chapter4.html">บทที่ 4</a></li>
+      <li><a href="Chapter5.html">บทที่ 5</a></li>
+      <li><a href="Chapter6.html">บทที่ 6</a></li>
+      <li><a href="Chapter7.html">บทที่ 7</a></li>
+      <li><a href="Chapter8.html">บทที่ 8</a></li>
+      <li><a href="Chapter9.html">บทที่ 9</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+      <p class="hero__kicker">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
+      <p class="hero__subtitle">ผู้เขียน: อิอิแอแอ</p>
+      <div class="hero__rule"></div>
+    </div>
+
+  </header>
+
+  <!-- ══ ARTICLE ══ -->
+  <main class="article">
+    <div class="article__inner">
+
+      <!-- Chapter heading -->
+      <div class="chapter-heading">
+        <div class="chapter-heading__number">บทที่ ๙</div>
+        <h1>ภารกิจตามล่า Holy Grail</h1>
+      </div>
+
+      <!-- Opening pull quote -->
+      <blockquote class="pull-quote">
+        <p>'การเกี้ยวพาราสีของ Chelsea กับ European Cup เป็นเรื่องราวที่น่าปวดใจและโชคร้าย นี่คือโอกาสสุดท้ายของพวกเขาที่จะรักษามรดกที่พวกเขาปรารถนา – และมรดกที่พวกเขาสมควรได้รับ ยากที่จะนึกออกว่าครั้งสุดท้ายที่ทีมที่ยอดเยี่ยมและยืนหยัดอย่างทีม Chelsea ล้มเหลวในการคว้าแชมป์ European Cup คือเมื่อใด'</p>
+        <cite>— หนังสือพิมพ์ The Guardian ก่อนเกมนัดชิงชนะเลิศ Champions League ปี 2012</cite>
+      </blockquote>
+
+      <!-- Intro -->
+      <p class="drop-cap">เมื่อ Didier Drogba ยืนอยู่ตรงจุดที่จะกลายเป็นการเตะที่โด่งดังที่สุดในประวัติศาสตร์ของ Chelsea อดีตการแข่งขัน Champions League ของสโมสรได้กดทับลงบนบ่าของเขา มันเป็นการเดินทางที่น่าตื่นเต้นแม้จะทรมานในบางครั้งจนมาถึงคืนนั้นที่ Munich ในเดือนพฤษภาคม 2012 แต่เพียงแค่สูดหายใจเข้าลึกๆ และการวาดเท้าขวาของดาวเตะชาว Ivorian ฝันร้ายใน Champions League เหล่านั้นก็ถูกฝังกลบไป เป็นครั้งแรกที่ Chelsea กลายเป็นแชมป์ของ Europe พวกเราต้องต่อสู้อย่างหนักแค่ไหนกว่าจะไปถึงจุดนั้น!</p>
+
+      <p>ความผูกพันของเรากับการแข่งขันระดับสุดยอดของทวีปเริ่มต้นขึ้นเมื่อ 13 ปีก่อนหน้านั้น ก่อนที่ Roman Abramovich จะเข้ามาซื้อสโมสร ทีม Blues ที่คุมทัพโดย Gianluca Vialli และเต็มไปด้วยนักเตะระดับซูเปอร์สตาร์อย่าง Marcel Desailly, Gustavo Poyet และ Gianfranco Zola รู้สึกสบายๆ ในการต่อกรกับทีมที่ดีที่สุดของ Europe</p>
+
+      <p>ฟุตบอลนั้นทั้งเร้าใจและมีประสิทธิภาพ นำพา Chelsea ผ่านรอบแบ่งกลุ่มสองรอบและสร้างแมตช์ที่น่าจดจำในการเจอกับยักษ์ใหญ่ของวงการอย่าง AC Milan และ Lazio อีกทีมหนึ่งคือ Barcelona ที่มี Figo, Rivaldo และคนอื่นๆ รออยู่ในรอบก่อนรองชนะเลิศ เลกแรกที่แสนวิเศษซึ่งทีม Blues ทำประตูกระจุยทิ้งห่างสามประตูก่อนหมดครึ่งแรก เป็นสิ่งที่ไม่เคยมีมาก่อนที่ Stamford Bridge อนิจจา ห้าจากหกประตูต่อมาในการแข่งขันรอบนี้ถูกทำโดยทีม Catalans ทำให้พวกเขาผ่านเข้ารอบไปได้ แต่ความบาดหมางก็ได้ถือกำเนิดขึ้นแล้ว</p>
+
+      <!-- Anecdote box: Flo -->
+      <div class="anecdote">
+        <div class="anecdote__header">
+          <span class="anecdote__label">เสียงจากสนาม</span>
+          <span class="anecdote__name">Tore Andre Flo</span>
+          <span class="anecdote__sub">Chelsea — ผู้ทำสองประตูในเลกแรกพบ Barcelona</span>
+        </div>
+        <p>"ผมจะไม่มีวันลืมบรรยากาศ และความสุขของทุกคนในสเตเดียม ในที่สุด Chelsea ก็สามารถเล่นและเอาชนะทีมที่ดีกว่าใน Europe ได้"</p>
+      </div>
+
+      <!-- Section 1 -->
+      <h2>ยุค Abramovich — ความคาดหวังพุ่งสูง</h2>
+
+      <p class="drop-cap">ต้องรอถึงสามปีกว่าฟุตบอล Champions League จะกลับมาที่ Bridge แต่คราวนี้การไหลทะลักเข้ามาของเหล่าสตาร์ที่ย้ายมาร่วมทีมหลังจากการมาถึงของ Abramovich ทำให้ความคาดหวังพุ่งสูงขึ้น หลังจากผ่านรอบแบ่งกลุ่มและรอบ 16 ทีมสุดท้ายมาได้อย่างปลอดภัย ไฮไลต์ของแคมเปญ European ฤดูกาล 2003/04 ก็มาถึงที่ Highbury เมื่อประตูช่วงท้ายเกมของ Wayne Bridge ช่วยยุติสถิติอันยาวนานที่ไม่สามารถเอาชนะ Arsenal ได้ และการันตีที่นั่งในรอบสี่ทีมสุดท้ายด้วยการเขี่ยคู่ปรับร่วมเมือง London ของเราตกรอบ</p>
+
+      <blockquote>
+        <p>'นั่นคือจุดที่ Chelsea เริ่มต้นการครองความยิ่งใหญ่เหนือ Arsenal' — Wayne Bridge รำลึกความหลังในอีกหลายปีต่อมา</p>
+      </blockquote>
+
+      <p>ในการพบกับ Monaco ในรอบรองชนะเลิศ หายนะได้มาเยือนในสิ่งที่เป็นความพ่ายแพ้อันแสนเจ็บปวดครั้งแรกจากสี่ครั้งในรอบนี้ ขณะที่นำอยู่ 2-0 ในเลกที่สองที่บ้านเกิด ทีม Blues กำลังมุ่งหน้าสู่รอบชิงชนะเลิศ แต่ทีมจาก Principality ก็ฮึดสู้กลับมา โดยได้รับความช่วยเหลือจากความผิดพลาดทางแท็กติกและการตัดสินที่ผิดพลาดของผู้ตัดสินตลอดทั้งสองเกม</p>
+
+      <!-- Section 2 -->
+      <h2>JT, Barcelona และ 'ประตูปริศนา' ของ Luis Garcia</h2>
+
+      <p class="drop-cap">การเป็นอริกับ Barcelona กลับมาปะทุอีกครั้งในแคมเปญถัดมา อีกหนึ่งแมตช์แห่งความทรงจำ คราวนี้ในรอบ 16 ทีมสุดท้าย จบลงด้วยชัยชนะของเราจากลูกโหม่งช่วงท้ายเกมของ John Terry ที่ Bridge ซึ่งเป็นประตูตัดสินจากทั้งหมด 9 ประตูที่เกิดขึ้นตลอดสองเลกที่ตื่นเต้นเร้าใจ จากนั้นเราก็จัดการเขี่ย Bayern Munich ตกรอบก่อนรองชนะเลิศ</p>
+
+      <!-- Image: Terry vs Barcelona 2005 -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/blogs-and-columns/2019/1/terry-barca-2005-GettyImages-52312236.jpg"
+             alt="John Terry ยิงประตูชัยพบ Barcelona ปี 2005">
+        <figcaption>JT ยิงประตูประวัติศาสตร์พาเชลซีผ่าน Barcelona เข้าสู่รอบรองชนะเลิศ ปี 2005</figcaption>
+      </figure>
+
+      <p>ทีม Blues ของ Jose Mourinho กำลังเดินหน้าคว้าแชมป์ลีก English สมัยแรกในรอบ 50 ปี แต่เป็นอีกทีมจาก Premier League อย่าง Liverpool ที่ดับฝันในถ้วย European ของเราในฤดูกาลนั้น ความขัดแย้งเกิดขึ้นเมื่อ 'ประตูปริศนา' ในเลกที่สองของ Luis Garcia ซึ่งเป็นประตูเดียวที่เกิดขึ้นในรอบนี้ ถูกตัดสินว่าข้ามเส้นไปแล้ว ภาพช้าก็ไม่สามารถพิสูจน์ได้อย่างชัดเจน ไม่ว่าจะอย่างไร เราก็ได้ศัตรูหน้าใหม่ทั้งในประเทศและ European</p>
+
+      <p>หลังจากที่ Barcelona ได้ล้างแค้นสำหรับความพ่ายแพ้เมื่อปีก่อนหน้าด้วยการเขี่ยเราตกรอบในปี 2006 มันเป็นความเจ็บปวดด้วยน้ำมือของ Liverpool ในรอบรองชนะเลิศอีกครั้งในปี 2007 คราวนี้เป็นการดวลจุดโทษ คำสาป Champions League ของ Chelsea ยังคงดำเนินต่อไป และทวีความรุนแรงขึ้นในอีกสองแคมเปญถัดมา</p>
+
+      <!-- Section 3 -->
+      <h2>Moscow 2008 — น้ำตาของ John Terry</h2>
+
+      <p class="drop-cap">ยากที่จะบอกว่าอันไหนดันเจ็บปวดกว่ากัน ในปี 2008 ในที่สุดเราก็เอาชนะ Liverpool ได้ในรอบรองชนะเลิศ จากการทำสองประตูของ Drogba และจุดโทษของ Frank Lampard ในค่ำคืนที่เต็มไปด้วยอารมณ์ที่ Bridge</p>
+
+      <!-- Image: Lampard vs Liverpool 2008 -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/news/2019/9/lampard_liverpool_2008_b.jpg"
+             alt="Frank Lampard ยิงจุดโทษพบ Liverpool 2008">
+        <figcaption>Frank Lampard ยิงจุดโทษในค่ำคืนอันเต็มไปด้วยอารมณ์ที่ Bridge พบ Liverpool รอบรองชนะเลิศ ปี 2008</figcaption>
+      </figure>
+
+      <p>ทีม Blues มุ่งหน้าสู่ Moscow แต่ความหวังที่จะชูถ้วยรางวัลหูใหญ่ในบ้านเกิดของเจ้าของสโมสรก็มลายหายไปท่ามกลางสายฝนที่ Russian เมื่อ Manchester United กลายเป็นผู้คว้าชัยชนะในการดวลจุดโทษหลังเสมอกัน 1-1 Terry มีโอกาสที่จะคว้าแชมป์ให้กับสโมสรที่เขารักและเป็นกัปตันทีม แต่เขากลับลื่นในขณะที่กำลังยิงจุดโทษ</p>
+
+      <blockquote>
+        <p>'การได้เห็น Chelsea คว้าแชมป์ Champions League หลังจากสิ่งที่เกิดขึ้นที่ Moscow ทำให้ค่ำคืนที่นอนไม่หลับเหล่านั้นบรรเทาลงได้อย่างแน่นอน' — John Terry กล่าวยอมรับหลังจากชัยชนะที่ Munich</p>
+      </blockquote>
+
+      <p>ความสงสัยที่ว่าโชคชะตาไม่ได้อยู่เคียงข้างเราใน Champions League ยิ่งเพิ่มขึ้นในอีก 12 เดือนต่อมา คราวนี้ ประตูในนาทีสุดท้ายของ Andres Iniesta สำหรับ Barcelona – พวกเขาอีกแล้ว – เขี่ยเราตกรอบรองชนะเลิศ Chelsea สู้ยิบตาที่ Camp Nou จนได้ผลเสมอแบบไม่มีประตู ขึ้นนำในเลกที่สองจากลูกยิงสุดสวยของ Michael Essien และจากนั้นก็มีการเรียกร้องจุดโทษหลายครั้งที่ถูกปฏิเสธในขณะที่เราพยายามจะปิดเกมก่อนการเข้ามาแทรกแซงอันน่าปวดใจของ Iniesta</p>
+
+      <p>สำหรับ Petr Cech, Terry, Lampard และ Drogba – ผู้เล่นกำลังสำคัญในการผจญภัยใน Champions League ของเรายกเว้นสองครั้งแรก – มันคงเริ่มรู้สึกเหมือนกับว่าสิ่งนี้ไม่ได้ถูกลิขิตมาเพื่อพวกเขา</p>
+
+      <!-- Section 4 -->
+      <h2>2012 — แคมเปญอันน่าอัศจรรย์สู่ Munich</h2>
+
+      <p class="drop-cap">ปี 2010 และ 2011 นำมาซึ่งการตกรอบที่ค่อนข้างไร้เรี่ยวแรงต่อ Inter Milan และ Man United ตามลำดับ แต่ความคิดที่ว่ายุคทองใน Europe ของทีมจบลงแล้วนั้นถูกลบล้างไปอย่างสิ้นเชิงในปี 2011/12 ในระหว่างแคมเปญ Champions League ที่เต็มไปด้วยอันตรายซึ่งจบลงด้วยความรุ่งโรจน์ที่ยิ่งใหญ่ที่สุด</p>
+
+      <p>มีเพียงชัยชนะเหนือ Valencia ในเกมรอบแบ่งกลุ่มนัดสุดท้ายเท่านั้นที่รับประกันการผ่านเข้าสู่รอบ 16 ทีมสุดท้ายอย่างปลอดภัย ซึ่งความพ่ายแพ้เกมเยือนต่อ Napoli 3-1 ได้นำไปสู่การเปลี่ยนตัว Andre Villas-Boas มาเป็น Roberto Di Matteo สมาชิกคนสำคัญของทีมชุดลุยศึก Champions League ชุดแรกสุดของ Chelsea</p>
+
+      <p>ทีม Blues สู้กลับในเลกที่สอง ด้วยความช่วยเหลือจากผู้เล่นเก๋าเกมอย่าง Drogba, Terry และ Lampard แมตช์รอบ 16 ทีมสุดท้ายอันน่าตื่นเต้นนี้ต้องยืดเยื้อไปจนถึงช่วงต่อเวลาพิเศษ และในตอนนั้น Branislav Ivanovic ก็ยิงประตูซึ่งกลายเป็นประตูตัดสิน เป็นการสวมมงกุฎให้กับหนึ่งในค่ำคืนที่ยิ่งใหญ่ที่สุดที่ Stamford Bridge</p>
+
+      <blockquote>
+        <p>'เราแสดงให้เห็นว่า Chelsea ทำมาจากอะไรจริงๆ' — John Terry ยิ้มกว้างหลังเอาชนะ Napoli</p>
+      </blockquote>
+
+      <p>หลังจากเอาชนะ Benfica ได้ทั้งเหย้าและเยือนในรอบก่อนรองชนะเลิศ ด่านต่อไปคือ Barcelona พวกเขาอีกแล้ว! แต่บางทีเทพเจ้าแห่งฟุตบอลอาจจะอยู่เคียงข้างเราในครั้งนี้ ในเลกแรกที่ Stamford Bridge ทีมเยือนพลาดโอกาสทำประตูไปมากมาย ในขณะที่ Drogba ฉวยโอกาสหนึ่งในไม่กี่ครั้งที่เข้ามาหาเราได้</p>
+
+      <p>เลกที่สองเป็นเกมที่อาจจะเรียกได้ว่าเหนือจริงที่สุดในประวัติศาสตร์ของเรา เสียสองประตูและเหลือผู้เล่นน้อยกว่าในการเจอกับทีมที่หลายคนยกย่องว่ายิ่งใหญ่ที่สุดตลอดกาล แต่ทีม Blues ก็ผ่านเข้ารอบไปได้ ในช่วงก่อนหมดเวลาครึ่งแรก Ramires ทำให้เราขึ้นนำด้วยกฎประตูทีมเยือนจากการชิพสุดสวย และเกมรับที่เหนียวแน่นดั่งฮีโร่ก็สามารถป้องกัน Barca เอาไว้ได้ในช่วงครึ่งหลัง Cech เซฟแล้วเซฟเล่า Lionel Messi ยิงจุดโทษชนคาน และเมื่อเวลาใกล้จะหมด Fernando Torres ก็หลุดเดี่ยวเข้าไปทำประตู</p>
+
+      <!-- Section 5 -->
+      <h2>Drogba — ชายผู้พิชิต Munich</h2>
+
+      <p class="drop-cap">Chelsea ได้ปีนข้ามภูเขามาแล้วและยังมีอีกหลายลูก แต่ยังมีจุดสูงสุดที่ยากลำบากอีกแห่งที่ต้องปีนข้าม: Bayern Munich ในสเตเดียมของพวกเขาเอง การขาดผู้เล่นสี่คนจากการติดโทษแบน ทำให้ทีม Blues ต้องใช้แท็กติกการตั้งรับที่เป็นระบบและเด็ดเดี่ยวอีกครั้ง</p>
+
+      <p>Thomas Muller ของทีม 'เจ้าบ้าน' โหม่งให้ Bayern ขึ้นนำในช่วงท้ายเกม แต่ Chelsea จะไม่ยอมแพ้เมื่อ Drogba ตีเสมอได้อย่างเหลือเชื่อในนาทีท้ายๆ Cech เซฟจุดโทษจากอดีตเพื่อนร่วมทีม Arjen Robben ในช่วงต่อเวลาพิเศษ และอีกสองครั้งในการดวลจุดโทษ นั่นทำให้ Drogba มีโอกาสที่จะปิดฉากการตามล่า Holy Grail อันแสนโลดโผนของ Chelsea และมันก็เป็นโอกาสที่เขาไม่ปล่อยให้หลุดมือไป</p>
+
+      <!-- Image: Drogba Munich 2012 -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1440,c_fill,q_90/editorial/historical/players/drogba-145211512.jpg"
+             alt="Didier Drogba — Munich 2012">
+        <figcaption>Didier Drogba — ชายผู้เปลี่ยนประวัติศาสตร์ของ Chelsea ในค่ำคืนที่ Munich ปี 2012</figcaption>
+      </figure>
+
+      <!-- Anecdote box: Peter Kenyon -->
+      <div class="anecdote">
+        <div class="anecdote__header">
+          <span class="anecdote__label">วิสัยทัศน์แห่งสโมสร</span>
+          <span class="anecdote__name">Peter Kenyon</span>
+          <span class="anecdote__sub">ประธานเจ้าหน้าที่บริหารของ Chelsea ปี 2004–2009</span>
+        </div>
+        <p>"เพื่อบรรลุความทะเยอทะยานของเราในการเป็นสโมสรระดับโลก คุณต้องคว้าแชมป์ Champions League ให้ได้ คุณต้องคว้าถ้วยรางวัลอย่างสม่ำเสมอ คุณต้องคว้าแชมป์ Premier League และ Champions League มากกว่าหนึ่งครั้งเพื่อก้าวขึ้นไปสู่จุดสูงสุดของการได้รับการยอมรับอย่างแท้จริงในฐานะสโมสรระดับโลก"</p>
+      </div>
+
+      <!-- Section 6 -->
+      <h2>PSG, Atletico และการกลับมาของ Mourinho</h2>
+
+      <p class="drop-cap">การป้องกันแชมป์ European ปี 2012 ของ Chelsea และความพยายามที่จะเพิ่มถ้วย Champions League ใบที่สองเข้าตู้โชว์เริ่มต้นได้ไม่ดีนัก เรากลายเป็นแชมป์เก่าทีมแรกที่ไม่สามารถผ่านพ้นรอบแบ่งกลุ่มได้ ซึ่งผลลัพธ์นี้ประกอบกับฟอร์มการเล่นในลีกที่ตะกุกตะกัก ทำให้ Di Matteo ต้องตกงานก่อนที่ฤดูกาล 2012/13 จะจบลง</p>
+
+      <p>การคว้าแชมป์ Europa League แทนถือเป็นรางวัลปลอบใจที่น่ายินดี และในปีถัดมา เมื่อ Jose Mourinho กลับมาคุมทีม ทีม Blues ก็กลับมาขับเคี่ยวในรอบลึกๆ ของ Champions League อีกครั้ง</p>
+
+      <p>Didier Drogba กลับมาที่ Stamford Bridge กับ Galatasaray แต่ก็ต้องพ่ายแพ้กลับไป และมีความดราม่าล้วนๆ เมื่อสามารถพลิกสถานการณ์จากการตามหลัง 3-1 ในเกมเยือน Paris St-Germain ในรอบก่อนรองชนะเลิศได้ โดย Demba Ba เป็นผู้ทำประตูชัยในช่วงสามนาทีสุดท้าย นำมาซึ่งการเฉลิมฉลองอันน่าจดจำ</p>
+
+      <!-- Image: PSG celebration 2016 -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/historical/new-history-section/Celebration_vs_PSG_2016.png"
+             alt="Mourinho เฉลิมฉลองหลังเอาชนะ PSG">
+        <figcaption>Mourinho ร่วมเฉลิมฉลองบนเส้นข้างสนามหลังพลิกสถานการณ์เหนือ PSG อย่างน่าตื่นเต้น</figcaption>
+      </figure>
+
+      <p>อย่างไรก็ตาม ในการพบกับ Atletico Madrid ของ Diego Simeone โดยมี Thibaut Courtois ผู้รักษาประตูที่ยืมตัวไปเฝ้าเสาให้กับทีมจาก Spaniards และอดีตผู้เล่นในอนาคตของ Chelsea อย่าง Filipe Luis และ Diego Costa อยู่ในแนวรับและแนวรุกของพวกเขาตามลำดับ ความสุขกลับมีน้อยกว่า และความพ่ายแพ้ที่ Stamford Bridge ก็เขี่ยทีม Blues ตกรอบ เราจะไม่สามารถผ่านเข้าสู่รอบรองชนะเลิศได้อีกเลยเป็นเวลาอีกเจ็ดปี</p>
+
+      <!-- Section 7 -->
+      <h2>Thiago Silva, PSG และ Messi — หนามยอกอก</h2>
+
+      <p class="drop-cap">ทีมจากฝั่งตะวันตกของ London อาจจะเอาชนะ PSG ได้ในฤดูกาลนั้น แต่ทีมจาก French ก็กลายเป็นหนามยอกอกของเราในเวลาต่อมา โดยดับฝันเราในรอบ 16 ทีมสุดท้ายในปี 2015 เมื่อ David Luiz ในช่วงเวลาระหว่างการค้าแข้งสองรอบกับ Chelsea และอีกคนที่จะกลายเป็นเซ็นเตอร์แบ็กของ Blues อย่าง Thiago Silva ต่างก็โหม่งทำประตูได้ที่ฝั่ง Shed End</p>
+
+      <!-- Image: Thiago Silva goal 2015 -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/news/2020/08/thiago_silva_goal_v_chelsea.jpg"
+             alt="Thiago Silva โหม่งพบเชลซี 2015">
+        <figcaption>Thiago Silva โหม่งทำประตูกำจัด Chelsea ในปี 2015 — ก่อนจะมาร่วมทัพสีน้ำเงินและคว้าแชมป์ Champions League ในที่สุด</figcaption>
+      </figure>
+
+      <p>เรากลับไปคว้าแชมป์ในประเทศแทน ดังนั้นเมื่อกลับมาสู่เวทีระดับสูงสุดของ Europe ภายใต้การคุมทีมของ Antonio Conte การเป็นอริของเรากับ Barcelona จึงถูกจุดประกายขึ้นอีกครั้งเมื่อเราพบกับทีม Catalans ในรอบน็อกเอาต์รอบแรก ในที่สุด และเป็นจุดจบสำหรับความหวังของเรา Lionel Messi ก็สามารถเจาะตาข่าย Chelsea ได้หลังจากที่เท้าบอดเมื่อเจอกับเรามาถึงเก้าเกม – ครั้งแรกในเกมที่เสมอกันที่ Bridge และอีกสองครั้งในความพ่ายแพ้ 3-0 ของเราที่ Camp Nou</p>
+
+      <p>การท้าชิงตำแหน่งแชมป์ Champions League อย่างแท้จริงอีกครั้งรู้สึกเหมือนจะอยู่ห่างไกลออกไป และฤดูกาล 2018/19 ภายใต้การคุมทีมของ Maurizio Sarri ก็เป็นอีกแคมเปญที่คว้าแชมป์ Europa League แทน</p>
+
+      <!-- Section 8 -->
+      <h2>Porto 2021 — ถ้วยที่สองบนฝั่งแม่น้ำ Douro</h2>
+
+      <p class="drop-cap">ในฤดูกาล 2019/20 ซึ่งมี Frank Lampard เข้ามาคุมทีมใหม่ๆ มีชัยชนะในรอบแบ่งกลุ่ม Champions League ที่ Ajax บวกกับความยอดเยี่ยมในการพลิกกลับมาจากการตามหลัง 4-1 พบกับทีมเดียวกันจนเสมอกันที่ Bridge แต่การตกรอบน็อกเอาต์ต่อทีมที่ถูกลิขิตมาให้คว้าแชมป์ทัวร์นาเมนต์นี้อย่าง Bayern Munich ก็เป็นความพ่ายแพ้ที่ราบคาบที่สุดเท่าที่จะเป็นไปได้</p>
+
+      <p>Lampard นำทีมที่มีดาวรุ่งลูกหม้อผสมผสานกับการซื้อนักเตะชุดใหญ่ช่วงซัมเมอร์ รวมถึงนักเตะเก๋าเกมคนสำคัญบางคน ผ่านรอบแบ่งกลุ่มมาได้อย่างน่าประทับใจ ชัยชนะ 4-0 เหนือ Sevilla ที่ Olivier Giroud เหมาทำประตูทั้งหมดนั้นโดดเด่นเป็นพิเศษ</p>
+
+      <p>เมื่อมาถึงรอบน็อกเอาต์ Thomas Tuchel ซึ่งเป็นผู้จัดการทีมที่พ่ายแพ้ในนัดชิงชนะเลิศกับ PSG เมื่อฤดูกาลที่แล้ว ได้เข้ามาเป็นโค้ชใหญ่ และโมเมนตัมซึ่งสร้างขึ้นจากเกมรับที่แข็งแกร่ง ก็เริ่มก่อตัวขึ้น</p>
+
+      <p>Atletico Madrid ซึ่งเป็นคู่แข่งที่น่าเกรงขามสำหรับทุกทีมในรายการนี้มาอย่างยาวนาน ถูกเอาชนะได้ทั้งสองเลก Giroud ทำประตูได้อีกครั้งด้วยลูกยิงจักรยานอากาศสุดสวยในเลกแรก และ Hakim Ziyech กับ Emerson ก็ทำประตูจากจังหวะโต้กลับเร็วที่ Bridge ในเลกที่สอง</p>
+
+      <p>เนื่องจาก Chelsea ถูกจับให้อยู่คนละสายกับทีมที่แข็งแกร่งที่สุดใน Premier League อย่าง Manchester City และแชมป์เก่ากับรองแชมป์เก่าอย่าง Bayern และ PSG ความหวังจึงเพิ่มสูงขึ้น แต่ยังคงต้องผ่านด่าน Porto และ Real Madrid ให้ได้</p>
+
+      <p>ทั้งสองเกมกับ Porto แข่งขันในสเตเดียมเดียวกันที่ Spain และประตูของ Mason Mount กับ Ben Chilwell ในการพบกันนัดแรกก็เพียงพอที่จะผ่านเข้ารอบ</p>
+
+      <p>เมื่อ Real Madrid ใช้โอกาสในช่วงล็อกดาวน์จาก Covid ในการปรับปรุงสเตเดียมของพวกเขา Chelsea จึงชวดโอกาสลงเล่นเกมแรกที่ Bernabeu แต่เราก็ทำผลงานได้อย่างน่าประทับใจที่สนามซ้อมของพวกเขาแทน โดย Christian Pulisic โชว์ฟอร์มกลบรัศมีผู้เล่นที่เขารับเสื้อเบอร์ของ Chelsea ต่อมาอย่าง Eden Hazard ในเกมที่เสมอกัน 1-1</p>
+
+      <p>ชัยชนะในรอบรองชนะเลิศที่คู่ควรอย่างยิ่งเสร็จสมบูรณ์ที่ Bridge โดยมีแนวรุกชาว German อย่าง Kai Havertz และ Timo Werner เป็นผู้มีส่วนร่วมในประตูแรกของชัยชนะ 2-0 และในที่สุด Mount ก็สามารถเปลี่ยนโอกาสมากมายที่มีให้เห็นเมื่อเจอกับทีมที่ยิ่งใหญ่ที่สุดในประวัติศาสตร์ของการแข่งขันให้เป็นประตู เพื่อปิดกล่องชัยชนะ</p>
+
+      <!-- Image: Mount goal vs Real Madrid -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/match-reports/2020-21/real-madrid-home/real_home_mount_goal_2.jpg"
+             alt="Mason Mount ยิงพบ Real Madrid">
+        <figcaption>Mason Mount ปิดฉากรอบรองชนะเลิศพบ Real Madrid — Chelsea มุ่งหน้าสู่รอบชิงชนะเลิศที่ Porto</figcaption>
+      </figure>
+
+      <p>ดังนั้นเราจึงมุ่งหน้าสู่ริมฝั่งแม่น้ำ Douro ใน Portugal สำหรับนัดชิงชนะเลิศ Champions League ครั้งที่สามของเรา และเป็นครั้งที่สองที่เจอกับทีมจาก English ด้วยกัน</p>
+
+      <p>ทีมของ Tuchel เอาชนะ Man City ของ Pep Guardiola ได้ถึงสองครั้งในการแข่งขันในประเทศเมื่อช่วงไม่กี่สัปดาห์ก่อนหน้านั้น และเช่นเดียวกับในเกมเหล่านั้น แชมป์ Premier League ถูกป้องกันไม่ให้เร่งเครื่องขึ้นสู่ระดับสูงสุดของพวกเขาได้ด้วยการวางแผนอย่างชาญฉลาดและฟอร์มการเล่นในระดับสูงของทีม Chelsea</p>
+
+      <p>เมื่อ Havertz รับการผ่านบอลอันยอดเยี่ยมของ Mount หลุดผู้รักษาประตูเข้าไปยิงตุงตาข่ายในช่วงท้ายครึ่งแรก การขึ้นนำนั้นก็สมควรอย่างยิ่งสำหรับ Chelsea การป้องกันอันยอดเยี่ยมทั่วทั้งสนาม โดยมี N'Golo Kante ในแดนกลางได้รับเลือกให้เป็นแมนออฟเดอะแมตช์ ช่วยรักษาสกอร์นั้นไว้ได้</p>
+
+      <p>Cesar Azpilicueta ซึ่งย้ายมาร่วมทีมในช่วงซัมเมอร์หลังจากชัยชนะใน Champions League ครั้งแรกของเรา ได้ชูถ้วยรางวัลอย่างสง่างาม และไม่มีใครสามารถพูดได้ว่าชัยชนะนั้นไม่คู่ควร</p>
+
+      <!-- Image: Champions League celebration -->
+      <figure class="img-block img-block--wide">
+        <img src="https://pbs.twimg.com/media/E8XC9yPXIAcfH37?format=jpg&name=4096x4096"
+             alt="Chelsea เฉลิมฉลองกับถ้วย Champions League">
+        <figcaption>Chelsea เฉลิมฉลองกับถ้วย Champions League ครั้งที่สอง — สถานะสโมสรระดับโลกได้รับการยืนยันแล้ว</figcaption>
+      </figure>
+
+      <blockquote>
+        <p>มันต้องใช้เวลานานกว่าความทะเยอทะยานเดิมในการคว้าแชมป์รายการที่ใหญ่ที่สุดของ Europe มากกว่าหนึ่งครั้ง แต่สถานะของ Chelsea ในฐานะ<em>สโมสรระดับโลก</em>ได้รับการการันตีแล้วในตอนนี้</p>
+      </blockquote>
+
+      <!-- Chapter end -->
+      <div class="chapter-end">
+        <div class="chapter-end__ornament">⚽</div>
+        <span class="chapter-end__text">— จบบทที่ ๙ —</span>
+      </div>
+
+    </div><!-- /.article__inner -->
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

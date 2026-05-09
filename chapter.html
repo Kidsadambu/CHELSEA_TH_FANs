@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chelsea Chapters Router</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #034694;
+      --blue-dark: #021f45;
+      --gold: #c8a84b;
+      --paper: #f9f6f0;
+      --white: #f5f2ec;
+      --ink: #1a1410;
+      --rule: #c5b89a;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Sarabun", sans-serif;
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 45vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 48px 20px 36px;
+      background:
+        linear-gradient(135deg, rgba(2,31,69,0.78), rgba(3,70,148,0.82)),
+        url("https://i.postimg.cc/fL3MFj0Y/CHELSEA.png") center / cover no-repeat;
+      color: var(--white);
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      font-size: clamp(14px, 2vw, 18px);
+      opacity: 0.9;
+    }
+
+    .main-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--blue-dark);
+      border-bottom: 2px solid rgba(200,168,75,0.5);
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 12px 16px;
+      margin: 0 auto;
+      max-width: 1180px;
+    }
+
+    .main-nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 7px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .main-nav a:hover {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .page-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 28px 16px 40px;
+    }
+
+    .chapter-picker {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(3,70,148,0.08);
+    }
+
+    .chapter-picker h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      margin-bottom: 6px;
+    }
+
+    .chapter-picker p {
+      color: rgba(26,20,16,0.72);
+      margin-bottom: 18px;
+    }
+
+    .chapter-links {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    .chapter-link {
+      display: block;
+      text-decoration: none;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fff;
+      color: var(--ink);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .chapter-link:hover {
+      transform: translateY(-2px);
+      border-color: var(--blue);
+      box-shadow: 0 8px 16px rgba(3,70,148,0.12);
+    }
+
+    .chapter-link.is-active {
+      border-color: var(--blue);
+      background: linear-gradient(0deg, rgba(3,70,148,0.09), rgba(3,70,148,0.09)), #fff;
+      box-shadow: 0 6px 14px rgba(3,70,148,0.14);
+    }
+
+    .chapter-link .num {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--blue);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .chapter-link .title {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.35;
+      display: block;
+    }
+
+    .viewer {
+      margin-top: 24px;
+    }
+
+    .chapter-route {
+      display: none;
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 14px 28px rgba(3,70,148,0.08);
+    }
+
+    .chapter-route.is-active {
+      display: block;
+    }
+
+    .route-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--rule);
+      background: #fcfbf8;
+    }
+
+    .route-head h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    .route-head a {
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .route-head a:hover {
+      text-decoration: underline;
+    }
+
+    .chapter-frame {
+      width: 100%;
+      border: 0;
+      height: 80vh;
+      min-height: 720px;
+      background: #fff;
+      display: block;
+    }
+
+    .site-footer {
+      margin-top: 36px;
+      text-align: center;
+      color: rgba(26,20,16,0.7);
+      font-size: 13px;
+      padding: 0 10px 24px;
+    }
+
+    @media (max-width: 860px) {
+      .chapter-frame {
+        min-height: 620px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <h1>Chelsea TH FANs Chapters</h1>
+      <p>รวมบทที่ 1-9 ไว้หน้าเดียว พร้อม Router แบบสลับคลาส</p>
+    </div>
+  </header>
+
+  <nav class="main-nav" aria-label="Main Site Navigation">
+    <ul>
+      <li><a href="index.html">หน้าหลัก</a></li>
+      <li><a href="honours.html">ทำเนียบแชมป์</a></li>
+      <li><a href="Managers.html">ผู้จัดการทีม</a></li>
+      <li><a href="squad.html">รายชื่อนักเตะ</a></li>
+      <li><a href="icon.html">ตำนาน</a></li>
+      <li><a href="appearances.html">สถิติลงสนาม</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-wrap">
+    <section class="chapter-picker" aria-label="Chapter Picker">
+      <h2>เลือกบทที่ต้องการอ่าน</h2>
+      <p>คลิกบทเพื่อสลับเนื้อหาโดยไม่ต้องโหลดหน้าใหม่</p>
+
+      <div class="chapter-links">
+        <a class="chapter-link is-active" data-route-link data-route="chapter-1" href="#chapter-1">
+          <span class="num">Chapter 1</span>
+          <span class="title">ยุคแรกเริ่ม (1905-1930)</span>
+        </a>
+        <a class="chapter-link" data-route-link data-route="chapter-2" href="#chapter-2">
+          <span class="num">Chapter 2</span>
+          <span class="title">ยุคหลังสงคราม (1930-1955)</span>
+        </a>
+        <a class="chapter-link" data-route-link data-route="chapter-3" href="#chapter-3">
+          <span class="num">Chapter 3</span>
+          <span class="title">แชมป์สมัยแรก (1955-1975)</span>
+        </a>
+        <a class="chapter-link" data-route-link data-route="chapter-4" href="#chapter-4">
+          <span class="num">Chapter 4</span>
+          <span class="title">ยุคมืด (1975-1996)</span>
+        </a>
+        <a class="chapter-link" data-route-link data-route="chapter-5" href="#chapter-5">
+          <span class="num">Chapter 5</span>
+          <span class="title">ยุคฟื้นฟู (1996-2003)</span>
+        </a>
+        <a class="chapter-link" data-route-link data-route="chapter-6" href="#chapter-6">
+          <span class="num">Chapter 6</span>
+          <span class="title">ยุคอับราโมวิช (2003-2012)</span>
+        </a>
+        <a class="chapter-link" data-route-link data-route="chapter-7" href="#chapter-7">
+          <span class="num">Chapter 7</span>
+          <span class="title">ยุคใหม่ (2012-2021)</span>
+        </a>
+        <a class="chapter-link" data-route-link data-route="chapter-8" href="#chapter-8">
+          <span class="num">Chapter 8</span>
+          <span class="title">ยุคเปลี่ยนผ่าน (2021-2023)</span>
+        </a>
+        <a class="chapter-link" data-route-link data-route="chapter-9" href="#chapter-9">
+          <span class="num">Chapter 9</span>
+          <span class="title">อนาคตข้างหน้า (2023-ปัจจุบัน)</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="viewer" id="chapter-viewer" aria-live="polite">
+      <article class="chapter-route is-active" id="chapter-1" data-route-panel>
+        <div class="route-head">
+          <h3>Chapter 1</h3>
+          <a href="Chapter1.html" target="_blank" rel="noopener">เปิดไฟล์ Chapter1.html แยกหน้า</a>
+        </div>
+        <iframe class="chapter-frame" src="Chapter1.html" title="Chapter 1"></iframe>
+      </article>
+
+      <article class="chapter-route" id="chapter-2" data-route-panel>
+        <div class="route-head">
+          <h3>Chapter 2</h3>
+          <a href="Chapter2.html" target="_blank" rel="noopener">เปิดไฟล์ Chapter2.html แยกหน้า</a>
+        </div>
+        <iframe class="chapter-frame" src="Chapter2.html" title="Chapter 2"></iframe>
+      </article>
+
+      <article class="chapter-route" id="chapter-3" data-route-panel>
+        <div class="route-head">
+          <h3>Chapter 3</h3>
+          <a href="Chapter3.html" target="_blank" rel="noopener">เปิดไฟล์ Chapter3.html แยกหน้า</a>
+        </div>
+        <iframe class="chapter-frame" src="Chapter3.html" title="Chapter 3"></iframe>
+      </article>
+
+      <article class="chapter-route" id="chapter-4" data-route-panel>
+        <div class="route-head">
+          <h3>Chapter 4</h3>
+          <a href="Chapter4.html" target="_blank" rel="noopener">เปิดไฟล์ Chapter4.html แยกหน้า</a>
+        </div>
+        <iframe class="chapter-frame" src="Chapter4.html" title="Chapter 4"></iframe>
+      </article>
+
+      <article class="chapter-route" id="chapter-5" data-route-panel>
+        <div class="route-head">
+          <h3>Chapter 5</h3>
+          <a href="Chapter5.html" target="_blank" rel="noopener">เปิดไฟล์ Chapter5.html แยกหน้า</a>
+        </div>
+        <iframe class="chapter-frame" src="Chapter5.html" title="Chapter 5"></iframe>
+      </article>
+
+      <article class="chapter-route" id="chapter-6" data-route-panel>
+        <div class="route-head">
+          <h3>Chapter 6</h3>
+          <a href="Chapter6.html" target="_blank" rel="noopener">เปิดไฟล์ Chapter6.html แยกหน้า</a>
+        </div>
+        <iframe class="chapter-frame" src="Chapter6.html" title="Chapter 6"></iframe>
+      </article>
+
+      <article class="chapter-route" id="chapter-7" data-route-panel>
+        <div class="route-head">
+          <h3>Chapter 7</h3>
+          <a href="Chapter7.html" target="_blank" rel="noopener">เปิดไฟล์ Chapter7.html แยกหน้า</a>
+        </div>
+        <iframe class="chapter-frame" src="Chapter7.html" title="Chapter 7"></iframe>
+      </article>
+
+      <article class="chapter-route" id="chapter-8" data-route-panel>
+        <div class="route-head">
+          <h3>Chapter 8</h3>
+          <a href="Chapter8.html" target="_blank" rel="noopener">เปิดไฟล์ Chapter8.html แยกหน้า</a>
+        </div>
+        <iframe class="chapter-frame" src="Chapter8.html" title="Chapter 8"></iframe>
+      </article>
+
+      <article class="chapter-route" id="chapter-9" data-route-panel>
+        <div class="route-head">
+          <h3>Chapter 9</h3>
+          <a href="Chapter9.html" target="_blank" rel="noopener">เปิดไฟล์ Chapter9.html แยกหน้า</a>
+        </div>
+        <iframe class="chapter-frame" src="Chapter9.html" title="Chapter 9"></iframe>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>CHELSEA TH FANs • Router แบบ Simple Client-side Class Toggling</p>
+  </footer>
+
+  <script>
+    (() => {
+      const links = Array.from(document.querySelectorAll("[data-route-link]"));
+      const panels = Array.from(document.querySelectorAll("[data-route-panel]"));
+      const viewer = document.getElementById("chapter-viewer");
+
+      function resizeFrame(panel) {
+        if (!panel) return;
+        const frame = panel.querySelector(".chapter-frame");
+        if (!frame) return;
+
+        const applyHeight = () => {
+          try {
+            const doc = frame.contentDocument;
+            if (!doc) return;
+            const bodyHeight = doc.body ? doc.body.scrollHeight : 0;
+            const rootHeight = doc.documentElement ? doc.documentElement.scrollHeight : 0;
+            const nextHeight = Math.max(bodyHeight, rootHeight, 720);
+            frame.style.height = `${nextHeight + 24}px`;
+          } catch (error) {
+            frame.style.height = "80vh";
+          }
+        };
+
+        applyHeight();
+        setTimeout(applyHeight, 350);
+        setTimeout(applyHeight, 1100);
+      }
+
+      function setRoute(routeId, options = {}) {
+        const { updateHash = true, scrollToViewer = true } = options;
+        const targetPanel = panels.find((panel) => panel.id === routeId) || panels[0];
+        const activeId = targetPanel.id;
+
+        panels.forEach((panel) => {
+          panel.classList.toggle("is-active", panel.id === activeId);
+        });
+
+        links.forEach((link) => {
+          link.classList.toggle("is-active", link.dataset.route === activeId);
+        });
+
+        if (updateHash) {
+          history.replaceState(null, "", `#${activeId}`);
+        }
+
+        resizeFrame(targetPanel);
+
+        if (scrollToViewer) {
+          viewer.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          setRoute(link.dataset.route, { updateHash: true, scrollToViewer: true });
+        });
+      });
+
+      panels.forEach((panel) => {
+        const frame = panel.querySelector(".chapter-frame");
+        if (!frame) return;
+        frame.addEventListener("load", () => resizeFrame(panel));
+      });
+
+      window.addEventListener("hashchange", () => {
+        const hashRoute = window.location.hash.replace("#", "").trim();
+        if (!hashRoute) return;
+        setRoute(hashRoute, { updateHash: false, scrollToViewer: false });
+      });
+
+      window.addEventListener("resize", () => {
+        const activePanel = panels.find((panel) => panel.classList.contains("is-active"));
+        resizeFrame(activePanel);
+      });
+
+      const initialRoute = window.location.hash.replace("#", "").trim();
+      setRoute(initialRoute || "chapter-1", { updateHash: false, scrollToViewer: false });
+    })();
+  </script>
+</body>
+</html>

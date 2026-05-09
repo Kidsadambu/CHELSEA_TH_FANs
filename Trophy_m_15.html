@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — FA Charity Shield 2000: Chelsea 2-0 Manchester United</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--blue-dark); padding: 12px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .top-bar a {
+      color: var(--white); text-decoration: none;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+      display: flex; align-items: center; gap: 8px;
+      opacity: 0.85; transition: opacity 0.3s ease;
+    }
+    .top-bar__arrow {
+      width: 0; height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 6px solid var(--white);
+    }
+    .top-bar a:hover { opacity: 1; }
+    .top-bar img { height: 32px; filter: brightness(1.1); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; width: 100%; height: 100vh;
+      min-height: 600px; overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://img.chelseafc.com/image/upload/f_auto,c_fill,h_700,g_faces,ar_16:9,q_90/site-sections/about-chelsea/history/2021/trophy-cabinet/thumbnails/Mens_FA_Charity_Shield_2000.jpg');
+      background-size: cover; background-position: center 30%;
+      filter: brightness(0.35) saturate(0.7);
+      transform: scale(1.03); transition: transform 8s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.06); }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(40,30,20,0.2) 40%,
+        rgba(3,12,30,0.88) 80%, rgba(3,12,30,0.97) 100%);
+    }
+    .hero__content {
+      position: relative; z-index: 2; width: 100%;
+      padding: 0 clamp(20px,6vw,80px) clamp(48px,8vh,90px);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+    }
+    .hero__logo {
+      width: clamp(70px,10vw,120px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.45));
+      margin-bottom: 24px; animation: fadeDown 1s ease both;
+    }
+    .hero__eyebrow {
+      font-size: clamp(10px,1.2vw,12px); font-weight: 600;
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.2rem,5.5vw,4.8rem); line-height: 1.08;
+      color: var(--white); letter-spacing: -0.01em; max-width: 820px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__score {
+      display: flex; align-items: center; gap: 20px;
+      margin-top: 28px; animation: fadeDown 1s 0.35s ease both;
+    }
+    .hero__score-team {
+      font-size: clamp(13px,1.5vw,15px); font-weight: 600;
+      letter-spacing: 0.08em; color: rgba(245,242,236,0.7);
+    }
+    .hero__score-num {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.4rem,5vw,4rem); color: var(--gold-light); line-height: 1;
+    }
+    .hero__score-divider {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem,2.5vw,2rem);
+      color: rgba(245,242,236,0.35);
+    }
+    .hero__meta {
+      margin-top: 16px; font-size: 13px;
+      color: rgba(245,242,236,0.5); letter-spacing: 0.05em;
+      animation: fadeDown 1s 0.45s ease both;
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-15px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── ARTICLE ── */
+    .article {
+      max-width: var(--col-max); margin: 0 auto;
+      padding: clamp(40px,8vw,80px) clamp(20px,6vw,80px);
+    }
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(1.6rem,3.5vw,2.2rem);
+      color: var(--ink); letter-spacing: -0.01em;
+      margin: 42px 0 18px; line-height: 1.25;
+    }
+    .article__inner h3 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(1.3rem,2.8vw,1.7rem);
+      color: var(--ink-soft); letter-spacing: -0.005em;
+      margin: 32px 0 14px; line-height: 1.3;
+    }
+    .article__inner p {
+      margin-bottom: 20px; text-align: justify;
+    }
+    .article__inner strong {
+      font-weight: 600; color: var(--ink);
+    }
+    .article__inner em {
+      font-style: italic; color: var(--blue);
+    }
+
+    /* ── MATCH RESULT BOX ── */
+    .match-result {
+      margin: 32px 0; padding: 24px;
+      border: 1px solid var(--rule);
+      background: white;
+      text-align: center;
+    }
+    .match-result__title {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .match-result__score {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: 2rem; color: var(--ink); margin: 12px 0;
+    }
+    .match-result__venue {
+      font-size: 14px; color: var(--ink-muted); margin-top: 8px;
+    }
+
+    /* ── SCORERS BOX ── */
+    .scorers-box {
+      margin: 32px 0; padding: 20px 24px;
+      border: 1px solid var(--rule); border-left: 4px solid var(--blue);
+      background: white;
+    }
+    .scorers-box__title {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 14px;
+    }
+    .scorers-box ul {
+      list-style: none; font-size: 16px; color: var(--ink-soft);
+    }
+    .scorers-box ul li {
+      padding: 8px 0; border-bottom: 1px solid rgba(197,184,154,0.3);
+      line-height: 1.6; padding-left: 18px; position: relative;
+    }
+    .scorers-box ul li::before {
+      content: '⚽'; position: absolute; left: 0;
+      font-size: 12px; top: 8px;
+    }
+    .scorers-box ul li:last-child { border-bottom: none; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      margin: 36px 0; padding: 24px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue);
+    }
+    .highlight-box p {
+      font-size: 16px; color: var(--ink); line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    /* ── DEBUT BOX ── */
+    .debut-box {
+      margin: 36px 0; padding: 24px 28px;
+      border: 1px solid var(--rule); border-left: 4px solid var(--gold);
+      background: white;
+    }
+    .debut-box__title {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+    }
+    .debut-box ul {
+      list-style: none; font-size: 16px; color: var(--ink-soft);
+    }
+    .debut-box ul li {
+      padding: 8px 0; border-bottom: 1px solid rgba(197,184,154,0.3);
+      line-height: 1.6; padding-left: 18px; position: relative;
+    }
+    .debut-box ul li::before {
+      content: '⭐'; position: absolute; left: 0;
+      font-size: 12px; top: 8px;
+    }
+    .debut-box ul li:last-child { border-bottom: none; }
+
+    /* ── FOOTER ── */
+    .article-footer {
+      margin-top: 60px; padding-top: 32px;
+      border-top: 1px solid var(--rule);
+      text-align: center;
+    }
+    .article-footer__back {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--blue); text-decoration: none;
+      font-weight: 600; font-size: 14px; letter-spacing: 0.05em;
+      transition: gap 0.3s ease;
+    }
+    .article-footer__back:hover { gap: 12px; }
+
+    .site-footer {
+      background: var(--ink); color: rgba(245,242,236,0.4);
+      text-align: center; padding: 40px 20px;
+      font-size: 12px; letter-spacing: 0.1em; margin-top: 60px;
+    }
+    .site-footer__logo { 
+      width: 50px; filter: brightness(0.5); margin-bottom: 16px; 
+    }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 8px; font-size: 13px; letter-spacing: 0.18em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero__score { gap: 12px; }
+      .article__inner p { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <nav class="top-bar">
+    <a href="Trophy.html">
+      <div class="top-bar__arrow"></div>
+      กลับสู่ทำเนียบแชมป์
+    </a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Chelsea TH Fans">
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="hero__logo" alt="Chelsea Logo">
+      <p class="hero__eyebrow">FA Charity Shield · 2000</p>
+      <h1 class="hero__title">Chelsea 2–0<br><em>Manchester United</em></h1>
+      <div class="hero__score">
+        <span class="hero__score-team">CHELSEA</span>
+        <span class="hero__score-num">2</span>
+        <span class="hero__score-divider">–</span>
+        <span class="hero__score-num">0</span>
+        <span class="hero__score-team">MAN UNITED</span>
+      </div>
+      <p class="hero__meta">Wembley Stadium · ก่อนเริ่มฤดูกาล 2000/01</p>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <article class="article">
+    <div class="article__inner">
+      
+      <h2>🏆 FA Charity Shield 2000</h2>
+
+      <div class="match-result">
+        <div class="match-result__title">นัดชิงชนะเลิศ</div>
+        <div class="match-result__score">Chelsea 2-0 Manchester United</div>
+        <div class="match-result__venue">Wembley Stadium</div>
+      </div>
+
+      <p>ชัยชนะในไฟนอล FA Cup เหนือ Aston Villa ทำให้เราได้พบกับ Charity Shield กับแชมป์ Premier League อย่าง Manchester United ก่อนเริ่มฤดูกาล 2000/01 และแม้จะเริ่มต้นเกมในฐานะทีมรอง เราก็ออกมาชนะอย่างสบายๆ 2-0</p>
+
+      <div class="scorers-box">
+        <div class="scorers-box__title">ผู้ทำประตู Chelsea</div>
+        <ul>
+          <li><strong>Jimmy Floyd Hasselbaink</strong> (ครึ่งแรก) – ประตูแรกในชุด Chelsea</li>
+          <li><strong>Mario Melchiot</strong> (ครึ่งหลัง) – ประตูสุดอลังการ</li>
+        </ul>
+      </div>
+
+      <h3>การครอบงำตั้งแต่นาทีแรก</h3>
+
+      <p>Chelsea ครอบงำเกมตั้งแต่นกหวีดแรกและเกือบจะออกนำเมื่อนักเตะคนใหม่ <strong>Mario Stanic</strong> เข้าใกล้ด้วยการโหม่งที่เสาไกลจากครอสของ <strong>Gianfranco Zola</strong></p>
+
+      <div class="highlight-box">
+        <p>อย่างไรก็ตามเราได้รับรางวัลจากความพยายามในไม่ช้า เมื่อนักเตะใหม่มูลค่า 15 ล้านปอนด์ <strong>Jimmy Floyd Hasselbaink</strong> ทำให้เรานำในช่วงกลางครึ่งแรก หลังจากที่เขาตามรับบอลจากการโหม่งของ <strong>Gustavo Poyet</strong> ก่อนยิงผ่าน <strong>Fabien Barthez</strong></p>
+      </div>
+
+      <h3>Man United ไม่เข้าท่า</h3>
+
+      <p>Man United ไม่เคยเข้าเกมได้จริงจัง และเมื่อ <strong>Roy Keane</strong> ถูกไล่ออกในครึ่งหลังจากการเข้าแทคเกิลช้ากับ Poyet เกมก็อยู่ในกำมือของทีมของ <strong>Gianluca Vialli</strong> อย่างสมบูรณ์</p>
+
+      <h3>ประตูสุดอลังการของ Melchiot</h3>
+
+      <div class="highlight-box">
+        <p>เป็นชาวดัตช์อีกคนหนึ่ง <strong>Mario Melchiot</strong> ที่ทำประตูที่สองอันเป็นตัวชี้ขาด โดยเขาทะลวงเข้ามาจากด้านขวาอย่างชำนาญก่อนยิงหักมุมสุดประณีตเข้ามุมล่างจากนอกเขตโทษ</p>
+      </div>
+
+      <h2>นักเตะคนใหม่ลงสนามครั้งแรก</h2>
+
+      <div class="debut-box">
+        <div class="debut-box__title">นักเตะที่ลงสนามครั้งแรกให้สโมสร</div>
+        <ul>
+          <li><strong>Jimmy Floyd Hasselbaink</strong> – และทำประตูได้ทันทีในเกมแรก</li>
+          <li><strong>Mario Stanic</strong> – เริ่มเกมในฐานะตัวจริง</li>
+          <li><strong>Eidur Gudjohnsen</strong> – ลงสนามแทน Zola ในนาทีที่ 73</li>
+        </ul>
+      </div>
+
+      <p>นอกจาก Hasselbaink และ Stanic แล้ว <strong>Eidur Gudjohnsen</strong> ก็ได้ลงสนามครั้งแรกให้สโมสรเช่นกัน โดยเข้ามาแทน Zola ในนาทีที่ 73</p>
+
+      <h2>ความสำคัญของชัยชนะ</h2>
+
+      <p>การเอาชนะแชมป์ Premier League อย่าง Manchester United อย่างสบายๆ 2-0 ในเกมเปิดฤดูกาลเป็นการส่งสัญญาณที่ชัดเจนว่า Chelsea พร้อมที่จะแข่งขันในระดับสูงสุด</p>
+
+      <p>การลงสนามและทำประตูได้ทันทีของ <strong>Hasselbaink</strong> แสดงให้เห็นว่าเขาจะเป็นกำลังสำคัญของทีมในฤดูกาลนี้ ในขณะที่การลงสนามครั้งแรกของ <strong>Gudjohnsen</strong> ก็เป็นจุดเริ่มต้นของอาชีพอันยาวนานและประสบความสำเร็จกับ Chelsea</p>
+
+      <div class="highlight-box">
+        <p>Charity Shield 2000 ครั้งนี้ไม่เพียงแต่เป็นถ้วยแชมป์อีกชิ้นหนึ่งเท่านั้น แต่ยังเป็นการเริ่มต้นฤดูกาลใหม่อย่างสมบูรณ์แบบและเป็นการแนะนำนักเตะคุณภาพหลายคนที่จะมาสร้างประวัติศาสตร์ให้กับสโมสร</p>
+      </div>
+
+    </div>
+
+    <!-- FOOTER BACK LINK -->
+    <div class="article-footer">
+      <a href="Trophy.html" class="article-footer__back">← กลับสู่ทำเนียบแชมป์</a>
+    </div>
+  </article>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Chelsea Logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

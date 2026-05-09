@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2007 League Cup — CHELSEA TH FANs</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px; 
+    }
+
+    /* RESET & BASE STYLES */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    /* TOP NAVIGATION BAR */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar__arrow {
+      width: 8px; height: 8px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 0.75rem;
+    }
+    .top-bar img { height: 32px; }
+
+    /* ARTICLE STRUCTURE */
+    .article-container {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    header.article-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .article-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 8vw, 3.5rem);
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .article-header .subtitle {
+      font-size: 1.2rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    /* CONTENT COMPONENTS */
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif; 
+      color: var(--blue); 
+      margin: 3rem 0 1.5rem; 
+      font-size: 1.8rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.5rem;
+    }
+
+    .article-img {
+      margin: 2.5rem 0;
+      text-align: center;
+    }
+    .article-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .highlight-box {
+      background-color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .timeline-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .timeline-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .timeline-list li::before {
+      content: '⚽';
+      position: absolute;
+      left: -5px;
+      top: 0;
+    }
+
+    /* SITE FOOTER */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .site-footer__logo { height: 60px; margin-bottom: 1rem; }
+
+    /* CLOCK WIDGET */
+    #th-time {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--blue-dark);
+      color: var(--gold);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .article-container { padding: 2rem 1.25rem; }
+      .article-header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-bar">
+    <a href="Trophy.html"><div class="top-bar__arrow"></div> กลับสู่ทำเนียบแชมป์</a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Logo">
+  </nav>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>🏆 2007 League Cup</h1>
+      <p class="subtitle">เกมสุดเดือดที่ Cardiff และฮีโร่หน้าเดิม Didier Drogba</p>
+    </header>
+
+    <figure class="article-img">
+      <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,h_700,g_faces,ar_16:9,q_90/site-sections/about-chelsea/history/2021/trophy-cabinet/thumbnails/Mens_League_Cup_2006-07.jpg" alt="2007 League Cup">
+    </figure>
+
+    <div class="article-body">
+      <h2>การดวลกันที่ Millennium Stadium</h2>
+      <p>การแข่งขันนัดนี้จัดขึ้นที่ <strong>Millennium Stadium</strong> ในเมือง <strong>Cardiff</strong> และเป็นเกมที่สนุกตื่นเต้นอย่างมาก แต่ทีมของ <strong>Jose Mourinho</strong> กลับเริ่มต้นได้อย่างเลวร้ายที่สุด เมื่อตกเป็นรองหลังจากผ่านไปเพียง 12 นาที จากจังหวะที่ <strong>Theo Walcott</strong> ยิงผ่านมือ <strong>Petr Cech</strong> เข้าไป</p>
+
+      <p>ทว่าความดีใจของฝั่ง <strong>Gunners</strong> กลับอยู่ได้ไม่นาน เพียง 8 นาทีต่อมา <strong>Didier Drogba</strong> ซึ่งมักจะเป็นหนามยอกอกของ <strong>Arsenal</strong> เสมอ ก็ตามไปเก็บบอลทะลุช่องสุดฉลาดจาก <strong>Michael Ballack</strong> และยิงมุมแคบตีเสมอได้สำเร็จ</p>
+
+      <h2>เหตุการณ์ระทึกและการตัดสินแชมป์</h2>
+      <p>ในช่วงครึ่งหลังกลับเป็น <strong>Arsenal</strong> ที่ดูมีโอกาสมากกว่า โดยทั้ง <strong>Jeremie Aliadiere</strong> และ <strong>Cesc Fabregas</strong> เกือบทำประตูได้ ก่อนที่จะเกิดเหตุการณ์ไม่คาดฝันเมื่อ <strong>John Terry</strong> ถูกหามออกจากสนามในสภาพหมดสติและถูกนำส่งโรงพยาบาล หลังจากโดนรองเท้าของ <strong>Abou Diaby</strong> เตะเข้าที่ใบหน้าในจังหวะที่เขาพยายามพุ่งโหม่งทำประตู (half-chance)</p>
+
+      <div class="highlight-box">
+        <p>อาการบาดเจ็บของกัปตันทีมดูเหมือนจะช่วยกระตุ้น (galvanise) ทัพ <strong>Blues</strong> ให้ตื่นตัวขึ้น และเราเริ่มสร้างความอันตราย โดย <strong>Frank Lampard</strong> เกือบทำประตูได้จากลูกยิงไกล (long-range effort) ที่ชนคาน ทั้งที่ <strong>Manuel Almunia</strong> หมดสิทธิ์เซฟไปแล้ว</p>
+      </div>
+
+      <p>และตามแบบฉบับ เป็นอีกครั้งที่ <strong>Drogba</strong> คือผู้ทำประตูชัยให้กับเรา โดยชิงจังหวะตัดหน้าตัวประกบและโหม่งลูก cross ของ <strong>Arjen Robben</strong> เข้าไปตุงตาข่ายในนาทีที่ 84</p>
+
+      <p>ช่วงท้ายเกมสถานการณ์เริ่มตึงเครียดและดุเดือดขึ้น (nasty turn) เมื่อ <strong>John Mikel Obi</strong> และ <strong>Kolo Toure</strong> มีปากเสียงกัน จนบานปลายกลายเป็นเหตุการณ์ตะลุมบอนครั้งใหญ่ (mass brawl) ทำให้ทั้ง <strong>Jose Mourinho</strong> และ <strong>Arsene Wenger</strong> ต้องลงมาในสนามเพื่อพยายามสงบสติอารมณ์ผู้เล่น <strong>Mikel</strong>, <strong>Toure</strong> และ <strong>Emmanuel Adebayor</strong> ถูกไล่ออกจากสนาม (dismissed) และแม้ว่าจะมีการทดเวลาบาดเจ็บ (added time) ถึง 12 นาทีเนื่องจากเกมหยุดชะงักไปยาวนานถึงสองครั้ง แต่เราก็สามารถรักษาสกอร์และชูถ้วย trophy ได้สำเร็จ</p>
+
+      <h2>เส้นทางสู่นัดชิงชนะเลิศ (Road to the Final)</h2>
+      <p>เส้นทางสู่นัดชิงชนะเลิศค่อนข้างราบรื่น โดยเราเสียเพียงแค่ 1 ประตูตลอดเส้นทางสู่ <strong>Cardiff</strong></p>
+
+      <ul class="timeline-list">
+        <li>สิ่งที่ดูเหมือนจะเป็นงานยากในการไปเยือน <strong>Blackburn</strong> กลับกลายเป็นเรื่องง่าย เมื่อประตูจาก <strong>Joe Cole</strong> และ <strong>Salomon Kalou</strong> เป็นแรงบันดาลใจให้เราคว้าชัย 2-0 ส่งเราไปพบกับ <strong>Aston Villa</strong> ในบ้าน ซึ่งเราเอาชนะไปได้อย่างสบายๆ 4-0</li>
+        <li>บททดสอบสุดหินในรอบ quarter-final คือการไปเยือน <strong>Newcastle</strong> แต่ลูกยิง free kick ลูกเดียวของ <strong>Didier Drogba</strong> ก็เป็นตัวตัดสินความแตกต่างระหว่างสองทีม</li>
+      </ul>
+
+      <p><strong>Wycombe Wanderers</strong> คือคู่แข่งที่ขวางทางเรากับนัดชิงชนะเลิศ แม้ดูบนหน้ากระดาษจะเป็นงานง่าย แต่กลับกลายเป็นหนึ่งในแมตช์ที่ยากที่สุดของเราในรายการนี้ อย่างน้อยก็ในเลกแรก (first leg)</p>
+
+      <p><strong>Wayne Bridge</strong> ซึ่งลงเล่นในตำแหน่ง winger จำเป็น ยิงให้เราขึ้นนำในครึ่งแรกที่ <strong>Adams Park</strong> แต่มันเป็นฟอร์มการเล่นที่ไม่ค่อยปะติดปะต่อ และทีมจาก <strong>League Two</strong> ก็ตามตีเสมอได้สำเร็จจาก <strong>Jermaine Easter</strong> ในนาทีที่ 78</p>
+
+      <p>ทว่าเลกที่สอง (second leg) ที่ <strong>Stamford Bridge</strong> เป็นค่ำคืนที่สบายกว่ามาก เราคว้าชัยชนะไป 4-0 ด้วยผลงานของ <strong>Frank Lampard</strong> และ <strong>Andriy Shevchenko</strong> ที่เหมาคนละสองประตู (braces) ตีตั๋วเข้าสู่รอบชิงชนะเลิศได้อย่างสวยงามและสมศักดิ์ศรี</p>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
+    <p>CHELSEA TH FANs — Kann Krung Nan News</p>
+    <p style="font-size: 0.8rem; opacity: 0.7;">ผู้เขียน: อิอิแอแอ</p>
+  </footer>
+
+  <div id="th-time">BKK: --:--:--</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const applyLionTheme = (s) => s.replace(/0/g, '🦁');
+      const timeStr = new Intl.DateTimeFormat('th-TH', { 
+        hour:'2-digit', minute:'2-digit', second:'2-digit', 
+        hour12:false, timeZone:'Asia/Bangkok' 
+      }).format(now);
+      document.getElementById('th-time').textContent = "BKK: " + applyLionTheme(timeStr);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — UEFA Conference League Final 2025: Real Betis 1–4 Chelsea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --green:      #00a859;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; width: 100%; height: 100vh;
+      min-height: 600px; overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://img.chelseafc.com/image/upload/f_auto,c_fill,g_faces,w_1440,h_856,q_90/editorial/match-reports/2024-25/Conference%20League%20final%20-%20Real%20Betis/DSC_6177-2567736.jpg');
+      background-size: cover; background-position: center 25%;
+      filter: brightness(0.4) saturate(0.8);
+      transform: scale(1.03); transition: transform 8s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.06); }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(0,40,20,0.2) 40%,
+        rgba(3,12,30,0.88) 80%, rgba(3,12,30,0.97) 100%);
+    }
+    .hero__content {
+      position: relative; z-index: 2; width: 100%;
+      padding: 0 clamp(20px,6vw,80px) clamp(48px,8vh,90px);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+    }
+    .hero__logo {
+      width: clamp(70px,10vw,120px);
+      filter: drop-shadow(0 4px 24px rgba(0,168,89,0.45));
+      margin-bottom: 24px; animation: fadeDown 1s ease both;
+    }
+    .hero__eyebrow {
+      font-size: clamp(10px,1.2vw,12px); font-weight: 600;
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 14px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.2rem,5.5vw,4.8rem); line-height: 1.08;
+      color: var(--white); letter-spacing: -0.01em; max-width: 820px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__score {
+      display: flex; align-items: center; gap: 20px;
+      margin-top: 28px; animation: fadeDown 1s 0.35s ease both;
+    }
+    .hero__score-team {
+      font-size: clamp(13px,1.5vw,15px); font-weight: 600;
+      letter-spacing: 0.08em; color: rgba(245,242,236,0.7);
+    }
+    .hero__score-num {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.4rem,5vw,4rem); color: var(--gold-light); line-height: 1;
+    }
+    .hero__score-divider {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem,2.5vw,2rem);
+      color: rgba(245,242,236,0.35);
+    }
+    .hero__meta {
+      margin-top: 16px; font-size: 13px;
+      letter-spacing: 0.08em; color: rgba(245,242,236,0.45);
+      animation: fadeDown 1s 0.45s ease both;
+    }
+    .hero__rule {
+      width: 60px; height: 2px; background: var(--green);
+      margin: 28px auto 0; animation: fadeDown 1s 0.5s ease both;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── SCROLL HINT ── */
+    .scroll-hint {
+      position: absolute; bottom: 30px; left: 50%;
+      transform: translateX(-50%); z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: float 2.4s ease-in-out infinite;
+    }
+    .scroll-hint span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,242,236,0.4); }
+    .scroll-hint__arrow {
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--green); border-bottom: 2px solid var(--green);
+      transform: rotate(45deg); opacity: 0.7;
+    }
+    @keyframes float {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── ARTICLE ── */
+    .article { background: var(--paper); position: relative; }
+    .article::before {
+      content: ''; display: block; width: 100%; height: 6px;
+      background: linear-gradient(to right, var(--blue), var(--green), var(--blue));
+    }
+    .article__inner {
+      max-width: var(--col-max); margin: 0 auto;
+      padding: clamp(48px,8vw,80px) clamp(20px,5vw,40px);
+    }
+
+    /* ── BACK BUTTON ── */
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-bottom: 40px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--green); border-bottom: 1px solid rgba(0,168,89,0.35);
+      padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+    }
+    .back-btn:hover { color: var(--blue); border-color: var(--blue); }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 4px solid var(--green); padding: 24px 32px;
+      margin: 0 0 52px;
+      background: linear-gradient(to right, rgba(0,168,89,0.06), transparent);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1.05rem,2.2vw,1.25rem); color: var(--ink-soft); line-height: 1.7;
+    }
+
+    /* ── BODY ── */
+    .article__inner p { margin-bottom: 1.6em; color: var(--ink-soft); }
+    .article__inner p em { color: var(--ink); font-style: italic; }
+    .drop-cap::first-letter {
+      float: left; font-family: 'Playfair Display', serif;
+      font-size: 4.2em; line-height: 0.78; margin: 6px 10px 0 0;
+      color: var(--green); font-weight: 900;
+    }
+
+    /* ── H2 ── */
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(1.2rem,2.6vw,1.6rem); color: var(--blue);
+      margin: 52px 0 22px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule); letter-spacing: -0.01em;
+    }
+
+    /* ── IMAGES ── */
+    .img-block { margin: 36px 0; }
+    .img-block img {
+      width: 100%; height: auto; display: block; object-fit: cover;
+      border-radius: 2px; box-shadow: 0 4px 24px rgba(26,20,16,0.14);
+    }
+    .img-block figcaption {
+      margin-top: 10px; font-size: 12px; color: var(--ink-muted);
+      letter-spacing: 0.04em; font-style: italic; line-height: 1.5;
+    }
+    .img-block--wide { margin: 44px calc(-1 * clamp(20px,5vw,40px)); }
+    .img-block--wide figcaption { padding: 0 clamp(20px,5vw,40px); }
+
+    /* ── KEY MOMENTS ── */
+    .key-moments {
+      margin: 40px 0;
+      background: var(--blue-dark);
+      border-radius: 2px;
+      padding: 24px 28px;
+    }
+    .key-moments__title {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 16px;
+    }
+    .key-moment {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .key-moment:last-child { border-bottom: none; padding-bottom: 0; }
+    .key-moment__time {
+      flex-shrink: 0; width: 36px; text-align: right;
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: 0.95rem; color: var(--gold); line-height: 1.4;
+    }
+    .key-moment__text {
+      font-size: 14px; color: rgba(245,242,236,0.75); line-height: 1.6;
+    }
+    .key-moment__text strong { color: var(--gold-light); }
+    .key-moment--goal .key-moment__text { color: rgba(245,242,236,0.9); }
+    .key-moment--goal .key-moment__time { color: #4ade80; }
+
+    /* ── LIVE FEED ── */
+    .live-feed { margin: 40px 0; }
+    .live-feed__title {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 16px;
+    }
+    .event {
+      display: grid; grid-template-columns: 56px 1fr;
+      gap: 0 16px; margin-bottom: 2px;
+    }
+    .event__time {
+      text-align: right; padding-top: 14px;
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: 0.95rem; color: var(--ink-muted); line-height: 1;
+    }
+    .event__body {
+      border-left: 2px solid var(--rule);
+      padding: 12px 0 12px 20px; position: relative;
+    }
+    .event__body::before {
+      content: ''; position: absolute; left: -5px; top: 18px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--rule); border: 2px solid var(--paper);
+    }
+    .event--goal .event__body { border-left-color: var(--green); }
+    .event--goal .event__body::before {
+      background: var(--green); width: 10px; height: 10px;
+      left: -6px; box-shadow: 0 0 0 3px rgba(0,168,89,0.2);
+    }
+    .event--goal .event__time { color: var(--green); }
+    .event--milestone .event__body {
+      background: var(--blue-dark); border-left: none;
+      border-radius: 2px; padding: 10px 16px;
+    }
+    .event--milestone .event__body::before { display: none; }
+    .event--milestone .event__time { color: var(--gold); }
+    .event__label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--ink-muted); margin-bottom: 3px;
+    }
+    .event--goal .event__label { color: var(--green); }
+    .event--milestone .event__label { color: var(--gold-light); }
+    .event__text { font-size: 15px; color: var(--ink-soft); line-height: 1.55; }
+    .event--milestone .event__text { color: rgba(245,242,236,0.75); font-size: 14px; }
+    .event__scorer {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: 1.05rem; color: var(--ink); margin-bottom: 4px;
+    }
+    .score-badge {
+      display: inline-block; margin-left: 8px;
+      background: var(--green); color: white;
+      font-size: 11px; font-weight: 700;
+      padding: 2px 8px; border-radius: 3px; vertical-align: middle; letter-spacing: 0.05em;
+    }
+    .score-badge--betis { background: #00a040; }
+
+    /* ── LINEUPS ── */
+    .lineups {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin: 36px 0;
+    }
+    .lineup-card {
+      background: white; border-radius: 2px;
+      border-top: 3px solid var(--blue); padding: 18px 16px;
+      box-shadow: 0 2px 8px rgba(26,20,16,0.06);
+    }
+    .lineup-card--betis { border-top-color: #00a040; }
+    .lineup-card__title {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--ink-muted); margin-bottom: 12px;
+    }
+    .lineup-card__players {
+      list-style: none; font-size: 13.5px; color: var(--ink-soft); line-height: 2;
+    }
+    .lineup-card__players li { border-bottom: 1px solid rgba(197,184,154,0.3); }
+    .lineup-card__players li:last-child { border-bottom: none; }
+
+    /* ── STATS BOX ── */
+    .stats-box {
+      margin: 40px 0; padding: 24px 28px;
+      border: 1px solid var(--rule); border-left: 4px solid var(--green);
+      background: white;
+    }
+    .stats-box__title {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 16px;
+    }
+    .stats-box ul {
+      list-style: none; font-size: 15px; color: var(--ink-soft);
+    }
+    .stats-box ul li {
+      padding: 8px 0; border-bottom: 1px solid rgba(197,184,154,0.3);
+      line-height: 1.6; padding-left: 18px; position: relative;
+    }
+    .stats-box ul li::before {
+      content: '★'; position: absolute; left: 0;
+      font-size: 10px; color: var(--green); top: 10px;
+    }
+    .stats-box ul li:last-child { border-bottom: none; }
+
+    /* ── VERDICT CARDS ── */
+    .verdicts {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin: 36px 0;
+    }
+    .verdict-card {
+      background: white; border-radius: 2px; padding: 20px 18px;
+      box-shadow: 0 2px 8px rgba(26,20,16,0.06);
+      border-top: 3px solid var(--rule);
+    }
+    .verdict-card--chelsea { border-top-color: var(--blue); }
+    .verdict-card--betis   { border-top-color: #00a040; }
+    .verdict-card__reporter {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px;
+    }
+    .verdict-card__text {
+      font-size: 14px; color: var(--ink-soft); line-height: 1.65;
+    }
+
+    /* ── REACTION QUOTES ── */
+    .article__inner blockquote {
+      margin: 28px 0; padding: 22px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue);
+      color: var(--ink); font-style: italic;
+      font-size: 16px; line-height: 1.7;
+    }
+    .article__inner blockquote cite {
+      display: block; margin-top: 10px;
+      font-size: 12px; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--green); font-style: normal;
+    }
+
+    /* ── POTM ── */
+    .potm-band {
+      margin: 40px 0; padding: 24px 28px;
+      background: var(--blue-dark); border-radius: 2px;
+      display: flex; align-items: center; gap: 20px;
+    }
+    .potm-band__icon { font-size: 36px; flex-shrink: 0; }
+    .potm-band__label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 4px;
+    }
+    .potm-band__name {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(1.2rem,2.5vw,1.8rem); color: var(--gold-light);
+    }
+    .potm-band__detail {
+      font-size: 13px; color: rgba(245,242,236,0.5); margin-top: 4px;
+    }
+
+    /* ── CHAPTER END ── */
+    .chapter-end {
+      text-align: center; margin: 64px 0 0;
+      padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    .chapter-end__ornament { font-size: 28px; color: var(--green); letter-spacing: 0.3em; }
+    .chapter-end__text {
+      display: block; margin-top: 12px; font-size: 12px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink); color: rgba(245,242,236,0.5);
+      text-align: center; padding: 40px 20px;
+      font-size: 13px; letter-spacing: 0.08em;
+    }
+    .site-footer__logo { width: 50px; filter: brightness(0.6); margin-bottom: 16px; }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 6px; font-size: 14px; letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 520px) {
+      .lineups, .verdicts { grid-template-columns: 1fr; }
+      .pull-quote { padding: 18px 20px; }
+      .potm-band { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Chelsea TH FANs" class="hero__logo">
+      <p class="hero__eyebrow">UEFA Conference League Final 2025 · Wrocław · 28 พฤษภาคม 2025</p>
+      <h1 class="hero__title">Chelsea คว้า<br><em>ถ้วยยุโรปครบทุกใบ!</em></h1>
+      <div class="hero__score">
+        <span class="hero__score-team">Real Betis</span>
+        <span class="hero__score-num" style="color:rgba(245,242,236,0.5)">1</span>
+        <span class="hero__score-divider">–</span>
+        <span class="hero__score-num">4</span>
+        <span class="hero__score-team">Chelsea FC</span>
+      </div>
+      <p class="hero__meta">Tarczyński Arena, Wrocław, Poland</p>
+      <div class="hero__rule"></div>
+    </div>
+    <div class="scroll-hint">
+      <span>เลื่อนลง</span>
+      <div class="scroll-hint__arrow"></div>
+    </div>
+  </header>
+
+  <!-- ══ ARTICLE ══ -->
+  <main class="article">
+    <div class="article__inner">
+
+      <a href="Trophy.html" class="back-btn">← กลับทำเนียบแชมป์</a>
+
+      <blockquote class="pull-quote">
+        <p>Chelsea ทำได้ครบชุด! คว้า UEFA Conference League สำเร็จ กลายเป็นสโมสรแรกในโลกที่คว้าถ้วย UEFA ระดับชายครบทุกรายการ</p>
+      </blockquote>
+
+      <!-- Intro -->
+      <p class="drop-cap">Chelsea พลิกสถานการณ์ได้อย่างน่าประทับใจหลังเสียประตูก่อน ด้วยสี่ประตูในครึ่งหลังที่กวาดแชมป์ UEFA Conference League มาครองที่ Wrocław ประเทศโปแลนด์</p>
+
+      <!-- Key moments -->
+      <div class="key-moments">
+        <p class="key-moments__title">⚡ ช่วงเวลาสำคัญของเกม</p>
+        <div class="key-moment">
+          <div class="key-moment__time">9'</div>
+          <div class="key-moment__text">Ezzalzouli ยิงนำให้ Real Betis ขึ้นนำ 1–0</div>
+        </div>
+        <div class="key-moment">
+          <div class="key-moment__time">13'</div>
+          <div class="key-moment__text">Jørgensen เซฟบอลดิ่งของ Bartra ได้อย่างยอดเยี่ยม</div>
+        </div>
+        <div class="key-moment">
+          <div class="key-moment__time">21'</div>
+          <div class="key-moment__text">Badiashile บล็อกลูกยิงของ Cardoso ที่กำลังจะลงตาข่าย</div>
+        </div>
+        <div class="key-moment key-moment--goal">
+          <div class="key-moment__time">65'</div>
+          <div class="key-moment__text"><strong>Palmer ส่งให้ Fernández โหม่งตีเสมอ 1–1</strong></div>
+        </div>
+        <div class="key-moment key-moment--goal">
+          <div class="key-moment__time">71'</div>
+          <div class="key-moment__text"><strong>Jackson ยิงจากแอสซิสต์ของ Palmer อีกครั้ง นำ 2–1</strong></div>
+        </div>
+        <div class="key-moment key-moment--goal">
+          <div class="key-moment__time">83'</div>
+          <div class="key-moment__text"><strong>ตัวสำรอง Sancho เข้ามาแล้วม้วนเข้ามุม นำ 3–1</strong></div>
+        </div>
+        <div class="key-moment key-moment--goal">
+          <div class="key-moment__time">90+1'</div>
+          <div class="key-moment__text"><strong>Caicedo ปิดท้ายด้วยลูกยิงคมจากนอกกรอบ 4–1</strong></div>
+        </div>
+      </div>
+
+      <!-- Match image -->
+      <figure class="img-block img-block--wide">
+        <img src="https://editorial.uefa.com/resources/0299-1dde1ba33800-bb52b52d893d-1000/format/wide1/real_betis_balompie_v_chelsea_fc_-_uefa_conference_league_final_2025.jpeg?imwidth=2048"
+             alt="Ezzalzouli ยิงประตูแรกให้ Real Betis">
+        <figcaption>Abdessamad Ezzalzouli ยิงประตูเปิดเกมให้ Real Betis — ภาพ: Getty Images</figcaption>
+      </figure>
+
+      <!-- Match report -->
+      <h2>รายงานเกม: Chelsea คือราชาแห่งการพลิกสถานการณ์</h2>
+
+      <p>Betis เลือกใช้แนวทางกดดันสูงตั้งแต่ต้นเกม พยายามตัดบอล Chelsea ในแดนหน้า และได้ผลตอบแทน หลังจากเก้านาที Isco ส่งบอลตัดผ่านกรอบเขตโทษให้ Abdessamad Ezzalzouli ชาวโมร็อกโกรับบอลหนึ่งทัชก่อนยิงต่ำแม่นยำเข้ามุมตาข่ายของ Filip Jørgensen</p>
+
+      <p>ผู้รักษาประตูชาวเดนมาร์กโก่งตัวเต็มที่เพื่อเซฟ Marc Bartra ที่พยายามจะเซอร์ไพรส์เขาด้วยลูกยิงระยะไกล และ Benoît Badiashile ขัดบอลโดยการกระโดดดิ่งสกัดลูกยิงของ Johnny Cardoso ออกไปได้อย่างหวุดหวิด หลังจาก Ezzalzouli ฝ่าเข้ามาในกรอบเขตโทษ Chelsea ส่วนใหญ่ใช้บอล 65% แต่สร้างโอกาสได้น้อยมากในครึ่งแรก ขาของ Betis ยืดตัวกีดขวางการเล่นของ Chelsea ได้อยู่เรื่อยๆ</p>
+
+      <p>กัปตัน Reece James ลงมาแทนที่ครึ่งหลัง Ezzalzouli ที่ขาเจ็บออกไปหลังนาทีที่ 53 และทันใดนั้น Betis กลับเป็นฝ่ายถูกกดดันและดูเหมือนทีมที่ไม่เคยคลีนชีตใน 11 เกมก่อนหน้า</p>
+
+      <figure class="img-block img-block--wide">
+        <img src="https://editorial.uefa.com/resources/0299-1dde196f115f-9b56b417f025-1000/format/wide1/real_betis_balompie_v_chelsea_fc_-_uefa_conference_league_final_2025.jpeg?imwidth=2048"
+             alt="Enzo Fernández หลังยิงประตูตีเสมอ">
+        <figcaption>Enzo Fernández หลังยิงประตูตีเสมอที่ Wrocław — ภาพ: Chelsea FC via Getty Images</figcaption>
+      </figure>
+
+      <p>James ยิงตรงใส่กองหลัง Natan ขณะที่ Betis ดิ้นรนเคลียร์มุม จากนั้น Cole Palmer ส่งลูกแล่นเข้ากรอบเขตโทษได้อย่างสวยงาม เชิญชวนให้ Enzo Fernández โหม่งตีเสมอผ่าน Adrián ที่ออกมาผิดจังหวะในนาทีที่ 65 และห้านาทีต่อมา Palmer สร้างแอสซิสต์ชั้นยอดอีกครั้ง หมุนตัวหลบกองหลังแล้วยกบอลข้ามให้ Nicolas Jackson ยิงเข้าเสาใกล้</p>
+
+      <p>แฟนบอล Betis เต็มสนามยังคงพยายามเป่าชีพจรให้ทีม แต่หนทางกลับไม่มีอีกแล้ว ก่อนอื่น Kiernan Dewsbury-Hall ส่งให้ตัวสำรอง Jadon Sancho ม้วนบอลเข้ามุมได้อย่างเยือกเย็น ก่อนที่ Moises Caicedo หน้ากากจะปิดท้ายด้วยลูกยิงต่ำจากนอกกรอบในช่วงทดเวลาพิเศษ</p>
+
+      <!-- Goal 3 image -->
+      <figure class="img-block img-block--wide">
+        <img src="https://editorial.uefa.com/resources/0299-1dde1ba33801-1f6893ef81a3-1000/format/wide1/real_betis_balompie_v_chelsea_fc_-_uefa_conference_league_final_2025.jpeg?imwidth=2048"
+             alt="Nicolas Jackson เฉลิมฉลองประตูที่ทำให้ Chelsea นำ">
+        <figcaption>Nicolas Jackson เฉลิมฉลองประตูที่ทำให้ Chelsea พลิกนำ — ภาพ: Getty Images</figcaption>
+      </figure>
+
+      <!-- Live feed -->
+      <h2>ไทม์ไลน์เกม</h2>
+      <div class="live-feed">
+        <p class="live-feed__title">รายงานสดนาทีต่อนาที</p>
+
+        <div class="event event--milestone">
+          <div class="event__time">0'</div>
+          <div class="event__body">
+            <div class="event__label">เริ่มเกม</div>
+            <div class="event__text">Real Betis 0–0 Chelsea FC · Tarczyński Arena, Wrocław</div>
+          </div>
+        </div>
+
+        <div class="event event--goal">
+          <div class="event__time">9'</div>
+          <div class="event__body">
+            <div class="event__label">⚽ ประตู — Real Betis</div>
+            <div class="event__scorer">Abdessamad Ezzalzouli <span class="score-badge score-badge--betis">0–1</span></div>
+            <div class="event__text">Isco ส่งบอลตัดผ่านกรอบเขตโทษ Ezzalzouli รับและยิงต่ำแม่นยำเข้ามุมตาข่าย Betis นำก่อน!</div>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="event__time">13'</div>
+          <div class="event__body">
+            <div class="event__label">เซฟประตู</div>
+            <div class="event__text">Jørgensen โก่งตัวเซฟลูกยิงระยะไกลของ Marc Bartra ได้อย่างยอดเยี่ยม</div>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="event__time">21'</div>
+          <div class="event__body">
+            <div class="event__label">บล็อกประตู</div>
+            <div class="event__text">Badiashile ดิ่งสกัดลูกยิงของ Johnny Cardoso ที่กำลังจะลงตาข่ายออกไปได้ในนาทีสำคัญ</div>
+          </div>
+        </div>
+
+        <div class="event event--milestone">
+          <div class="event__time">HT</div>
+          <div class="event__body">
+            <div class="event__label">พักครึ่ง</div>
+            <div class="event__text">Real Betis 1–0 Chelsea — Betis ครองเกมได้ดีในครึ่งแรก Chelsea ต้องปรับกลยุทธ์</div>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="event__time">HT</div>
+          <div class="event__body">
+            <div class="event__label">เปลี่ยนตัว — Chelsea</div>
+            <div class="event__text">กัปตัน <strong>Reece James</strong> ลงสนามรับช่วงต้นครึ่งหลัง — เกมเปลี่ยนทันที</div>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="event__time">53'</div>
+          <div class="event__body">
+            <div class="event__label">เปลี่ยนตัว — Real Betis</div>
+            <div class="event__text">Ezzalzouli ออกเนื่องจากข้อเท้าพลิก การสูญเสียผู้เล่นหลักทำให้ Betis เสียสมดุลทันที</div>
+          </div>
+        </div>
+
+        <div class="event event--goal">
+          <div class="event__time">65'</div>
+          <div class="event__body">
+            <div class="event__label">⚽ ประตู — Chelsea</div>
+            <div class="event__scorer">Enzo Fernández <span class="score-badge">1–1</span></div>
+            <div class="event__text">Cole Palmer ส่งลูกแล่นเข้ากรอบสวยงาม Fernández วิ่งรับและโหม่งผ่าน Adrián ที่ออกมาผิดจังหวะ Chelsea ตีเสมอแล้ว!</div>
+          </div>
+        </div>
+
+        <div class="event event--goal">
+          <div class="event__time">71'</div>
+          <div class="event__body">
+            <div class="event__label">⚽ ประตู — Chelsea</div>
+            <div class="event__scorer">Nicolas Jackson <span class="score-badge">1–2</span></div>
+            <div class="event__text">Palmer หมุนตัวหลบกองหลังแล้วยกบอลข้ามให้ Jackson ยิงเข้าเสาใกล้ Chelsea พลิกนำแล้ว!</div>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="event__time">77'</div>
+          <div class="event__body">
+            <div class="event__label">เปลี่ยนตัว — Chelsea</div>
+            <div class="event__text"><strong>Jadon Sancho</strong> ลงสนาม ถูกส่งตัวมาจาก Manchester United</div>
+          </div>
+        </div>
+
+        <div class="event event--goal">
+          <div class="event__time">83'</div>
+          <div class="event__body">
+            <div class="event__label">⚽ ประตู — Chelsea</div>
+            <div class="event__scorer">Jadon Sancho <span class="score-badge">1–3</span></div>
+            <div class="event__text">Dewsbury-Hall ส่งให้ Sancho ตัวสำรอง ม้วนบอลเข้ามุมอย่างเยือกเย็นจากมุมหักศอก Chelsea ห่างออกไปสองลูก!</div>
+          </div>
+        </div>
+
+        <div class="event event--goal">
+          <div class="event__time">90+1'</div>
+          <div class="event__body">
+            <div class="event__label">⚽ ประตู — Chelsea</div>
+            <div class="event__scorer">Moises Caicedo <span class="score-badge">1–4</span></div>
+            <div class="event__text">Caicedo สวมหน้ากากยิงต่ำจากนอกกรอบเขตโทษปิดท้ายชัยชนะ Chelsea คือแชมป์ UEFA Conference League!</div>
+          </div>
+        </div>
+
+        <div class="event event--milestone">
+          <div class="event__time">90+6'</div>
+          <div class="event__body">
+            <div class="event__label">จบเกม</div>
+            <div class="event__text">Real Betis 1–4 Chelsea FC — Chelsea คว้า UEFA Conference League ครั้งแรกในประวัติศาสตร์!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sancho image -->
+      <figure class="img-block img-block--wide">
+        <img src="https://editorial.uefa.com/resources/029a-1deba4e98047-1e9bd80c589b-1000/format/wide1/real_betis_balompie_v_chelsea_fc_-_uefa_conference_league_final_2025.jpeg?imwidth=2048"
+             alt="Jadon Sancho ม้วนบอลเข้ามุม">
+        <figcaption>Jadon Sancho ม้วนบอลเข้ามุมทำให้ Chelsea นำ 3–1 — ภาพ: Getty Images</figcaption>
+      </figure>
+
+      <!-- POTM -->
+      <div class="potm-band">
+        <div class="potm-band__icon">🏅</div>
+        <div>
+          <div class="potm-band__label">Laufenn Player of the Match</div>
+          <div class="potm-band__name">Cole Palmer</div>
+          <div class="potm-band__detail">2 แอสซิสต์ · ขับเคลื่อนการพลิกกลับมาทั้งหมดในครึ่งหลัง</div>
+        </div>
+      </div>
+
+      <!-- POTM image -->
+      <figure class="img-block">
+        <img src="https://editorial.uefa.com/resources/0299-1dde1ba33801-2c326f7e8ab1-1000/format/wide1/real_betis_balompie_v_chelsea_fc_-_uefa_conference_league_final_2025.jpeg?imwidth=2048"
+             alt="Cole Palmer กับรางวัล Player of the Match">
+        <figcaption>Cole Palmer รับรางวัล Player of the Match ของรอบชิงชนะเลิศ UEFA Conference League — ภาพ: UEFA via Getty Images</figcaption>
+      </figure>
+
+      <!-- Lineups -->
+      <h2>รายชื่อผู้เล่นตัวจริง</h2>
+      <div class="lineups">
+        <div class="lineup-card">
+          <div class="lineup-card__title">🔵 Chelsea FC</div>
+          <ol class="lineup-card__players" start="0">
+            <li>#12 — Jørgensen</li>
+            <li>#27 — Gusto</li>
+            <li>#23 — Chalobah</li>
+            <li>#5 — Badiashile</li>
+            <li>#3 — Cucurella</li>
+            <li>#8 — Fernández (กัปตัน)</li>
+            <li>#25 — Caicedo</li>
+            <li>#11 — Madueke</li>
+            <li>#20 — Palmer</li>
+            <li>#7 — Neto</li>
+            <li>#15 — Jackson</li>
+          </ol>
+        </div>
+        <div class="lineup-card lineup-card--betis">
+          <div class="lineup-card__title">🟢 Real Betis</div>
+          <ol class="lineup-card__players" start="0">
+            <li>#13 — Adrián</li>
+            <li>#23 — Youssouf Sabaly</li>
+            <li>#5 — Marc Bartra</li>
+            <li>#6 — Natan</li>
+            <li>#12 — Ricardo Rodriguez</li>
+            <li>#18 — Pablo Fornals</li>
+            <li>#22 — Isco (กัปตัน)</li>
+            <li>#4 — Johnny Cardoso</li>
+            <li>#7 — Antony</li>
+            <li>#11 — Cédric Bakambu</li>
+            <li>#10 — Abde Ezzalzouli</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Reporter verdicts -->
+      <h2>บทวิเคราะห์จากผู้สื่อข่าว</h2>
+      <div class="verdicts">
+        <div class="verdict-card verdict-card--chelsea">
+          <div class="verdict-card__reporter">Joe Terry · Chelsea</div>
+          <p class="verdict-card__text">ลูกศิษย์ชนะอาจารย์ Maresca มีปัญหาทางยุทธวิธีในครึ่งแรกและแก้ไขได้ด้วยการส่ง Reece James ลงสนาม ผู้ซึ่งเล่นได้ยอดเยี่ยมทั้งกับและไม่มีบอลในครึ่งหลัง นี่คือช่วงเวลาสำคัญของ Chelsea ทั้งในแง่ประวัติศาสตร์และพัฒนาการของกลุ่มนักเตะหนุ่มที่มีพรสวรรค์</p>
+        </div>
+        <div class="verdict-card verdict-card--betis">
+          <div class="verdict-card__reporter">Simon Hart · Real Betis</div>
+          <p class="verdict-card__text">ครึ่งแรกที่ยอดเยี่ยมของ Betis ที่นำโดย Isco ผู้ยอดเยี่ยม ถูกทดแทนด้วยครึ่งหลังที่น่าผิดหวังอย่างมากเมื่อพวกเขาถูก Chelsea กดดัน การสูญเสียคู่ปีกซ้าย Ricardo Rodríguez และ Ezzalzouli ทำให้เสียสมดุล แตกต่างอย่างสิ้นเชิงกับการเปลี่ยนตัวที่เสริมความแข็งแกร่งให้คู่แข่ง</p>
+        </div>
+      </div>
+
+      <!-- Reaction quotes -->
+      <h2>เสียงจากแฟนบอล</h2>
+
+      <blockquote>
+        <p>"เราปรับแก้บางอย่างทางยุทธวิธีในช่วงพักครึ่ง และครึ่งหลังเราเล่นได้ดีขึ้นมาก เรามีความสุขมาก [การคว้า Conference League] อาจเป็นจุดเริ่มต้น ในการสร้างจิตใจแห่งชัยชนะคุณต้องชนะเกม ชนะการแข่งขัน ถ้วยที่เราได้คืนนี้จะทำให้เราดีขึ้น"</p>
+        <cite>— Enzo Maresca, หัวหน้าโค้ช Chelsea</cite>
+      </blockquote>
+
+      <blockquote>
+        <p>"เราแค่เพิ่มความเข้มข้นและแสดงฟอร์มที่ดีในครึ่งหลัง ผมเบื่อที่จะรับบอลแล้วแค่ส่งถอยหลังหรือส่งข้างๆ [แอสซิสต์แรก] มีพื้นที่เล็กน้อยและผมเห็น Enzo วิ่ง ลูกที่สอง เหมือนกัน ผมรู้สึกว่าเราแสดงให้เห็นถึงลักษณะนิสัยที่ดีในการพลิกสถานการณ์กลับมา"</p>
+        <cite>— Cole Palmer, Player of the Match</cite>
+      </blockquote>
+
+      <blockquote>
+        <p>"นักเตะรู้สึกอย่างไร? พวกเขาหัวใจสลาย เราไม่สามารถรักษาสิ่งที่ทำได้ในครึ่งแรก เราทำให้พวกเขามีปัญหาผ่าน Abde [Ezzalzouli] แต่เขาพลิกข้อเท้าและเราต้องเปลี่ยนตัวออก กระนั้น เราควรภูมิใจในวิธีที่เราเล่น ส่วนที่เหลือคือฟุตบอล"</p>
+        <cite>— Manuel Pellegrini, หัวหน้าโค้ช Real Betis</cite>
+      </blockquote>
+
+      <!-- Key stats -->
+      <h2>สถิติน่าสนใจ</h2>
+      <div class="stats-box">
+        <p class="stats-box__title">📊 ข้อเท็จจริงที่น่าทึ่ง</p>
+        <ul>
+          <li>Chelsea เป็นสโมสรแรกในโลกที่คว้า UEFA ระดับชายครบทุกรายการ ได้แก่ Champions League (2ครั้ง), Europa League (2ครั้ง), Conference League (1ครั้ง), Super Cup (2ครั้ง) และ Cup Winners' Cup (2ครั้ง)</li>
+          <li>Chelsea ยุติสถิติชนะ 9 รายการติดต่อกันของสโมสรสเปนในรอบชิงชนะเลิศ UEFA พบกับสโมสรอังกฤษ นับตั้งแต่ต้นฤดูกาล 2001/02 สโมสรสเปนชนะทั้ง 23 นัดใน Final รายการ Champions League, Europa League และ Conference League จนกระทั่งคืนนี้</li>
+          <li>Chelsea เป็นสโมสรอังกฤษที่สองที่คว้า Conference League ต่อจาก West Ham ในปี 2022/23</li>
+          <li>Real Betis ลงเล่น UEFA Final รายการสำคัญเป็นครั้งแรกในประวัติศาสตร์</li>
+          <li>Chelsea ชนะ 11 จาก 12 เกมในรอบ Conference League ฤดูกาลนี้ (ตั้งแต่รอบแรก)</li>
+          <li>Chelsea ทำได้ 42 ประตูในรายการ Conference League ฤดูกาลนี้ สถิติสูงสุดของการแข่งขัน แซงหน้า Fiorentina ที่ทำได้ 37 ลูกในฤดูกาล 2022/23</li>
+        </ul>
+      </div>
+
+      <div class="chapter-end">
+        <div class="chapter-end__ornament">🏆</div>
+        <span class="chapter-end__text">Chelsea FC · UEFA Conference League Champions · 28 พฤษภาคม 2025</span>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <img src="https://i.imgur.com/Fcv2zkG.png" alt="Chelsea Logo" class="site-footer__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

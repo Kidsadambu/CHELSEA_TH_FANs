@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — รายชื่อผู้จัดการทีมทุกคน & เกียรติประวัติ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ══ NAV ══ */
+    .main-nav {
+      background-color: var(--blue);
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-list {
+      list-style-type: none; margin: 0; padding: 0;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    }
+    .nav-list li a {
+      color: var(--white); text-decoration: none;
+      font-weight: 600; font-family: 'Sarabun', sans-serif;
+      padding: 6px 12px; border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 14px;
+    }
+    .nav-list li a:hover, .nav-list li a.active {
+      background-color: var(--gold); color: var(--ink);
+    }
+
+    /* ══ HERO ══ */
+    .hero {
+      position: relative; width: 100%; height: 80vh;
+      min-height: 520px; overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://chelseafc.media/wp-content/uploads/2020/10/66283595_2409331232644693_7701903863934091264_o-1536x768.jpg');
+      background-size: cover; background-position: center 35%;
+      filter: brightness(0.38) saturate(0.75);
+      transform: scale(1.03); transition: transform 8s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.06); }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(2,31,69,0.3) 40%,
+        rgba(2,31,69,0.88) 80%, rgba(2,31,69,0.97) 100%);
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+      z-index: 5;
+    }
+    .hero__content {
+      position: relative; z-index: 2; width: 100%;
+      padding: 0 clamp(20px,6vw,80px) clamp(48px,8vh,80px);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+    }
+    .hero__logo {
+      width: clamp(70px,10vw,110px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.5));
+      margin-bottom: 22px; animation: fadeUp 1s ease both;
+    }
+    .hero__eyebrow {
+      font-size: clamp(10px,1.1vw,12px); font-weight: 600;
+      letter-spacing: 0.38em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+      animation: fadeUp 1s 0.1s ease both;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2rem,5vw,4.5rem); line-height: 1.08;
+      color: var(--white); letter-spacing: -0.01em; max-width: 860px;
+      animation: fadeUp 1s 0.2s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__sub {
+      font-size: clamp(13px,1.6vw,16px); color: rgba(245,242,236,0.55);
+      margin-top: 18px; letter-spacing: 0.04em;
+      animation: fadeUp 1s 0.3s ease both;
+    }
+    .hero__rule {
+      width: 60px; height: 2px; background: var(--gold);
+      margin: 26px auto 0; animation: fadeUp 1s 0.4s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(20px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ══ INTRO BAND ══ */
+    .intro {
+      background: var(--blue-dark);
+      padding: clamp(52px,8vw,80px) clamp(20px,6vw,80px);
+      text-align: center;
+    }
+    .intro__label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+    }
+    .intro__stats {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 40px; margin-bottom: 36px;
+    }
+    .intro__stat { text-align: center; }
+    .intro__stat-num {
+      display: block;
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2rem,4vw,3rem); color: var(--gold-light); line-height: 1;
+    }
+    .intro__stat-label {
+      display: block; margin-top: 6px; font-size: 11px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(245,242,236,0.4);
+    }
+    .intro__rule {
+      width: 40px; height: 2px; background: var(--gold);
+      margin: 0 auto; opacity: 0.6;
+    }
+
+    /* ══ ARTICLE ══ */
+    .article {
+      background: var(--paper);
+      padding: clamp(52px,8vw,80px) clamp(20px,6vw,80px);
+    }
+    .article::before {
+      content: ''; display: block; height: 5px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+      margin-bottom: clamp(52px,8vw,80px);
+    }
+    .article__inner {
+      max-width: 760px; margin: 0 auto;
+    }
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(1.25rem,2.8vw,1.7rem); color: var(--blue);
+      margin: 52px 0 22px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .article__inner p {
+      font-size: clamp(15px,1.8vw,17px); color: var(--ink-soft);
+      line-height: 1.9; margin-bottom: 1.5em;
+    }
+    .article__inner p:first-child { font-size: clamp(16px,2vw,18px); }
+    .drop-cap::first-letter {
+      float: left; font-family: 'Playfair Display', serif;
+      font-size: 4em; line-height: 0.8; margin: 6px 10px 0 0;
+      color: var(--blue); font-weight: 900;
+    }
+
+    /* ══ MANAGER TABLE SECTION ══ */
+    .table-section {
+      padding: 0 clamp(20px,6vw,80px) clamp(60px,8vw,90px);
+      max-width: 1100px; margin: 0 auto;
+    }
+    .table-section__header {
+      text-align: center; margin-bottom: 36px;
+    }
+    .table-section__label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+    }
+    .table-section__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(1.5rem,3vw,2.2rem); color: var(--ink);
+    }
+
+    .table-wrap { overflow-x: auto; }
+    .mgr-table {
+      width: 100%; border-collapse: collapse; font-size: 13.5px;
+      min-width: 700px;
+    }
+    .mgr-table thead tr {
+      background: var(--blue-dark);
+    }
+    .mgr-table thead th {
+      padding: 12px 14px; text-align: left;
+      font-size: 10.5px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold-light);
+      white-space: nowrap;
+    }
+    .mgr-table thead th:first-child { min-width: 160px; }
+    .mgr-table tbody tr {
+      border-bottom: 1px solid rgba(197,184,154,0.22);
+      transition: background 0.15s;
+    }
+    .mgr-table tbody tr:hover { background: rgba(3,70,148,0.04); }
+    .mgr-table tbody tr.era-row { background: rgba(3,70,148,0.07); }
+    .mgr-table tbody tr.interim-row { background: rgba(197,184,154,0.06); }
+    .mgr-table tbody td {
+      padding: 10px 14px; color: var(--ink-soft); vertical-align: middle;
+    }
+    .mgr-table .td-name {
+      font-weight: 500; color: var(--ink);
+    }
+    .mgr-table .td-name .interim-tag {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+      color: var(--ink-muted); background: rgba(197,184,154,0.3);
+      padding: 1px 6px; border-radius: 2px; margin-left: 6px;
+      text-transform: uppercase;
+    }
+    .mgr-table .td-period {
+      font-size: 12.5px; color: var(--ink-muted); white-space: nowrap;
+    }
+    .mgr-table .td-trophy {
+      font-size: 12.5px; color: var(--ink-soft);
+    }
+    .mgr-table .td-trophy em {
+      color: var(--blue); font-style: normal; font-weight: 600;
+    }
+    .mgr-table .td-none {
+      color: var(--ink-muted); font-size: 12px;
+    }
+
+    /* era separator */
+    .era-header td {
+      background: var(--blue) !important;
+      color: var(--gold-light) !important;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; padding: 7px 14px !important;
+    }
+
+    /* ══ FOOTER ══ */
+    .site-footer {
+      background: var(--ink); color: rgba(245,242,236,0.4);
+      text-align: center; padding: 36px 20px;
+      font-size: 12px; letter-spacing: 0.1em;
+    }
+    .site-footer__logo { width: 40px; filter: brightness(0.5); margin-bottom: 14px; }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 6px; font-size: 13px; letter-spacing: 0.18em;
+    }
+
+    @media (max-width: 520px) {
+      .intro__stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══ -->
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 หน้าหลัก</a></li>
+      <li><a href="Trophy.html">🏆 ทำเนียบแชมป์</a></li>
+      <li><a href="Managers.html" class="active">👔 ผู้จัดการทีม</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Chelsea TH FANs" class="hero__logo">
+      <p class="hero__eyebrow">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">ผู้จัดการทีม Chelsea<br><em>ตลอดประวัติศาสตร์</em></h1>
+      <p class="hero__sub">Chelsea Managers — รายชื่อผู้จัดการทีมทุกคน & เกียรติประวัติ ตั้งแต่ปี 1905 จนถึงปัจจุบัน</p>
+      <div class="hero__rule"></div>
+    </div>
+  </header>
+
+  <!-- ══ INTRO STATS ══ -->
+  <section class="intro">
+    <p class="intro__label">สถิติรวม</p>
+    <div class="intro__stats">
+      <div class="intro__stat">
+        <span class="intro__stat-num">48</span>
+        <span class="intro__stat-label">ผู้จัดการทีมทั้งหมด</span>
+      </div>
+      <div class="intro__stat">
+        <span class="intro__stat-num">1905</span>
+        <span class="intro__stat-label">ผู้จัดการทีมคนแรก</span>
+      </div>
+      <div class="intro__stat">
+        <span class="intro__stat-num">966</span>
+        <span class="intro__stat-label">เกม (สถิติของ Calderhead)</span>
+      </div>
+      <div class="intro__stat">
+        <span class="intro__stat-num">26</span>
+        <span class="intro__stat-label">ปี (Calderhead ในตำแหน่ง)</span>
+      </div>
+    </div>
+    <div class="intro__rule"></div>
+  </section>
+
+  <!-- ══ ARTICLE ══ -->
+  <section class="article">
+    <div class="article__inner">
+
+      <h2>จากจุดเริ่มต้น สู่ยุคแห่งความยิ่งใหญ่</h2>
+
+      <p class="drop-cap">ผู้เล่นคนแรกที่ Chelsea เซ็นสัญญาก่อนฤดูกาล 1905/06 คือ John 'Jacky' Tait Robertson จาก Rangers โดยเขาไม่เพียงแต่ลงเล่นในตำแหน่ง half back เท่านั้น แต่ยังรับหน้าที่เป็นผู้จัดการทีมคนแรกของสโมสรอีกด้วย ในฐานะ player-manager Robertson พา Chelsea จบในอันดับสามของ Second Division แต่ลาออกในเดือนพฤศจิกายนของฤดูกาลที่สอง และถูกแทนที่โดยเลขาสโมสร William Lewis ซึ่งสามารถพาทีมเลื่อนชั้นสู่ First Division ในฐานะ caretaker manager</p>
+
+      <p>หลังจากมีผู้จัดการทีมสองคนในสองปี การแต่งตั้งครั้งถัดมาของ Chelsea ดำรงอยู่นานกว่าเล็กน้อย — จริงๆ คือเกือบ 26 ปีเลยทีเดียว David Calderhead ถูกนำตัวมาจาก Lincoln City สร้างความประทับใจให้คณะกรรมการในฤดูกาลก่อนหน้าหลังจากพาทีมเขี่ย Chelsea ออกจาก FA Cup ที่ Stamford Bridge ในรอบแรก Calderhead ไม่ได้คว้าถ้วยรางวัลสำคัญ แต่เขาพา Chelsea ไปสู่รอบชิงชนะเลิศ FA Cup ครั้งแรกในปี 1915 และเป็นผู้คุมทีมใน 966 เกม ซึ่งเป็นสถิติที่คงจะไม่มีวันถูกทำลาย</p>
+
+      <p>ผู้จัดการทีมที่ตามมาต่างล้วนอยู่กับสโมสรนานหลายปี Leslie Knighton ดูแลทีมเกือบหกปี Billy Birrell สิบสามปี และ Ted Drake ผู้คว้าแชมป์ลีกครั้งแรกในประวัติศาสตร์ของ Chelsea ในฤดูกาล 1954/55 ในช่วงเก้าปีที่อยู่กับทีม Tommy Docherty แทนที่ Drake ในฤดูกาล 1961/62 และคว้า League Cup ครั้งแรกให้สโมสรในปี 1965 Dave Sexton คว้า FA Cup ครั้งแรกในปี 1970 และประสบความสำเร็จในยุโรปด้วยการชนะ Cup Winners' Cup ในปีถัดมา</p>
+
+      <h2>เข้าสู่ยุค Premier League</h2>
+
+      <p>เมื่อยุค Premier League ใกล้เข้ามา Bobby Campbell สร้างผลงานสำคัญด้วยการพาทีมเลื่อนชั้นกลับสู่ First Division ในฤดูกาล 89/90 ด้วยการทำสถิติแต้มระดับสองสูงสุดที่ 99 แต้ม Ian Porterfield เป็นผู้จัดการทีมสำหรับแคมเปญ Premier League ครั้งแรก แต่ถูกแทนที่ในเดือนกุมภาพันธ์โดย David Webb ผู้ยิงประตูชัยใน FA Cup 1970</p>
+
+      <p>Glenn Hoddle, Ruud Gullit และ Gianluca Vialli เริ่มการเปลี่ยนแปลง Chelsea ในฐานะ player-manager ทั้งสามคน โดย Gullit ยุติการรอคอยถ้วยรางวัล 26 ปีด้วยการคว้า FA Cup 1997 ส่วน Vialli คว้า League Cup และ Cup Winners' Cup ในสามเดือนแรก ก่อนจะเพิ่ม FA Cup อีกสองปีต่อมา</p>
+
+      <h2>ยุคอับราโมวิช — ความสำเร็จที่ไม่เคยมีมาก่อน</h2>
+
+      <p>วาระของ Claudio Ranieri ครอบคลุมเจ้าของสองคน คือ Ken Bates และ Roman Abramovich เจ้าของชาวรัสเซียผู้มั่งคั่งนำผู้จัดการทีมหลายคนและความสำเร็จมากมายมาสู่ Stamford Bridge José Mourinho คว้าแชมป์ลีกครั้งแรกในรอบ 50 ปีให้กับ Chelsea ในฤดูกาลแรก ในสองช่วงเวลา "The Special One" คว้าแชมป์ลีกสามครั้ง FA Cup หนึ่งครั้งและ League Cup สามครั้ง</p>
+
+      <p>ในฤดูกาล 2009/10 Carlo Ancelotti พา Chelsea คว้า League and FA Cup Double ครั้งแรก และจนถึงปัจจุบันเป็นครั้งเดียว Roberto Di Matteo คว้า Champions League ครั้งแรกและ FA Cup ในฐานะ caretaker manager ในปี 2012 Thomas Tuchel การแต่งตั้งครั้งสุดท้ายของอับราโมวิช คว้า Champions League ครั้งที่สองของ Chelsea ตามด้วยชัยชนะ Super Cup และ Club World Cup</p>
+
+      <p>หลังยุคอับราโมวิช Enzo Maresca เข้ามารับหน้าที่ในฤดูกาล 2024/25 และนำทีมคว้า UEFA Conference League (ซึ่งทำให้ Chelsea กลายเป็นสโมสรแรกในโลกที่คว้าถ้วย UEFA ชายครบทุกรายการ) และ FIFA Club World Cup รูปแบบใหม่ 32 ทีม ก่อนที่ Liam Rosenior จะรับตำแหน่งในเดือนมกราคม 2026</p>
+
+    </div>
+  </section>
+
+  <!-- ══ MANAGER TABLE ══ -->
+  <section class="table-section">
+    <div class="table-section__header">
+      <p class="table-section__label">ข้อมูลทางการ</p>
+      <h2 class="table-section__title">ทำเนียบผู้จัดการทีม Chelsea FC</h2>
+    </div>
+
+    <div class="table-wrap">
+      <table class="mgr-table">
+        <thead>
+          <tr>
+            <th>ผู้จัดการทีม</th>
+            <th>ช่วงเวลา</th>
+            <th>แชมป์ลีก</th>
+            <th>ถ้วยในประเทศ</th>
+            <th>ถ้วยยุโรป / สากล</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- ERA: 2020s -->
+          <tr class="era-header"><td colspan="5">ยุคปัจจุบัน (2020s–)</td></tr>
+
+          <tr class="interim-row">
+            <td class="td-name">Calum McFarlane <span class="interim-tag">interim</span></td>
+            <td class="td-period">เม.ย. 2026 – จนถึงปัจจุบัน</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Liam Rosenior</td>
+            <td class="td-period">ม.ค. 2026 – เม.ย. 2026</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr class="interim-row">
+            <td class="td-name">Calum McFarlane <span class="interim-tag">interim</span></td>
+            <td class="td-period">ม.ค. 2026 – ม.ค. 2026</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Enzo Maresca</td>
+            <td class="td-period">มิ.ย. 2024 – ม.ค. 2026</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>Conference League, Club World Cup</em></td>
+          </tr>
+          <tr>
+            <td class="td-name">Mauricio Pochettino</td>
+            <td class="td-period">ก.ค. 2023 – พ.ค. 2024</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Frank Lampard</td>
+            <td class="td-period">เม.ย. 2023 – มิ.ย. 2023</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr class="interim-row">
+            <td class="td-name">Bruno Saltor <span class="interim-tag">interim</span></td>
+            <td class="td-period">เม.ย. 2023 – เม.ย. 2023</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Graham Potter</td>
+            <td class="td-period">ก.ย. 2022 – เม.ย. 2023</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+
+          <!-- ERA: Abramovic era -->
+          <tr class="era-header"><td colspan="5">ยุคอับราโมวิช (2003–2022)</td></tr>
+
+          <tr>
+            <td class="td-name">Thomas Tuchel</td>
+            <td class="td-period">ม.ค. 2021 – ก.ย. 2022</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>Champions League, Club World Cup, Super Cup</em></td>
+          </tr>
+          <tr>
+            <td class="td-name">Frank Lampard</td>
+            <td class="td-period">ก.ค. 2019 – ม.ค. 2021</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Maurizio Sarri</td>
+            <td class="td-period">ก.ค. 2018 – มิ.ย. 2019</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>Europa League</em></td>
+          </tr>
+          <tr>
+            <td class="td-name">Antonio Conte</td>
+            <td class="td-period">ก.ค. 2016 – ก.ค. 2018</td>
+            <td class="td-trophy"><em>Premier League</em></td>
+            <td class="td-trophy"><em>FA Cup</em></td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr class="interim-row">
+            <td class="td-name">Guus Hiddink <span class="interim-tag">interim</span></td>
+            <td class="td-period">ธ.ค. 2015 – มิ.ย. 2016</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr class="interim-row">
+            <td class="td-name">Steve Holland <span class="interim-tag">interim</span></td>
+            <td class="td-period">ธ.ค. 2015 – ธ.ค. 2015</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">José Mourinho (ครั้งที่ 2)</td>
+            <td class="td-period">มิ.ย. 2013 – ธ.ค. 2015</td>
+            <td class="td-trophy"><em>Premier League</em></td>
+            <td class="td-trophy"><em>League Cup</em></td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr class="interim-row">
+            <td class="td-name">Rafael Benítez <span class="interim-tag">interim</span></td>
+            <td class="td-period">พ.ย. 2012 – พ.ค. 2013</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>Europa League</em></td>
+          </tr>
+          <tr class="interim-row">
+            <td class="td-name">Roberto Di Matteo <span class="interim-tag">interim</span></td>
+            <td class="td-period">มี.ค. 2012 – พ.ย. 2012</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>FA Cup</em></td>
+            <td class="td-trophy"><em>Champions League</em></td>
+          </tr>
+          <tr>
+            <td class="td-name">André Villas-Boas</td>
+            <td class="td-period">มิ.ย. 2011 – มี.ค. 2012</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Carlo Ancelotti</td>
+            <td class="td-period">ก.ค. 2009 – พ.ค. 2011</td>
+            <td class="td-trophy"><em>Premier League</em></td>
+            <td class="td-trophy"><em>FA Cup, Community Shield</em></td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr class="interim-row">
+            <td class="td-name">Guus Hiddink <span class="interim-tag">interim</span></td>
+            <td class="td-period">ก.พ. 2009 – พ.ค. 2009</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>FA Cup</em></td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr class="interim-row">
+            <td class="td-name">Ray Wilkins <span class="interim-tag">interim</span></td>
+            <td class="td-period">ก.พ. 2009 – ก.พ. 2009</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Luiz Felipe Scolari</td>
+            <td class="td-period">ก.ค. 2008 – ก.พ. 2009</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Avram Grant</td>
+            <td class="td-period">ก.ย. 2007 – พ.ค. 2008</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">José Mourinho (ครั้งที่ 1)</td>
+            <td class="td-period">มิ.ย. 2004 – ก.ย. 2007</td>
+            <td class="td-trophy"><em>Premier League x2</em></td>
+            <td class="td-trophy"><em>FA Cup, League Cup x2, Community Shield</em></td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Claudio Ranieri</td>
+            <td class="td-period">ก.ย. 2000 – พ.ค. 2004</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+
+          <!-- ERA: 1990s transformation -->
+          <tr class="era-header"><td colspan="5">ยุคการเปลี่ยนแปลง (1990s–2000s)</td></tr>
+
+          <tr class="interim-row">
+            <td class="td-name">Graham Rix <span class="interim-tag">interim</span></td>
+            <td class="td-period">ก.ย. 2000 – ก.ย. 2000</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Gianluca Vialli</td>
+            <td class="td-period">ก.พ. 1998 – ก.ย. 2000</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>FA Cup, League Cup, Charity Shield</em></td>
+            <td class="td-trophy"><em>Cup Winners' Cup, Super Cup</em></td>
+          </tr>
+          <tr>
+            <td class="td-name">Ruud Gullit</td>
+            <td class="td-period">พ.ค. 1996 – ก.พ. 1998</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>FA Cup</em></td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Glenn Hoddle</td>
+            <td class="td-period">มิ.ย. 1993 – พ.ค. 1996</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">David Webb</td>
+            <td class="td-period">ก.พ. 1993 – พ.ค. 1993</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Ian Porterfield</td>
+            <td class="td-period">มิ.ย. 1991 – ก.พ. 1993</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+
+          <!-- ERA: 1980s -->
+          <tr class="era-header"><td colspan="5">ยุค 1980s</td></tr>
+
+          <tr>
+            <td class="td-name">Bobby Campbell</td>
+            <td class="td-period">มี.ค. 1988 – พ.ค. 1991</td>
+            <td class="td-trophy"><em>Second Division</em></td>
+            <td class="td-trophy"><em>Full Members' Cup</em></td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">John Hollins</td>
+            <td class="td-period">มิ.ย. 1985 – มี.ค. 1988</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>Full Members' Cup</em></td>
+            <td class="td-none">—</td>
+          </tr>
+
+          <!-- ERA: 1980s–70s -->
+          <tr class="era-header"><td colspan="5">ยุค 1970s–80s</td></tr>
+
+          <tr>
+            <td class="td-name">John Neal</td>
+            <td class="td-period">พ.ค. 1981 – มิ.ย. 1985</td>
+            <td class="td-trophy"><em>Second Division</em></td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr class="interim-row">
+            <td class="td-name">Bobby Gould <span class="interim-tag">interim</span></td>
+            <td class="td-period">เม.ย. 1981 – พ.ค. 1981</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Geoff Hurst</td>
+            <td class="td-period">ก.ย. 1979 – เม.ย. 1981</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Danny Blanchflower</td>
+            <td class="td-period">ธ.ค. 1978 – ก.ย. 1979</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Ken Shellito</td>
+            <td class="td-period">ก.ค. 1977 – ธ.ค. 1978</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Eddie McCreadie</td>
+            <td class="td-period">เม.ย. 1975 – ก.ค. 1977</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Ron Suart</td>
+            <td class="td-period">ต.ค. 1974 – เม.ย. 1975</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+
+          <!-- ERA: Golden era 1960s-70s -->
+          <tr class="era-header"><td colspan="5">ยุคทอง (1960s–1970s)</td></tr>
+
+          <tr>
+            <td class="td-name">Dave Sexton</td>
+            <td class="td-period">ต.ค. 1967 – ต.ค. 1974</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>FA Cup</em></td>
+            <td class="td-trophy"><em>Cup Winners' Cup</em></td>
+          </tr>
+          <tr class="interim-row">
+            <td class="td-name">Ron Suart <span class="interim-tag">interim</span></td>
+            <td class="td-period">ต.ค. 1967 – ต.ค. 1967</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Tommy Docherty</td>
+            <td class="td-period">ต.ค. 1961 – ต.ค. 1967</td>
+            <td class="td-none">—</td>
+            <td class="td-trophy"><em>League Cup</em></td>
+            <td class="td-none">—</td>
+          </tr>
+
+          <!-- ERA: Early era -->
+          <tr class="era-header"><td colspan="5">ยุคแรก (1905–1960s)</td></tr>
+
+          <tr>
+            <td class="td-name">Ted Drake</td>
+            <td class="td-period">มิ.ย. 1952 – ก.ย. 1961</td>
+            <td class="td-trophy"><em>First Division</em></td>
+            <td class="td-trophy"><em>Charity Shield</em></td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Billy Birrell</td>
+            <td class="td-period">เม.ย. 1939 – พ.ค. 1952</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">Leslie Knighton</td>
+            <td class="td-period">พ.ค. 1933 – เม.ย. 1939</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">David Calderhead</td>
+            <td class="td-period">ส.ค. 1907 – พ.ค. 1933</td>
+            <td class="td-none">—</td>
+            <td class="td-none">— (FA Cup Final 1915)</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">William Lewis</td>
+            <td class="td-period">พ.ย. 1906 – ส.ค. 1907</td>
+            <td class="td-none">—</td>
+            <td class="td-none">— (เลื่อนชั้น)</td>
+            <td class="td-none">—</td>
+          </tr>
+          <tr>
+            <td class="td-name">John Tait Robertson</td>
+            <td class="td-period">ส.ค. 1905 – พ.ย. 1906</td>
+            <td class="td-none">—</td>
+            <td class="td-none">— (ผู้จัดการทีมคนแรก)</td>
+            <td class="td-none">—</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--ink-muted);margin-top:12px;text-align:right">
+      * หมายถึง interim manager &nbsp;|&nbsp; ข้อมูล ณ มกราคม 2026
+    </p>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Chelsea Logo" class="site-footer__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — บทที่ 3 การหว่านเมล็ดพันธุ์แห่งความสำเร็จ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       RESET & VARIABLES
+    ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue:        #034694;
+      --blue-light:  #1565c0;
+      --gold:        #c8a84b;
+      --gold-light:  #e8c97a;
+      --white:       #f5f2ec;
+      --off-white:   #ede8df;
+      --ink:         #1a1410;
+      --ink-soft:    #3d342a;
+      --ink-muted:   #7a6f63;
+      --rule:        #c5b89a;
+      --paper:       #f9f6f0;
+      --col-max:     740px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============================================
+       HERO / MASTHEAD
+    ============================================ */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://i.imgur.com/d7cGptr.jpeg');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.45) saturate(0.8);
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+
+    .hero:hover .hero__bg { transform: scale(1.06); }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(3,12,30,0.3) 40%,
+        rgba(3,12,30,0.85) 80%,
+        rgba(3,12,30,0.97) 100%
+      );
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 clamp(20px, 6vw, 80px) clamp(48px, 8vh, 90px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero__logo {
+      width: clamp(80px, 12vw, 140px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.5));
+      margin-bottom: 28px;
+      animation: fadeDown 1s ease both;
+    }
+
+    .hero__kicker {
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 600;
+      font-size: clamp(10px, 1.2vw, 13px);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+
+    .hero__title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 6.5vw, 5.5rem);
+      line-height: 1.08;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      max-width: 900px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+
+    .hero__title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero__subtitle {
+      font-size: clamp(14px, 1.8vw, 17px);
+      color: rgba(245,242,236,0.65);
+      margin-top: 22px;
+      letter-spacing: 0.04em;
+      animation: fadeDown 1s 0.35s ease both;
+    }
+
+    .hero__rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 32px auto 0;
+      animation: fadeDown 1s 0.45s ease both;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================
+       SCROLL INDICATOR
+    ============================================ */
+    .scroll-hint {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: float 2.4s ease-in-out infinite;
+    }
+
+    .scroll-hint span {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,242,236,0.4);
+    }
+
+    .scroll-hint__arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg);
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ============================================
+       ARTICLE WRAPPER
+    ============================================ */
+    .article {
+      background: var(--paper);
+      position: relative;
+    }
+
+    .article::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+    }
+
+    .article__inner {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 90px) clamp(20px, 5vw, 40px);
+    }
+
+    /* ============================================
+       PULL QUOTE
+    ============================================ */
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding: 24px 32px;
+      margin: 0 0 48px;
+      background: linear-gradient(to right, rgba(200,168,75,0.06), transparent);
+    }
+
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .pull-quote cite {
+      display: block;
+      margin-top: 14px;
+      font-family: 'Sarabun', sans-serif;
+      font-style: normal;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ============================================
+       CHAPTER HEADING
+    ============================================ */
+    .chapter-heading {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .chapter-heading__number {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding: 6px 16px;
+      margin-bottom: 20px;
+    }
+
+    .chapter-heading h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    /* ============================================
+       BODY TEXT
+    ============================================ */
+    .article__inner p {
+      margin-bottom: 1.6em;
+      color: var(--ink-soft);
+    }
+
+    .article__inner p em {
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2em;
+      line-height: 0.78;
+      margin: 6px 10px 0 0;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    /* ============================================
+       SECTION HEADINGS
+    ============================================ */
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1.25rem, 2.8vw, 1.7rem);
+      color: var(--blue);
+      margin: 56px 0 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule);
+      letter-spacing: -0.01em;
+    }
+
+    /* ============================================
+       IMAGES
+    ============================================ */
+    .img-block {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .img-block img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: 0 4px 24px rgba(26,20,16,0.15);
+    }
+
+    .img-block figcaption {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .img-block--wide {
+      margin: 48px calc(-1 * clamp(20px,5vw,40px));
+    }
+
+    .img-block--wide figcaption {
+      padding: 0 clamp(20px,5vw,40px);
+    }
+
+    /* ============================================
+       INLINE BLOCKQUOTE
+    ============================================ */
+    .article__inner blockquote {
+      margin: 36px 0;
+      padding: 24px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    /* ============================================
+       SUBSECTION LABEL
+    ============================================ */
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 48px 0 6px;
+    }
+
+    /* ============================================
+       CHAPTER END
+    ============================================ */
+    .chapter-end {
+      text-align: center;
+      margin: 64px 0 0;
+      padding-top: 40px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .chapter-end__ornament {
+      font-size: 28px;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+    }
+
+    .chapter-end__text {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .site-footer {
+      background: var(--ink);
+      color: rgba(245,242,236,0.5);
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+    }
+
+    .site-footer__logo {
+      width: 50px;
+      filter: brightness(0.6);
+      margin-bottom: 16px;
+    }
+
+    .site-footer__name {
+      display: block;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 14px;
+      letter-spacing: 0.15em;
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 500px) {
+      .pull-quote { padding: 18px 20px; }
+    }
+  
+    /* ============================================
+       NAVIGATION MENU STYLES (เมนูนำทาง)
+    ============================================ */
+    .main-nav {
+      background-color: var(--blue, #034694);
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav-list li a {
+      color: var(--white, #f5f2ec);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Sarabun', sans-serif;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 14px;
+    }
+    .nav-list li a:hover {
+      background-color: var(--gold, #c8a84b);
+      color: var(--ink, #1a1410);
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="Chapter1.html">บทที่ 1</a></li>
+      <li><a href="Chapter2.html">บทที่ 2</a></li>
+      <li><a href="Chapter3.html">บทที่ 3</a></li>
+      <li><a href="Chapter4.html">บทที่ 4</a></li>
+      <li><a href="Chapter5.html">บทที่ 5</a></li>
+      <li><a href="Chapter6.html">บทที่ 6</a></li>
+      <li><a href="Chapter7.html">บทที่ 7</a></li>
+      <li><a href="Chapter8.html">บทที่ 8</a></li>
+      <li><a href="Chapter9.html">บทที่ 9</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+      <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+      <p class="hero__kicker">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
+      <p class="hero__subtitle">ผู้เขียน: อิอิแอแอ</p>
+      <div class="hero__rule"></div>
+    </div>
+
+
+  </header>
+
+  <!-- ===================== ARTICLE ===================== -->
+  <main class="article">
+    <div class="article__inner">
+
+      <!-- Chapter heading -->
+      <div class="chapter-heading">
+        <div class="chapter-heading__number">บทที่ ๓</div>
+        <h1>การหว่านเมล็ดพันธุ์แห่งความสำเร็จ</h1>
+      </div>
+
+      <!-- Opening pull quote -->
+      <blockquote class="pull-quote">
+        <p>'ช่วงเวลาที่น่าจดจำ ช่วงเวลาที่หลายคนรอคอยมา 50 ปี ในที่สุดก็มาถึง เมื่อเข็มนาทีบนนาฬิกาชี้ไปที่ห้านาทีก่อนห้าโมงเย็น ในเวลานั้นเอง ข่าวจากคาร์ดิฟฟ์ก็มาถึงว่าพอร์ทสมัธพ่ายแพ้ เชลซีเป็นแชมป์ และแฟนบอล 50,000 คน... ก็ลุกขึ้นยืนและส่งเสียงเชียร์เมื่อประวัติศาสตร์ได้ถูกจารึกไว้ แล้วเชลซีทำได้อย่างไร? ส่วนใหญ่เป็นเพราะจิตวิญญาณของทีม ความฟิต และการเล่นที่ตรงไปตรงมา ซึ่งแตกต่างจากเชลซีในยุคก่อนๆ'</p>
+        <cite>— เดอะซันเดย์ไทมส์, 24 เมษายน 1955</cite>
+      </blockquote>
+
+      <!-- Body -->
+      <p class="drop-cap">วันเสาร์ที่ 23 เมษายน 1955 คือจุดสูงสุดของความหวังและความคาดหวังที่รอคอยมานานกว่าห้าทศวรรษ ในที่สุดเชลซี สโมสรที่มีแฟนบอลมากที่สุดในประเทศ ก็ได้คว้าแชมป์ลีกมาครอง เอริค 'แรบบิท' พาร์สันส์ ยิงสองประตูใส่เชฟฟิลด์ เวนส์เดย์ ที่สแตมฟอร์ด บริดจ์ และปีเตอร์ ซิลเล็ตต์ ยิงจุดโทษให้เชลซีขึ้นนำ 3-0 ท่ามกลางเสียงเชียร์ที่ดังกระหึ่มไปทั่วสนาม</p>
+
+      <p>อัลเบิร์ต เซเวลล์ นักบันทึกประวัติศาสตร์ผู้ยิ่งใหญ่ของเดอะบลูส์ เขียนถึงช่วงเวลานั้นว่า 'จากบรรดาแฟนบอลผู้เปี่ยมด้วยน้ำตาที่เอ่อล้นจากการรอคอยช่วงเวลานี้มานานหลายปี ไปจนถึงแฟนบอลเชลซีที่อายุน้อยที่สุด เสียงเรียกร้องหาผู้เล่นและผู้ที่อยู่เบื้องหลังผู้เล่นก็ดังขึ้น'</p>
+
+      <p>เนื่องจากสนามแทบมองไม่เห็นเพราะฝูงชนที่กำลังดีใจสุดขีด จึงมีการติดตั้งไมโครโฟนอย่างเร่งด่วนบนอัฒจันทร์ชั้นบนฝั่งตะวันออก โจ เมียร์ส ประธานสโมสรเป็นคนแรกที่กล่าวขอบคุณผู้ที่มาร่วมงาน ก่อนที่จะส่งต่อให้เท็ด เดรก ผู้จัดการทีมที่กำลังซาบซึ้งใจ</p>
+
+      <blockquote>
+        <p>"นี่คือช่วงเวลาที่มีความสุขที่สุดในชีวิตของผม พวกเขาทั้งหมดเป็นหนึ่งเดียวของเชลซี!"</p>
+      </blockquote>
+
+      <!-- Image: Ted Drake -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/historical/new-history-section/Ted_Drake_1955.jpg"
+             alt="ผู้จัดการทีม เท็ด เดรก กล่าวปราศรัยต่อฝูงชน">
+        <figcaption>ผู้จัดการทีม เท็ด เดรก กล่าวปราศรัยต่อฝูงชนที่กำลังเฉลิมฉลองชัยชนะ</figcaption>
+      </figure>
+
+      <p>นักเตะภายใต้การนำของรอย เบนท์ลีย์ ผู้ทำประตูสูงสุด ได้รับข้อเสนอเป็น "โบนัส" 20 ปอนด์ หรือชุดสูทสั่งตัดพิเศษ หากคว้าแชมป์ได้ (หลายคนเลือกอย่างหลัง) แต่เกียรติยศนั้นประเมินค่าไม่ได้ และพวกเขารู้ว่าใครคือผู้ที่นำพาความสำเร็จนั้นมาสู่ทีม</p>
+
+      <!-- Section: เดรก ลงจอดที่สแตมฟอร์ดบริดจ์ -->
+      <h2>เดรก ลงจอดที่สแตมฟอร์ด บริดจ์</h2>
+
+      <p class="drop-cap">ในเดือนมิถุนายน ปี 1952 อดีตศูนย์หน้าของอาร์เซนอลและทีมชาติอังกฤษนั่งอยู่ในสำนักงานใหม่ของเขาที่สแตมฟอร์ด บริดจ์ และทำนายว่าต้องใช้เวลาสามปีในการเปลี่ยนเชลซีที่น่ารักแต่ฟอร์มตกให้กลายเป็นแชมป์ของอังกฤษ เช่นเดียวกับ "เดอะ สเปเชียล วัน" ในอีกครึ่งศตวรรษต่อมา เขายังทำนายไว้อีกว่านี่คือฤดูกาลนั้น</p>
+
+      <p>เมื่อเขามาถึง มีคนกล่าวว่าเดรก "มีวิธีการจัดการทีมเหมือนกับที่เขาใช้กับฟุตบอล คือ แข็งแกร่ง กระฉับกระเฉง ตรงไปตรงมา และเหนือสิ่งอื่นใด คือ เปี่ยมด้วยความกระตือรือร้นอย่างเหลือล้น"</p>
+
+      <p>ผู้จัดการทีมเองกล่าวว่า "ไม่มีความแตกต่างกันมากนักในเรื่องฝีมือของทีมส่วนใหญ่ในดิวิชั่นหนึ่ง ทีมที่ประสบความสำเร็จคือทีมที่ทำงานหนักในเกม และต่อสู้ต่อไปและรักษาผลงานไว้ได้เมื่อต้องการความพยายามเพิ่มเติมอีกเล็กน้อย มีเพียงจิตวิญญาณของสโมสรที่สูงส่งเท่านั้นที่จะสร้างแรงผลักดันนี้ได้"</p>
+
+      <p>เขาถูกวิพากษ์วิจารณ์จากการดึงตัวนักเตะจากดิวิชั่นสาม เช่น สแตน วิลเลมส์ กองหลังจอมแกร่งของไบรท์ตัน และจอห์นนี่ แม็คนิโคล กองหน้าตัวใน และเอาชนะคู่แข่งอีกครึ่งโหลเพื่อเซ็นสัญญากับแฟรงค์ บลันสโตน ปีกวัย 18 ปีจากครูว์ เขายังเซ็นสัญญากับปีเตอร์ ซิลเล็ตต์ส่วนหนึ่งเพราะเคยเล่นกับพ่อของเขาที่เซาแธมป์ตัน</p>
+
+      <!-- Image: Peter Sillett -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/historical/new-history-section/peter_sillett.jpg"
+             alt="ปีเตอร์ ซิลเล็ตต์">
+        <figcaption>ปีเตอร์ ซิลเล็ตต์ ที่ปรากฏในภาพเมื่อปี 1959 — มีบทบาทสำคัญอย่างยิ่งในการพาเชลซีคว้าแชมป์ลีกเป็นครั้งแรก</figcaption>
+      </figure>
+
+      <p>เดรกเริ่มต้นด้วยการกระตุ้นให้แฟนบอลแสดงออกถึงความเป็นแฟนทีมตัวเองให้มากขึ้น สนามสแตมฟอร์ด บริดจ์ขึ้นชื่อว่าเป็นสถานที่ที่มีแฟนบอลหลากหลายเชื้อชาติและผ่อนคลายที่สุดในวงการฟุตบอล เขาต้องการเปลี่ยนสิ่งนั้น</p>
+
+      <!-- Section: ผู้รับบำนาญเชลซี -->
+      <h2>ผู้รับบำนาญเชลซี</h2>
+
+      <p class="drop-cap">สโมสรแห่งนี้มีความสัมพันธ์อันยาวนานและน่าสนใจกับเหล่าทหารผ่านศึกเชลซี เดรกตัดสินใจอย่างกะทันหันที่จะปลดมาสคอต "ทหารผ่านศึก" ของทีมออก "ผมคิดว่าเราคงไม่มีวันหลุดพ้นจากฉายา 'คนแก่' ได้หรอก แต่เราไม่ชอบความหมายแฝงของมัน และเราอยากจะกำจัดมันออกไป มุกตลกเก่าๆ ที่ว่า 'ใช่ แล้วพวกเขาก็เล่นเหมือนคนแก่' มันเริ่มจะจืดชืดแล้ว"</p>
+
+      <p>นับจากนั้นเป็นต้นมา เชลซีก็กลายเป็นที่รู้จักในชื่อ <em>เดอะบลูส์</em> ถึงกระนั้น นักวิจารณ์ก็ยังเยาะเย้ยว่า เสือดาวจะเปลี่ยนลายได้เร็วกว่าที่ 'เชลซีที่รัก' จะกลายเป็นผู้ชนะ แต่ความจริงแล้ว รากฐานความสำเร็จของเดรกในปี 1955 มาจากการเปลี่ยนแปลงครั้งใหญ่สองทศวรรษก่อนหน้านั้นต่างหาก</p>
+
+      <!-- Section: เยาวชนจะมีวันของตนเอง -->
+      <h2>เยาวชนจะมีวันของตนเอง</h2>
+
+      <p class="drop-cap">ในปี 1935/36 การเสียชีวิตอย่างกะทันหันของบุคคลสำคัญหลายคนในสโมสรได้สร้างความสั่นคลอนให้กับสแตมฟอร์ด บริดจ์ เบิร์ต พาล์มเมอร์ เลขาธิการตั้งแต่ปี 1907, เจที เมียร์ส, โคลด เคอร์บี ผู้ก่อตั้ง และชาร์ลส์ แพรตต์ ซีเนียร์ ต่างเสียชีวิตภายในห้าเดือนติดต่อกัน นอกจากนี้ สโมสรยังมีหนี้สินถึง 12,000 ปอนด์</p>
+
+      <p>ในช่วงไม่กี่ปีต่อมา คณะกรรมการชุดใหม่ที่มุ่งมั่นได้ก้าวขึ้นมา ได้แก่ โจ เมียร์ส, เลสลี ลูกศิษย์ของโคลด เคอร์บี, แจ็ค บัดด์ นักกีฬาโปโลน้ำโอลิมปิกสูง 6 ฟุต 8 นิ้ว, บิล แพรตต์ พ่อค้าของเก่า และเฮนรี 'แจ็ค' โบเยอร์ ผู้ขนส่งและเจ้าของโรงละครแกรนวิลล์ที่อยู่ใกล้เคียง ทุกคนอยู่ในวัยสามสิบกว่าปี</p>
+
+      <!-- Image: Joe Mears -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/Joe_Mears_FA_Cup_draw.jpg"
+             alt="โจ เมียร์ส ประธานสโมสรเชลซี">
+        <figcaption>โจ เมียร์ส ประธานสโมสรเชลซี ในระหว่างการจับสลากเอฟเอ คัพ</figcaption>
+      </figure>
+
+      <p>เลสลี ไนท์ตัน ผู้สืบทอดตำแหน่งผู้จัดการทีมต่อจากเดวิด คาลเดอร์เฮดในปี 1933 ค้นหาพรสวรรค์จากทั่วทุกสารทิศและประสบความสำเร็จอย่างมาก นอกจากนี้ยังเป็นผู้ดึงตัวเฟร็ด แฮนลีย์ กองหน้าวัยรุ่น ซึ่งเป็นผู้เล่นผิวดำคนแรกของเชลซีในปี 1938 โดยประกาศว่า "เชลซีเปิดกว้างเสมอ ตราบใดที่มีพรสวรรค์ เชลซีจะต่อต้านการเลือกปฏิบัติทุกรูปแบบ"</p>
+
+      <p>ในปี 1939 คณะกรรมการบริหารได้เลือกวิลลี เบอร์เรลล์ อดีตกองหน้าชาวสกอตแลนด์ที่จบการศึกษาจากมหาวิทยาลัย เข้ามาดำรงตำแหน่งแทน และการปฏิวัติก็เริ่มต้นขึ้นอย่างแท้จริง ไอเดียสำคัญของเบอร์เรลล์คือโครงการเยาวชนเชลซี — เขาออกแบบให้เป็นการศึกษาฟุตบอลแบบองค์รวม สร้างทั้งนักคิดและนักฟุตบอล แต่สงครามโลกครั้งที่สองได้ทำลายแผนการอันกว้างไกลเหล่านี้ไป</p>
+
+      <p>มรดกที่น่าทึ่งของเบอร์เรลล์คือความสัมพันธ์ที่สร้างขึ้นกับสโมสรเยาวชนแฮร์โรว์ โรด นักเตะอาวุโสของเชลซีทำงานร่วมกับนักเตะเยาวชนสัปดาห์ละสามคืน และนักเตะที่ดีที่สุดจะได้รับการคัดเลือกไปฝึกสอนในทีมทิวดอร์ โรส นักเตะพรสวรรค์คนแรกที่ก้าวขึ้นสู่ทีมชุดใหญ่จากแหล่งนี้คือ บ็อบบี้ สมิธ กองหน้าจากยอร์กเชียร์ ซึ่งประเดิมสนามเมื่อวันที่ 4 กันยายน 1950 ขณะอายุ 17 ปี</p>
+
+      <!-- Section: วันไดนาโม -->
+      <h2>วันไดนาโม</h2>
+
+      <p class="drop-cap">ในเดือนพฤศจิกายนปี 1945 มีผู้คนประมาณ 100,000 คนมาร่วมชมการแข่งขันกระชับมิตรกับทีมไดนาโม มอสโกว์จากรัสเซีย หลังจากความยากลำบากและการเสียสละในช่วงสงคราม ประเทศชาติต่างกระหายความบันเทิง มีผู้คนทั้งหมด 74,496 คนจ่ายเงินเพื่อเข้าชม โดยบางคนจ่ายเงินให้พ่อค้าตั๋วเถื่อนสูงถึง 5 ปอนด์เพื่อซื้อตั๋วราคา 10 ชิลลิง</p>
+
+      <p>โรงละคร Granville Theatre ของแจ็ค โบเยอร์ ได้ลงโฆษณาในโปรแกรมการแข่งขันของเชลซี และด้วยความสัมพันธ์ในวงการบันเทิง The Stage รายงานอย่างกระตือรือร้นถึงเหล่าดาราจาก Variety ที่มาร่วมงานกับเขาในอัฒจันทร์ฝั่งตะวันออก</p>
+
+      <p>ในเวลานั้น นักแสดงหนุ่มริชาร์ด แอทเทนโบโรห์ ได้รับอนุญาตให้ฝึกซ้อมกับทีมของเบอร์เรลล์เพื่อเตรียมตัวสำหรับบทบาท "พิงกี้" ในภาพยนตร์เรื่อง "ไบรตัน ร็อก" และเขาก็ชักชวนเพื่อนนักแสดงไปชมเกมการแข่งขันในช่วงหลายทศวรรษต่อมา</p>
+
+      <blockquote>
+        <p>"ผมคิดว่าผมเคยพาแฟรงค์ ซินาตราไปที่เดอะบริดจ์ครั้งหนึ่ง แน่นอนว่าผมเคยพาโลเรนซ์ โอลิวิเยร์, ราล์ฟ ริชาร์ดสัน, เอวา การ์ดเนอร์ – เธอเป็นเพื่อนสนิทของภรรยาผม..."</p>
+      </blockquote>
+
+      <!-- Section: ในที่สุดก็ถึงคิวแชมป์แล้ว -->
+      <h2>ในที่สุดก็ถึงคิวแชมป์แล้ว!</h2>
+
+      <p class="drop-cap">ในฤดูกาลถัดมา เดรกได้รับแจ้งว่าในที่สุดเขาก็สร้างทีมที่สามารถคว้าแชมป์ได้แล้ว แต่เขาตอบว่า ไม่ใช่: แชมป์ลีกต่างหาก ทีมบลูส์เล่นได้อย่างไม่ย่อท้อ เก็บได้ 24 คะแนนจาก 32 คะแนนสุดท้ายเพื่อคว้าแชมป์ไปครอง</p>
+
+      <p>การเฉลิมฉลองในสนามในเดือนเมษายนปี 1955 นั้นเป็นผลลัพธ์ของการเตรียมการมานานถึง 20 ปี มากกว่าการวางแผนอย่างที่มักเกิดขึ้นในวงการฟุตบอล มรดกของเบอร์เรลล์ โครงการเยาวชนเชลซี ยังคงสร้างนักเตะพรสวรรค์ชั้นยอดอย่างต่อเนื่อง รวมถึงจิมมี่ กรีฟส์ ผู้ไร้เทียมทาน</p>
+
+      <p>ในเดือนกันยายน ปี 1962 การตกชั้นคุกคาม และยุคของเดรกก็จบลงอย่างกะทันหัน เช่นเดียวกับการเมือง แม้แต่เส้นทางอาชีพนักฟุตบอลที่ยิ่งใหญ่ที่สุดก็มักจบลงด้วยความล้มเหลวเสมอ</p>
+
+      <p>ยังมีข้อสังเกตสุดท้ายที่น่าหงุดหงิด: แม้ว่าจอห์น แบตเตอร์สบี เลขานุการสโมสร จะกระตือรือร้นที่จะช่วยจัดตั้งการแข่งขันยูโรเปียนคัพครั้งแรกในปี 1955/56 (ปัจจุบันคือแชมเปียนส์ลีก) แต่คณะกรรมการบริหารกลับถูกบีบให้ปฏิเสธคำเชิญด้วยเหตุผลเรื่อง "ตารางการแข่งขันที่แน่นเกินไป" ประวัติศาสตร์ของเราอาจแตกต่างออกไปมากเพียงใดหากพวกเขาตัดสินใจก้าวไปข้างหน้าในครั้งนั้น</p>
+
+      <!-- Chapter End -->
+      <div class="chapter-end">
+        <div class="chapter-end__ornament">⚽</div>
+        <span class="chapter-end__text">— จบบทที่ ๓ —</span>
+      </div>
+
+    </div><!-- /.article__inner -->
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

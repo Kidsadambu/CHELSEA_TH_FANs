@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — บทที่ 6 ไม้กวาดใหม่และยุคบูมใหม่</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; width: 100%; height: 100vh;
+      min-height: 600px; overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://i.imgur.com/d7cGptr.jpeg');
+      background-size: cover; background-position: center 30%;
+      filter: brightness(0.45) saturate(0.8);
+      transform: scale(1.03); transition: transform 8s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.06); }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(3,12,30,0.3) 40%,
+        rgba(3,12,30,0.85) 80%, rgba(3,12,30,0.97) 100%);
+    }
+    .hero__content {
+      position: relative; z-index: 2; width: 100%;
+      padding: 0 clamp(20px,6vw,80px) clamp(48px,8vh,90px);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+    }
+    .hero__logo {
+      width: clamp(80px,12vw,140px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.5));
+      margin-bottom: 28px; animation: fadeDown 1s ease both;
+    }
+    .hero__kicker {
+      font-weight: 600; font-size: clamp(10px,1.2vw,13px);
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.4rem,6.5vw,5.5rem); line-height: 1.08;
+      color: var(--white); letter-spacing: -0.01em; max-width: 900px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__subtitle {
+      font-size: clamp(14px,1.8vw,17px);
+      color: rgba(245,242,236,0.65); margin-top: 22px;
+      letter-spacing: 0.04em; animation: fadeDown 1s 0.35s ease both;
+    }
+    .hero__rule {
+      width: 60px; height: 2px; background: var(--gold);
+      margin: 32px auto 0; animation: fadeDown 1s 0.45s ease both;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── SCROLL HINT ── */
+    .scroll-hint {
+      position: absolute; bottom: 30px; left: 50%;
+      transform: translateX(-50%); z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: float 2.4s ease-in-out infinite;
+    }
+    .scroll-hint span {
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(245,242,236,0.4);
+    }
+    .scroll-hint__arrow {
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg); opacity: 0.7;
+    }
+    @keyframes float {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── ARTICLE ── */
+    .article { background: var(--paper); position: relative; }
+    .article::before {
+      content: ''; display: block; width: 100%; height: 6px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+    }
+    .article__inner {
+      max-width: var(--col-max); margin: 0 auto;
+      padding: clamp(48px,8vw,90px) clamp(20px,5vw,40px);
+    }
+
+    /* ── CHAPTER HEADING ── */
+    .chapter-heading { text-align: center; margin-bottom: 52px; }
+    .chapter-heading__number {
+      display: inline-block; font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+      padding: 6px 16px; margin-bottom: 20px;
+    }
+    .chapter-heading h1 {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(1.6rem,4vw,2.8rem); line-height: 1.2;
+      color: var(--ink); letter-spacing: -0.01em;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 4px solid var(--gold); padding: 24px 32px;
+      margin: 0 0 48px;
+      background: linear-gradient(to right, rgba(200,168,75,0.06), transparent);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1rem,2vw,1.15rem); color: var(--ink-soft); line-height: 1.7;
+    }
+    .pull-quote p + p { margin-top: 20px; }
+    .pull-quote cite {
+      display: block; margin-top: 14px; font-family: 'Sarabun', sans-serif;
+      font-style: normal; font-size: 12px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+    }
+
+    /* ── BODY ── */
+    .article__inner p { margin-bottom: 1.6em; color: var(--ink-soft); }
+    .article__inner p em { color: var(--ink); font-style: italic; }
+    .drop-cap::first-letter {
+      float: left; font-family: 'Playfair Display', serif;
+      font-size: 4.2em; line-height: 0.78; margin: 6px 10px 0 0;
+      color: var(--blue); font-weight: 900;
+    }
+
+    /* ── H2 ── */
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(1.25rem,2.8vw,1.7rem); color: var(--blue);
+      margin: 56px 0 24px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule); letter-spacing: -0.01em;
+    }
+
+    /* ── IMAGES ── */
+    .img-block { margin: 40px 0; }
+    .img-block img {
+      width: 100%; height: auto; display: block; object-fit: cover;
+      border-radius: 2px; box-shadow: 0 4px 24px rgba(26,20,16,0.15);
+    }
+    .img-block figcaption {
+      margin-top: 12px; font-size: 12.5px; color: var(--ink-muted);
+      letter-spacing: 0.04em; font-style: italic; line-height: 1.5;
+    }
+    .img-block--wide { margin: 48px calc(-1 * clamp(20px,5vw,40px)); }
+    .img-block--wide figcaption { padding: 0 clamp(20px,5vw,40px); }
+
+    /* ── BLOCKQUOTE ── */
+    .article__inner blockquote {
+      margin: 36px 0; padding: 24px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue); color: var(--ink); font-style: italic;
+    }
+
+    /* ── DARK QUOTE BOX ── */
+    .quote-box {
+      margin: 40px 0; padding: 28px 32px;
+      background: var(--ink); color: rgba(245,242,236,0.85);
+      border-radius: 2px;
+      font-size: clamp(0.95rem,1.8vw,1.05rem); line-height: 1.8;
+    }
+    .quote-box em {
+      display: block; margin-top: 16px; font-size: 12px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); font-style: normal;
+    }
+
+    /* ── PLAYER SPOTLIGHT ── */
+    .player-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 36px 0;
+    }
+    .player-card {
+      padding: 16px 18px;
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--blue);
+      background: white;
+    }
+    .player-card__name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1rem;
+      color: var(--blue); margin-bottom: 4px;
+    }
+    .player-card__detail {
+      font-size: 12.5px; color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
+    /* ── CHAPTER END ── */
+    .chapter-end {
+      text-align: center; margin: 64px 0 0;
+      padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    .chapter-end__ornament { font-size: 28px; color: var(--gold); letter-spacing: 0.3em; }
+    .chapter-end__text {
+      display: block; margin-top: 12px; font-size: 12px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink); color: rgba(245,242,236,0.5);
+      text-align: center; padding: 40px 20px;
+      font-size: 13px; letter-spacing: 0.08em;
+    }
+    .site-footer__logo { width: 50px; filter: brightness(0.6); margin-bottom: 16px; }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 6px; font-size: 14px; letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 500px) {
+      .pull-quote { padding: 18px 20px; }
+      .quote-box { padding: 20px 18px; }
+    }
+  
+    /* ============================================
+       NAVIGATION MENU STYLES (เมนูนำทาง)
+    ============================================ */
+    .main-nav {
+      background-color: var(--blue, #034694);
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav-list li a {
+      color: var(--white, #f5f2ec);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Sarabun', sans-serif;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 14px;
+    }
+    .nav-list li a:hover {
+      background-color: var(--gold, #c8a84b);
+      color: var(--ink, #1a1410);
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="Chapter1.html">บทที่ 1</a></li>
+      <li><a href="Chapter2.html">บทที่ 2</a></li>
+      <li><a href="Chapter3.html">บทที่ 3</a></li>
+      <li><a href="Chapter4.html">บทที่ 4</a></li>
+      <li><a href="Chapter5.html">บทที่ 5</a></li>
+      <li><a href="Chapter6.html">บทที่ 6</a></li>
+      <li><a href="Chapter7.html">บทที่ 7</a></li>
+      <li><a href="Chapter8.html">บทที่ 8</a></li>
+      <li><a href="Chapter9.html">บทที่ 9</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+      <p class="hero__kicker">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
+      <p class="hero__subtitle">ผู้เขียน: อิอิแอแอ</p>
+      <div class="hero__rule"></div>
+    </div>
+
+  </header>
+
+  <!-- ══ ARTICLE ══ -->
+  <main class="article">
+    <div class="article__inner">
+
+      <!-- Chapter heading -->
+      <div class="chapter-heading">
+        <div class="chapter-heading__number">บทที่ ๖</div>
+        <h1>ไม้กวาดใหม่และยุคบูมใหม่</h1>
+      </div>
+
+      <!-- Hero image -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,h_700,g_faces,ar_16:9,q_90/site-sections/about-chelsea/history/2021/story_of_chelsea/History_Chapter6_2870x645_V3.jpg"
+             alt="บทที่ 6 — ยุคเริ่มต้นใหม่ของเชลซี">
+      </figure>
+
+      <!-- Opening dual pull quote -->
+      <blockquote class="pull-quote">
+        <p>'มันสำเร็จแล้ว เจ็ดสิบเจ็ดปีหลังจากที่ H.A. Mears ก่อตั้งเชลซี หลานชายของเขาได้ทอดทิ้งมันไป — ยุคราชวงศ์ Mears สิ้นสุดลงแล้ว และยุคของผมกำลังจะเริ่มต้น ผมตัดสินใจว่ามันจะต้องแตกต่างออกไป ไม่เช่นนั้นผมก็จะตายพยายาม'</p>
+        <cite>— เคน เบตส์</cite>
+        <p style="margin-top:20px">'วันนี้เรามีเช็คมาสองใบ ใบหนึ่งสำหรับจ่ายเงินเดือนนักเตะ อีกใบสำหรับส่วนแบ่งรายได้ FA Cup ให้กับ FA — จะให้ใบไหนเด้งดีกว่ากัน?'</p>
+        <cite>— ธนาคารของเชลซีถามซีอีโอ ณ สิ้นเดือนมีนาคม 1982</cite>
+      </blockquote>
+
+      <!-- Intro -->
+      <p class="drop-cap">คำถามที่เปรียบเสมือน "catch 22" สำหรับสโมสรที่จมอยู่กับหนี้สินและถูกรุมเร้าเช่นนี้ มาจากธนาคารของเชลซีสู่ซีอีโอในขณะนั้น การหยุดเช็คของ FA จะหมายถึงการปิดฉากเรื่องราวของเชลซีลง ดังนั้นนักเตะจึงไม่ได้รับเงินเดือนเพื่อซื้อเวลาอีกเล็กน้อย แต่ความพยายามอย่างสิ้นหวังของตระกูล Mears ที่จะรักษาการควบคุมสโมสรที่บรรพบุรุษก่อตั้งไว้ก็กำลังเดินเข้าสู่ทางตัน</p>
+
+      <p>มีการพูดคุยกันมาก่อนแล้วเกี่ยวกับ เคน เบตส์ ที่จะเข้ามาเทคโอเวอร์อย่างน้อยบางส่วนของกิจการเชลซี เบตส์เป็นนักธุรกิจที่แม้จะเกิดในลอนดอนแต่เคยนั่งในคณะกรรมการของสโมสรใน Football League ในแลงคาเชียร์ และบัดนี้การพูดคุยก็เริ่มต้นขึ้นอย่างจริงจังอีกครั้ง</p>
+
+      <p>เป็นที่รู้กันดีว่าเมื่อดีลสำเร็จในวันที่ 2 เมษายน เบตส์ซื้อสโมสรฟุตบอลในราคาเพียง 1 ปอนด์ แต่ด้วยราคานั้น เขาไม่ได้ครอบครองสินทรัพย์หลัก ก่อนหน้านั้นในฐานะส่วนหนึ่งของการจัดการหนี้ กรรมสิทธิ์ของสนาม Stamford Bridge ถูกแยกออกจากสโมสรไปอยู่ในบริษัทแยกต่างหากคือ SB Properties ซึ่งติดหนี้อยู่ 1.6 ล้านปอนด์</p>
+
+      <p>เชลซีกลายเป็นผู้เช่าในสนามของตัวเองอีกครั้ง เช่นเดียวกับที่เคยเป็นมาจนถึงต้นทศวรรษ 1970 การแยกใหม่นี้จะคอยบดบัง ขัดขวาง และคุกคามเราไปอีกหลายปีข้างหน้า</p>
+
+      <!-- Image: Bates shirt sponsor -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/historical/new-history-section/bates_shirt_sponsor.jpg"
+             alt="เคน เบตส์ ในงานเปิดตัวสปอนเซอร์เสื้อครั้งแรกของเชลซี">
+        <figcaption>เคน เบตส์ ในงานเปิดตัวการสนับสนุนเสื้อแข่งครั้งแรกในประวัติศาสตร์ของเชลซี</figcaption>
+      </figure>
+
+      <!-- Section 1 -->
+      <h2>จอห์น นีล และการกวาดทีมใหม่</h2>
+
+      <p class="drop-cap">ประธานคนใหม่ลงมือพลิกฟื้นกิจการทันที ตัดงาน ปล่อยนักเตะบางส่วน และขึ้นราคาตั๋ว ในฤดูกาลเต็มแรกที่เบตส์คุมอำนาจ คือ 1982/83 เชลซีประสบฤดูกาลที่เลวร้ายที่สุดในประวัติศาสตร์ การตกชั้นสู่ดิวิชั่นสามเป็นไปได้อย่างชัดเจนและหายนะ แต่สิ่งสำคัญที่สุดคือเบตส์ยังคงสนับสนุน จอห์น นีล ผู้จัดการทีมเงียบแต่ฉลาดที่เขาได้รับสืบทอดมา และเมื่อทีมรักษาตำแหน่งในดิวิชั่นสองได้อย่างหวุดหวิด การปรับทีมผู้เล่นครั้งใหญ่ก็เริ่มต้นขึ้น</p>
+
+      <p>นักเตะจำนวนมากถูกส่งออกไป ขณะที่เบตส์หาเงินได้พอให้ นีล และ เอียน แม็คนีล ผู้ช่วยผู้มีสายตาพิเศษด้านนักเตะ ทำสิ่งที่เรียกได้ว่าเป็นการเซ็นสัญญาเชิงกลยุทธ์ที่ฉลาดที่สุดครั้งหนึ่งในวงการ</p>
+
+      <!-- Player grid -->
+      <div class="player-grid">
+        <div class="player-card">
+          <div class="player-card__name">Kerry Dixon</div>
+          <div class="player-card__detail">กองหน้าร่างใหญ่ผมทอง จากดิวิชั่นล่าง</div>
+        </div>
+        <div class="player-card">
+          <div class="player-card__name">Pat Nevin</div>
+          <div class="player-card__detail">ปีกผอมบาง มายากลบนลูกบอล จากสกอตแลนด์</div>
+        </div>
+        <div class="player-card">
+          <div class="player-card__name">Nigel Spackman</div>
+          <div class="player-card__detail">กองกลางไม่หยุดวิ่ง พลังงานไม่มีวันหมด</div>
+        </div>
+        <div class="player-card">
+          <div class="player-card__name">Joe McLaughlin</div>
+          <div class="player-card__detail">เซ็นเตอร์แบ็กแกร่งและเชื่อถือได้</div>
+        </div>
+        <div class="player-card">
+          <div class="player-card__name">Eddie Niedzwiecki</div>
+          <div class="player-card__detail">ผู้รักษาประตูดาวรุ่งจากเวลส์</div>
+        </div>
+        <div class="player-card">
+          <div class="player-card__name">John Hollins</div>
+          <div class="player-card__detail">ตำนานเดอะบลูส์กลับบ้านในบทบาทผู้เล่น/โค้ช</div>
+        </div>
+      </div>
+
+      <!-- Image: New signings 1983 -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/foundation/2023/New_signings_1983.jpg"
+             alt="นักเตะใหม่ก่อนฤดูกาล 1983/84">
+        <figcaption>นักเตะชุดใหม่ก่อนฤดูกาล 1983/84 ที่พลิกโฉมสโมสร</figcaption>
+      </figure>
+
+      <p>พวกเขาถูกเสริมด้วยนักเตะที่ผ่านระบบเยาวชนของเชลซีอย่าง โคลิน เพตส์ และ จอห์น บัมสเตด รวมถึงการเซ็นสัญญาก่อนหน้าของนีลอย่าง เดวิด สปีดี้ และ โจอี้ โจนส์ คู่ดุดันทั้งสอง</p>
+
+      <p>น่าทึ่งมากที่ทีมผสมใหม่นี้ชนะเกมแรกในฤดูกาล 1983/84 ด้วยสกอร์ 5-0 โดย ดิกซัน หนึ่งในสี่ผู้เล่นที่เปิดตัว ยิงได้สองลูก และในไม่ช้าก็ชัดเจนว่าทีมที่เคยดิ้นรนหนีตกชั้นในฤดูกาลก่อน ถูกแปลงโฉมเป็นผู้ท้าชิงการเลื่อนชั้นอย่างแท้จริง</p>
+
+      <p>ศัตรูเก่าอย่าง Leeds ถูกถล่ม 5-0 เพื่อคว้าการเลื่อนชั้น โดย ดิกซัน ทำแฮตทริก และดาวเด่นใหม่ของ Stamford Bridge ยิงประตูเดียวในเกมสุดท้ายที่ Grimsby เพื่อคว้าแชมป์ดิวิชั่นสอง</p>
+
+      <blockquote>
+        <p>'เชลซีกลับมาแล้ว!' — เสียงร้องจากอัฒจันทร์ตลอดฤดูกาลนั้น และนั่นคือความจริง หลังจากห่างหายจากดิวิชั่นสูงสุดไปห้าปี การขึ้นสูงได้เร็วจากต่ำขนาดนี้ ไม่แปลกเลยที่ฤดูกาล 1983/84 ติดอยู่ในความทรงจำของผู้ที่ได้ร่วมชมมาจนถึงทุกวันนี้</p>
+      </blockquote>
+
+      <!-- Image: Promotion party -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/historical/stadium/old_stamford_bridge_views_(3).jpg"
+             alt="เฉลิมฉลองการเลื่อนชั้น">
+        <figcaption>ปาร์ตี้เลื่อนชั้น — Stamford Bridge ตื่นขึ้นอีกครั้ง</figcaption>
+      </figure>
+
+      <!-- Section 2 -->
+      <h2>ทดสอบในดิวิชั่นหนึ่ง</h2>
+
+      <p class="drop-cap">เชลซีจะยืนหยัดในดิวิชั่นหนึ่งได้ไหม? แทบไม่มีบทพิสูจน์ที่ยิ่งใหญ่กว่าเกมเปิดฤดูกาลถัดมาเมื่อเดอะบลูส์เดินทางข้ามเมืองไป Arsenal แฟนบอลของเราอดอยากจากโอกาสเช่นนี้มานาน และมาถล่มทลายในจำนวนที่สามารถจ่ายเงินผ่านประตูได้ และยึดครองพื้นที่ส่วนใหญ่ของ Highbury Stadium ซึ่งระเบิดขึ้นด้วยความปิติเมื่อ ดิกซัน ยิงตีเสมอในการเสมอ 1-1</p>
+
+      <p>ไม่ใช้เวลานานในการพิสูจน์ว่าแนวหน้า ดิกซัน–สปีดี้–เนวิน สามารถเปล่งประกายได้ในระดับนี้ และ Everton ที่ยืนอยู่บนสุดตารางกับ Liverpool ต่างถูกเอาชนะทั้งเยือนและเหย้าตามลำดับ</p>
+
+      <div class="quote-box">
+        '[สปีดี้] เก่งในสิ่งที่ผมทำได้ไม่ดีนัก และในทางกลับกันก็เป็นเช่นเดียวกัน เราพัฒนาความเข้าใจกันได้อย่างรวดเร็ว ผมรู้ว่าถ้าเขาจะไปถึงบอลเพื่อโหม่งส่งต่อ — สำหรับคนตัวเล็ก เขากระโดดได้สูงมาก และมีความสามารถที่ยอดเยี่ยม คุณยังต้องรวม แพต เนวิน เข้าไปในสมการด้วย เขาสร้างโอกาสที่ยอดเยี่ยมให้พวกเราทั้งสองด้วยการเล่นปีกและเล่นลูกที่วิเศษสุดๆ'
+        <em>— เคอร์รี่ ดิกซัน, 'Up Front'</em>
+      </div>
+
+      <!-- Section 3 -->
+      <h2>พอล คาโนวิลล์ — ผู้บุกเบิกผู้กล้าหาญ</h2>
+
+      <p class="drop-cap">ท่ามกลางความตื่นเต้นนั้น เดอะบลูส์ที่อดอยากจากถ้วยรางวัลมานานได้สร้างเส้นทาง League Cup ที่ผลิตดราม่าสุดมันส์ในรอบก่อนรองชนะเลิศพบกับ Sheffield Wednesday การรีเพลย์ยืดออกไปเป็นสามเกมใน 10 วัน และในเกมที่สอง ทีมของนีลดูเหมือนจะจบเมื่อตามหลัง 0-3 ณ ครึ่งแรกในยอร์กเชียร์ ก่อนจะฟื้นคืนอย่างน่าทึ่งขึ้นนำ 4-3 จนต้องเสียจุดโทษในนาทีท้าย กลับมาที่ The Bridge ก็คว้าชัยด้วยการโหม่งนาทีสุดท้ายของ ทอมมี่ โทมัส จากมุมเตะของ พอล คาโนวิลล์</p>
+
+      <!-- Image: Canoville goal -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/historical/former-key-players/Canoville_goal_Sheffield_Wednesday.jpg"
+             alt="พอล คาโนวิลล์ ยิงประตูใส่ Sheffield Wednesday">
+        <figcaption>พอล คาโนวิลล์ สังหาร Sheffield Wednesday</figcaption>
+      </figure>
+
+      <p>คาโนวิลล์เป็นหนึ่งในฮีโร่ของเกม 4-4 ยิงประตูแรกของเชลซีในวินาทีที่ลงมาทดแทนในครึ่งหลัง และยิงประตูที่พาทีมนำ เกม Sheffield Wednesday จะพิสูจน์ว่าเป็นจุดสูงสุดของสโมสรในอาชีพที่มีความสำคัญอย่างยิ่งในประวัติศาสตร์ของเรา</p>
+
+      <p>เซ็นสัญญาตั้งแต่วัยรุ่นจากลีกสมัครเล่นของลอนดอน คาโนวิลล์เป็นปีกเร็วและมีพรสวรรค์ที่จะกลายเป็นผู้บุกเบิกสำคัญของสโมสร แม้จะมีนักเตะผิวดำที่สโมสรตั้งแต่ทศวรรษ 1930 แต่ 'King Canners' คือคนแรกที่ได้รับการปล่อยตัวลงสนามกับทีมชุดใหญ่</p>
+
+      <p>นั่นคือในเดือนเมษายน 1982 ที่สนามของ Crystal Palace และผลลัพธ์คือฉากที่น่าอับอาย เขาถูกละเมิดด้วยการเหยียดเชื้อชาติอย่างน่าสะพรึงจากผู้ชมจำนวนมากที่มาเพื่อสนับสนุนเชลซี สิ่งนี้สั่นสะเทือนเขาอย่างถึงแก่น และยังคงเกิดขึ้นในทุกเกม ผู้จัดการทีม นีล พยายามอย่างเต็มที่เพื่อให้กำลังใจ และหลังจาก เนวิน เข้ามาร่วมทีมและเหตุการณ์ซ้ำรอยในเกมอื่นที่ Palace สองปีต่อมา ชาวสกอตผู้เป็นดาราที่ยิงประตูชัยก็ใช้สัมภาษณ์สื่อของตัวเองบอกผู้ที่ทำพฤติกรรมน่ารังเกียจนั้นว่าพวกเขาต้องเปลี่ยนแปลง</p>
+
+      <p>คำพูดจากขวัญใจแฟนบอลและผลงานที่ดีของคาโนวิลล์ ซึ่งมีส่วนร่วมในความสำเร็จการเลื่อนชั้นนั้น ดูเหมือนจะมีผล และถึงเวลาที่ Sheffield ดุเดือด ชื่อของเขาถูกร้องอย่างสม่ำเสมอ แม้เขาจะออกจากเชลซีหนึ่งปีต่อมาและเลิกเล่นอาชีพเนื่องจากอาการบาดเจ็บ เขาคือผู้บุกเบิก ความอดทนของเขาเปิดทางให้กับนักเตะผิวดำคนอื่นๆ ที่ค่อยๆ ได้รับการยอมรับและกลายเป็นที่รักของแฟนเชลซีส่วนใหญ่ นำไปสู่สโมสรที่หลากหลายในปัจจุบัน</p>
+
+      <!-- Section 4 -->
+      <h2>ใกล้ถึงจุดสูงสุด แต่รอยร้าวกลับปรากฏ</h2>
+
+      <p class="drop-cap">โชคร้ายที่ความฝันของเชลซีในการเข้ารอบชิงชนะเลิศถ้วยในปี 1985 ดับสูญอย่างไม่คาดคิดในรอบรองชนะเลิศพบกับ Sunderland แม้ความหวังในการเข้ายุโรปผ่านอันดับในลีกจะถูกล้างหายไปกับสนามที่ชื้นแฉะในเกมสุดท้าย แต่การจบอันดับหกในดิวิชั่นหนึ่งถือเป็นผลตอบแทนที่ยอดเยี่ยม สูงที่สุดของสโมสรนับตั้งแต่ปี 1970/71</p>
+
+      <p>อันดับหกซ้ำในฤดูกาลถัดมา และเชลซีภายใต้การนำของ จอห์น ฮอลลินส์ ซึ่งรับหน้าที่ต่อจาก นีล ที่ล้มป่วย เป็นผู้ท้าชิงแชมป์จริงๆ จนกระทั่งพ่ายสองเกมในช่วงอีสเตอร์ ซึ่งยิ่งหนักขึ้นเมื่อ นีดซวิกกี้ ผู้รักษาประตูผู้ยอดเยี่ยมได้รับบาดเจ็บสาหัสจนต้องเลิกเล่นอาชีพ</p>
+
+      <!-- Image: Niedzwiecki -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/historical/new-history-section/niedzwiecki_anfield.jpg"
+             alt="เอ็ดดี้ นีดซวิกกี้ เซฟลูกที่ Anfield ปี 1985">
+        <figcaption>เอ็ดดี้ นีดซวิกกี้ เซฟลูกยากที่ Anfield ในปี 1985</figcaption>
+      </figure>
+
+      <p>การสูญเสียผู้รักษาประตูเป็นเพียงหนึ่งในรอยร้าวหลายจุดที่เริ่มปรากฏ ความอ่อนแอที่แบ็กได้รับการเสริมด้วยการเซ็นสัญญา สตีฟ คลาร์ก และ โทนี่ ดอริโก้ ที่มีคุณภาพ แต่ตอนนี้ทุกอย่างกลับไม่เป็นใจในส่วนอื่น การมาของนักเตะหน้าใหม่ล้มเหลวที่จะจุดประกาย สไตล์การเล่นยิ่งหยาบง่ายลง ขวัญกำลังใจในห้องแต่งตัวแตกสลาย และทีมของ นีล ก็เริ่มแตกสลาย ก่อนสิ้นสุดฤดูกาล 1987/88 ฮอลลินส์ผู้ขาดประสบการณ์ถูกแทนที่โดย บ็อบบี้ แคมป์เบล แต่ก็ไม่สามารถหลีกเลี่ยงการตกชั้นได้ เชลซียังคงเป็นทีมสูงสุดเพียงทีมเดียวที่เคยตกชั้นผ่านระบบเพลย์ออฟ</p>
+
+      <p>แต่เชลซีชุดนั้นพิสูจน์ว่าตัวเองเป็นทีมที่ "ดีเกินกว่าจะตกชั้น" ด้วยการกลับสู่ดิวิชั่นสูงสุดในคราวเดียว เดอะบลูส์คว้าแชมป์ดิวิชั่นสองด้วยสถิติ 99 แต้ม แล้วจบอันดับห้าในดิวิชั่นหนึ่งฤดูกาลถัดมา ซึ่งเป็นจุดสูงสุดที่ไม่เคยเห็นมา 20 ปี</p>
+
+      <!-- Section 5 -->
+      <h2>การต่อสู้เพื่อรักษา Stamford Bridge</h2>
+
+      <!-- Image: Save the Bridge -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/site-sections/about-chelsea/history/decade-by-decade/save%20the%20bridge.jpg"
+             alt="Save The Bridge — แคมเปญรักษาบ้าน">
+        <figcaption>คำอุทธรณ์ "Save The Bridge" เหนืออัฒจันทร์ทิศเหนือที่ถูกทิ้งร้างบางส่วนของ Stamford Bridge</figcaption>
+      </figure>
+
+      <p class="drop-cap">ขณะที่เวลาผ่านไป ผู้เล่นอื่นๆ เริ่มต้นอาชีพที่ Stamford Bridge รวมถึงการเซ็นสัญญาครั้งแรกที่เกินล้านปอนด์ของสโมสรกับ แอนดี้ ทาวน์เซนด์ กองกลาง และ เดนนิส ไวส์ ปีกจาก "Crazy Gang" ของ Wimbledon ที่คว้า FA Cup ปี 1988 แต่ขณะที่แสดงให้เห็นถึงความทะเยอทะยานในระดับหนึ่ง เดอะบลูส์ยังคงท้าทายคู่แข่งด้วยมือข้างเดียวที่ถูกมัดไว้ข้างหลัง</p>
+
+      <!-- Image: Dennis Wise -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/historical/new-history-section/wise_1991.jpg"
+             alt="เดนนิส ไวส์ ปี 1991">
+        <figcaption>เดนนิส ไวส์ เป็นการเซ็นสัญญาสถิติสโมสรที่ 1.6 ล้านปอนด์ในปี 1990 ก่อนที่อนาคตของ Stamford Bridge จะได้รับการรับประกัน</figcaption>
+      </figure>
+
+      <p>การต่อสู้ที่ Stamford Bridge ในปี 1066 เป็นส่วนสำคัญของประวัติศาสตร์อังกฤษยุคกลาง แต่นั่นอยู่ในยอร์กเชียร์ เกือบหนึ่งพันปีต่อมาและห่างออกไปกว่า 200 ไมล์ทางใต้ในลอนดอนตะวันตก การสวมบทบาทที่แตกต่างออกไปกำลังเกิดขึ้น แทนที่จะเป็นชาวแซ็กซอนและไวกิ้ง ผู้ที่ต่อสู้กันคือสโมสรฟุตบอลเชลซีและนักพัฒนาอสังหาริมทรัพย์ที่ได้ความเป็นเจ้าของที่ดินสนามของเรา</p>
+
+      <p>SB Properties บริษัทที่ถือกรรมสิทธิ์เมื่อเบตส์เข้าควบคุมกิจการฟุตบอล ตกไปอยู่ในมือของนักพัฒนา อดีตกรรมการและผู้ถือหุ้นของเชลซี รวมถึงสมาชิกตระกูล Mears ขายหุ้นของพวกเขาให้นักเก็งกำไร Marler Estates อย่างสำคัญยิ่งคือหนึ่งในอดีตกรรมการเหล่านั้น ริชาร์ด แอทเทนโบโรห์ ผู้กำกับภาพยนตร์รางวัลออสการ์ ไม่ใช่หนึ่งในนั้น เขายังคงซื่อสัตย์ต่อทีมที่รักและถือหุ้นไว้ ขณะที่เบตส์จัดการซื้อหุ้นอื่นๆ เพิ่มเติม ประธานตอบแทนแอทเทนโบโรห์ด้วยการแต่งตั้งให้เขาเป็นรองประธานกิตติมศักดิ์ตลอดชีพ</p>
+
+      <p>เกือบหนึ่งทศวรรษ การท้าทายทางกฎหมาย การหน่วงเวลา และยุทธวิธีเบี่ยงเบนความสนใจดำเนินไปและดูดพลังงานและเงินจากเชลซี ขณะที่สโมสรอื่นใช้จ่ายมหาศาล เดอะบลูส์ไม่สามารถสู้ได้ ขณะที่สโมสรอื่นพัฒนาสนามกีฬาหลังเหตุการณ์ Hillsborough และ Heysel เราไม่สามารถเริ่มต้นปรับปรุงสนามเก่าที่ล้าหลังให้ทันสมัยได้ แฟนบอลถูกขอให้บริจาคเข้ากองทุน 'Save The Bridge'</p>
+
+      <p>แต่ศัตรูนักพัฒนาก็กำลังถูกดูดพลังเช่นกัน ไม่น้อยไปกว่าการล่มสลายของตลาดอสังหาริมทรัพย์อังกฤษเมื่อทศวรรษ 1980 กลายเป็นทศวรรษ 1990 พวกเขาล้มละลายในที่สุดในปี 1992 และการต่อสู้แห่ง The Bridge ก็ถูกชนะ เชลซีตกลงข้อตกลงที่ดีกับธนาคารที่รับช่วงต่อ เพื่อจัดการซื้อกรรมสิทธิ์คืน</p>
+
+      <p>เพื่อป้องกันภัยคุกคามในอนาคต โครงการ Chelsea Pitch Owners ก็ถูกก่อตั้งขึ้น โดยแบ่งความเป็นเจ้าของที่ดินที่สนามตั้งอยู่ออกให้แก่ผู้คนหลายพัน</p>
+
+      <!-- Section 6 -->
+      <h2>รอการปลุกชีพ — ยักษ์หลับกำลังจะตื่น</h2>
+
+      <p class="drop-cap">เมื่อพ้นจากพันธนาการที่ล้าหลัง ศักยภาพของเชลซีในการลุกขึ้นเติบโตและไปถึงความยิ่งใหญ่เช่นในอดีตก็พร้อมอยู่ แต่แทนที่จะเข้ารอบชิงชนะเลิศถ้วย เหตุการณ์ที่เกิดขึ้นกลับเป็นการพ่ายแพ้ให้ทีมดิวิชั่นต่ำกว่า และในฤดูกาล 1991/92 ฤดูกาลสุดท้ายของดิวิชั่นหนึ่งเก่าก่อน Premier League จะเริ่มต้น เราจบอยู่ในอันดับที่ 14 ซึ่งต่ำกว่าครึ่งตาราง</p>
+
+      <p>แคมป์เบลถูกแทนที่ในฐานะผู้จัดการทีมโดย เอียน พอร์เตอร์ฟิลด์ อดีตโค้ช แต่ก้าวขึ้นสู่ตำแหน่งหมายเลขหนึ่งของชาวสกอตนั้นสั้นเกินไป ในแคมเปญ Premier League ครั้งแรกของเรา เราตกรอบการแข่งขันถ้วยทั้งสองรายการภายในสัปดาห์แห่งมกราคมที่มืดหม่น และฟอร์มในลีกก็คุกคามการตกชั้น</p>
+
+      <p>เดวิด เวบบ์ ผู้ประกาศตัวเองเป็น 'ผู้จัดการทีม Red Adair' ซึ่งยิงประตูชัยของเราในชัยชนะ FA Cup ปี 1970 เหนือ Leeds ได้รับมอบหมายให้ประเมินกองทัพและพาทีมห่างออกจากโซนตกชั้น เป้าหมายเหล่านั้นบรรลุแล้ว แต่แฟนบอลกระหายสไตล์และความทะเยอทะยานของยุคที่เวบบ์เคยเล่นมากกว่า</p>
+
+      <blockquote>
+        <p>หลุดพ้นจากการต่อสู้อันเหน็ดเหนื่อยแห่ง The Bridge แล้ว เชลซียักษ์หลับผู้นี้สุกงอมพร้อมสำหรับการเปลี่ยนแปลงครั้งใหญ่ และมันกำลังมาถึง ตัวเร่งที่ไม่คาดคิดของการปฏิวัตินั้นคือสัญลักษณ์ของคู่แข่งในลอนดอนที่เดินทางสู่ลอนดอนตะวันตกผ่านตะวันตกเฉียงใต้ของประเทศและลีกระดับล่าง…</p>
+      </blockquote>
+
+      <!-- Chapter end -->
+      <div class="chapter-end">
+        <div class="chapter-end__ornament">⚽</div>
+        <span class="chapter-end__text">— จบบทที่ ๖ —</span>
+      </div>
+
+    </div><!-- /.article__inner -->
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

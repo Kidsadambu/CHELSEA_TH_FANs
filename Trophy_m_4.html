@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FA Cup 1970: ความทรงจำนัดชิงประวัติศาสตร์ — CHELSEA TH FANs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Variables ควบคุมสีและขนาด */
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    /* ---------------------------------
+       TOP BAR (แถบนำทางด้านบน)
+       --------------------------------- */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .top-bar a:hover { color: var(--gold); }
+
+    .top-bar__arrow {
+      width: 8px;
+      height: 8px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 0.75rem;
+    }
+
+    .top-bar img { height: 32px; }
+
+    /* ---------------------------------
+       ARTICLE LAYOUT (โครงสร้างบทความ)
+       --------------------------------- */
+    .article-container {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    header.article-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .article-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      color: var(--blue-dark);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .article-header .subtitle {
+      font-size: 1.2rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    /* Content Styling */
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif; 
+      color: var(--blue); 
+      margin: 3rem 0 1.5rem; 
+      font-size: 2rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.5rem;
+    }
+    .player-name {
+      color: var(--blue-dark);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* Components (ส่วนประกอบพิเศษในบทความ) */
+    .highlight-box {
+      background-color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+    }
+    
+    .highlight-box p:last-child { margin-bottom: 0; }
+
+    .pull-quote {
+      margin: 3rem 0;
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      background-color: rgba(197, 184, 154, 0.1);
+    }
+
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--blue-dark);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .pull-quote cite {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    /* ---------------------------------
+       SITE FOOTER (ส่วนท้ายเว็บ)
+       --------------------------------- */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 5rem;
+    }
+
+    .site-footer__logo { height: 60px; margin-bottom: 0.5rem; }
+
+    .site-footer__name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+    }
+
+    .site-footer span {
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      opacity: 0.8;
+    }
+
+    /* Clock Widget (วิดเจ็ตนาฬิกา) */
+    #th-time {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--blue-dark);
+      color: var(--gold);
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      border: 1px solid var(--gold);
+      z-index: 1000;
+    }
+
+    /* รองรับหน้าจอมือถือ */
+    @media (max-width: 600px) {
+      .article-container { padding: 2rem 1.25rem; }
+      .pull-quote { padding: 1.5rem 1rem; }
+      .highlight-box { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-bar">
+    <a href="Trophy.html">
+      <div class="top-bar__arrow"></div>
+      กลับสู่ทำเนียบแชมป์
+    </a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Chelsea TH Fans">
+  </nav>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>FA Cup 1970</h1>
+      <p class="subtitle">ความทรงจำจากนัดชิงชนะเลิศ FA Cup ปี 1970 ของผู้ที่พาทีม Chelsea คว้าแชมป์</p>
+    </header>
+
+    <div class="article-body">
+      <p>หนึ่งในชัยชนะที่ยิ่งใหญ่ที่สุดในประวัติศาสตร์ของ Chelsea เกิดขึ้นในเกม FA Cup กับ Leeds เมื่อเราคว้าถ้วยรางวัลที่ไล่ล่ามานานกว่า 60 ปีได้สำเร็จ ในสุดสัปดาห์นี้ทั้งสองทีมจะพบกันอีกครั้ง และเพื่อเป็นการเตรียมความพร้อม เราได้เชิญผู้เล่นหลักบางคนที่เกี่ยวข้องกับความสำเร็จครั้งยิ่งใหญ่ในปี 1970 มาเล่าประสบการณ์ให้ชมกัน</p>
+      
+      <p>นักเตะ Chelsea เคยเข้าใกล้การคว้าแชมป์ FA Cup มาก่อนแล้ว โดยเคยเข้าชิงชนะเลิศในปี 1915 และ 1967 ซึ่งเป็นเวลาสามปีก่อนที่ทีมชุดนั้นจะคว้าแชมป์ได้ในที่สุด</p>
+      
+      <p>แม้จะเคยผ่านรอบรองชนะเลิศมาหลายครั้ง แต่ในค่ำคืนของปลายเดือนเมษายน ณ เมือง Manchester ท่ามกลางผู้ชมเต็มความจุและผู้ชมทางโทรทัศน์จำนวนมากเป็นประวัติการณ์ ในที่สุด Chelsea ก็คว้าแชมป์ได้สำเร็จ</p>
+      
+      <p>เพื่อเป็นการเฉลิมฉลองวันสำคัญนั้น เราได้รวบรวมคำพูดจากบทสัมภาษณ์และอัตชีวประวัติในอดีตของสมาชิกหลายคนในทีมของ Dave Sexton ซึ่งพวกเขาได้กล่าวถึงเหตุการณ์ก่อน ระหว่าง และหลังชัยชนะในศึก FA Cup นัด Replay ปี 1970 เหนือ Leeds ที่ Old Trafford...</p>
+
+      <div class="pull-quote">
+        <p>"ความฝันของเด็กผู้ชายทุกคนคือการได้เล่นในรอบชิงชนะเลิศฟุตบอลถ้วย ซึ่งเป็นไฮไลต์ของฤดูกาลฟุตบอลอังกฤษ ปัจจุบันมีการถ่ายทอดสดเกือบทุกวัน แต่ในยุค 70 เกมลีกไม่ได้ถ่ายทอดสด มีเพียงไฮไลท์ในคืนวันเสาร์หรือบ่ายวันอาทิตย์เท่านั้น"</p>
+        <p>"เกมสำคัญที่สุดคือรอบชิงชนะเลิศ FA Cup ดังนั้นการได้เข้าชิงและคว้าแชมป์ได้จึงเป็นสิ่งที่ยิ่งใหญ่ที่สุดสำหรับนักฟุตบอลชาวอังกฤษในเวลานั้น การคว้าแชมป์ลีกก็คงจะยอดเยี่ยมเช่นกัน แต่ถ้าให้เลือก คนส่วนใหญ่คงเลือก FA Cup มากกว่า"</p>
+        <cite>— John Dempsey (กองหลังดุดันที่ย้ายมาจาก Southampton)</cite>
+      </div>
+
+      <p><span class="player-name">John Hollins</span> ผลผลิตจากอะคาเดมี่และกองกลางตัวเก่งที่ช่วยให้สกอร์กลับมาเสมอ 2-2 ในนัดแรกที่ Wembley กล่าวถึงความแตกต่างของสองสนามว่า: "ในเกมแรกที่ Wembley, Leeds ครองเกมได้ดีมาก และหากไม่ใช่เพราะ Peter Bonetti และเกมรับที่เหนียวแน่น เราคงตกรอบไปแล้ว เราเกือบชนะในช่วงต่อเวลาพิเศษ แม้ว่าเราจะไม่ได้เล่นดีที่สุดก็ตาม แต่พอเราไปถึง Old Trafford สนามแห้งสนิทและแข็งกระด้าง ไม่มีหญ้าขึ้นตรงกลางมากนัก ซึ่งเปลี่ยนรูปแบบเกมไปอย่างสิ้นเชิง"</p>
+
+      <div class="highlight-box">
+        <p><span class="player-name">Charlie Cooke</span> นักเตะสกอตแลนด์ผู้สร้างสรรค์เกมแดนกลาง โดยเฉพาะการจ่ายบอลให้ Peter Osgood ยิงประตูตีเสมอสุดคลาสสิก เล่าถึงช่วงเวลานั้นว่า:</p>
+        <p>"ผมแปลกใจที่มีเวลาห่างกันเกือบ 3 สัปดาห์ระหว่างนัดชิงกับนัด Replay มีเวลาเตรียมตัวและคิดทบทวนเยอะมาก สนามที่ Wembley ในเกมแรกนั้นนุ่มและลึกมาก แต่ที่นี่แห้งและแข็งกว่ามาก"</p>
+        <p>"ประตูของ Ossie (Osgood) ถูกนำมาฉายซ้ำหลายครั้ง แต่ผมไม่เคยเบื่อ เพราะผมเป็นคนจ่ายบอลให้เขา! ผมเห็นเขาอยู่ใกล้ Jack Charlton ลอยตัวอยู่บริเวณขอบเขตโทษ ผมชิปลูกนั้นข้ามหัวแจ็คไป เขาพุ่งโหม่งแบบแนวนอน บอลเข้าไปตุงตาข่าย เสียงเชียร์ดังสนั่น เป็นช่วงเวลาที่น่าจดจำที่สุด"</p>
+      </div>
+
+      <p><span class="player-name">David Webb</span> กองหลังผู้ยิงประตูชัยในช่วงต่อเวลาพิเศษ หลังจากเจอความลำบากจาก Eddie Gray ในนัดแรก เปิดเผยถึงแผนการเล่นว่า: "เราคุยกันเรื่องเปลี่ยนแผนตั้งแต่บนรถบัสกลับจาก Wembley Ron Harris เล่นเกมรับได้แน่นกว่าผม เราจึงให้เขาประกบ Eddie Gray ส่วนผมดูแล Allan Clark ผลลัพธ์พิสูจน์แล้วว่ามันถูกต้องที่สุด การได้ประตูชัยหลังจากเจอเรื่องราวมากมายมันวิเศษมาก Leeds ขึ้นชื่อเรื่องความดุดัน แต่เรากล้าหาญเกินกว่าที่พวกเขาจะรับมือได้"</p>
+
+      <div class="pull-quote">
+        <p>"ผมคิดว่ามันเป็นจังหวะที่ยอดเยี่ยม! จริงๆ บิลลี่เป็นเพื่อนผมและเล่นทีมชาติ Scotland ด้วยกัน แต่ในสนามไม่มีเพื่อน มันเหมือนเตะคาราเต้เลย ผมรู้ว่ามันต้องเจ็บ แต่สิ่งที่น่าทึ่งคือกรรมการปล่อยผ่าน!"</p>
+        <cite>— Eddie McCreadie (เล่าถึงจังหวะฟาวล์สุดดราม่ากับ Billy Bremner)</cite>
+      </div>
+
+      <p><span class="player-name">Peter Bonetti</span> ผู้รักษาประตูมือหนึ่งซึ่งโชว์ฟอร์มมหัศจรรย์ทั้งสองนัด เล่าถึงอาการบาดเจ็บว่า: "คนพูดกันว่า Mick Jones ตั้งใจทำฟาวล์ แต่ผมมองว่ามันเป็นอุบัติเหตุ เข่าโดนกระแทกจนเส้นประสาทถูกกระตุ้น เจ็บมากแต่ผมเล่นต่อได้ พักครึ่งต้องพันผ้า พอต่อเวลาขาแทบจะเดินไม่ได้เลยด้วยซ้ำ แต่ผมต้องเล่นให้จบ"</p>
+
+      <div class="highlight-box">
+        <p><span class="player-name">Ron Harris</span> กัปตันทีมผู้แข็งแกร่งที่คุมเกมรับได้อย่างยอดเยี่ยม รวมถึงบรรยากาศในวันแข่งขันว่า:</p>
+        <p>"สำหรับเกม Replay มันเหมือนเล่นในบ้านเลย ผมว่าแฟนเราเยอะกว่า Leeds เสียอีก ทั้งที่ Old Trafford อยู่ใกล้พวกเขามาก เสียงเชียร์ดังกระหึ่ม ฝั่ง Stretford End เต็มไปด้วยสีน้ำเงินและขาว ขนลุกทุกครั้งที่นึกถึง"</p>
+        <p>"ตอนที่ Leeds ขึ้นนำ 1-0 สนามเงียบกริบ แต่พอ Osgood ยิงได้ เสียงเชียร์ดังลั่น ความมั่นใจของพวกเขาหายวูบเลย"</p>
+      </div>
+
+      <h2>ฉลองชัยชนะและความทรงจำ</h2>
+      
+      <p><span class="player-name">Marvin Hinton</span> ที่ลงสนามฐานะตัวสำรองเล่าว่า: "ผมได้ลงแค่ 13 นาทีสุดท้าย แต่มันคือ 13 นาทีที่ยาวนานที่สุดในชีวิต พอเสียงนกหวีดดังขึ้น ทุกคนกระโดดกอดกัน มันคือช่วงเวลาที่ดีที่สุด"</p>
+
+      <p><span class="player-name">Ron Harris</span> เสริมว่า: "สิ่งเดียวที่ติดหูคือเราไม่ได้เดินขึ้นบันได 39 ขั้นเหมือนปกติที่ Wembley แต่ความรู้สึกนั้นมันพิเศษสุดๆ ผมภูมิใจที่เป็นกัปตันทีม Chelsea คนแรกที่ได้ชูถ้วยรางวัลนี้"</p>
+
+      <p>บรรยากาศการฉลองเต็มไปด้วยความสุข ทั้งบนรถไฟที่มีเบียร์และเสียงเพลง รถบัสเปิดประทุนจากสถานี Euston ไปยัง Fulham Town Hall ที่มีแฟนบอลมารอต้อนรับนับพันคน</p>
+
+      <div class="highlight-box">
+        <p><span class="player-name">John Hollins</span> เล่าตอนจบว่า: "ตอนนั้น FA Cup ได้สปอนเซอร์จากคณะกรรมการนม เราเลยต้องแช่ตัวในอ่างนม! David Webb นั่งอาบน้ำพร้อมบุหรี่ในมือแล้วพูดว่า 'เราชนะแล้ว' มันเป็นอะไรที่บ้ามากแต่ก็วิเศษที่สุด"</p>
+      </div>
+
+      <p style="text-align: center; font-weight: 600; color: var(--gold); margin-top: 3rem;">
+        นี่คือหน้าประวัติศาสตร์ที่ Chelsea คว้าแชมป์ FA Cup ได้เป็นครั้งแรก หลังจากรอคอยมาอย่างยาวนาน และเป็นความทรงจำที่ไม่มีวันลืมสำหรับเหล่าตำนานทุกคน
+      </p>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Chelsea Logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+  <div id="th-time"></div>
+
+<!-- =========================================
+     CHELSEA FLOATING CLOCK
+========================================= -->
+
+<div class="floating-clock">
+
+  <!-- Thailand -->
+  <div class="floating-clock__section">
+    <div class="floating-clock__label">🇹🇭 ไทย</div>
+    <div class="floating-clock__date" id="th-date">--</div>
+    <div class="floating-clock__time" id="th-time">--:--:--</div>
+  </div>
+
+  <div class="floating-clock__divider"></div>
+
+  <!-- London -->
+  <div class="floating-clock__section">
+    <div class="floating-clock__label">🇬🇧 London</div>
+    <div class="floating-clock__date" id="uk-date">--</div>
+    <div class="floating-clock__time" id="uk-time">--:--:--</div>
+  </div>
+
+</div>
+
+<style>
+  :root{
+    --blue: #034694;
+    --blue-dark: #021f45;
+
+    --gold: #c8a84b;
+    --gold-light: #e8c97a;
+
+    --white: #f5f2ec;
+  }
+
+  /* =========================================
+     FLOATING CLOCK
+  ========================================= */
+
+  .floating-clock{
+    position: fixed;
+
+    top: 72px;
+    right: 18px;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 12px 18px;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(2,31,69,0.95),
+        rgba(3,70,148,0.88)
+      );
+
+    border: 1px solid rgba(200,168,75,0.9);
+
+    border-radius: 10px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+      0 6px 18px rgba(0,0,0,0.45),
+      0 0 18px rgba(3,70,148,0.35);
+
+    overflow: hidden;
+
+    transition:
+      transform .3s ease,
+      box-shadow .3s ease;
+  }
+
+  /* top glow line */
+  .floating-clock::before{
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 2px;
+
+    background:
+      linear-gradient(
+        to right,
+        transparent,
+        var(--gold-light),
+        transparent
+      );
+
+    opacity: .9;
+  }
+
+  .floating-clock:hover{
+    transform: translateY(-4px);
+
+    box-shadow:
+      0 10px 28px rgba(0,0,0,0.55),
+      0 0 24px rgba(3,70,148,0.45);
+  }
+
+  .floating-clock__section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    position: relative;
+    z-index: 2;
+  }
+
+  .floating-clock__divider{
+    width: 1px;
+    height: 58px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        transparent,
+        var(--gold),
+        transparent
+      );
+
+    opacity: .45;
+  }
+
+  .floating-clock__label{
+    font-size: 10px;
+    font-weight: 700;
+
+    color: var(--gold-light);
+
+    text-transform: uppercase;
+    letter-spacing: .18em;
+
+    margin-bottom: 3px;
+
+    text-shadow: 0 0 8px rgba(232,201,122,.25);
+  }
+
+  .floating-clock__date{
+    font-size: 12px;
+    font-weight: 400;
+
+    color: rgba(245,242,236,0.78);
+
+    margin-bottom: 3px;
+
+    letter-spacing: .04em;
+  }
+
+  .floating-clock__time{
+    font-size: 17px;
+    font-weight: 700;
+
+    color: var(--gold);
+
+    font-family:
+      'Sarabun',
+      'Consolas',
+      monospace;
+
+    letter-spacing: .08em;
+
+    text-shadow:
+      0 0 8px rgba(200,168,75,.28),
+      0 0 18px rgba(200,168,75,.18);
+  }
+
+  /* =========================================
+     MOBILE
+  ========================================= */
+
+  @media (max-width: 768px){
+
+    .floating-clock{
+      top: 68px;
+      right: 10px;
+
+      padding: 9px 13px;
+
+      transform: scale(.88);
+      transform-origin: top right;
+    }
+
+    .floating-clock:hover{
+      transform:
+        scale(.88)
+        translateY(-3px);
+    }
+
+    .floating-clock__time{
+      font-size: 15px;
+    }
+
+  }
+</style>
+
+<script>
+  function updateFloatingClocks(){
+
+    const now = new Date();
+
+    // Lion Theme
+    const applyLionTheme = (str) => {
+      return str.replace(/0/g, '🦁');
+    };
+
+    const dateOptions = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    };
+
+    const timeOptions = {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    };
+
+    // Thailand
+    const thDateRaw = new Intl.DateTimeFormat(
+      'th-TH',
+      {
+        ...dateOptions,
+        timeZone: 'Asia/Bangkok'
+      }
+    ).format(now);
+
+    const thTimeRaw = new Intl.DateTimeFormat(
+      'th-TH',
+      {
+        ...timeOptions,
+        timeZone: 'Asia/Bangkok'
+      }
+    ).format(now);
+
+    document.getElementById('th-date').textContent =
+      applyLionTheme(thDateRaw);
+
+    document.getElementById('th-time').textContent =
+      applyLionTheme(thTimeRaw) + ' น.';
+
+    // London
+    const ukDateRaw = new Intl.DateTimeFormat(
+      'en-GB',
+      {
+        ...dateOptions,
+        timeZone: 'Europe/London'
+      }
+    ).format(now);
+
+    const ukTimeRaw = new Intl.DateTimeFormat(
+      'en-GB',
+      {
+        ...timeOptions,
+        timeZone: 'Europe/London'
+      }
+    ).format(now);
+
+    document.getElementById('uk-date').textContent =
+      applyLionTheme(ukDateRaw);
+
+    document.getElementById('uk-time').textContent =
+      applyLionTheme(ukTimeRaw);
+  }
+
+  updateFloatingClocks();
+  setInterval(updateFloatingClocks, 1000);
+</script>
+</body>
+</html>

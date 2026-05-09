@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FA Cup 1997: ยุค Sexy Football — CHELSEA TH FANs</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px; 
+    }
+
+    /* RESET & BASE STYLES */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    /* TOP NAVIGATION BAR */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar__arrow {
+      width: 8px; height: 8px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 0.75rem;
+    }
+    .top-bar img { height: 32px; }
+
+    /* ARTICLE STRUCTURE */
+    .article-container {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    header.article-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .article-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 8vw, 3.5rem);
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .article-header .subtitle {
+      font-size: 1.2rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    /* CONTENT COMPONENTS */
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif; 
+      color: var(--blue); 
+      margin: 3rem 0 1.5rem; 
+      font-size: 1.8rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.5rem;
+    }
+    
+    .bullet-list {
+      list-style-type: disc;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+    .bullet-list li {
+      margin-bottom: 1rem;
+    }
+
+    /* กล่องข้อมูลแมตช์ */
+    .match-info-box {
+      background-color: var(--white);
+      border: 1px solid var(--rule);
+      border-top: 4px solid var(--blue);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      border-radius: 4px;
+    }
+    .match-info-box h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--blue-dark);
+      margin-bottom: 1rem;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+    .match-details-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .match-details-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed var(--rule);
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .match-details-list li:last-child {
+      border-bottom: none;
+    }
+    .match-details-list strong {
+      flex: 0 0 120px;
+      color: var(--ink-soft);
+    }
+    
+    /* กล่องไฮไลต์ */
+    .highlight-box {
+      background-color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+    }
+    .highlight-box p:last-child { margin-bottom: 0; }
+
+    /* คำพูดคัดลอก */
+    .pull-quote {
+      margin: 3rem 0;
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      background-color: rgba(197, 184, 154, 0.05);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--blue-dark);
+      margin-bottom: 0.5rem;
+    }
+    .pull-quote cite {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    /* SITE FOOTER */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 3rem;
+    }
+    .site-footer__logo { height: 60px; margin-bottom: 0.5rem; }
+    .site-footer__name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+    }
+    .site-footer span { font-size: 0.85rem; color: var(--gold-light); opacity: 0.8; }
+
+    /* CLOCK WIDGET */
+    #th-time {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--blue-dark);
+      color: var(--gold);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      border: 1px solid var(--gold);
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .article-container { padding: 2rem 1.25rem; }
+      .article-header h1 { font-size: 2rem; }
+      .match-details-list strong { flex: 0 0 100%; margin-bottom: 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-bar">
+    <a href="Trophy.html">
+      <div class="top-bar__arrow"></div>
+      กลับสู่ทำเนียบแชมป์
+    </a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Logo">
+  </nav>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>🏆 FA Cup 🦁 1997</h1>
+      <p class="subtitle">26 ปีที่รอคอย: ย้อนรอยนัดชิง FA Cup 1997 จุดกำเนิดยุค "Sexy Football"</p>
+    </header>
+
+    <div class="article-body">
+      <p>หากจะถามแฟนบอลเชลซีรุ่นเก๋าว่า "จุดเริ่มต้นที่ทำให้ทีมกลายเป็นยักษ์ใหญ่คือตอนไหน?" คำตอบส่วนใหญ่คงหนีไม่พ้นวันที่ 17 พฤษภาคม 1997 ณ สนามเวมบลีย์เดิม ในวันนั้น "สิงห์บลูส์" ภายใต้การทำทีมของ <strong>รูด กุลลิต</strong> ไม่เพียงแต่คว้าแชมป์ FA Cup มาครองได้สำเร็จ แต่พวกเขายังประกาศให้โลกรู้ว่ายุคสมัยของ "Sexy Football" ได้เริ่มต้นขึ้นแล้ว</p>
+
+      <h2>บรรยากาศก่อนเกม: ความหวังและการรอคอย</h2>
+      <p>เชลซีห่างหายจากแชมป์รายการเมเจอร์มานานถึง 26 ปี (นับตั้งแต่แชมป์คัพวินเนอร์สคัพ ปี 1971) การเข้าชิงครั้งนี้พวกเขาถูกยกให้เป็นต่อมิดเดิลสโบรห์ (Middlesbrough) ที่นำทัพโดยจูนินโญ่ และฟาบริซิโอ ราวาเนลลี แต่ในนัดชิงอะไรก็เกิดขึ้นได้... ทว่าในวันนั้น "โชคชะตา" และ "ความมหัศจรรย์" ตัดสินใจเข้าข้างฝั่งสีน้ำเงินตั้งแต่นกหวีดเริ่ม</p>
+
+      <h2>43 วินาทีที่เปลี่ยนประวัติศาสตร์</h2>
+      <p>ยังไม่ทันที่แฟนบอลบางส่วนจะนั่งลงที่เก้าอี้ด้วยซ้ำ <strong>โรแบร์โต้ ดิ มัตเตโอ</strong> ก็สร้างความตะลึงไปทั่วทั้งโลก เขาพาบอลมาจากครึ่งสนามโดยไม่มีใครเข้าบีบ ก่อนจะตัดสินใจตะบันด้วยขวาจากระยะเกือบ 30 หลา บอลพุ่งเช็ดคานเข้าไปอย่างงดงาม</p>
+
+      <div class="highlight-box">
+        <p><strong>บันทึกสถิติ:</strong> ประตูนี้เป็นประตูที่เร็วที่สุดในนัดชิงชนะเลิศ FA Cup ณ ขณะนั้น (43 วินาที) ทำลายสถิติเดิมที่ยืนยาวมานานกว่าร้อยปีลงได้สำเร็จ</p>
+      </div>
+
+      <h2>การตอกฝาโลงและชัยชนะ</h2>
+      <p>แม้ "เดอะ โบโร่" จะพยายามบุกเพื่อตีเสมอ แต่แนวรับของเชลซีที่มี <strong>แฟรงค์ เลอเบิฟ</strong> และ <strong>สตีฟ คลาร์ก</strong> ยืนคุมอยู่นั้นแข็งแกร่งเกินกว่าจะเจาะได้ จนกระทั่งนาทีที่ 83 <strong>เอ็ดดี้ นิวตัน</strong> ก็มาทำประตูตอกย้ำชัยชนะจากการประสานงานอันยอดเยี่ยมของ <strong>จานฟรังโก้ โซล่า</strong> และ <strong>ดาน เปเตรสคู</strong></p>
+
+      <div class="match-info-box">
+        <h3>สรุปรายละเอียดการแข่งขัน</h3>
+        <ul class="match-details-list">
+          <li><strong>คู่แข่งขัน:</strong> เชลซี 2 - 0 มิดเดิลสโบรห์</li>
+          <li><strong>วันที่:</strong> 17 พฤษภาคม 1997</li>
+          <li><strong>สนาม:</strong> เวมบลีย์ (Old Wembley Stadium)</li>
+          <li><strong>ผู้ทำประตู:</strong> โรแบร์โต้ ดิ มัตเตโอ (1'), เอ็ดดี้ นิวตัน (83')</li>
+          <li><strong>ผู้จัดการทีม:</strong> รูด กุลลิต (เชลซี)</li>
+        </ul>
+      </div>
+
+      <h2>ทำไม Match นี้ถึงสำคัญ?</h2>
+      <ul class="bullet-list">
+        <li><strong>ถ้วยรางวัลใบแรกในรอบ 26 ปี:</strong> เป็นการปลดล็อคความกดดันและสร้างรากฐานความเป็น "ทีมลุ้นแชมป์"</li>
+        <li><strong>กุลลิตสร้างประวัติศาสตร์:</strong> เขากลายเป็นผู้จัดการทีมที่ไม่ใช่ชาวสหราชอาณาจักร (Non-British) คนแรกที่สามารถคว้าแชมป์ FA Cup ได้</li>
+        <li><strong>การรวมตัวของแข้งระดับโลก:</strong> ทีมชุดนั้นประกอบไปด้วยนักเตะเทคนิคสูงอย่าง โซล่า, ดิ มัตเตโอ และเลอเบิฟ ซึ่งเปลี่ยนภาพลักษณ์ของเชลซีจากทีมที่เน้นพละกำลัง ให้กลายเป็นทีมที่มีสไตล์การเล่นสวยงาม</li>
+      </ul>
+
+      <div class="pull-quote">
+        <p>"ผมไม่ได้แค่มาเพื่อชนะ แต่ผมมาเพื่อทำให้ผู้คนมีความสุขกับการดูฟุตบอลของเรา"</p>
+        <cite>— รูด กุลลิต (กล่าวไว้หลังจบฤดูกาลนั้น)</cite>
+      </div>
+
+      <p style="text-align: center; color: var(--blue-dark); font-weight: 600; margin-top: 3rem;">
+        ชัยชนะในปี 1997 คือสะพานที่ทอดไปสู่ความสำเร็จในยุคต่อๆ มาของทั้ง จานลูก้า วิอัลลี และ โชเซ่ มูรินโญ่ หากไม่มีลูกยิงของดิ มัตเตโอ ในวันนั้น เราอาจจะไม่ได้เห็นเชลซีที่ยิ่งใหญ่ในวันนี้
+      </p>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+  <div id="th-time">BKK: --:--:--</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const applyLionTheme = (s) => s.replace(/0/g, '🦁');
+      const timeStr = new Intl.DateTimeFormat('th-TH', { 
+        hour:'2-digit', minute:'2-digit', second:'2-digit', 
+        hour12:false, timeZone:'Asia/Bangkok' 
+      }).format(now);
+      document.getElementById('th-time').textContent = "BKK: " + applyLionTheme(timeStr);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

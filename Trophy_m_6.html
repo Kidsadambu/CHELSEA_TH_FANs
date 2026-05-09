@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏆 1984 Division 2: CHELSEA TH FANs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 17px;
+    }
+
+    /* ── TOP NAV ── */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar__arrow {
+      width: 8px; height: 8px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 0.75rem;
+    }
+    .top-bar img { height: 32px; }
+
+    /* ── ARTICLE ── */
+    .article-container {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    /* HEADER */
+    header.article-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .article-header .badge {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+    .article-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 7vw, 3.6rem);
+      color: var(--blue-dark);
+      line-height: 1.12;
+      margin-bottom: 1rem;
+    }
+    .article-header .subtitle {
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .article-header .divider {
+      width: 50px; height: 3px;
+      background: linear-gradient(to right, var(--blue), var(--gold));
+      margin: 1.8rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* BODY TEXT */
+    .article-body p {
+      margin-bottom: 1.5rem;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+    .article-body p:first-child::first-letter {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 0.8;
+      margin: 6px 10px 0 0;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    /* SECTION HEADING */
+    .article-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      color: var(--blue-dark);
+      margin: 3rem 0 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* SEASON STATS BOX */
+    .season-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1px;
+      background: rgba(200,168,75,0.15);
+      margin: 2.5rem 0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .stat-item {
+      background: var(--blue-dark);
+      padding: 1.1rem 1rem;
+      text-align: center;
+    }
+    .stat-item__num {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .stat-item__label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(245,242,236,0.45);
+    }
+
+    /* KEY SIGNINGS */
+    .signings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 1.5rem 0 2.5rem;
+    }
+    .signing-card {
+      background: #fff;
+      border-top: 3px solid var(--blue);
+      padding: 14px 16px;
+      box-shadow: 0 2px 8px rgba(26,20,16,0.06);
+      border-radius: 0 0 3px 3px;
+    }
+    .signing-card__name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .signing-card__detail {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
+    /* MOMENT CARDS */
+    .moments-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 1.5rem 0 2.5rem;
+      border-left: 2px solid var(--rule);
+      padding-left: 1.5rem;
+    }
+    .moment-item { position: relative; }
+    .moment-item::before {
+      content: '';
+      position: absolute;
+      left: -1.75rem; top: 8px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--paper);
+    }
+    .moment-item__tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3px;
+    }
+    .moment-item p {
+      margin-bottom: 0;
+      font-size: 0.97rem;
+      color: var(--ink-soft);
+    }
+
+    /* FINAL STANDINGS BOX */
+    .standings-box {
+      margin: 2.5rem 0;
+      background: var(--blue-dark);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .standings-box__title {
+      padding: 12px 18px;
+      background: rgba(200,168,75,0.12);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(200,168,75,0.15);
+    }
+    .standings-row {
+      display: grid;
+      grid-template-columns: 32px 1fr 50px 50px;
+      padding: 11px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      align-items: center;
+      font-size: 0.9rem;
+      color: rgba(245,242,236,0.75);
+    }
+    .standings-row:last-child { border-bottom: none; }
+    .standings-row.highlight {
+      background: rgba(200,168,75,0.12);
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+    .standings-row__pos { color: var(--gold); font-weight: 700; }
+    .standings-row__pts { text-align: right; font-weight: 700; color: var(--gold-light); }
+    .standings-row__gd  { text-align: right; color: rgba(245,242,236,0.4); font-size: 0.82rem; }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      margin: 3rem 0;
+      padding: 2.2rem 2rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      background-color: rgba(197,184,154,0.06);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--blue-dark);
+      margin-bottom: 0.5rem;
+    }
+    .pull-quote cite {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background-color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 1.4rem 1.8rem;
+      margin: 2.5rem 0;
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+    }
+    .highlight-box p { margin-bottom: 0; font-size: 1rem; color: var(--ink-soft); }
+
+    /* FOOTER */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .site-footer__logo { height: 60px; margin-bottom: 0.5rem; }
+    .site-footer__name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+    }
+    .site-footer span { font-size: 0.85rem; color: var(--gold-light); opacity: 0.8; }
+
+    /* CLOCK */
+    #th-time {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      background: var(--blue-dark);
+      color: var(--gold);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      border: 1px solid var(--gold);
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 600px) {
+      .article-container { padding: 2rem 1.25rem; }
+      .article-header h1 { font-size: 2rem; }
+      .season-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="top-bar">
+    <a href="Trophy.html">
+      <div class="top-bar__arrow"></div>
+      กลับสู่ทำเนียบแชมป์
+    </a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Logo">
+  </nav>
+
+  <!-- ARTICLE -->
+  <article class="article-container">
+
+    <header class="article-header">
+      <div class="badge">🏆 Division Two · 1983/84</div>
+      <h1>🦁 1984 Division 2 🏆</h1>
+      <p class="subtitle">John Neal สร้างทีมใหม่จากศูนย์ — คว้าแชมป์ด้วยผลต่างประตูเหนือ Sheffield Wednesday</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="article-body">
+
+      <!-- STATS -->
+      <div class="season-stats">
+        <div class="stat-item">
+          <span class="stat-item__num">1st</span>
+          <span class="stat-item__label">อันดับ Division 2</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__num">88</span>
+          <span class="stat-item__label">คะแนนรวม</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__num">25</span>
+          <span class="stat-item__label">นัดชนะ</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__num">90–40</span>
+          <span class="stat-item__label">ประตูได้-เสีย</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__num">28</span>
+          <span class="stat-item__label">Kerry Dixon (ประตู)</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__num">GD</span>
+          <span class="stat-item__label">ชนะแชมป์ด้วยผลต่าง</span>
+        </div>
+      </div>
+
+      <p>ทีม Chelsea ของ John Neal คว้าสิทธิ์เลื่อนชั้นกลับสู่ First Division ด้วยการคว้าแชมป์ Division Two ในฤดูกาล 1983/84 โดยเหนือกว่า Sheffield Wednesday ด้วยผลต่างประตู หลังจากจบในครึ่งล่างของตารางในฤดูกาลก่อน Neal ได้ปรับโครงสร้างทีมใหม่อย่างขนานใหญ่จนได้ผลลัพธ์ที่งดงาม</p>
+
+      <!-- SIGNINGS -->
+      <h2>การเสริมทัพที่เปลี่ยนหน้าประวัติศาสตร์</h2>
+
+      <p>ทีมได้รับการเสริมความแข็งแกร่งอย่างมีนัยสำคัญด้วยการดึงตัวนักเตะคุณภาพเข้ามาร่วมทีม 5 คนหลัก</p>
+
+      <div class="signings-grid">
+        <div class="signing-card">
+          <div class="signing-card__name">Eddie Niedzwiecki</div>
+          <div class="signing-card__detail">🧤 ผู้รักษาประตู<br>กำแพงด่านสุดท้ายที่มั่นคง</div>
+        </div>
+        <div class="signing-card">
+          <div class="signing-card__name">Joe McLaughlin</div>
+          <div class="signing-card__detail">🛡️ กองหลัง<br>แนวรับที่แข็งแกร่ง</div>
+        </div>
+        <div class="signing-card">
+          <div class="signing-card__name">Nigel Spackman</div>
+          <div class="signing-card__detail">⚙️ กองกลาง<br>ยิงในนัดแรก 5–0 vs Derby</div>
+        </div>
+        <div class="signing-card" style="border-top-color:var(--gold)">
+          <div class="signing-card__name">Pat Nevin</div>
+          <div class="signing-card__detail">⚡ ปีก — สกอตแลนด์<br>5 ประตูใน 6 นัดสุดท้าย</div>
+        </div>
+        <div class="signing-card" style="border-top-color:#dc2626">
+          <div class="signing-card__name">Kerry Dixon</div>
+          <div class="signing-card__detail">🔴 กองหน้า<br>28 ประตูลีก ดาวซัลโวสูงสุด</div>
+        </div>
+      </div>
+
+      <!-- EARLY SEASON -->
+      <h2>ต้นฤดูกาล — เปิดตัวด้วยพายุ</h2>
+
+      <p>Spackman และ Dixon ยิงประตูในวันเปิดฤดูกาลที่ทีมชนะ Derby 5–0 ที่บ้าน และสัปดาห์ต่อมา กองหน้าคนดังยิงอีกสองลูกในชัยชนะ 2–1 ที่ Brighton ก่อนสิ้นเดือนพฤศจิกายน เราพ่ายแพ้เพียงครั้งเดียว เยือน Sheffield Wednesday</p>
+
+      <p>Dixon, Nevin และ David Speedie พิสูจน์ตัวว่าเป็นภัยคุกคามที่แท้จริงในแดนหน้า ขณะที่ Paul Canoville และ John Bumstead ก็มีส่วนยิงประตูตามส่วนของตนด้วย</p>
+
+      <!-- KEY MOMENTS -->
+      <h2>ช่วงเวลาชี้ชะตา</h2>
+
+      <div class="moments-list">
+        <div class="moment-item">
+          <div class="moment-item__tag">มกราคม — Trip to Derby</div>
+          <p>Neal ตัดสินใจใช้ Colin Lee เป็น right-back แทน John Hollins สำหรับทริปไป Derby — การตัดสินใจที่ได้ผลตอบแทนงามเมื่อเราชนะ 2–1</p>
+        </div>
+        <div class="moment-item">
+          <div class="moment-item__tag">ต่อหน้าแฟน 35,000 คน — Sheffield Wednesday</div>
+          <p>Micky Thomas ยิงสองลูกในชัยชนะ 3–2 สำคัญเหนือ Sheffield Wednesday ที่ Stamford Bridge</p>
+        </div>
+        <div class="moment-item">
+          <div class="moment-item__tag">มีนาคม–เมษายน — Nevin พุ่งฟอร์ม</div>
+          <p>Pat Nevin ยิง 5 ลูกใน 6 นัด รวมถึงประตูเดียวในชัยชนะเยือน Crystal Palace</p>
+        </div>
+        <div class="moment-item">
+          <div class="moment-item__tag">แฮตทริกสมบูรณ์แบบ vs Leeds</div>
+          <p>Kerry Dixon ยิงแฮตทริกที่สมบูรณ์แบบ — เท้าซ้าย เท้าขวา โหม่ง — ในชัยชนะ 5–0 ถล่ม Leeds</p>
+        </div>
+      </div>
+
+      <!-- PULL QUOTE -->
+      <div class="pull-quote">
+        <p>"ไม่ใช่ครั้งแรกที่คู่ Nevin–Dixon พิสูจน์ตัวว่าเป็นตัวชี้ขาด ด้วยการครอสของปีกที่กองหน้าโหม่งยิงซีลชัยชนะที่ Grimsby"</p>
+        <cite>— นัดชิงแชมป์ เยือน Grimsby Town</cite>
+      </div>
+
+      <!-- TITLE RACE -->
+      <h2>นาทีดรามา — ศึกชิงแชมป์</h2>
+
+      <p>Sheffield Wednesday ยังเป็นตัวเต็งชัดด้วยการนำ 5 แต้มเหลืออีก 3 นัด แต่หลังจากพวกเขาทำได้เพียง 1 แต้มจาก 2 นัด ขณะที่เราเก็บ 6 แต้มจาก Manchester City และ Barnsley เราก็ขึ้นนำก่อนเข้านัดสุดท้ายเยือน Grimsby</p>
+
+      <div class="highlight-box">
+        <p>🦁 <strong>แฟนบอล Chelsea กว่า 10,000 คน</strong>เดินทางขึ้นเหนือ และ Nevin ส่งครอสให้ Dixon โหม่งยิงซีลชัยชนะ Sheffield Wednesday ชนะเช่นกัน แต่ <strong>ผลต่างประตูที่เหนือกว่าทำให้ Chelsea ได้รับการสวมมงกุฎเป็นแชมป์!</strong></p>
+      </div>
+
+      <!-- FINAL TABLE -->
+      <div class="standings-box">
+        <div class="standings-box__title">📊 ตารางสุดท้าย Division Two 1983/84</div>
+        <div class="standings-row highlight">
+          <span class="standings-row__pos">1</span>
+          <span>🦁 Chelsea FC</span>
+          <span class="standings-row__gd">+50</span>
+          <span class="standings-row__pts">88 pts</span>
+        </div>
+        <div class="standings-row">
+          <span class="standings-row__pos">2</span>
+          <span>Sheffield Wednesday</span>
+          <span class="standings-row__gd">+37</span>
+          <span class="standings-row__pts">88 pts</span>
+        </div>
+        <div class="standings-row">
+          <span class="standings-row__pos">3</span>
+          <span>Newcastle United</span>
+          <span class="standings-row__gd">+28</span>
+          <span class="standings-row__pts">80 pts</span>
+        </div>
+      </div>
+
+      <p>ด้วยคะแนนเท่ากัน 88 แต้ม แต่ผลต่างประตูที่ดีกว่า Chelsea ถูกประกาศให้เป็นแชมป์ Division Two ฤดูกาล 1983/84 — บัตรผ่านกลับสู่ First Division อย่างมีเกียรติ</p>
+
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+  <div id="th-time">BKK: --:--:--</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const applyLionTheme = (s) => s.replace(/0/g, '🦁');
+      const timeStr = new Intl.DateTimeFormat('th-TH', {
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hour12: false, timeZone: 'Asia/Bangkok'
+      }).format(now);
+      document.getElementById('th-time').textContent = 'BKK: ' + applyLionTheme(timeStr);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

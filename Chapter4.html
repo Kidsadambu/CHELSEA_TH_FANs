@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — บทที่ 4 ลอนดอนยุคสวิงกิ้ง</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; width: 100%; height: 100vh;
+      min-height: 600px; overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://i.imgur.com/d7cGptr.jpeg');
+      background-size: cover; background-position: center 30%;
+      filter: brightness(0.45) saturate(0.8);
+      transform: scale(1.03); transition: transform 8s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.06); }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(3,12,30,0.3) 40%,
+        rgba(3,12,30,0.85) 80%, rgba(3,12,30,0.97) 100%);
+    }
+    .hero__content {
+      position: relative; z-index: 2; width: 100%;
+      padding: 0 clamp(20px,6vw,80px) clamp(48px,8vh,90px);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+    }
+    .hero__logo {
+      width: clamp(80px,12vw,140px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.5));
+      margin-bottom: 28px; animation: fadeDown 1s ease both;
+    }
+    .hero__kicker {
+      font-weight: 600; font-size: clamp(10px,1.2vw,13px);
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.4rem,6.5vw,5.5rem); line-height: 1.08;
+      color: var(--white); letter-spacing: -0.01em; max-width: 900px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__subtitle {
+      font-size: clamp(14px,1.8vw,17px);
+      color: rgba(245,242,236,0.65); margin-top: 22px;
+      letter-spacing: 0.04em; animation: fadeDown 1s 0.35s ease both;
+    }
+    .hero__rule {
+      width: 60px; height: 2px; background: var(--gold);
+      margin: 32px auto 0; animation: fadeDown 1s 0.45s ease both;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── SCROLL HINT ── */
+    .scroll-hint {
+      position: absolute; bottom: 30px; left: 50%;
+      transform: translateX(-50%); z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: float 2.4s ease-in-out infinite;
+    }
+    .scroll-hint span {
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(245,242,236,0.4);
+    }
+    .scroll-hint__arrow {
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg); opacity: 0.7;
+    }
+    @keyframes float {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── ARTICLE ── */
+    .article { background: var(--paper); position: relative; }
+    .article::before {
+      content: ''; display: block; width: 100%; height: 6px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+    }
+    .article__inner {
+      max-width: var(--col-max); margin: 0 auto;
+      padding: clamp(48px,8vw,90px) clamp(20px,5vw,40px);
+    }
+
+    /* ── CHAPTER HEADING ── */
+    .chapter-heading { text-align: center; margin-bottom: 52px; }
+    .chapter-heading__number {
+      display: inline-block; font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+      padding: 6px 16px; margin-bottom: 20px;
+    }
+    .chapter-heading h1 {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(1.6rem,4vw,2.8rem); line-height: 1.2;
+      color: var(--ink); letter-spacing: -0.01em;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 4px solid var(--gold); padding: 24px 32px;
+      margin: 0 0 48px;
+      background: linear-gradient(to right, rgba(200,168,75,0.06), transparent);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1rem,2vw,1.15rem); color: var(--ink-soft); line-height: 1.7;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 14px; font-family: 'Sarabun', sans-serif;
+      font-style: normal; font-size: 12px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+    }
+
+    /* ── BODY ── */
+    .article__inner p { margin-bottom: 1.6em; color: var(--ink-soft); }
+    .article__inner p em { color: var(--ink); font-style: italic; }
+    .drop-cap::first-letter {
+      float: left; font-family: 'Playfair Display', serif;
+      font-size: 4.2em; line-height: 0.78; margin: 6px 10px 0 0;
+      color: var(--blue); font-weight: 900;
+    }
+
+    /* ── H2 ── */
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(1.25rem,2.8vw,1.7rem); color: var(--blue);
+      margin: 56px 0 24px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule); letter-spacing: -0.01em;
+    }
+
+    /* ── IMAGES ── */
+    .img-block { margin: 40px 0; }
+    .img-block img {
+      width: 100%; height: auto; display: block; object-fit: cover;
+      border-radius: 2px; box-shadow: 0 4px 24px rgba(26,20,16,0.15);
+    }
+    .img-block figcaption {
+      margin-top: 12px; font-size: 12.5px; color: var(--ink-muted);
+      letter-spacing: 0.04em; font-style: italic; line-height: 1.5;
+    }
+    .img-block--wide {
+      margin: 48px calc(-1 * clamp(20px,5vw,40px));
+    }
+    .img-block--wide figcaption { padding: 0 clamp(20px,5vw,40px); }
+
+    /* ── BLOCKQUOTE ── */
+    .article__inner blockquote {
+      margin: 36px 0; padding: 24px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue); color: var(--ink); font-style: italic;
+    }
+
+    /* ── ANECDOTE BOX (เรื่องเล่า) ── */
+    .anecdote {
+      margin: 40px 0; padding: 28px 32px;
+      background: var(--ink); color: rgba(245,242,236,0.85);
+      border-radius: 2px;
+      font-size: clamp(0.95rem,1.8vw,1.05rem);
+      line-height: 1.8;
+    }
+    .anecdote__header {
+      display: flex; flex-direction: column; gap: 4px;
+      margin-bottom: 20px; padding-bottom: 16px;
+      border-bottom: 1px solid rgba(200,168,75,0.25);
+    }
+    .anecdote__label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .anecdote__name {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1rem,2vw,1.2rem); color: var(--gold-light);
+    }
+    .anecdote__sub {
+      font-size: 12px; color: rgba(245,242,236,0.4); letter-spacing: 0.05em;
+    }
+    .anecdote p { color: rgba(245,242,236,0.8); margin-bottom: 1.2em; }
+    .anecdote p:last-child { margin-bottom: 0; }
+
+    /* ── CHAPTER END ── */
+    .chapter-end {
+      text-align: center; margin: 64px 0 0;
+      padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    .chapter-end__ornament { font-size: 28px; color: var(--gold); letter-spacing: 0.3em; }
+    .chapter-end__text {
+      display: block; margin-top: 12px; font-size: 12px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink); color: rgba(245,242,236,0.5);
+      text-align: center; padding: 40px 20px;
+      font-size: 13px; letter-spacing: 0.08em;
+    }
+    .site-footer__logo { width: 50px; filter: brightness(0.6); margin-bottom: 16px; }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 6px; font-size: 14px; letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 500px) {
+      .pull-quote { padding: 18px 20px; }
+      .anecdote { padding: 20px 18px; }
+    }
+  
+    /* ============================================
+       NAVIGATION MENU STYLES (เมนูนำทาง)
+    ============================================ */
+    .main-nav {
+      background-color: var(--blue, #034694);
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav-list li a {
+      color: var(--white, #f5f2ec);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Sarabun', sans-serif;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 14px;
+    }
+    .nav-list li a:hover {
+      background-color: var(--gold, #c8a84b);
+      color: var(--ink, #1a1410);
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="Chapter1.html">บทที่ 1</a></li>
+      <li><a href="Chapter2.html">บทที่ 2</a></li>
+      <li><a href="Chapter3.html">บทที่ 3</a></li>
+      <li><a href="Chapter4.html">บทที่ 4</a></li>
+      <li><a href="Chapter5.html">บทที่ 5</a></li>
+      <li><a href="Chapter6.html">บทที่ 6</a></li>
+      <li><a href="Chapter7.html">บทที่ 7</a></li>
+      <li><a href="Chapter8.html">บทที่ 8</a></li>
+      <li><a href="Chapter9.html">บทที่ 9</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+      <p class="hero__kicker">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
+      <p class="hero__subtitle">ผู้เขียน: อิอิแอแอ</p>
+      <div class="hero__rule"></div>
+    </div>
+
+  </header>
+
+  <!-- ══ ARTICLE ══ -->
+  <main class="article">
+    <div class="article__inner">
+
+      <!-- Chapter heading -->
+      <div class="chapter-heading">
+        <div class="chapter-heading__number">บทที่ ๔</div>
+        <h1>ลอนดอนยุคสวิงกิ้ง — เชลซีและเหล่าราชาแห่ง King's Road</h1>
+      </div>
+
+      <!-- Opening pull quote -->
+      <blockquote class="pull-quote">
+        <p>'ชาร์ลี คุก เตะบอลอ้อมด้านหนึ่งของ รอน เยตส์ แล้ววิ่งออกนอกสนาม อ้อมลู่วิ่ง อ้อมเสาธงมุมอีกด้าน แล้วก็รับบอลได้ ผมนึกในใจว่า "โอ้โห มันจะดีแค่ไหน ถ้าได้มาเล่นกับทีมนี้!"'</p>
+        <cite>— เดวิด เวบบ์ ก่อนย้ายมาร่วมทีมเชลซีในปี 1968</cite>
+      </blockquote>
+
+      <!-- Intro -->
+      <p class="drop-cap">เชลซีที่เคยตกจากจุดสูงสุดตั้งแต่คว้าแชมป์ลีกจนถึงการตกชั้นในเจ็ดฤดูกาล ไม่ได้แค่กลับมายิ่งใหญ่อีกครั้งเมื่อยุคทศวรรษ 1960 อันพลุ่งพล่านมาถึง หากแต่สโมสรได้กลายเป็นสัญลักษณ์แห่งยุค "สวิงกิ้ง" อย่างแท้จริง เช่นเดียวกับการระเบิดตัวของดนตรี ศิลปะ แฟชั่น วิทยาศาสตร์ และกระแสการเมืองใหม่ๆ ที่กวาดล้างโลก การฟื้นคืนชีพของเดอะบลูส์ก็ผลิบานจากรากฐานของ "ความเป็นเยาวชน"</p>
+
+      <p>สโมสรที่ตั้งอยู่ติดกับ King's Road หนึ่งในศูนย์กลางของ "ลอนดอนยุคสวิงกิ้ง" เบ่งบานอีกครั้งภายใต้การนำของผู้จัดการทีมหน้าใหม่ ทอมมี่ ด็อกเฮอร์ตี ซึ่งเป็นงานคุมทีมครั้งแรกของเขา และสโมสรเติบโตแข็งแกร่งขึ้นด้วยนักเตะหนุ่มในทีม ซึ่งหลายคนเป็นผลผลิตแรกๆ จากระบบเยาวชนบุกเบิกที่ถูกพัฒนาขึ้นภายใต้ผู้จัดการทีมสองคนก่อนหน้า</p>
+
+      <!-- Section 1 -->
+      <h2>จิมมี่ กรีฟส์ — ตำนานที่ไม่มีวันลืม</h2>
+
+      <p class="drop-cap">ว่าทีมเยาวชนเชลซีสามารถผลิตนักเตะระดับสูงสุดได้นั้น ได้รับการพิสูจน์อย่างไม่มีข้อสงสัยในยุคของ เท็ด เดรก โดยมี บ็อบบี้ สมิธ เป็นคนแรกที่ก้าวขึ้นสู่ทีมชุดใหญ่ในปี 1953 ทีมชุดที่คว้าแชมป์ลีกในปี 1955 ค่อยๆ เปลี่ยนแปลงเป็นกลุ่มนักเตะหน้าใหม่ที่ถูกขนานนามว่า "ลูกเป็ดของเดรก" สิ่งที่ยุคนั้นผลิตออกมาได้คือพรสวรรค์ที่ยิ่งใหญ่ผู้หนึ่ง ซึ่งในสายตาหลายคนถือเป็นกองหน้าที่ยอดเยี่ยมที่สุดที่วงการฟุตบอลอังกฤษเคยมี: <em>จิมมี่ กรีฟส์</em></p>
+
+      <p>ในฤดูกาลแรกที่สมบูรณ์กับทีมเยาวชนเชลซี กรีฟส์ทำสถิติยิง 114 ประตู จึงไม่น่าแปลกใจที่มีความสนใจในตัวเขาอย่างมากตั้งแต่ก่อนที่เขาจะเปิดตัวกับทีมชุดใหญ่ที่สนามของ Tottenham ขณะอายุเพียง 17 ปีในนัดแรกของฤดูกาล 1957/58 เขายิงประตูได้แน่นอน และพาตัวเลขรวมของเขาขึ้นไปถึง 132 ประตูใน 169 นัดตลอดสี่ฤดูกาลของเชลซี การเลี้ยงบอลที่ลื่นไหลและความแม่นยำที่เฉียบคมด้วยเท้าทั้งสองข้างคือสิ่งที่ทำให้เขาโดดเด่น</p>
+
+      <!-- Image: Greaves -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/blogs-and-columns/2021/8/Greaves-GettyImages-78954095.jpg"
+             alt="จิมมี่ กรีฟส์">
+        <figcaption>จิมมี่ กรีฟส์ ในช่วงเวลาเปิดตัวที่สนาม Tottenham</figcaption>
+      </figure>
+
+      <p>ขณะที่กรีฟส์เติบโตขึ้น ฟุตบอลยุคเจ็ตก็เริ่มเปลี่ยนแปลงไปในทางอื่นด้วย การมาถึงของไฟสปอตไลต์ทำให้สนามกีฬารวมถึง Stamford Bridge กลายเป็นเวทีการแสดง นำพาการแข่งขันยามค่ำคืนที่ฝูงชนที่อยู่ในความมืดกลายเป็นหมู่ชนที่เอ็ดอึงและมีพลัง</p>
+
+      <p>ประตูของกรีฟส์และ รอน ทินดอล ลูกหม้ออีกคนยังคงพยุงทีมที่กำลังจมอยู่กับประตูที่เสียไป หลังจากทำแฮตทริกได้ถึง 13 ครั้ง กรีฟส์ถูกขายให้ AC Milan และเชลซีก็ตกชั้นจากดิวิชั่นหนึ่งในฤดูกาลถัดมา ไม่น่าแปลกใจเพราะกองหน้าคนนี้ไม่เคยปิดบังความไม่พอใจต่อเพดานเงินเดือนของฟุตบอลอังกฤษ ซึ่งน่าขันที่มันสิ้นสุดลงเพียงไม่กี่เดือนต่อมา แต่ก็เป็นการสูญเสียครั้งใหญ่สำหรับกองทัพของเดรก</p>
+
+      <blockquote>
+        <p>'คนหนึ่งสงสัยอย่างสิ้นหวังว่า เชลซีจะทำอย่างไรได้โดยไม่มีเขาในฤดูกาลหน้า' — ผู้บรรยายของ BBC TV ในเกมสุดท้ายของกรีฟส์ที่เขายิงได้ทั้งสี่ประตูในชัยชนะ 4-3 พาสถิติฤดูกาล 1960/61 ขึ้นไปถึง 41 ประตู ซึ่งเป็นสถิติของสโมสร</p>
+      </blockquote>
+
+      <!-- Anecdote box -->
+      <div class="anecdote">
+        <div class="anecdote__header">
+          <span class="anecdote__label">เรื่องเล่าจากตำนาน</span>
+          <span class="anecdote__name">แฟรงก์ บลันสโตน</span>
+          <span class="anecdote__sub">เชลซี ปี 1953–1964</span>
+        </div>
+        <p>"ผมจะจดจำจิมมี่ กรีฟส์ ได้แม่นเลยล่ะ เพราะตอนนั้นเขายังเป็นแค่เด็กฝึกหัดอยู่เลย</p>
+        <p>เรื่องมีอยู่ว่าทุกเช้าวันอังคาร ปกติเราจะมีโปรแกรมฝึกซ้อมกัน เป็นเกมอุ่นเครื่องระหว่างทีมชุดใหญ่กับทีมสำรอง พอดีวันเสาร์ก่อนหน้าเรามีนักเตะบาดเจ็บไปสองสามคน เท็ด เดรก ก็เลยเรียกเด็กสองคนมาจากเพนดันให้มาเล่นด้วย</p>
+        <p>เขาลงเล่นไปได้ประมาณ 20 นาที ทันใดนั้นเจ้าหนูคนนี้ก็รับบอลได้ แล้วเขาก็เริ่มออกตัววิ่ง เลี้ยงผ่านคนแรกไปได้สบายๆ แล้วก็ผ่านคนที่สอง</p>
+        <p>ตอนนั้นเอง อัลเบิร์ต เทนแนนต์ ซึ่งเป็นโค้ชยืนอยู่ข้างสนามพร้อมกับโทรโข่ง ตะโกนลั่นว่า "ส่งบอลซะทีสิจิมมี่!" แต่จิมมี่ก็ยังเลี้ยงผ่านไปอีกคน</p>
+        <p>โค้ชตะโกนซ้ำ "เพื่อพระเจ้าเถอะจิมมี่ ส่งบอลได้แล้ว!" จิมมี่ลากไปหลอกผู้รักษาประตูจนหลังหัก โยกไหล่หนึ่งที แล้วก็แปะบอลกลิ้งเข้าไปที่มุมไกลของตาข่ายอย่างนิ่มนวล จากนั้นเขาก็จ็อกกิ้งกลับมาที่เส้นครึ่งสนาม พอถึงที่นั่น เขาก็หันกลับไปหาโค้ชแล้วพูดว่า: <em>"อัลเบิร์ตครับ... น้าไม่ได้บอกผมนี่นาว่าให้ส่งตอนไหน"</em>"</p>
+      </div>
+
+      <!-- Section 2 -->
+      <h2>ด็อกเฮอร์ตี — "The Doc" มาถึงแล้ว</h2>
+
+      <p class="drop-cap">กองหน้า บ็อบบี้ แทมบลิ้ง และ แบร์รี่ บริดเจส, ผู้รักษาประตู ปีเตอร์ โบเนตติ, กองกลาง เทอร์รี่ เวนาเบิลส์, ปีก เบิร์ต เมอร์เรย์, กองหลัง เคน เชลลิโต และ อัลลัน แฮร์ริส รวมกับผู้เล่นอาวุโสจำนวนหนึ่งและการเซ็นสัญญาใหม่จากสกอตแลนด์อย่าง เอ็ดดี้ แม็คเครดี้ พวกเขาพาเชลซีกลับขึ้นสู่ดิวิชั่นหนึ่งได้ในคราวเดียว</p>
+
+      <p>'มาสิลูกเพชรน้อยๆ ของฉัน!' ด็อกเฮอร์ตี หรือ "The Doc" ถูกบันทึกภาพไว้ขณะตะโกนให้กำลังใจ และชื่อเล่นใหม่ของทีมก็เกิดขึ้น</p>
+
+      <p>จอห์น ฮอลลินส์ และ รอน แฮร์ริส น้องชายของ อัลลัน ซึ่งเป็นผลผลิตจากระบบเยาวชนอีกเช่นกัน ก็กลายเป็นผู้เล่นประจำในเวลาไม่นาน ทีมเชลซีชุดนี้กำลังถูกพูดถึงไกลออกไปเกินกว่าแค่ London SW6</p>
+
+      <p>ฟุตบอลเริ่มถูกถ่ายทอดทางโทรทัศน์มากขึ้นเป็นประวัติการณ์ด้วยการถือกำเนิดของรายการ Match of the Day ที่โด่งดัง และ The Doc หนุ่ม ฉลาดแหลมคม เข้ากับสื่อได้อย่างลงตัว เขายังได้เปลี่ยนชุดแข่งของเชลซีด้วย จากกางเกงขาสั้นสีขาวเป็นสีน้ำเงิน และถุงเท้าสีน้ำเงินเป็นสีขาว รูปลักษณ์ที่สวยงามจนยังคงอยู่มาจนถึงทุกวันนี้</p>
+
+      <!-- Image: Mods -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/mods_1967.jpg"
+             alt="Mods ในลอนดอนกลางทศวรรษ 1960">
+        <figcaption>วัฒนธรรม Mod ที่กำลังรุ่งเรืองในลอนดอนกลางทศวรรษ 1960</figcaption>
+      </figure>
+
+      <p>มุมมองฟุตบอลของ The Doc นั้นมองการณ์ไกล ได้รับอิทธิพลจากวิธีการเล่นในสเปนและอเมริกาใต้ เขาแนะนำแบ็กตีขึ้นสู่วงการฟุตบอลอังกฤษ โดยเชลลิโตและแม็คเครดี้ประสบความสำเร็จในบทบาทที่แหวกแนวนี้จนถึงขนาดที่ทีมชาติเยอรมันตะวันตกขอเล่นกระชับมิตรกับเชลซีเพื่อเตรียมตัวรับมือกับทีมอย่างบราซิลในฟุตบอลโลกปี 1966</p>
+
+      <!-- Section 3 -->
+      <h2>ปีเตอร์ ออสกู้ด — ราชาแห่ง Stamford Bridge</h2>
+
+      <p class="drop-cap">ช่วงปลายฤดูกาล 1964/65 ทีมกำลังดิ้นรนแย่งชิงถ้วยรางวัลถึงสามรายการ และในที่สุดก็คว้ามาได้หนึ่งรายการ นั่นคือ League Cup ซึ่งเป็นถ้วยน็อคเอาท์แรกของลอนดอน ในรอบชิงชนะเลิศพบกับ Leicester City แบบสองนัด ในนัดแรกที่ Stamford Bridge การบาดเจ็บบังคับให้แบ็ก แม็คเครดี้ มารับหน้าที่หมายเลข 9 แทน และเขายิงประตูที่ยอดเยี่ยม วิ่งเดี่ยวมาตั้งแต่แนวรับของตัวเองก่อนจะยิงเข้าประตูของ กอร์ดอน แบงก์ส ประตูชัยในเกมที่จบ 3-2</p>
+
+      <p>แต่ช่วงเวลาที่สำคัญยิ่งกว่ามาก เกิดขึ้นในช่วงก่อนหน้าของ League Cup เมื่อ Stamford Bridge ได้พบกับราชาคนแรกของสนาม ในเกมรีเพลย์พบกับ Workington กลางเดือนธันวาคม ด็อกเฮอร์ตีให้ ปีเตอร์ ออสกู้ด วัย 17 ปี ลงเปิดตัว เขาไม่ทำให้ผิดหวัง</p>
+
+      <!-- Image: Docherty with League Cup -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/news/2024/02/19/Docherty_League_Cup_trophy_1965_GettyImages-1206862026.jpg"
+             alt="ทอมมี่ ด็อกเฮอร์ตี กับถ้วย League Cup">
+        <figcaption>ทอมมี่ ด็อกเฮอร์ตี พร้อมทีมและถ้วยน็อคเอาท์ครั้งแรกของเชลซี</figcaption>
+      </figure>
+
+      <p>กองหน้าหนุ่มยิงสองประตูในชัยชนะ 2-0 เพื่อประกาศการมาถึงอย่างล่าช้าอย่างน่าประหลาดใจสู่สโมสรอาชีพ ลุงของเขาเขียนจดหมายถึงเชลซีขอทดสอบฝีมือให้ ออสกู้ด ออกจากสนามระดับสมัครเล่นในเขต Windsor ที่เขาทำงานเป็นช่างก่ออิฐ ด็อกเฮอร์ตีสั่งให้เขาออกจากสนามตอนครึ่งเวลาในเกมทดสอบเพราะกลัวสกาวท์ทีมอื่นจะดู แล้วก็เซ็นสัญญาทันที</p>
+
+      <p>'เขาอยู่ที่ไหนมาตลอด?' เทอร์รี่ เวนาเบิลส์ เล่าถึงปฏิกิริยาของเพื่อนร่วมทีมเมื่อเห็นทักษะของออสกู้ดเป็นครั้งแรก</p>
+
+      <!-- Image: Osgood -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/osgood_north_stand_b.jpg"
+             alt="ปีเตอร์ ออสกู้ด">
+        <figcaption>ปีเตอร์ ออสกู้ด สวมชุดใหม่ที่ ทอมมี่ ด็อกเฮอร์ตี นำมาใช้</figcaption>
+      </figure>
+
+      <p>ทุกอย่างไปได้ดีสำหรับออสกู้ด แต่ก็มีอุปสรรคสำคัญเมื่อหนึ่งปีต่อมา เมื่อขาของเขาหักในเกม League Cup พบกับ Blackpool ต้องใช้เวลาเกือบหนึ่งปีในการฟื้นตัว แต่แม้ความเร็วที่แผดเผาและลื่นไหลจะลดลงเล็กน้อยหลังจากนั้น เขาก็ชดเชยด้วยความเฉลียวฉลาด และพรสวรรค์ที่เหลืออยู่ก็มากพอจนออสกู้ดได้รับการสวมมงกุฎเป็นราชาแห่ง Stamford Bridge</p>
+
+      <!-- Section 4 -->
+      <h2>รอบรองฯ สามครั้ง และรอบชิงฯ ครั้งแรก</h2>
+
+      <p class="drop-cap">FA Cup ซึ่งในยุคนั้นถือเป็นเรื่องใหญ่พอๆ กับแชมป์ลีก กลับเป็นการแข่งขันที่โชคร้ายที่สุดของด็อกเฮอร์ตี แม้เขาจะพาเชลซีไปสู่รอบชิงชนะเลิศครั้งแรกที่ Wembley สามปีติดต่อกัน ตั้งแต่ปี 1965 ถึง 1967 เดอะบลูส์ผ่านเข้ารอบรองชนะเลิศ ซึ่งทุกครั้งจัดที่ Villa Park</p>
+
+      <p>ในที่สุดก็เป็นคราวที่สามที่โชคเข้าข้างเมื่อกลับมา Villa อีกครั้งในรอบรองฯ ปี 1966/67 เชลซีเอาชนะ Leeds United ของ ดอน เรวี ได้ ซึ่งครั้งนี้เป็น Leeds เองที่ต้องทนเห็นประตูถูกยกเลิก สำหรับรอบชิงชนะเลิศพบกับ Tottenham ในเดือนพฤษภาคม 1967 โอกาส "Cockney cup final" ครั้งประวัติศาสตร์ โดยมี รอน แฮร์ริส ของเชลซีเป็นกัปตันทีมที่อายุน้อยที่สุดเท่าที่เคยมีมา ก็ยังไม่สามารถป้องกันการแสดงที่ต่ำกว่ามาตรฐานของเชลซีได้</p>
+
+      <!-- Image: Docherty Wembley -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/news/2018/4/Tommy_Docherty_wembley.jpg"
+             alt="The Doc นำทีมลงสนามที่ Wembley ปี 1967">
+        <figcaption>The Doc นำทีมลงสนามสู่รอบชิงชนะเลิศ FA Cup ที่ Wembley ครั้งแรกในปี 1967 — "Cockney Cup Final" ครั้งประวัติศาสตร์</figcaption>
+      </figure>
+
+      <!-- Section 5 -->
+      <h2>ลอนดอนกำลังสวิง และ Stamford Bridge คือศูนย์กลาง</h2>
+
+      <p class="drop-cap">ทัวร์นาเมนต์ยุโรปนำมาซึ่งความตื่นตาตื่นใจที่แท้จริงในลอนดอนตะวันตก โดยเฉพาะเมื่อทีมอย่าง Roma, AC Milan และ Barcelona เข้ามาในเมือง Stamford Bridge กำลังสวิงพร้อมกับลอนดอนในช่วงเวลานั้น The Beatles บุกมาตั้งรกรากในเมืองหลวง และ Edith Grove ซึ่งอยู่แค่มุมเดียวจากสนามของเรา คือบ้านของ Rolling Stones</p>
+
+      <p>นักดนตรีชั้นนำของบราซิล กิลแบร์โต กิล และ กาเอตาโน เวโลโซ แม้กระทั่งใช้เวลาช่วงลี้ภัยปลายทศวรรษ 1960 ในลอนดอนท่ามกลางฝูงชนจำนวนมากที่สนามของเรา The Bridge คือสถานที่ที่ต้องมา</p>
+
+      <p>ริชาร์ด แอทเทนโบโรห์ นักแสดง ผู้กำกับ และผู้อำนวยการสร้างรางวัลออสการ์ ซึ่งยังดำรงตำแหน่งกรรมการของเชลซี เป็นแฟนบอลของสโมสรตั้งแต่มาฝึกกับทีมเพื่อเตรียมตัวรับบทในภาพยนตร์ช่วงทศวรรษ 1940 เขานำดาราฮอลลีวูดมากมายมาร่วมชมเกมที่ Stamford Bridge ตั้งแต่ Laurence Olivier, John Mills ไปจนถึง John Wayne, Frank Sinatra และ Steve McQueen ซึ่งช่วยเสริมชื่อเสียงของเชลซีในฐานะสโมสรแห่งความหรูหราของลอนดอน</p>
+
+      <!-- Image: Attenborough & McQueen -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/attenborough_mcqueen.jpg"
+             alt="ริชาร์ด แอทเทนโบโรห์ กับ สตีฟ แม็คควีน">
+        <figcaption>ริชาร์ด แอทเทนโบโรห์ (ที่สองจากซ้าย) พร้อมดาราฮอลลีวูด สตีฟ แม็คควีน (ที่สี่จากซ้าย) บนกองถ่าย "The Great Escape"</figcaption>
+      </figure>
+
+      <blockquote>
+        <p>'ณ บัดนั้น เชลซีได้รับการยอมรับอย่างไม่ต้องสงสัยว่าเป็นสโมสรฟุตบอลที่มีเสน่ห์ที่สุดของลอนดอน บนเส้นทางที่กำลังจะทำให้ศักยภาพที่ กัส เมียร์ส และ เฟร็ด พาร์คเกอร์ มองเห็นล่วงหน้ามาตั้งแต่ยุค Edwardian นั้นเป็นความจริง'</p>
+      </blockquote>
+
+      <!-- Section 6: Sexton Era -->
+      <h2>เดฟ เซ็กซ์ตัน และยุคสมบัติล้ำค่า</h2>
+
+      <p class="drop-cap">ผู้สืบทอดตำแหน่งของด็อกเฮอร์ตีคือ เดฟ เซ็กซ์ตัน บุตรชายของนักมวยผู้ศึกษาใฝ่รู้ที่เคยเป็นโค้ชทีมชุดใหญ่ของเชลซีก่อนออกไปเริ่มอาชีพผู้จัดการทีมของตัวเอง บุคลิกที่เงียบสงบแต่กลยุทธ์ที่แรงบันดาลใจทำให้เขาเป็นตัวเลือกที่นักเตะโปรดปราน และในไม่ช้าเขาก็จะเปลี่ยนเชลซีให้เป็นแชมป์ถ้วยรางวัลใหญ่อีกครั้ง</p>
+
+      <p>ความเข้มแข็งถูกเสริมเข้ามาด้วยการเซ็นสัญญาใหม่ เช่น กองหลังเหนียวแน่น เดวิด เวบบ์ และ จอห์น เดมป์ซีย์ รวมถึงกองหน้า อลัน เบิร์กเชนอล และ เอียน ฮัทชินสัน ซึ่งอย่างหลังเป็นดาวเด่นที่ไม่เคยยอมแพ้จากระดับสมัครเล่น</p>
+
+      <p>ไฮไลต์ช่วงต้นของเซ็กซ์ตันคือการเอาชนะแมนเชสเตอร์ยูไนเต็ดที่เพิ่งคว้าแชมป์ยุโรป 4-0 ที่ Old Trafford ในเดือนสิงหาคม 1968 ดาวรุ่งใหม่ปรากฏตัวขึ้นเรื่อยๆ ซึ่งจะมาประดับประวัติศาสตร์ของสโมสร ปีเตอร์ โบเนตติ โดดเด่นในเป้ากับความสามารถที่สมชื่อฉายา "The Cat" กองหลังที่แข็งแกร่ง กองกลาง อลัน ฮัดสัน ผู้เติบโตมาในระยะที่ได้ยินเสียงฝูงชน Stamford Bridge ได้ก็ตั้งมั่นในทีมแล้ว และเกมกองกลางที่ไดนามิกและรักการส่งบอลของเขาทำให้เชลซีชุดนี้กลายเป็นสิ่งพิเศษ</p>
+
+      <!-- Image: Venables -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/Venables_playing_Stamford_Bridge.jpg"
+             alt="เทอร์รี่ เวนาเบิลส์">
+        <figcaption>เทอร์รี่ เวนาเบิลส์ อนาคตกุนซือทีมชาติอังกฤษ ฝึกฝีมือที่เชลซี</figcaption>
+      </figure>
+
+      <!-- Section 7: 1970 FA Cup -->
+      <h2>FA Cup 1970 — ชัยชนะครั้งประวัติศาสตร์</h2>
+
+      <p class="drop-cap">ทุกอย่างมาถึงจุดสูงสุดในแคมเปญอันรุ่งโรจน์ครั้งหนึ่ง Birmingham และ Burnley ถูกเอาชนะในรอบแรกๆ ของ FA Cup 1969/70 ก่อนที่ชัยชนะเยือนใหญ่ในดาร์บี้ลอนดอน (4-1 พบ Crystal Palace และ 4-2 พบ QPR) จะส่งเดอะบลูส์เข้าสู่รอบรองชนะเลิศเป็นครั้งที่สี่ในหกฤดูกาล</p>
+
+      <p>ในรอบชิงชนะเลิศที่ Wembley คู่ปรับตลอดกาลอย่าง Leeds ผู้เป็นแชมป์ลีกรอคอยอยู่ เกมนัดชิงจะเป็นการพบกันครั้งที่ห้าของสองทีมในฤดูกาลเดียวกัน ซึ่งเกลียดชังกันอย่างรุนแรง เชลซีคือกลุ่ม King's Road นักเที่ยวแห่งลอนดอนตะวันตก ส่วน Leeds คือสโมสรดอกไม้ขาวผู้แข็งกร้าว ที่รวมตัวกันในเกมบิงโก</p>
+
+      <!-- Image: 1970 FA Cup Final -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/historical/new-history-section/1970_FA_Cup_final_action.jpg"
+             alt="FA Cup Final 1970">
+        <figcaption>รอบชิงชนะเลิศ FA Cup 1970 — ภาพสรุปเหตุการณ์สุดดุเดือด</figcaption>
+      </figure>
+
+      <p>น่าเสียใจที่ฮัดสันบาดเจ็บขาดไป และพื้นสนามที่ขรุขระมีส่วนทำให้ Leeds ยิงประตูแรกได้ Leeds ขึ้นนำอีกครั้ง แต่สามนาทีต่อมา แฟนเชลซีทั่วโลกก็โถมตัวเฉลิมฉลองกับประตูตีเสมอของ ฮัทชินสัน ที่โหม่งได้ เราได้รีเพลย์มาด้วยความพยายามทั้งๆ ที่เป็นรองตลอดวัน</p>
+
+      <p>ผู้ชมทางโทรทัศน์สดทั่วสหราชอาณาจักรในเกมรีเพลย์ที่ Old Trafford มีถึง 28.49 ล้านคน ซึ่งยังคงเป็นสถิติสูงสุดตลอดกาลสำหรับการแข่งขันฟุตบอลสโมสร แฟนใหม่ของเชลซีจำนวนมากถูกสร้างขึ้นในคืนนั้น</p>
+
+      <!-- Image: Osgood goal -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/news/2020/04/Osgood_Leeds_GettyImages-79020786.jpg"
+             alt="ออสกู้ด ยิงประตูสุดโด่งดัง">
+        <figcaption>ปีเตอร์ ออสกู้ด ยิงหนึ่งในประตูที่โด่งดังที่สุดของเชลซี — จากลูกส่งของชาร์ลี คุก</figcaption>
+      </figure>
+
+      <p>ออสกู้ดมีสถิติยิงได้ทุกรอบของรายการถ้วยนั้น รวมถึงในรอบชิงฯ ด้วย เขายังคงเป็นคนสุดท้ายที่ทำเช่นนี้ได้ และเมื่อเชลซีกลายเป็นฝ่ายที่เหนือกว่า ความเชื่อมั่นของ Yorkshire ก็เริ่มสั่นคลอน ในช่วงต่อเวลาพิเศษ เวบบ์ไถตัวเองจากความล้มเหลวในนัดแรกด้วยการดันบอลเข้าไปได้ ก่อนที่ แฮร์ริส จะกลายเป็นกัปตันเชลซีคนแรกที่ยก FA Cup ขึ้นสู่ฟ้า</p>
+
+      <!-- Section 8: Cup Winners' Cup -->
+      <h2>เชลซีพิชิตยุโรป — ถ้วย Cup Winners' Cup</h2>
+
+      <p class="drop-cap">ด้วยชัยชนะ FA Cup ครั้งแรก เชลซีได้สิทธิ์เข้าร่วม European Cup Winners' Cup และการแข่งขันระดับทวีปครั้งใหม่นี้จะกลายเป็นศูนย์กลางของฤดูกาล 1970/71</p>
+
+      <p>ฝ่ายตรงข้ามจากกรีซและบัลแกเรียถูกเอาชนะในสองรอบแรก ก่อนจะเจอกับ Bruges จากเบลเยียม ตามหลัง 2-0 จากเลกเยือน เชลซีดึงกลับมาได้หนึ่งประตูก่อนที่นาทีที่ 80 ของเลกสอง แต่ท่ามกลางบรรยากาศที่ยอดเยี่ยมที่สุดครั้งหนึ่งของ Stamford Bridge ประตูตีเสมอมาจาก ออสกู้ด ซึ่งเพิ่งรับโทษแบนแปดสัปดาห์จากการได้รับใบเหลืองมากเกินไป เขายิงในช่วงต่อเวลาพิเศษอีกครั้งและ ฮัดสัน เพิ่มอีกหนึ่งประตูสำหรับ บอลด์วิน ผลรวม 4-2 พาเข้าสู่รอบรองชนะเลิศ</p>
+
+      <p>ในรอบชิงชนะเลิศที่เขตท่าเรือ Piraeus กรุงเอเธนส์ คู่แข่งสวมชุดขาวล้วนอีกครั้ง คราวนี้คือชุดอันโด่งดังของ Real Madrid ออสกู้ดพาทีมขึ้นนำ 1-0 แต่ในนาทีที่ 90 Real ตีเสมอ ทำให้ต้องเล่นต่อเวลาและในที่สุดก็มีเกมรีเพลย์</p>
+
+      <p>ในเกมรีเพลย์วันศุกร์ที่ 21 พฤษภาคม 1971 เดมป์ซีย์ไถตัวเองจากความเจ็บปวดในนัดแรกด้วยการยิงอย่างทรงพลังเปิดสกอร์ ออสกู้ดทำให้เป็น 2-0 และแม้ชาวสเปนจะดึงกลับมาหนึ่งประตู การเซฟที่ยอดเยี่ยมของ โบเนตติ ก็ปิดโอกาสทุกทาง</p>
+
+      <!-- Image: Cup Winners' Cup celebration -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/news/2021/05/20/1971_CWC_Boyle_Dempsey_GettyImages-79030279.jpg"
+             alt="เชลซีเดินแถวรอบสนาม Karaiskaki Stadium">
+        <figcaption>จอห์น บอยล์ และ จอห์น เดมป์ซีย์ เดินแถวรอบสนาม Karaiskaki Stadium ด้วยความภาคภูมิใจ</figcaption>
+      </figure>
+
+      <p>ไม่กี่วันหลังจากแฟนบอลร่วมเดินแถวรอบสนามกับออสกู้ดและเพื่อนๆ ถ้วยรางวัลอีกใบก็ถูกแห่ไปทั่วลอนดอน ทีมเชลซีที่เป็นที่รักและสง่างามที่สุดทีมหนึ่งตลอดกาล King's Road ไม่เคยมีความองอาจขนาดนี้มาก่อน และก็ไม่เคยมีอีกนับแต่นั้น</p>
+
+      <blockquote>
+        <p>ในเดือนพฤษภาคม 1971 เมื่อถ้วย Cup Winners' Cup ถูกนำมาคู่กับ FA Cup จากเดือนเมษายน 1970 — แม้กระทั่งบนตราสัญลักษณ์ของเชลซี — ก็ไม่มีข้อโต้แย้งใดๆ ว่าในช่วงเวลาพิเศษนั้น <em>สีน้ำเงินคือสีแห่งชัยชนะอย่างแท้จริง!</em></p>
+      </blockquote>
+
+      <!-- Image: Hudson -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/hudson_injury_1970.jpg"
+             alt="อลัน ฮัดสัน">
+        <figcaption>อลัน ฮัดสัน ในความพยายามที่ไม่ประสบความสำเร็จเพื่อให้ทันรอบชิงชนะเลิศ FA Cup ปี 1970</figcaption>
+      </figure>
+
+      <!-- Chapter end -->
+      <div class="chapter-end">
+        <div class="chapter-end__ornament">⚽</div>
+        <span class="chapter-end__text">— จบบทที่ ๔ —</span>
+      </div>
+
+    </div><!-- /.article__inner -->
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

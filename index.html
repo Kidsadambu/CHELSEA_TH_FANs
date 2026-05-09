@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — กาลครั้งนั้น Kann Krung Nan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 60px; }
+    body { background: var(--paper); color: var(--ink); font-family: 'Sarabun', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+
+    /* ── CLOCK (คงเดิม) ── */
+    .floating-clock { position: fixed; top: 60px; right: 20px; z-index: 9999; background: rgba(2,31,69,0.85); border: 1px solid var(--gold); border-radius: 8px; padding: 12px 18px; display: flex; gap: 16px; backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0,0,0,0.5); color: var(--white); transition: transform 0.3s ease; }
+    .floating-clock:hover { transform: translateY(-3px); }
+    .floating-clock__section { display: flex; flex-direction: column; align-items: flex-end; }
+    .floating-clock__divider { width: 1px; background: var(--gold); opacity: 0.4; }
+    .floating-clock__label { font-size: 10px; font-weight: 600; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+    .floating-clock__date { font-size: 12px; color: rgba(245,242,236,0.8); margin-bottom: 2px; }
+    .floating-clock__time { font-size: 16px; font-weight: 700; color: var(--gold); font-family: 'Sarabun', monospace; }
+    @media (max-width: 768px) {
+      .floating-clock { top: 60px; right: 10px; padding: 8px 12px; transform: scale(0.85); transform-origin: top right; }
+      .floating-clock:hover { transform: scale(0.85); }
+    }
+
+    /* ── NAV ── */
+    .main-nav { background-color: var(--blue); padding: 12px 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 10000; border-bottom: 2px solid var(--gold); }
+    .nav-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .nav-list li a { color: var(--white); text-decoration: none; font-weight: 600; font-family: 'Sarabun', sans-serif; padding: 7px 14px; border-radius: 4px; transition: all 0.3s ease; font-size: 13.5px; letter-spacing: 0.04em; }
+    .nav-list li a:hover { background-color: var(--gold); color: var(--blue-dark); box-shadow: 0 2px 8px rgba(200,168,75,0.4); }
+
+    /* ── HERO ── */
+    .hero { position: relative; width: 100%; height: 100vh; min-height: 640px; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .hero__bg { position: absolute; inset: 0; background-image: url('https://i.postimg.cc/ncWtDQsq/CHELSEA-TH-FANs.png'); background-size: cover; background-position: center 30%; filter: brightness(0.32) saturate(0.65); transform: scale(1.04); transition: transform 12s ease; }
+    .hero:hover .hero__bg { transform: scale(1.08); }
+    .hero__overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(2,31,69,0.7) 0%, rgba(3,12,30,0.55) 50%, rgba(0,0,0,0.8) 100%); }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(to right, var(--blue), var(--gold), var(--blue)); z-index: 5; }
+
+    .hero__inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 clamp(20px,6vw,80px); gap: 0; }
+    .hero__logo { width: clamp(90px,13vw,150px); filter: drop-shadow(0 6px 32px rgba(200,168,75,0.55)); margin-bottom: 28px; animation: riseIn 1s ease both; }
+    .hero__eyebrow { font-size: clamp(10px,1.1vw,12px); font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; animation: riseIn 1s 0.1s ease both; }
+    .hero__title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(2.4rem,6.5vw,5.5rem); line-height: 1.05; color: var(--white); letter-spacing: -0.015em; max-width: 880px; animation: riseIn 1s 0.2s ease both; }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__tagline { font-size: clamp(14px,1.6vw,17px); color: rgba(245,242,236,0.55); margin-top: 16px; letter-spacing: 0.05em; animation: riseIn 1s 0.3s ease both; }
+
+    /* live ticker */
+    .hero__ticker { margin-top: 32px; animation: riseIn 1s 0.45s ease both; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .ticker-pill { background: rgba(200,168,75,0.12); border: 1px solid rgba(200,168,75,0.35); border-radius: 24px; padding: 6px 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--gold-light); white-space: nowrap; }
+    .ticker-pill span { color: rgba(245,242,236,0.55); font-weight: 300; margin-right: 5px; }
+
+    /* hero CTA buttons */
+    .hero__ctas { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; animation: riseIn 1s 0.55s ease both; }
+    .hero__cta { display: inline-block; padding: 11px 26px; background: transparent; border: 1px solid rgba(200,168,75,0.55); color: var(--gold-light); font-family: 'Sarabun', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; }
+    .hero__cta:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+    .hero__cta--primary { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+
+    @keyframes riseIn { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+
+    /* scroll hint */
+    .scroll-hint { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 7px; animation: bounce 2.5s ease-in-out infinite; }
+    .scroll-hint span { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,242,236,0.32); }
+    .scroll-hint__arrow { width: 18px; height: 18px; border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: rotate(45deg); opacity: 0.55; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(9px)} }
+
+    /* ── STATS BAND ── */
+    .stats-band { background: var(--blue-dark); padding: clamp(48px,7vw,72px) clamp(20px,6vw,80px); }
+    .stats-band__label { text-align: center; font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 36px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: 1px; max-width: 1100px; margin: 0 auto 48px; background: rgba(200,168,75,0.12); }
+    .stat-card { background: rgba(2,31,69,0.85); padding: 24px 20px; text-align: center; }
+    .stat-card__num { display: block; font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.8rem,3.5vw,2.8rem); color: var(--gold-light); line-height: 1; }
+    .stat-card__label { display: block; margin-top: 8px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,242,236,0.45); line-height: 1.4; }
+    .stat-card__sub { display: block; margin-top: 5px; font-size: 12px; color: rgba(200,168,75,0.5); }
+
+    /* ── WIN RATE BAR ── */
+    .wdl-wrap { max-width: 640px; margin: 0 auto; }
+    .wdl-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .wdl-label span:nth-child(1) { color: #4ade80; }
+    .wdl-label span:nth-child(2) { color: var(--gold); }
+    .wdl-label span:nth-child(3) { color: #f87171; }
+    .wdl-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; gap: 2px; }
+    .wdl-bar__w { background: #4ade80; }
+    .wdl-bar__d { background: var(--gold); }
+    .wdl-bar__l { background: #f87171; }
+    .wdl-nums { display: flex; justify-content: space-between; margin-top: 6px; font-size: 13px; }
+    .wdl-nums span:nth-child(1) { color: rgba(74,222,128,0.8); font-weight: 600; }
+    .wdl-nums span:nth-child(2) { color: rgba(200,168,75,0.7); font-weight: 600; }
+    .wdl-nums span:nth-child(3) { color: rgba(248,113,113,0.8); font-weight: 600; }
+
+    /* ── CHART SECTION ── */
+    .chart-section { padding: clamp(52px,7vw,80px) clamp(20px,6vw,80px); background: var(--paper); }
+    .chart-section__header { text-align: center; margin-bottom: 36px; }
+    .chart-section__label { font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .chart-section__title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.4rem,3vw,2.1rem); color: var(--ink); }
+    .chart-section__sub { font-size: 14px; color: var(--ink-muted); margin-top: 8px; }
+
+    .chart-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+    .chart-tab { padding: 7px 18px; border: 1px solid var(--rule); border-radius: 20px; background: transparent; font-family: 'Sarabun', sans-serif; font-size: 13px; color: var(--ink-soft); cursor: pointer; transition: all 0.2s; }
+    .chart-tab.active, .chart-tab:hover { background: var(--blue); border-color: var(--blue); color: white; }
+
+    .chart-canvas-wrap { position: relative; width: 100%; max-width: 1100px; margin: 0 auto; overflow-x: auto; }
+    #leagueChart { display: block; }
+
+    /* tooltip */
+    .chart-tooltip { position: fixed; background: var(--blue-dark); border: 1px solid var(--gold); border-radius: 6px; padding: 10px 14px; font-size: 13px; color: var(--white); pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 200; line-height: 1.6; max-width: 200px; }
+
+    /* ── TOP SCORERS ── */
+    .scorers-section { background: var(--blue-dark); padding: clamp(48px,7vw,72px) clamp(20px,6vw,80px); }
+    .scorers-section__label { text-align: center; font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .scorers-section__title { text-align: center; font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.4rem,3vw,2rem); color: var(--white); margin-bottom: 36px; }
+
+    .scorer-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 12px; max-width: 1000px; margin: 0 auto; }
+    .scorer-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(200,168,75,0.15); border-left: 3px solid var(--gold); padding: 16px 18px; border-radius: 2px; display: flex; align-items: center; gap: 14px; }
+    .scorer-card__rank { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem; color: var(--gold); line-height: 1; flex-shrink: 0; width: 32px; }
+    .scorer-card:first-child .scorer-card__rank { font-size: 2.2rem; color: var(--gold-light); }
+    .scorer-card__info {}
+    .scorer-card__name { font-weight: 600; font-size: 14px; color: var(--white); line-height: 1.2; }
+    .scorer-card__goals { font-size: 12px; color: var(--gold); letter-spacing: 0.08em; margin-top: 3px; }
+
+    /* ── TITLES TIMELINE ── */
+    .titles-section { padding: clamp(52px,7vw,80px) clamp(20px,6vw,80px); background: var(--paper); }
+    .titles-section__header { text-align: center; margin-bottom: 40px; }
+    .titles-section__label { font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .titles-section__title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.4rem,3vw,2rem); color: var(--ink); }
+
+    .titles-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 900px; margin: 0 auto; }
+    .title-badge { text-align: center; padding: 16px 20px; background: var(--blue-dark); border-radius: 2px; border-bottom: 3px solid var(--gold); min-width: 110px; }
+    .title-badge__num { display: block; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.4rem; color: var(--gold-light); }
+    .title-badge__season { display: block; font-size: 11px; color: rgba(245,242,236,0.5); letter-spacing: 0.05em; margin-top: 4px; }
+    .title-badge__pts { display: block; font-size: 11px; font-weight: 600; color: var(--gold); margin-top: 3px; letter-spacing: 0.06em; }
+
+    /* ── INTRO BAND ── */
+    .intro { background: var(--blue-dark); padding: clamp(56px,8vw,80px) clamp(20px,6vw,80px); text-align: center; }
+    .intro__label { font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .intro__text { max-width: 640px; margin: 0 auto; font-size: clamp(15px,2vw,18px); line-height: 1.9; color: rgba(245,242,236,0.7); }
+    .intro__rule { width: 40px; height: 2px; background: var(--gold); margin: 28px auto 0; opacity: 0.6; }
+
+    /* ── ABOUT ── */
+    .about { background: var(--paper); padding: clamp(56px,9vw,80px) clamp(20px,6vw,80px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; border-top: 4px solid var(--gold); }
+    .about__logo { width: 64px; filter: drop-shadow(0 4px 16px rgba(200,168,75,0.3)); }
+    .about__label { font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+    .about__author { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1rem,2vw,1.2rem); color: var(--ink); }
+    .about__text { max-width: 560px; font-size: clamp(14px,1.8vw,16px); line-height: 1.9; color: var(--ink-soft); }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--ink); color: rgba(245,242,236,0.4); text-align: center; padding: 36px 20px; font-size: 12px; letter-spacing: 0.1em; }
+    .site-footer__logo { width: 40px; filter: brightness(0.5); margin-bottom: 14px; }
+    .site-footer__name { display: block; color: var(--gold); font-weight: 600; margin-bottom: 6px; font-size: 13px; letter-spacing: 0.18em; }
+
+    @media (max-width: 540px) {
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .hero__ctas { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="Trophy.html">🏆 ทำเนียบแชมป์</a></li>
+      <li><a href="chapter.html">📖 Chapter Story</a></li>
+      <li><a href="Managers.html">👔 ผู้จัดการทีม</a></li>
+      <li><a href="squad.html">👥 รายชื่อนักเตะ</a></li>
+      <li><a href="icon.html">👑 ตำนาน</a></li>
+      <li><a href="appearances.html">📊 สถิติลงสนาม</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ CLOCK (คงเดิม) ══ -->
+  <div class="floating-clock">
+    <div class="floating-clock__section">
+      <div class="floating-clock__label">🇹🇭 ไทย</div>
+      <div class="floating-clock__date" id="th-date">--</div>
+      <div class="floating-clock__time" id="th-time">--:--:--</div>
+    </div>
+    <div class="floating-clock__divider"></div>
+    <div class="floating-clock__section">
+      <div class="floating-clock__label">🇬🇧 London</div>
+      <div class="floating-clock__date" id="uk-date">--</div>
+      <div class="floating-clock__time" id="uk-time">--:--:--</div>
+    </div>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__inner">
+      <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="hero__logo" alt="Chelsea TH Fans Logo">
+      <p class="hero__eyebrow">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
+      <p class="hero__tagline">ประวัติศาสตร์อันยาวนานของสโมสร Chelsea FC ฉบับภาษาไทย ตั้งแต่ปี 1905</p>
+
+      <div class="hero__ticker">
+        <div class="ticker-pill"><span>League Matches</span>4,412 นัด</div>
+        <div class="ticker-pill"><span>Win Rate</span>42.6%</div>
+        <div class="ticker-pill"><span>League Titles</span>8 สมัย</div>
+        <div class="ticker-pill"><span>Goals Scored</span>6,966 ประตู</div>
+      </div>
+  </header>
+
+  <!-- ══ STATS BAND ══ -->
+  <section class="stats-band">
+    <p class="stats-band__label">สถิติ League ตลอดกาล (1905–2025)</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-card__num">109</span>
+        <span class="stat-card__label">ฤดูกาล</span>
+        <span class="stat-card__sub">League 1905–2025</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__num">4,412</span>
+        <span class="stat-card__label">นัดที่ลงเล่น</span>
+        <span class="stat-card__sub">Played</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__num" style="color:#4ade80">1,878</span>
+        <span class="stat-card__label">นัดที่ชนะ</span>
+        <span class="stat-card__sub">Won · 42.6%</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__num" style="color:var(--gold)">1,134</span>
+        <span class="stat-card__label">นัดที่เสมอ</span>
+        <span class="stat-card__sub">Drawn · 25.7%</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__num" style="color:#f87171">1,400</span>
+        <span class="stat-card__label">นัดที่แพ้</span>
+        <span class="stat-card__sub">Lost · 31.7%</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__num">6,966</span>
+        <span class="stat-card__label">ประตูที่ยิงได้</span>
+        <span class="stat-card__sub">Goals For</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__num">6,096</span>
+        <span class="stat-card__label">ประตูที่เสีย</span>
+        <span class="stat-card__sub">Goals Against</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-card__num">+870</span>
+        <span class="stat-card__label">ผลต่างประตู</span>
+        <span class="stat-card__sub">Goal Difference</span>
+      </div>
+    </div>
+
+    <!-- W/D/L bar -->
+    <div class="wdl-wrap">
+      <div class="wdl-label">
+        <span>ชนะ 42.6%</span>
+        <span>เสมอ 25.7%</span>
+        <span>แพ้ 31.7%</span>
+      </div>
+      <div class="wdl-bar">
+        <div class="wdl-bar__w" style="width:42.6%"></div>
+        <div class="wdl-bar__d" style="width:25.7%"></div>
+        <div class="wdl-bar__l" style="width:31.7%"></div>
+      </div>
+      <div class="wdl-nums">
+        <span>1,878 W</span>
+        <span>1,134 D</span>
+        <span>1,400 L</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ INTERACTIVE CHART ══ -->
+  <section class="chart-section">
+    <div class="chart-section__header">
+      <p class="chart-section__label">Data Visualisation</p>
+      <h2 class="chart-section__title">ผลงาน League ทุกฤดูกาล</h2>
+      <p class="chart-section__sub">คลิกแถบเพื่อดูรายละเอียดแต่ละฤดูกาล | เส้นแดงคือตำแหน่ง 1 (แชมป์)</p>
+    </div>
+    <div class="chart-tabs">
+      <button class="chart-tab active" onclick="setMode('wins')">จำนวนชนะ</button>
+      <button class="chart-tab" onclick="setMode('pts')">คะแนน</button>
+      <button class="chart-tab" onclick="setMode('goals')">ประตู</button>
+      <button class="chart-tab" onclick="setMode('pos')">อันดับ</button>
+    </div>
+    <div class="chart-canvas-wrap">
+      <canvas id="leagueChart" height="280"></canvas>
+    </div>
+    <div class="chart-tooltip" id="chartTooltip"></div>
+  </section>
+
+  <!-- ══ LEAGUE TITLES ══ -->
+  <section class="titles-section">
+    <div class="titles-section__header">
+      <p class="titles-section__label">Champions</p>
+      <h2 class="titles-section__title">8 สมัยแชมป์ลีก</h2>
+    </div>
+    <div class="titles-row">
+      <div class="title-badge">
+        <span class="title-badge__num">🏆</span>
+        <span class="title-badge__season">1954/55</span>
+        <span class="title-badge__pts">52 pts</span>
+      </div>
+      <div class="title-badge">
+        <span class="title-badge__num">🏆</span>
+        <span class="title-badge__season">1983/84</span>
+        <span class="title-badge__pts">88 pts</span>
+      </div>
+      <div class="title-badge">
+        <span class="title-badge__num">🏆</span>
+        <span class="title-badge__season">1988/89</span>
+        <span class="title-badge__pts">99 pts ★</span>
+      </div>
+      <div class="title-badge">
+        <span class="title-badge__num">🏆</span>
+        <span class="title-badge__season">2004/05</span>
+        <span class="title-badge__pts">95 pts</span>
+      </div>
+      <div class="title-badge">
+        <span class="title-badge__num">🏆</span>
+        <span class="title-badge__season">2005/06</span>
+        <span class="title-badge__pts">91 pts</span>
+      </div>
+      <div class="title-badge">
+        <span class="title-badge__num">🏆</span>
+        <span class="title-badge__season">2009/10</span>
+        <span class="title-badge__pts">86 pts</span>
+      </div>
+      <div class="title-badge">
+        <span class="title-badge__num">🏆</span>
+        <span class="title-badge__season">2014/15</span>
+        <span class="title-badge__pts">87 pts</span>
+      </div>
+      <div class="title-badge">
+        <span class="title-badge__num">🏆</span>
+        <span class="title-badge__season">2016/17</span>
+        <span class="title-badge__pts">93 pts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TOP SCORERS ══ -->
+  <section class="scorers-section">
+    <p class="scorers-section__label">Leading Scorers</p>
+    <h2 class="scorers-section__title">ดาวซัลโวสูงสุดตลอดกาล (League)</h2>
+    <div class="scorer-list">
+      <div class="scorer-card">
+        <div class="scorer-card__rank">1</div>
+        <div class="scorer-card__info">
+          <div class="scorer-card__name">Bobby Tambling</div>
+          <div class="scorer-card__goals">164 ประตู League (ทุกรายการ)</div>
+        </div>
+      </div>
+      <div class="scorer-card">
+        <div class="scorer-card__rank">2</div>
+        <div class="scorer-card__info">
+          <div class="scorer-card__name">Frank Lampard</div>
+          <div class="scorer-card__goals">211 ประตู (ทุกรายการ)</div>
+        </div>
+      </div>
+      <div class="scorer-card">
+        <div class="scorer-card__rank">3</div>
+        <div class="scorer-card__info">
+          <div class="scorer-card__name">Jimmy Greaves</div>
+          <div class="scorer-card__goals">124 ประตู League · 1957–61</div>
+        </div>
+      </div>
+      <div class="scorer-card">
+        <div class="scorer-card__rank">4</div>
+        <div class="scorer-card__info">
+          <div class="scorer-card__name">Kerry Dixon</div>
+          <div class="scorer-card__goals">193 ประตู (ทุกรายการ)</div>
+        </div>
+      </div>
+      <div class="scorer-card">
+        <div class="scorer-card__rank">5</div>
+        <div class="scorer-card__info">
+          <div class="scorer-card__name">Roy Bentley</div>
+          <div class="scorer-card__goals">125 ประตู League · 1948–56</div>
+        </div>
+      </div>
+      <div class="scorer-card">
+        <div class="scorer-card__rank">6</div>
+        <div class="scorer-card__info">
+          <div class="scorer-card__name">George Hilsdon</div>
+          <div class="scorer-card__goals">108 ประตู League · 1906–12</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ INTRO ══ -->
+  <section class="intro">
+    <p class="intro__label">เกี่ยวกับซีรีส์นี้</p>
+    <p class="intro__text">ซีรีส์ที่เล่าเรื่องราวประวัติศาสตร์อันยาวนานของ Chelsea FC ตั้งแต่วันก่อตั้งในปี 1905 จนถึงยุคสมัยใหม่ ผ่านมุมมองของแฟนบอลชาวไทยผู้รักและติดตามสโมสรมาโดยตลอด</p>
+    <div class="intro__rule"></div>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section class="about">
+    <img src="https://i.postimg.cc/Y0YTcy8f/Kann-Krung-Nan-News.png" class="about__logo" alt="Kann Krung Nan News Logo">
+    <p class="about__label">ผู้เขียน</p>
+    <p class="about__author">อิอิแอแอ</p>
+    <p class="about__text">ซีรีส์นี้เขียนขึ้นด้วยความรัก ความภาคภูมิใจ และการวิจัยอย่างละเอียดถี่ถ้วน เพื่อถ่ายทอดเรื่องราวของสโมสรที่เราทุกคนรักและผูกพันมายาวนาน ให้แฟนบอลชาวไทยได้รับรู้และสัมผัสประวัติศาสตร์อันยิ่งใหญ่ของ Chelsea FC</p>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+  <script>
+    /* ══ CLOCK ══ */
+    function updateFloatingClocks() {
+      const now = new Date();
+      const lion = s => s.replace(/0/g,'🦁');
+      const dO = { year:'numeric', month:'short', day:'numeric' };
+      const tO = { hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false };
+      document.getElementById('th-date').textContent = lion(new Intl.DateTimeFormat('th-TH',{...dO,timeZone:'Asia/Bangkok'}).format(now));
+      document.getElementById('th-time').textContent = lion(new Intl.DateTimeFormat('th-TH',{...tO,timeZone:'Asia/Bangkok'}).format(now)) + ' น.';
+      document.getElementById('uk-date').textContent = lion(new Intl.DateTimeFormat('en-GB',{...dO,timeZone:'Europe/London'}).format(now));
+      document.getElementById('uk-time').textContent = lion(new Intl.DateTimeFormat('en-GB',{...tO,timeZone:'Europe/London'}).format(now));
+    }
+    updateFloatingClocks();
+    setInterval(updateFloatingClocks, 1000);
+
+    /* ══ CHART DATA ══ */
+    const SEASONS = [
+      {s:"1905/06",w:22,d:9,l:7,f:90,a:37,pos:3,pts:53},
+      {s:"1906/07",w:26,d:5,l:7,f:80,a:34,pos:2,pts:57},
+      {s:"1907/08",w:14,d:8,l:16,f:53,a:62,pos:13,pts:36},
+      {s:"1908/09",w:14,d:9,l:15,f:56,a:61,pos:11,pts:37},
+      {s:"1909/10",w:11,d:7,l:20,f:47,a:70,pos:19,pts:29},
+      {s:"1910/11",w:20,d:9,l:9,f:71,a:35,pos:3,pts:49},
+      {s:"1911/12",w:24,d:6,l:8,f:64,a:34,pos:2,pts:54},
+      {s:"1912/13",w:11,d:6,l:21,f:51,a:73,pos:18,pts:28},
+      {s:"1913/14",w:16,d:7,l:15,f:46,a:55,pos:8,pts:39},
+      {s:"1914/15",w:8,d:13,l:17,f:51,a:65,pos:19,pts:29},
+      {s:"1919/20",w:22,d:5,l:15,f:56,a:51,pos:3,pts:49},
+      {s:"1920/21",w:13,d:13,l:16,f:48,a:58,pos:18,pts:39},
+      {s:"1921/22",w:17,d:12,l:13,f:40,a:43,pos:9,pts:46},
+      {s:"1922/23",w:9,d:18,l:15,f:45,a:53,pos:19,pts:36},
+      {s:"1923/24",w:9,d:14,l:19,f:31,a:53,pos:21,pts:32},
+      {s:"1924/25",w:16,d:15,l:11,f:51,a:37,pos:5,pts:47},
+      {s:"1925/26",w:19,d:14,l:9,f:76,a:49,pos:3,pts:52},
+      {s:"1926/27",w:20,d:12,l:10,f:62,a:52,pos:4,pts:52},
+      {s:"1927/28",w:23,d:8,l:11,f:75,a:45,pos:3,pts:54},
+      {s:"1928/29",w:17,d:10,l:15,f:64,a:65,pos:9,pts:44},
+      {s:"1929/30",w:22,d:11,l:9,f:74,a:46,pos:2,pts:55},
+      {s:"1930/31",w:15,d:10,l:17,f:64,a:67,pos:12,pts:40},
+      {s:"1931/32",w:16,d:8,l:18,f:69,a:73,pos:12,pts:40},
+      {s:"1932/33",w:14,d:7,l:21,f:63,a:73,pos:18,pts:35},
+      {s:"1933/34",w:14,d:8,l:20,f:67,a:69,pos:19,pts:36},
+      {s:"1934/35",w:16,d:9,l:17,f:73,a:82,pos:12,pts:41},
+      {s:"1935/36",w:15,d:13,l:14,f:65,a:72,pos:8,pts:43},
+      {s:"1936/37",w:14,d:13,l:15,f:52,a:55,pos:13,pts:41},
+      {s:"1937/38",w:14,d:13,l:15,f:65,a:65,pos:10,pts:41},
+      {s:"1938/39",w:12,d:9,l:21,f:64,a:80,pos:20,pts:33},
+      {s:"1946/47",w:16,d:7,l:19,f:69,a:84,pos:15,pts:39},
+      {s:"1947/48",w:14,d:9,l:19,f:53,a:71,pos:18,pts:37},
+      {s:"1948/49",w:12,d:14,l:16,f:69,a:68,pos:13,pts:38},
+      {s:"1949/50",w:12,d:16,l:14,f:58,a:65,pos:13,pts:40},
+      {s:"1950/51",w:12,d:8,l:22,f:53,a:65,pos:20,pts:32},
+      {s:"1951/52",w:14,d:8,l:20,f:52,a:72,pos:19,pts:36},
+      {s:"1952/53",w:12,d:11,l:19,f:56,a:66,pos:19,pts:35},
+      {s:"1953/54",w:16,d:12,l:14,f:74,a:68,pos:8,pts:44},
+      {s:"1954/55",w:20,d:12,l:10,f:81,a:57,pos:1,pts:52},
+      {s:"1955/56",w:14,d:11,l:17,f:64,a:77,pos:16,pts:39},
+      {s:"1956/57",w:13,d:13,l:16,f:73,a:73,pos:13,pts:39},
+      {s:"1957/58",w:15,d:12,l:15,f:83,a:79,pos:11,pts:42},
+      {s:"1958/59",w:18,d:4,l:20,f:77,a:98,pos:14,pts:40},
+      {s:"1959/60",w:14,d:9,l:19,f:76,a:91,pos:18,pts:37},
+      {s:"1960/61",w:15,d:7,l:20,f:98,a:100,pos:12,pts:37},
+      {s:"1961/62",w:9,d:10,l:23,f:63,a:94,pos:22,pts:28},
+      {s:"1962/63",w:24,d:4,l:14,f:81,a:42,pos:2,pts:52},
+      {s:"1963/64",w:20,d:10,l:12,f:68,a:74,pos:5,pts:50},
+      {s:"1964/65",w:24,d:8,l:10,f:83,a:75,pos:3,pts:56},
+      {s:"1965/66",w:22,d:7,l:13,f:62,a:72,pos:5,pts:51},
+      {s:"1966/67",w:15,d:14,l:13,f:66,a:73,pos:9,pts:44},
+      {s:"1967/68",w:18,d:12,l:12,f:77,a:73,pos:6,pts:48},
+      {s:"1968/69",w:20,d:10,l:12,f:69,a:74,pos:5,pts:50},
+      {s:"1969/70",w:21,d:13,l:8,f:68,a:73,pos:3,pts:55},
+      {s:"1970/71",w:18,d:15,l:9,f:55,a:72,pos:6,pts:51},
+      {s:"1971/72",w:18,d:12,l:12,f:70,a:68,pos:7,pts:48},
+      {s:"1972/73",w:13,d:14,l:15,f:59,a:62,pos:12,pts:40},
+      {s:"1973/74",w:12,d:13,l:17,f:67,a:66,pos:17,pts:37},
+      {s:"1974/75",w:9,d:15,l:18,f:63,a:64,pos:21,pts:33},
+      {s:"1975/76",w:12,d:16,l:14,f:53,a:54,pos:11,pts:40},
+      {s:"1976/77",w:21,d:13,l:8,f:73,a:53,pos:2,pts:55},
+      {s:"1977/78",w:11,d:14,l:17,f:46,a:69,pos:16,pts:36},
+      {s:"1978/79",w:5,d:10,l:27,f:44,a:92,pos:22,pts:20},
+      {s:"1979/80",w:23,d:7,l:12,f:66,a:52,pos:4,pts:53},
+      {s:"1980/81",w:14,d:12,l:16,f:46,a:41,pos:12,pts:40},
+      {s:"1981/82",w:15,d:12,l:15,f:60,a:60,pos:12,pts:57},
+      {s:"1982/83",w:11,d:14,l:17,f:51,a:61,pos:18,pts:47},
+      {s:"1983/84",w:25,d:13,l:4,f:90,a:40,pos:1,pts:88},
+      {s:"1984/85",w:18,d:12,l:12,f:63,a:48,pos:6,pts:66},
+      {s:"1985/86",w:20,d:11,l:11,f:57,a:56,pos:6,pts:71},
+      {s:"1986/87",w:13,d:13,l:16,f:53,a:64,pos:14,pts:52},
+      {s:"1987/88",w:9,d:15,l:16,f:50,a:68,pos:18,pts:42},
+      {s:"1988/89",w:29,d:12,l:5,f:96,a:50,pos:1,pts:99},
+      {s:"1989/90",w:16,d:12,l:10,f:58,a:50,pos:5,pts:60},
+      {s:"1990/91",w:13,d:10,l:15,f:58,a:69,pos:11,pts:49},
+      {s:"1991/92",w:13,d:14,l:15,f:50,a:60,pos:14,pts:53},
+      {s:"1992/93",w:14,d:14,l:14,f:51,a:54,pos:11,pts:56},
+      {s:"1993/94",w:13,d:12,l:17,f:49,a:53,pos:14,pts:51},
+      {s:"1994/95",w:13,d:15,l:14,f:50,a:55,pos:11,pts:54},
+      {s:"1995/96",w:12,d:14,l:12,f:46,a:44,pos:11,pts:50},
+      {s:"1996/97",w:16,d:11,l:11,f:58,a:55,pos:6,pts:59},
+      {s:"1997/98",w:20,d:3,l:15,f:71,a:43,pos:4,pts:63},
+      {s:"1998/99",w:20,d:15,l:3,f:57,a:30,pos:3,pts:75},
+      {s:"1999/00",w:18,d:11,l:9,f:53,a:34,pos:5,pts:65},
+      {s:"2000/01",w:17,d:10,l:11,f:68,a:45,pos:6,pts:61},
+      {s:"2001/02",w:17,d:13,l:8,f:66,a:38,pos:6,pts:64},
+      {s:"2002/03",w:19,d:10,l:9,f:68,a:38,pos:4,pts:67},
+      {s:"2003/04",w:24,d:7,l:7,f:67,a:31,pos:2,pts:79},
+      {s:"2004/05",w:29,d:8,l:1,f:72,a:15,pos:1,pts:95},
+      {s:"2005/06",w:29,d:4,l:5,f:72,a:22,pos:1,pts:91},
+      {s:"2006/07",w:24,d:11,l:3,f:64,a:24,pos:2,pts:83},
+      {s:"2007/08",w:25,d:10,l:3,f:65,a:26,pos:2,pts:85},
+      {s:"2008/09",w:25,d:8,l:5,f:68,a:24,pos:3,pts:83},
+      {s:"2009/10",w:27,d:5,l:6,f:103,a:32,pos:1,pts:86},
+      {s:"2010/11",w:21,d:8,l:9,f:69,a:33,pos:2,pts:71},
+      {s:"2011/12",w:18,d:10,l:10,f:65,a:46,pos:6,pts:64},
+      {s:"2012/13",w:22,d:9,l:7,f:75,a:39,pos:3,pts:75},
+      {s:"2013/14",w:25,d:7,l:6,f:71,a:27,pos:3,pts:82},
+      {s:"2014/15",w:26,d:9,l:3,f:73,a:32,pos:1,pts:87},
+      {s:"2015/16",w:12,d:14,l:12,f:59,a:53,pos:10,pts:50},
+      {s:"2016/17",w:30,d:3,l:5,f:85,a:33,pos:1,pts:93},
+      {s:"2017/18",w:21,d:7,l:10,f:62,a:38,pos:5,pts:70},
+      {s:"2018/19",w:21,d:9,l:8,f:63,a:39,pos:3,pts:72},
+      {s:"2019/20",w:20,d:6,l:12,f:69,a:54,pos:4,pts:66},
+      {s:"2020/21",w:19,d:10,l:9,f:58,a:36,pos:4,pts:67},
+      {s:"2021/22",w:21,d:11,l:6,f:76,a:33,pos:3,pts:74},
+      {s:"2022/23",w:11,d:11,l:16,f:38,a:47,pos:12,pts:44},
+      {s:"2023/24",w:18,d:9,l:11,f:77,a:63,pos:6,pts:63},
+      {s:"2024/25",w:20,d:9,l:9,f:64,a:43,pos:4,pts:69}
+    ];
+
+    /* ══ CHART ══ */
+    let chartMode = 'wins';
+    const canvas = document.getElementById('leagueChart');
+    const tooltip = document.getElementById('chartTooltip');
+
+    function setMode(mode) {
+      chartMode = mode;
+      document.querySelectorAll('.chart-tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      drawChart();
+    }
+
+    function drawChart() {
+      const dpr = window.devicePixelRatio || 1;
+      const container = canvas.parentElement;
+      const W = container.clientWidth;
+      const H = 280;
+      canvas.width  = W * dpr;
+      canvas.height = H * dpr;
+      canvas.style.width  = W + 'px';
+      canvas.style.height = H + 'px';
+
+      const ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+
+      const PAD = { top: 20, right: 20, bottom: 44, left: 46 };
+      const cW = W - PAD.left - PAD.right;
+      const cH = H - PAD.top - PAD.bottom;
+      const n = SEASONS.length;
+      const barW = Math.max(2, cW / n - 1);
+
+      // Get values
+      const vals = SEASONS.map(s => {
+        if (chartMode === 'wins') return s.w;
+        if (chartMode === 'pts')  return s.pts;
+        if (chartMode === 'goals') return s.f;
+        if (chartMode === 'pos')  return s.pos === 99 ? 0 : s.pos;
+        return 0;
+      });
+      const maxVal = Math.max(...vals);
+      const minVal = Math.min(...vals.filter(v => v > 0));
+
+      // Background
+      ctx.fillStyle = '#f9f6f0';
+      ctx.fillRect(0, 0, W, H);
+
+      // Grid lines
+      ctx.strokeStyle = 'rgba(197,184,154,0.3)';
+      ctx.lineWidth = 1;
+      for (let g = 0; g <= 4; g++) {
+        const y = PAD.top + cH * (1 - g/4);
+        ctx.beginPath();
+        ctx.moveTo(PAD.left, y);
+        ctx.lineTo(PAD.left + cW, y);
+        ctx.stroke();
+        ctx.fillStyle = '#7a6f63';
+        ctx.font = `10px Sarabun`;
+        ctx.textAlign = 'right';
+        const label = chartMode === 'pos' ? Math.round(maxVal * (1 - g/4)) : Math.round(maxVal * g/4);
+        ctx.fillText(label, PAD.left - 4, y + 3);
+      }
+
+      // Bars
+      SEASONS.forEach((s, i) => {
+        const v = vals[i];
+        if (!v) return;
+        const x = PAD.left + i * (cW / n);
+        const barH = chartMode === 'pos'
+          ? cH * (1 - (v - 1) / (maxVal - 1 || 1)) * 0.85 + cH * 0.1
+          : cH * (v / maxVal);
+        const y = PAD.top + cH - barH;
+
+        // Color
+        let color;
+        if (chartMode === 'pos') {
+          color = s.pos === 1 ? '#f59e0b' : s.pos <= 4 ? '#34d399' : s.pos <= 10 ? '#60a5fa' : '#94a3b8';
+        } else {
+          color = s.pos === 1 ? '#f59e0b' : '#034694';
+        }
+
+        ctx.fillStyle = color;
+        ctx.globalAlpha = 0.85;
+        ctx.beginPath();
+        ctx.roundRect(x, y, barW, barH, [2, 2, 0, 0]);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+
+        // Title star
+        if (s.pos === 1 && chartMode !== 'pos') {
+          ctx.fillStyle = '#f59e0b';
+          ctx.font = `bold 10px Sarabun`;
+          ctx.textAlign = 'center';
+          ctx.fillText('★', x + barW/2, y - 3);
+        }
+      });
+
+      // X-axis labels (every ~10 seasons)
+      ctx.fillStyle = '#7a6f63';
+      ctx.font = `10px Sarabun`;
+      ctx.textAlign = 'center';
+      const step = Math.ceil(n / 15);
+      SEASONS.forEach((s, i) => {
+        if (i % step !== 0) return;
+        const x = PAD.left + i * (cW / n) + barW/2;
+        ctx.save();
+        ctx.translate(x, PAD.top + cH + 8);
+        ctx.rotate(-Math.PI/4);
+        ctx.fillText(s.s.slice(0,7), 0, 0);
+        ctx.restore();
+      });
+
+      // Legend
+      ctx.fillStyle = '#f59e0b';
+      ctx.fillRect(PAD.left, 6, 10, 10);
+      ctx.fillStyle = '#7a6f63';
+      ctx.font = `10px Sarabun`;
+      ctx.textAlign = 'left';
+      ctx.fillText('แชมป์', PAD.left + 14, 15);
+    }
+
+    // Hover tooltip
+    canvas.addEventListener('mousemove', e => {
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const PAD = { top:20, right:20, bottom:44, left:46 };
+      const cW = canvas.offsetWidth - PAD.left - PAD.right;
+      const n = SEASONS.length;
+      const i = Math.floor((mx - PAD.left) / (cW / n));
+      if (i < 0 || i >= n) { tooltip.style.opacity='0'; return; }
+      const s = SEASONS[i];
+      tooltip.innerHTML = `<strong style="color:var(--gold)">${s.s}</strong><br>
+        ชนะ ${s.w} · เสมอ ${s.d} · แพ้ ${s.l}<br>
+        ประตู ${s.f}–${s.a}<br>
+        คะแนน <strong>${s.pts}</strong> · อันดับ <strong>${s.pos}</strong>
+        ${s.pos===1?'<br><span style="color:#f59e0b">★ แชมป์!</span>':''}`;
+      tooltip.style.opacity = '1';
+      tooltip.style.left = (e.clientX + 10) + 'px';
+      tooltip.style.top  = (e.clientY - 20) + 'px';
+    });
+    canvas.addEventListener('mouseleave', () => { tooltip.style.opacity='0'; });
+
+    drawChart();
+    window.addEventListener('resize', drawChart);
+  </script>
+</body>
+</html>

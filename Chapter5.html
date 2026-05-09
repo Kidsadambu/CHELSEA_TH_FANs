@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — บทที่ 5 ขึ้นลงบนรถไฟเหาะแห่ง Fulham Road</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; width: 100%; height: 100vh;
+      min-height: 600px; overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://i.imgur.com/d7cGptr.jpeg');
+      background-size: cover; background-position: center 30%;
+      filter: brightness(0.45) saturate(0.8);
+      transform: scale(1.03); transition: transform 8s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.06); }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(3,12,30,0.3) 40%,
+        rgba(3,12,30,0.85) 80%, rgba(3,12,30,0.97) 100%);
+    }
+    .hero__content {
+      position: relative; z-index: 2; width: 100%;
+      padding: 0 clamp(20px,6vw,80px) clamp(48px,8vh,90px);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+    }
+    .hero__logo {
+      width: clamp(80px,12vw,140px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.5));
+      margin-bottom: 28px; animation: fadeDown 1s ease both;
+    }
+    .hero__kicker {
+      font-weight: 600; font-size: clamp(10px,1.2vw,13px);
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.4rem,6.5vw,5.5rem); line-height: 1.08;
+      color: var(--white); letter-spacing: -0.01em; max-width: 900px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__subtitle {
+      font-size: clamp(14px,1.8vw,17px);
+      color: rgba(245,242,236,0.65); margin-top: 22px;
+      letter-spacing: 0.04em; animation: fadeDown 1s 0.35s ease both;
+    }
+    .hero__rule {
+      width: 60px; height: 2px; background: var(--gold);
+      margin: 32px auto 0; animation: fadeDown 1s 0.45s ease both;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── SCROLL HINT ── */
+    .scroll-hint {
+      position: absolute; bottom: 30px; left: 50%;
+      transform: translateX(-50%); z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: float 2.4s ease-in-out infinite;
+    }
+    .scroll-hint span {
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(245,242,236,0.4);
+    }
+    .scroll-hint__arrow {
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg); opacity: 0.7;
+    }
+    @keyframes float {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── ARTICLE ── */
+    .article { background: var(--paper); position: relative; }
+    .article::before {
+      content: ''; display: block; width: 100%; height: 6px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+    }
+    .article__inner {
+      max-width: var(--col-max); margin: 0 auto;
+      padding: clamp(48px,8vw,90px) clamp(20px,5vw,40px);
+    }
+
+    /* ── CHAPTER HEADING ── */
+    .chapter-heading { text-align: center; margin-bottom: 52px; }
+    .chapter-heading__number {
+      display: inline-block; font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+      padding: 6px 16px; margin-bottom: 20px;
+    }
+    .chapter-heading h1 {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(1.6rem,4vw,2.8rem); line-height: 1.2;
+      color: var(--ink); letter-spacing: -0.01em;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 4px solid var(--gold); padding: 24px 32px;
+      margin: 0 0 48px;
+      background: linear-gradient(to right, rgba(200,168,75,0.06), transparent);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1rem,2vw,1.15rem); color: var(--ink-soft); line-height: 1.7;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 14px; font-family: 'Sarabun', sans-serif;
+      font-style: normal; font-size: 12px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+    }
+
+    /* ── BODY ── */
+    .article__inner p { margin-bottom: 1.6em; color: var(--ink-soft); }
+    .article__inner p em { color: var(--ink); font-style: italic; }
+    .drop-cap::first-letter {
+      float: left; font-family: 'Playfair Display', serif;
+      font-size: 4.2em; line-height: 0.78; margin: 6px 10px 0 0;
+      color: var(--blue); font-weight: 900;
+    }
+
+    /* ── H2 ── */
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(1.25rem,2.8vw,1.7rem); color: var(--blue);
+      margin: 56px 0 24px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule); letter-spacing: -0.01em;
+    }
+
+    /* ── IMAGES ── */
+    .img-block { margin: 40px 0; }
+    .img-block img {
+      width: 100%; height: auto; display: block; object-fit: cover;
+      border-radius: 2px; box-shadow: 0 4px 24px rgba(26,20,16,0.15);
+    }
+    .img-block figcaption {
+      margin-top: 12px; font-size: 12.5px; color: var(--ink-muted);
+      letter-spacing: 0.04em; font-style: italic; line-height: 1.5;
+    }
+    .img-block--wide { margin: 48px calc(-1 * clamp(20px,5vw,40px)); }
+    .img-block--wide figcaption { padding: 0 clamp(20px,5vw,40px); }
+
+    /* ── BLOCKQUOTE ── */
+    .article__inner blockquote {
+      margin: 36px 0; padding: 24px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue); color: var(--ink); font-style: italic;
+    }
+
+    /* ── DARK QUOTE BOX ── */
+    .quote-box {
+      margin: 40px 0; padding: 28px 32px;
+      background: var(--ink); color: rgba(245,242,236,0.85);
+      border-radius: 2px;
+      font-size: clamp(0.95rem,1.8vw,1.05rem);
+      line-height: 1.8;
+    }
+    .quote-box em {
+      display: block; margin-top: 16px;
+      font-size: 12px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold); font-style: normal;
+    }
+
+    /* ── STAT STRIP ── */
+    .stat-strip {
+      margin: 44px 0;
+      padding: 24px 28px;
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--blue);
+      background: rgba(3,70,148,0.03);
+      display: flex; flex-wrap: wrap; gap: 24px;
+    }
+    .stat-strip__item { flex: 1; min-width: 120px; text-align: center; }
+    .stat-strip__num {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem,4vw,2.8rem);
+      font-weight: 900; color: var(--blue); line-height: 1;
+    }
+    .stat-strip__label {
+      display: block; margin-top: 6px;
+      font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--ink-muted);
+    }
+
+    /* ── CHAPTER END ── */
+    .chapter-end {
+      text-align: center; margin: 64px 0 0;
+      padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    .chapter-end__ornament { font-size: 28px; color: var(--gold); letter-spacing: 0.3em; }
+    .chapter-end__text {
+      display: block; margin-top: 12px; font-size: 12px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink); color: rgba(245,242,236,0.5);
+      text-align: center; padding: 40px 20px;
+      font-size: 13px; letter-spacing: 0.08em;
+    }
+    .site-footer__logo { width: 50px; filter: brightness(0.6); margin-bottom: 16px; }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 6px; font-size: 14px; letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 500px) {
+      .pull-quote { padding: 18px 20px; }
+      .quote-box { padding: 20px 18px; }
+      .stat-strip { flex-direction: column; gap: 16px; }
+    }
+  
+    /* ============================================
+       NAVIGATION MENU STYLES (เมนูนำทาง)
+    ============================================ */
+    .main-nav {
+      background-color: var(--blue, #034694);
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav-list li a {
+      color: var(--white, #f5f2ec);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Sarabun', sans-serif;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 14px;
+    }
+    .nav-list li a:hover {
+      background-color: var(--gold, #c8a84b);
+      color: var(--ink, #1a1410);
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="Chapter1.html">บทที่ 1</a></li>
+      <li><a href="Chapter2.html">บทที่ 2</a></li>
+      <li><a href="Chapter3.html">บทที่ 3</a></li>
+      <li><a href="Chapter4.html">บทที่ 4</a></li>
+      <li><a href="Chapter5.html">บทที่ 5</a></li>
+      <li><a href="Chapter6.html">บทที่ 6</a></li>
+      <li><a href="Chapter7.html">บทที่ 7</a></li>
+      <li><a href="Chapter8.html">บทที่ 8</a></li>
+      <li><a href="Chapter9.html">บทที่ 9</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+      <p class="hero__kicker">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
+      <p class="hero__subtitle">ผู้เขียน: อิอิแอแอ</p>
+      <div class="hero__rule"></div>
+    </div>
+
+  </header>
+
+  <!-- ══ ARTICLE ══ -->
+  <main class="article">
+    <div class="article__inner">
+
+      <!-- Chapter heading -->
+      <div class="chapter-heading">
+        <div class="chapter-heading__number">บทที่ ๕</div>
+        <h1>ขึ้นลงบนรถไฟเหาะแห่ง Fulham Road</h1>
+      </div>
+
+      <!-- Opening pull quote -->
+      <blockquote class="pull-quote">
+        <p>'โครงสร้างเหล็กและคอนกรีตยักษ์นั้นกำลังสูบเลือดสโมสรอันยิ่งใหญ่แห่งหนึ่งของประเทศให้ตายลงอย่างช้าๆ แม้ว่าในขณะนั้นสัญญาณเหล่านั้นจะยังไม่ปรากฏให้เห็นชัด เมื่อทีมย่ำอยู่กับที่ แม้จะมีนักเตะหน้าใหม่ที่มีพรสวรรค์อย่าง เรย์ วิลกินส์, แกรี่ ล็อค, เอียน บริตตัน และ จอห์น สแปร์โรว์ หลั่งไหลเข้ามา ผู้จัดการทีม [เดฟ] เซ็กซ์ตัน ก็กลายเป็นเหยื่อรายแรกของความตื่นตระหนักของเชลซี'</p>
+        <cite>— จอห์น มอยนิแฮน, The Chelsea Story</cite>
+      </blockquote>
+
+      <!-- Intro -->
+      <p class="drop-cap">ขณะที่ยุค 1960 ก้าวเข้าสู่ทศวรรษ 1970 เชลซีขี่คลื่นความสำเร็จอย่างที่ไม่เคยเกิดขึ้นมาก่อนในประวัติศาสตร์สโมสร ไม่ว่าจะในแง่ของความสำเร็จที่ยั่งยืน นักเตะดาวเด่น ความสนใจจากสื่อระดับชาติ และสีสันจากแฟนบอลของเรา ทั้งหมดนี้ถือเป็นสิ่งที่ไม่เคยมีมาก่อน</p>
+
+      <p>ไม่แปลกที่ประธาน ไบรอัน เมียร์ส และคณะกรรมการจะถูกจุดไฟด้วยความทะเยอทะยานเดียวกับที่บรรพบุรุษของเขาซึ่งก่อตั้งสโมสรในต้นศตวรรษเคยมี พวกเขาได้สร้างสิ่งที่ถูกขนานนามในสมัยนั้นว่าเป็น 'สนามที่จะทำให้มวลมนุษย์ตะลึง' และบัดนี้คณะกรรมการตัดสินใจที่จะปรับโฉมใหม่ทั้งหมดเพื่อให้ Stamford Bridge เป็น 'สนามที่สมกับศักยภาพอันยิ่งใหญ่ของทีมเรา'</p>
+
+      <p>มีหลังคาครบทุกด้าน ใกล้ชิดสนามแทนที่จะเป็นพื้นที่โล่งกว้างของสนามรูปวงรีดั้งเดิม และแม้กระทั่งมีศักยภาพในการส่งลมร้อนใต้ที่นั่งเพื่อให้ฤดูหนาวไม่ทรมานแฟนบอล นี่ถือเป็นการออกแบบที่ยิ่งใหญ่โอฬาร</p>
+
+      <!-- Image: Jeunesse -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/news/2018/8/baldwin-jeunesse.jpg"
+             alt="เชลซีชนะ Jeunesse Hautcharage 13-0">
+        <figcaption>หน้าอัฒจันทร์เก่าในเดือนกันยายน 1971 — เชลซีเอาชนะ Jeunesse Hautcharage จากลักเซมเบิร์ก 13-0 (รวม 21-0) ใน Cup Winners' Cup สถิติชัยชนะสูงสุดของสโมสร</figcaption>
+      </figure>
+
+      <!-- Section 1 -->
+      <h2>วิกฤตรุมเร้าทั้งในและนอกสนาม</h2>
+
+      <p class="drop-cap">สิ่งแรกคือการรื้อถอนอัฒจันทร์ไม้เก่าแก่ดั้งเดิมที่มีมานานและสร้างอัฒจันทร์ฝั่งตะวันออกขนาดมหึมาที่เป็นโครงสร้างคอนกรีตและเหล็กแบบคานยื่น ซึ่งเมื่อเปิดใช้จะเป็นอัฒจันทร์หลังเดี่ยวที่ใหญ่ที่สุดในอังกฤษ แต่อัตรากำไรนั้นคับแคบ และสิ่งที่คณะกรรมการรับไม่ไหว และไม่ได้งบประมาณไว้ คือผลการแข่งขันของทีมที่ตกต่ำหรือปัญหาเศรษฐกิจที่กว้างขึ้นในสหราชอาณาจักร และทั้งสองอย่างก็ถาโถมเข้ามาพร้อมกัน</p>
+
+      <p>การแต่งตั้งสถาปนิกที่ไม่มีประสบการณ์ด้านการออกแบบสนามกีฬาก็นำไปสู่ความล่าช้าอยู่แล้ว แต่ความสัมพันธ์แรงงานที่เลวร้ายลงของอังกฤษในต้นทศวรรษ 1970 นำไปสู่การทำงานสัปดาห์ละสามวันสำหรับแรงงานทั่วประเทศ รวมถึงการประท้วงก่อสร้างและการขาดแคลนวัสดุก่อสร้าง บนสนาม จากที่เคยจบอันดับสามในลีกเมื่อปีที่เราคว้า FA Cup ทีมก็ร่วงลงมาในตาราง และแม้จะเข้าถึงรอบชิงชนะเลิศถ้วยครั้งที่สามในสามปีคือรอบชิงชนะเลิศ League Cup ที่ Wembley ปี 1972 เชลซีที่เป็นตัวเก็งก็แพ้ให้ Stoke City</p>
+
+      <!-- Stat strip -->
+      <div class="stat-strip">
+        <div class="stat-strip__item">
+          <span class="stat-strip__num">12</span>
+          <span class="stat-strip__label">อันดับฤดูกาล 1972/73</span>
+        </div>
+        <div class="stat-strip__item">
+          <span class="stat-strip__num">17</span>
+          <span class="stat-strip__label">อันดับฤดูกาล 1973/74</span>
+        </div>
+        <div class="stat-strip__item">
+          <span class="stat-strip__num">£3.4M</span>
+          <span class="stat-strip__label">หนี้สินที่พอกพูนขึ้น</span>
+        </div>
+      </div>
+
+      <!-- Image: East Stand -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/east_stand-2469611.jpg"
+             alt="อัฒจันทร์ฝั่งตะวันออกใหม่">
+        <figcaption>อัฒจันทร์ฝั่งตะวันออกใหม่ — ความยิ่งใหญ่ที่แลกมาด้วยภาระหนักอึ้งของสโมสร</figcaption>
+      </figure>
+
+      <p>ผู้จัดการทีม เดฟ เซ็กซ์ตัน กำลังต่อสู้กับความสัมพันธ์ที่เสื่อมถอยกับดาวเด่นอย่างน้อยสองคนซึ่งเป็นกำลังสำคัญในยุคถ้วยรางวัล ได้แก่ ปีเตอร์ ออสกู้ด และ อลัน ฮัดสัน ท่ามกลางความวุ่นวายทางการเงินที่กำลังก่อตัว คณะกรรมการจัดประชุมพิเศษกับผู้จัดการทีมและหนุนหลังเขาพร้อมกับหวังจะรักษานักเตะดาวเด่นไว้ เมื่อจำนวนผู้ชมและรายได้จากประตูลดลง หลังจากแพ้สี่นัดติดต่อกัน ผู้เล่นสองคนนั้นพร้อมกับ ปีเตอร์ โบเนตติ และ ทอมมี่ บอลด์วิน ถูกเด้งออกจากทีมสำหรับเกมวันปีใหม่ในปี 1974</p>
+
+      <p>มีการพักการแข่งขัน การขอย้ายทีม และคำขอโทษ แต่สุดท้าย ออสกู้ด และ ฮัดสัน ก็ถูกขายออกไปทั้งคู่ ผู้เล่นคนอื่นๆ จากทีมชุดยิ่งใหญ่ก็ทยอยออกประตูตามไป และวันของเซ็กซ์ตันก็ถูกนับถอยหลัง</p>
+
+      <p>บรรยากาศที่ The Bridge ถูกกระทบอยู่แล้วจากการมีเว็บไซต์ก่อสร้างขนาดใหญ่อยู่ข้างสนาม และจำนวนผู้ชมก็ลดลงเรื่อยๆ อัฒจันทร์ฝั่งตะวันออกเปิดใช้งานล่าช้ากว่ากำหนดหนึ่งปีและเกินงบประมาณอย่างมาก เมล็ดพันธุ์แห่งปัญหาสำหรับคนรุ่นต่อไปถูกหว่านไว้แล้วขณะที่สโมสรขอต่อวงเงินเบิกเกินบัญชีจากธนาคาร เชิงสัญลักษณ์ ในเกมแรกที่เล่นหน้าอัฒจันทร์ใหม่ เชลซีแพ้ให้กับ Carlisle United น้องใหม่ในดิวิชั่นหนึ่ง และปลายฤดูกาลสองสโมสรก็มาพบกันอีกครั้ง — ในการตกชั้น</p>
+
+      <!-- Section 2 -->
+      <h2>เอ็ดดี้ แม็คเครดี้ — หวังใหม่จากลูกหม้อ</h2>
+
+      <!-- Image: squad 1974/75 -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/squad_1974.jpg"
+             alt="ทีมเชลซีฤดูกาล 1974/75">
+        <figcaption>ภาพถ่ายทีมแบบไม่เป็นทางการของชุดฤดูกาล 1974/75</figcaption>
+      </figure>
+
+      <p class="drop-cap">สโมสรกำลังเผชิญกับวิกฤตการณ์ทางการเงินอย่างหนักและต่อสู้เพื่อความอยู่รอด แต่เนื่องจากนี่คือเชลซีที่ผาดโผนและคาดเดาไม่ได้ จึงมีช่วงขึ้นที่น่าตื่นเต้นท่ามกลางการร่วงลงครั้งใหญ่ การซื้อนักเตะใหม่แทบเป็นไปไม่ได้ทางการเงิน ทีมบริหารจึงหันกลับมาใช้ระบบเยาวชนอีกครั้ง เรย์ วิลกินส์ เป็นอัญมณีหนุ่มใหม่ที่เริ่มส่องแสงแล้วและได้รับตำแหน่งกัปตันทีมตอนอายุเพียง 18 ปี โดย เอ็ดดี้ แม็คเครดี้ แบ็กผู้ยิ่งใหญ่จากยุค ด็อกเฮอร์ตี/เซ็กซ์ตัน ซึ่งปัจจุบันดำรงตำแหน่งผู้จัดการทีมหน้าใหม่</p>
+
+      <p>'คนอย่าง จอห์น ฮอลลินส์, มาร์วิน ฮินตัน, ปีเตอร์ เฮาส์แมน ผมตระหนักแล้วว่านักเตะที่ยอดเยี่ยม วิเศษ และเป็นเพื่อนของผมเหล่านี้ ไม่สามารถพาสโมสรกลับไปยังจุดที่ต้องการได้' แม็คเครดี้กล่าวในภายหลัง</p>
+
+      <p>เพื่อนร่วมทีมเก่าบางคนของแม็คเครดี้ยังคงอยู่เพื่อให้ประสบการณ์ ได้แก่ โบเนตติ, รอน แฮร์ริส และ ชาร์ลี คุก แต่ทีมกลางทศวรรษ 1970 เป็นลูกหม้อหน้าใหม่แทบทั้งหมด และขณะที่พวกเขาเริ่มประสบความสำเร็จอย่างไม่คาดคิดในยุคแห่งความยากลำบาก ความผูกพันกับแฟนบอลก็ก่อตัวขึ้น ทำให้พวกเขากลายเป็นหนึ่งในทีมที่ยังคงเป็นที่รักของแฟนเชลซีมากที่สุดตลอดกาล</p>
+
+      <div class="quote-box">
+        'แกรี่ ล็อค, สตีฟ วิกส์ และ มิกกี้ ดรอย ยักษ์ใหญ่เล่นในแนวรับ เรย์ ลิวิงตัน เป็นคู่หูของ วิลกินส์ ในกองกลาง มี แกรี่ สแตนลีย์ ดีนามิกและ เอียน บริตตัน แรงๆ เล่นอยู่สองปีก เคนนี่ สเวน เป็นกองหน้าที่มีสไตล์ สตีฟ ฟินนิสตัน ทำประตูได้เยอะมาก และโดดออกมาจาก Shed End คือ ทอมมี่ แลงลีย์ กองหน้าวัยรุ่นที่เป็นแฟนเชลซีตั้งแต่เด็ก'
+        <em>— บรรยากาศทีมแห่งความหวัง กลางทศวรรษ 1970</em>
+      </div>
+
+      <p>ภายในสองฤดูกาล ทีมของแม็คเครดี้ได้เลื่อนชั้นกลับสู่ดิวิชั่นหนึ่ง ซึ่งเป็นเส้นชีวิตสำคัญสำหรับสโมสรที่กำลังถูกบี้ด้วยหนี้สินที่พุ่งขึ้นไปถึง 3.4 ล้านปอนด์ น่าทึ่งที่มีการเรี่ยไรเงินในสนามเพราะแฟนบอลถูกขอให้ล้วงกระเป๋าหาเศษสตางค์เพื่อช่วยค้ำยันอนาคตของสโมสร</p>
+
+      <!-- Image: McCreadie -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/blogs-and-columns/2020/1/Mccreadie-GettyImages-3267888.jpg"
+             alt="เอ็ดดี้ แม็คเครดี้">
+        <figcaption>ผู้จัดการทีม แม็คเครดี้ สำรวจสถานการณ์ระหว่างการบุกสนาม Stamford Bridge</figcaption>
+      </figure>
+
+      <p>รถไฟเหาะยังคงวิ่งต่อเมื่อเพียงสองเดือนหลังจากที่เขาพาทีมเลื่อนชั้น แม็คเครดี้ก็ลาออกเนื่องจากข้อพิพาทสัญญากับคณะกรรมการ สำหรับคนภายนอก ดูเหมือนสโมสรจะมีปืนโหลกระสุนชี้อยู่ที่เท้าตัวเองตลอดเวลา</p>
+
+      <!-- Section 3 -->
+      <h2>เงาของอันธพาลและพลังของยุคพังก์</h2>
+
+      <p class="drop-cap">ยิ่งกว่านั้น ผู้ชมบางส่วนที่มาดูเกมของเรายังก่อปัญหาอื่นที่สร้างความเสียหายอย่างมาก การก่อกวนในเกมฟุตบอล ความรุนแรงต่อแฟนบอลฝ่ายตรงข้าม และการทำลายทรัพย์สินในสนามกีฬา ผับ และยานพาหนะ มีมาตั้งแต่ทศวรรษ 1960 แต่มันได้กลายเป็นสิ่งที่ฝังรากลึกและแพร่ระบาดในช่วงทศวรรษ 1970 นี่คือวัฒนธรรมย่อยและปรากฏการณ์ทางสังคมที่มีพิธีกรรม อาณาเขต และลำดับชั้นของตัวเอง และชื่อเสียงของเชลซีในเรื่องพฤติกรรมที่เลวร้ายของแฟนบอลก็ติดอยู่ในกลุ่มที่แย่ที่สุด</p>
+
+      <p>ฟุตบอลกำลังสูญเสียความนิยมในวงกว้างและจำนวนผู้ชมทั่วประเทศลดลง ซึ่งเป็นสิ่งสุดท้ายที่เชลซีต้องการ ขณะที่ได้รับผลกระทบจากปัญหาของทีมและวิกฤตกระแสเงินสดอยู่แล้ว รัฐบาลเข้ามาแทรกแซง พยายามห้ามแฟนเชลซีเข้าชมเกมเยือน และเมื่อปัญหาลุกลามเข้าสู่ทศวรรษ 1980 ก็มีการพูดถึงโครงการบัตรประจำตัวระดับชาติ แม้กระทั่งมีการติดตั้งรั้วไฟฟ้าเพื่อกักแฟนบอลใน Stamford Bridge แต่ก็ไม่เคยเปิดใช้งาน — อย่างน่าขันที่เหตุผลคือเรื่องความปลอดภัย</p>
+
+      <p>จาก King's Road ที่เคยเป็นศูนย์กลางของวัฒนธรรม Mod ในทศวรรษ 1960 ซึ่งกลายเป็นบางอย่างที่น่าเกลียดกว่าในทศวรรษ 70 King's Road ของเชลซียังเป็นจุดศูนย์กลางของพังก์ร็อกและความหิวกระหายต่อการปฏิวัติและสิ่งใหม่ ทั่วอังกฤษรู้สึกถึงความขัดแย้งมากขึ้น มีความรุนแรงแบบสุ่มในงานสังสรรค์ต่างๆ และในต้นทศวรรษ 1980 ก็มีการจลาจลในเมืองและความวุ่นวายทางสังคม ขณะที่เชลซีดิ้นรนทางการเงิน เศรษฐกิจของประเทศก็ตกชั้นเหมือนกัน</p>
+
+      <!-- Section 4 -->
+      <h2>ดิวิชั่น 2 — และวิกฤตที่ไม่มีวันสิ้นสุด</h2>
+
+      <p class="drop-cap">แม้แม็คเครดี้จะออกจากเก้าอี้ไปแล้ว แต่ก็มีช่วงเวลาอัศจรรย์เมื่อแชมป์ยุโรปอย่าง Liverpool ถูกถล่ม 4-2 ใน FA Cup โดยมี ไคลฟ์ วอล์คเกอร์ กองหน้าหนุ่มคล่องแคล่วเป็นแกนนำ แต่การกลับมาสู่ดิวิชั่นหนึ่งก็ไม่ยั่งยืนและรถไฟเหาะก็ดิ่งลงอีกครั้งในช่วงดิ่งใหญ่</p>
+
+      <p>ผู้จัดการทีม รวมถึง เจฟฟ์ เฮิร์สต์ ฮีโร่แฮตทริกในฟุตบอลโลกปี 1966 ของอังกฤษ ผลัดกันมาและไปด้วยความถี่ที่น่าตกใจ และมีการพูดถึงการเซ็นสัญญาตัวเก่งอย่าง โยฮัน ครอยฟ์ ตำนานชาวดัตช์ แต่วันเหล่านั้นยังอยู่ไกลออกไป แม้ว่าหนี้สินจะลดลงเหลือ 1.3 ล้านปอนด์ (ส่วนหนึ่งจากการขาย เรย์ วิลกินส์ ไปให้ Manchester United) แต่หมาป่าแห่งการล้มละลายก็ไม่เคยรู้สึกว่าอยู่ไกล จำนวนผู้ชมต่ำกว่า 10,000 คนที่ Stamford Bridge ไม่ใช่เรื่องแปลก</p>
+
+      <p>ฤดูกาล 1982/83 ถือเป็นฤดูกาลที่แย่ที่สุดในประวัติศาสตร์เชลซีในแง่ผลงาน ขณะที่ทีมเดินทางขึ้นเหนือไปยัง Bolton สำหรับเกมรองสุดท้าย เราอยู่ในสถานการณ์ที่ทีมไหนแพ้ก็ต้องตกไปดิวิชั่นสาม สำหรับเดอะบลูส์ การตกชั้นสู่ระดับสามซึ่งไม่เคยเกิดขึ้นมาก่อนมาพร้อมกับภัยคุกคามเรื่องการล่มสลายภายใต้น้ำหนักของหนี้สินและไม่มีหนทางกลับ</p>
+
+      <!-- Image: Walker Bolton goal -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/walker_bolton_1983_celebration.jpg"
+             alt="การเฉลิมฉลองที่ Bolton ปี 1983">
+        <figcaption>Bolton ปี 1983 — การเฉลิมฉลองหนึ่งในประตูที่สำคัญที่สุดในประวัติศาสตร์เชลซี</figcaption>
+      </figure>
+
+      <p>วอล์คเกอร์คือผู้กอบกู้วันนั้นในสายฝนของแลงคาเชียร์ด้วยประตูในนาทีท้ายที่มีค่าเกินจะบรรยาย และนักเตะส่วนใหญ่โยนเสื้อของตัวเองเข้าไปในกลุ่มแฟนบอลเยือนที่กำลังปลาบปลื้ม ตามสไตล์ยุคนั้น ค่าเสื้อทดแทนถูกหักจากค่าจ้างของพวกเขา สัปดาห์ถัดมา การเสมอ 0-0 ที่บ้านในเกมสุดท้ายปิดฉากการหนีรอด แต่แม้จะโล่งใจ สโมสรฟุตบอลเชลซียังอยู่ในความยุ่งเหยิงอย่างแท้จริง</p>
+
+      <blockquote>
+        <p>ในครั้งนี้อย่างไรก็ตาม คำกล่าวอันโด่งดังนั้นพิสูจน์ว่าเป็นเรื่องจริง: <em>ชั่วโมงที่มืดที่สุดนั้น คือช่วงก่อนรุ่งอรุณนั่นเอง</em></p>
+      </blockquote>
+
+      <!-- Chapter end -->
+      <div class="chapter-end">
+        <div class="chapter-end__ornament">⚽</div>
+        <span class="chapter-end__text">— จบบทที่ ๕ —</span>
+      </div>
+
+    </div><!-- /.article__inner -->
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

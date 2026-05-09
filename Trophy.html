@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — ทำเนียบแชมป์</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============================================
+       NAVIGATION MENU STYLES (แถบเมนูนำทาง)
+    ============================================ */
+    .main-nav {
+      background-color: var(--blue, #034694);
+      padding: 12px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+      border-bottom: 2px solid var(--gold);
+    }
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .nav-list li a {
+      color: var(--white, #f5f2ec);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Sarabun', sans-serif;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+    .nav-list li a:hover, .nav-list li a.active {
+      background-color: var(--gold, #c8a84b);
+      color: var(--blue-dark);
+      box-shadow: 0 2px 8px rgba(200, 168, 75, 0.4);
+    }
+
+    /* ============================================
+       FLOATING DIGITAL CLOCK (BLUE GOLD)
+    ============================================ */
+    .floating-clock {
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      z-index: 9999;
+      background: rgba(2, 31, 69, 0.85);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 12px 18px;
+      display: flex;
+      gap: 16px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      color: var(--white);
+      transition: transform 0.3s ease;
+    }
+    .floating-clock:hover {
+      transform: translateY(-3px);
+    }
+    .floating-clock__section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .floating-clock__divider {
+      width: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+    }
+    .floating-clock__label {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .floating-clock__date {
+      font-size: 12px;
+      color: rgba(245, 242, 236, 0.8);
+      margin-bottom: 2px;
+    }
+    .floating-clock__time {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: 'Sarabun', monospace;
+    }
+    @media (max-width: 768px) {
+      .floating-clock {
+        top: 60px;
+        right: 10px;
+        padding: 8px 12px;
+        transform: scale(0.85);
+        transform-origin: top right;
+      }
+    }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 640px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://i.postimg.cc/kG8gNd67/WE-VE-WON-IT-ALL.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.35) saturate(0.7);
+      transform: scale(1.04);
+      transition: transform 12s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.08); }
+
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(2,31,69,0.6) 0%,
+        rgba(3,12,30,0.5) 50%,
+        rgba(0,0,0,0.75) 100%
+      );
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+      z-index: 5;
+    }
+
+    .hero__inner {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 0 clamp(20px,6vw,80px);
+    }
+
+    .hero__logo {
+      width: clamp(90px,13vw,150px);
+      filter: drop-shadow(0 6px 32px rgba(200,168,75,0.55));
+      margin-bottom: 32px;
+      animation: riseIn 1s ease both;
+    }
+
+    .hero__eyebrow {
+      font-size: clamp(10px,1.1vw,12px); font-weight: 600;
+      letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+      animation: riseIn 1s 0.15s ease both;
+    }
+
+    .hero__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.6rem,7vw,6rem); line-height: 1.05;
+      color: var(--white); letter-spacing: -0.015em;
+      max-width: 880px;
+      animation: riseIn 1s 0.25s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+
+    .hero__tagline {
+      font-size: clamp(14px,1.6vw,17px);
+      color: rgba(245,242,236,0.6); margin-top: 20px;
+      letter-spacing: 0.05em;
+      animation: riseIn 1s 0.35s ease both;
+    }
+
+    .hero__divider {
+      display: flex; align-items: center; gap: 16px;
+      margin: 36px auto;
+      animation: riseIn 1s 0.45s ease both;
+    }
+    .hero__divider span { display: block; width: 80px; height: 1px; background: var(--gold); opacity: 0.5; }
+    .hero__divider em { font-size: 20px; color: var(--gold); font-style: normal; }
+
+    @keyframes riseIn {
+      from { opacity:0; transform:translateY(20px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    .scroll-hint {
+      position: absolute; bottom: 32px; left: 50%;
+      transform: translateX(-50%); z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: bounce 2.4s ease-in-out infinite;
+    }
+    .scroll-hint span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,242,236,0.35); }
+    .scroll-hint__arrow {
+      width: 18px; height: 18px;
+      border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg); opacity: 0.6;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(9px); }
+    }
+
+    /* ══════════════════════════════
+       INTRO BAND
+    ══════════════════════════════ */
+    .intro {
+      background: var(--blue-dark);
+      padding: clamp(48px,8vw,80px) clamp(20px,6vw,80px);
+      text-align: center;
+    }
+    .intro__label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+    .intro__text {
+      max-width: 640px; margin: 0 auto;
+      font-size: clamp(15px,2vw,18px);
+      line-height: 1.9; color: rgba(245,242,236,0.7);
+    }
+
+    /* stat row */
+    .intro__stats {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 40px; margin-top: 40px;
+    }
+    .intro__stat { text-align: center; }
+    .intro__stat-num {
+      display: block;
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.2rem,5vw,3.5rem); color: var(--gold-light);
+      line-height: 1;
+    }
+    .intro__stat-label {
+      display: block; margin-top: 6px;
+      font-size: 11px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(245,242,236,0.45);
+    }
+    .intro__rule {
+      width: 40px; height: 2px; background: var(--gold);
+      margin: 36px auto 0; opacity: 0.6;
+    }
+
+    /* ══════════════════════════════
+       FILTER BAR
+    ══════════════════════════════ */
+    .filter-bar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(249,246,240,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      padding: 14px clamp(20px,5vw,60px);
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    }
+    .filter-bar__label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-muted); margin-right: 4px;
+    }
+    .filter-btn {
+      padding: 6px 14px;
+      border: 1px solid var(--rule);
+      border-radius: 20px;
+      background: transparent;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 13px; font-weight: 400;
+      color: var(--ink-soft);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: white;
+    }
+
+    /* ══════════════════════════════
+       TIMELINE SECTION
+    ══════════════════════════════ */
+    .timeline-section {
+      padding: clamp(60px,10vw,90px) clamp(20px,6vw,80px);
+      max-width: 1000px; margin: 0 auto;
+    }
+
+    /* Year group */
+    .year-group {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0 32px;
+      margin-bottom: 0;
+    }
+
+    /* Year label column */
+    .year-label {
+      text-align: right;
+      padding-top: 6px;
+    }
+    .year-label__num {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem,3.5vw,2.4rem);
+      color: var(--blue);
+      line-height: 1;
+      display: block;
+    }
+
+    /* Timeline column */
+    .year-entries {
+      border-left: 2px solid var(--rule);
+      padding: 0 0 48px 32px;
+      position: relative;
+    }
+
+    /* dot on the line */
+    .year-entries::before {
+      content: '';
+      position: absolute;
+      left: -8px; top: 8px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--paper);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+
+    /* single trophy entry */
+    .trophy-entry {
+      margin-bottom: 16px;
+      padding: 18px 20px;
+      border-left: 3px solid transparent;
+      background: white;
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(26,20,16,0.06);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      cursor: default;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .trophy-entry:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 20px rgba(26,20,16,0.12);
+    }
+    .trophy-entry:last-child { margin-bottom: 0; }
+
+    /* clickable / linkable entry */
+    a.trophy-entry {
+      cursor: pointer;
+      position: relative;
+    }
+    a.trophy-entry::after {
+      content: 'อ่านรายงานเกม →';
+      display: block;
+      margin-top: 10px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold);
+      transition: color 0.2s, letter-spacing 0.2s;
+    }
+    a.trophy-entry:hover::after {
+      color: var(--blue);
+      letter-spacing: 0.22em;
+    }
+    a.trophy-entry:hover {
+      transform: translateX(4px);
+      box-shadow: 0 6px 28px rgba(26,20,16,0.16);
+      border-color: var(--gold) !important;
+    }
+
+    /* colour-code by competition */
+    .trophy-entry[data-comp="PL"]        { border-color: #3d0b9e; }
+    .trophy-entry[data-comp="FL"]        { border-color: #3d0b9e; }
+    .trophy-entry[data-comp="FA"]        { border-color: #e11f26; }
+    .trophy-entry[data-comp="LC"]        { border-color: #f5a623; }
+    .trophy-entry[data-comp="UCL"]       { border-color: #034694; }
+    .trophy-entry[data-comp="UEL"]       { border-color: #ff6600; }
+    .trophy-entry[data-comp="UECL"]      { border-color: #00a859; }
+    .trophy-entry[data-comp="UCWC"]      { border-color: #8e44ad; }
+    .trophy-entry[data-comp="USEC"]      { border-color: #1abc9c; }
+    .trophy-entry[data-comp="CWC"]       { border-color: var(--gold); }
+    .trophy-entry[data-comp="CS"]        { border-color: #95a5a6; }
+    .trophy-entry[data-comp="FMC"]       { border-color: #95a5a6; }
+
+    .trophy-entry__top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .trophy-entry__comp {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1rem,2vw,1.15rem);
+      color: var(--ink); line-height: 1.3;
+    }
+
+    .trophy-entry__badge {
+      flex-shrink: 0;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--blue-dark);
+      color: var(--gold-light);
+      white-space: nowrap;
+    }
+
+    .trophy-entry__date {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 8px;
+    }
+
+    .trophy-entry__detail {
+      font-size: 14px; color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* ══════════════════════════════
+       LEGEND
+    ══════════════════════════════ */
+    .legend {
+      background: var(--blue-dark);
+      padding: clamp(40px,6vw,64px) clamp(20px,6vw,80px);
+    }
+    .legend__title {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 24px; text-align: center;
+    }
+    .legend__grid {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 12px; max-width: 800px; margin: 0 auto;
+    }
+    .legend__item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: rgba(245,242,236,0.65);
+    }
+    .legend__dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .site-footer {
+      background: var(--ink); color: rgba(245,242,236,0.4);
+      text-align: center; padding: 36px 20px;
+      font-size: 12px; letter-spacing: 0.1em;
+    }
+    .site-footer__logo { width: 40px; filter: brightness(0.5); margin-bottom: 14px; }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 6px; font-size: 13px; letter-spacing: 0.18em;
+    }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 560px) {
+      .year-group { grid-template-columns: 64px 1fr; gap: 0 16px; }
+      .year-entries { padding-left: 20px; }
+      .trophy-entry__top { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 หน้าหลัก</a></li>
+      <li><a href="Trophy.html" class="active">🏆 ทำเนียบแชมป์</a></li>
+      <li><a href="Managers.html">👔 ผู้จัดการทีม</a></li>
+      <li><a href="squad.html">👥 รายชื่อนักเตะ</a></li>
+      <li><a href="icon.html">👑 ตำนาน</a></li>
+      <li><a href="appearances.html">📊 สถิติลงสนาม</a></li>
+    </ul>
+  </nav>
+
+  <div class="floating-clock">
+    <div class="floating-clock__section">
+      <div class="floating-clock__label">🇹🇭 ไทย</div>
+      <div class="floating-clock__date" id="th-date">--</div>
+      <div class="floating-clock__time" id="th-time">--:--:--</div>
+    </div>
+    <div class="floating-clock__divider"></div>
+    <div class="floating-clock__section">
+      <div class="floating-clock__label">🇬🇧 London</div>
+      <div class="floating-clock__date" id="uk-date">--</div>
+      <div class="floating-clock__time" id="uk-time">--:--:--</div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__inner">
+      <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo" alt="Logo">
+      <p class="hero__eyebrow">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">ทำเนียบ<br><em>แชมป์เชลซี</em></h1>
+      <p class="hero__tagline">ถ้วยรางวัลทุกใบ เรียงตามไทม์ไลน์ประวัติศาสตร์</p>
+      <div class="hero__divider">
+        <span></span><em>🏆</em><span></span>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-hint__arrow"></div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p class="intro__label">สถิติรวม</p>
+    <p class="intro__text">
+      รวมถ้วยรางวัลทุกใบที่เชลซีเคยคว้ามาได้ตลอดประวัติศาสตร์สโมสร<br>
+      เรียงลำดับตามวันที่คว้าแชมป์จริงจากเก่าไปหาใหม่
+    </p>
+    <div class="intro__stats">
+      <div class="intro__stat">
+        <span class="intro__stat-num">37</span>
+        <span class="intro__stat-label">ถ้วยรางวัลทั้งหมด</span>
+      </div>
+      <div class="intro__stat">
+        <span class="intro__stat-num">7</span>
+        <span class="intro__stat-label">ประเภทรายการ</span>
+      </div>
+      <div class="intro__stat">
+        <span class="intro__stat-num">1955</span>
+        <span class="intro__stat-label">แชมป์แรก</span>
+      </div>
+      <div class="intro__stat">
+        <span class="intro__stat-num">2025</span>
+        <span class="intro__stat-label">ล่าสุด</span>
+      </div>
+    </div>
+    <div class="intro__rule"></div>
+  </section>
+
+  <div class="filter-bar" id="filterBar">
+    <span class="filter-bar__label">กรอง:</span>
+    <button class="filter-btn active" onclick="filterTrophies('all', this)">ทั้งหมด</button>
+    <button class="filter-btn" onclick="filterTrophies('league', this)">ลีก</button>
+    <button class="filter-btn" onclick="filterTrophies('fa', this)">FA Cup</button>
+    <button class="filter-btn" onclick="filterTrophies('lc', this)">League Cup</button>
+    <button class="filter-btn" onclick="filterTrophies('europe', this)">ยุโรป</button>
+    <button class="filter-btn" onclick="filterTrophies('world', this)">โลก</button>
+  </div>
+
+  <section class="timeline-section" id="trophyTimeline">
+
+    <div class="year-group" data-year="1955">
+      <div class="year-label"><span class="year-label__num">1955</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_1.html" class="trophy-entry" data-comp="FL" data-cat="league">
+          <div class="trophy-entry__date">23 เมษายน 1955</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Division 1</span>
+            <span class="trophy-entry__badge">ลีก</span>
+          </div>
+          <p class="trophy-entry__detail">การันตีแชมป์ก่อนจบฤดูกาล 1 นัด ด้วยการชนะ Sheffield Wednesday 3–0 ที่ Stamford Bridge คว้าแชมป์ลีกครั้งแรกและครั้งเดียวก่อนยุคอับราโมวิช</p>
+        </a>
+        <a href="Trophy_m_2.html" class="trophy-entry" data-comp="CS" data-cat="domestic">
+          <div class="trophy-entry__date">14 กันยายน 1955</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Charity Shield</span>
+            <span class="trophy-entry__badge">ซูเปอร์คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Newcastle United 3–0 ที่ Stamford Bridge</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="1965">
+      <div class="year-label"><span class="year-label__num">1965</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_3.html" class="trophy-entry" data-comp="LC" data-cat="lc">
+          <div class="trophy-entry__date">5 เมษายน 1965</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">League Cup</span>
+            <span class="trophy-entry__badge">ลีกคัพ</span>
+          </div>
+          <p class="trophy-entry__detail">เสมอ Leicester City 0–0 ในนัดที่สอง รวมผลสองนัดชนะ 3–2 — League Cup ครั้งแรกในประวัติศาสตร์สโมสร</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="1970">
+      <div class="year-label"><span class="year-label__num">1970</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_4.html" class="trophy-entry" data-comp="FA" data-cat="fa">
+          <div class="trophy-entry__date">29 เมษายน 1970</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Cup</span>
+            <span class="trophy-entry__badge">เอฟเอ คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Leeds United 2–1 ในนัดรีเพลย์ที่ Old Trafford ด้วยประตูของ ออสกู้ด และ เวบบ์ — FA Cup ครั้งแรกในประวัติศาสตร์สโมสร</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="1971">
+      <div class="year-label"><span class="year-label__num">1971</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_5.html" class="trophy-entry" data-comp="UCWC" data-cat="europe">
+          <div class="trophy-entry__date">21 พฤษภาคม 1971</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">UEFA Cup Winners' Cup</span>
+            <span class="trophy-entry__badge">ยุโรป</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Real Madrid 2–1 ในนัดรีเพลย์ที่กรุงเอเธนส์ ประเทศกรีซ ด้วยประตูของ เดมป์ซีย์ และ ออสกู้ด — European Trophy ครั้งแรกของสโมสร</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="1984">
+      <div class="year-label"><span class="year-label__num">1984</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_6.html" class="trophy-entry" data-comp="FL" data-cat="league">
+          <div class="trophy-entry__date">ปี 1984</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Division 2</span>
+            <span class="trophy-entry__badge">ลีก</span>
+          </div>
+          <p class="trophy-entry__detail">คว้าแชมป์ลีกดิวิชั่นสองเพื่อเลื่อนชั้นกลับสู่ลีกสูงสุด</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="1986">
+      <div class="year-label"><span class="year-label__num">1986</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_7.html" class="trophy-entry" data-comp="FMC" data-cat="domestic">
+          <div class="trophy-entry__date">23 มีนาคม 1986</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Full Members' Cup</span>
+            <span class="trophy-entry__badge">🏆 ถ้วยในประเทศ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Manchester City 5–4 ที่ Wembley Stadium ท่ามกลางผู้ชม 67,236 คน — <strong>David Speedie ยิงแฮตทริก, Colin Lee ยิงสองลูก</strong> ในนัดชิงครั้งแรกของรายการ</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="1989">
+      <div class="year-label"><span class="year-label__num">1989</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_8.html" class="trophy-entry" data-comp="FL" data-cat="league">
+          <div class="trophy-entry__date">ปี 1989</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Division 2</span>
+            <span class="trophy-entry__badge">ลีก</span>
+          </div>
+          <p class="trophy-entry__detail">คว้าแชมป์ลีกดิวิชั่นสองเพื่อเลื่อนชั้นกลับสู่ลีกสูงสุดอีกครั้ง</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="1990">
+      <div class="year-label"><span class="year-label__num">1990</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_9.html" class="trophy-entry" data-comp="FMC" data-cat="domestic">
+          <div class="trophy-entry__date">25 มีนาคม 1990</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Full Members' Cup</span>
+            <span class="trophy-entry__badge">ถ้วยในประเทศ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Middlesbrough 1–0 ที่สนาม Wembley</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="1997">
+      <div class="year-label"><span class="year-label__num">1997</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_10.html" class="trophy-entry" data-comp="FA" data-cat="fa">
+          <div class="trophy-entry__date">17 พฤษภาคม 1997</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Cup</span>
+            <span class="trophy-entry__badge">เอฟเอ คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Middlesbrough 2–0 ด้วยประตูของ ดิ มัตเตโอ (นาทีที่ 43 วินาที — เร็วที่สุดในประวัติ FA Cup Final) และ เอ็ดดี้ นิวตัน ยุติการรอคอย 26 ปี</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="1998">
+      <div class="year-label"><span class="year-label__num">1998</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_11.html" class="trophy-entry" data-comp="LC" data-cat="lc">
+          <div class="trophy-entry__date">29 มีนาคม 1998</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">League Cup</span>
+            <span class="trophy-entry__badge">ลีกคัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Middlesbrough 2–0 ช่วงต่อเวลาพิเศษ ประตูจาก แฟรงก์ ซินแคลร์ และ ดิ มัตเตโอ</p>
+        </a>
+        <a href="Trophy_m_12.html" class="trophy-entry" data-comp="UCWC" data-cat="europe">
+          <div class="trophy-entry__date">13 พฤษภาคม 1998</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">UEFA Cup Winners' Cup</span>
+            <span class="trophy-entry__badge">ยุโรป</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ VfB Stuttgart 1–0 ที่สตอกโฮล์ม ประตูชัยจาก จานฟรังโก โซล่า เพียง 20 วินาทีหลังลงสนามแทน</p>
+        </a>
+        <a href="Trophy_m_13.html" class="trophy-entry" data-comp="USEC" data-cat="europe">
+          <div class="trophy-entry__date">28 สิงหาคม 1998</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">UEFA Super Cup</span>
+            <span class="trophy-entry__badge">ยุโรป</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Real Madrid 1–0 ที่โมนาโก</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2000">
+      <div class="year-label"><span class="year-label__num">2000</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_14.html" class="trophy-entry" data-comp="FA" data-cat="fa">
+          <div class="trophy-entry__date">20 พฤษภาคม 2000</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Cup</span>
+            <span class="trophy-entry__badge">เอฟเอ คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Aston Villa 1–0 ประตูจาก โรแบร์โต ดิ มัตเตโอ — นัดชิงชนะเลิศครั้งสุดท้ายที่ Wembley Stadium เดิม</p>
+        </a>
+        <a href="Trophy_m_15.html" class="trophy-entry" data-comp="CS" data-cat="domestic">
+          <div class="trophy-entry__date">13 สิงหาคม 2000</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Charity Shield</span>
+            <span class="trophy-entry__badge">ซูเปอร์คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Manchester United 2–0</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2005">
+      <div class="year-label"><span class="year-label__num">2005</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_16.html" class="trophy-entry" data-comp="LC" data-cat="lc">
+          <div class="trophy-entry__date">27 กุมภาพันธ์ 2005</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">League Cup</span>
+            <span class="trophy-entry__badge">ลีกคัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Liverpool 3–2 ช่วงต่อเวลาพิเศษ ด้วยประตูของ ดร็อกบา และ เกซมาน หลังจาก เจอร์ราร์ด เตะเข้าประตูตัวเองตีเสมอ</p>
+        </a>
+        <a href="Trophy_m_17.html" class="trophy-entry" data-comp="PL" data-cat="league">
+          <div class="trophy-entry__date">30 เมษายน 2005</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Premier League</span>
+            <span class="trophy-entry__badge">ลีก</span>
+          </div>
+          <p class="trophy-entry__detail">การันตีแชมป์ก่อนจบฤดูกาล 3 นัด ชนะ Bolton 2–0 ด้วยสองประตูของ แลมพาร์ด สถิติสำคัญ: เสียประตูเพียง 15 ลูกตลอดฤดูกาล (ยังคงเป็นสถิติ Premier League)</p>
+        </a>
+        <a href="Trophy_m_18.html" class="trophy-entry" data-comp="CS" data-cat="domestic">
+          <div class="trophy-entry__date">7 สิงหาคม 2005</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Community Shield</span>
+            <span class="trophy-entry__badge">ซูเปอร์คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Arsenal 2–1</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2006">
+      <div class="year-label"><span class="year-label__num">2006</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_19.html" class="trophy-entry" data-comp="PL" data-cat="league">
+          <div class="trophy-entry__date">29 เมษายน 2006</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Premier League</span>
+            <span class="trophy-entry__badge">ลีก</span>
+          </div>
+          <p class="trophy-entry__detail">การันตีแชมป์ก่อนจบฤดูกาล 2 นัด ชนะ Manchester United 3–0 ในฤดูกาลครบรอบ 100 ปีสโมสร — แชมป์ติดต่อกันเป็นครั้งแรกในประวัติศาสตร์</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2007">
+      <div class="year-label"><span class="year-label__num">2007</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_20.html" class="trophy-entry" data-comp="LC" data-cat="lc">
+          <div class="trophy-entry__date">25 กุมภาพันธ์ 2007</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">League Cup</span>
+            <span class="trophy-entry__badge">ลีกคัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Arsenal 2–1 ประตูจาก ดร็อกบา สองลูก ช่วยพลิกจากตามหลัง</p>
+        </a>
+        <a href="Trophy_m_21.html" class="trophy-entry" data-comp="FA" data-cat="fa">
+          <div class="trophy-entry__date">19 พฤษภาคม 2007</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Cup</span>
+            <span class="trophy-entry__badge">เอฟเอ คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Manchester United 1–0 ด้วยประตูช่วงต่อเวลาพิเศษของ ดร็อกบา — นัดชิงชนะเลิศครั้งแรกที่ Wembley Stadium ใหม่</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2009">
+      <div class="year-label"><span class="year-label__num">2009</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_22.html" class="trophy-entry" data-comp="FA" data-cat="fa">
+          <div class="trophy-entry__date">30 พฤษภาคม 2009</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Cup</span>
+            <span class="trophy-entry__badge">เอฟเอ คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Everton 2–1 ประตูชัยจากฟรีคิกอันเป็นเอกลักษณ์ของ ดร็อกบา ภายใต้กุนซือ Guus Hiddink รักษาการ</p>
+        </a>
+        <a href="Trophy_m_23.html" class="trophy-entry" data-comp="CS" data-cat="domestic">
+          <div class="trophy-entry__date">9 สิงหาคม 2009</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Community Shield</span>
+            <span class="trophy-entry__badge">ซูเปอร์คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Manchester United ด้วยการดวลจุดโทษ</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2010">
+      <div class="year-label"><span class="year-label__num">2010</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_24.html" class="trophy-entry" data-comp="PL" data-cat="league">
+          <div class="trophy-entry__date">9 พฤษภาคม 2010</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Premier League</span>
+            <span class="trophy-entry__badge">ลีก</span>
+          </div>
+          <p class="trophy-entry__detail">คว้าแชมป์ในนัดสุดท้ายด้วยการถล่ม Wigan Athletic 8–0 บันทึก 103 ประตูตลอดฤดูกาล ดร็อกบา 29 ลูก แลมพาร์ด 22 ลูก</p>
+        </a>
+        <a href="Trophy_m_25.html" class="trophy-entry" data-comp="FA" data-cat="fa">
+          <div class="trophy-entry__date">15 พฤษภาคม 2010</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Cup</span>
+            <span class="trophy-entry__badge">เอฟเอ คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Portsmouth 1–0 ด้วยฟรีคิกของ ดร็อกบา — คว้า Double แชมป์ Premier League + FA Cup เป็นครั้งแรกในประวัติศาสตร์สโมสร</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2012">
+      <div class="year-label"><span class="year-label__num">2012</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_26.html" class="trophy-entry" data-comp="FA" data-cat="fa">
+          <div class="trophy-entry__date">5 พฤษภาคม 2012</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Cup</span>
+            <span class="trophy-entry__badge">เอฟเอ คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Liverpool 2–1 ประตูของ ดร็อกบา ยืนยันสถิติยิงใน FA Cup Final 4 นัดติดต่อกัน 4 ประตู</p>
+        </a>
+        <a href="Trophy_m_27.html" class="trophy-entry" data-comp="UCL" data-cat="europe">
+          <div class="trophy-entry__date">19 พฤษภาคม 2012</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">UEFA Champions League</span>
+            <span class="trophy-entry__badge">ยุโรป</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Bayern Munich ด้วยการดวลจุดโทษที่ Allianz Arena มิวนิก ดร็อกบา ตีเสมอในนาทีท้าย เช็ก เซฟ 3 จุดโทษ — ชัยชนะที่ยิ่งใหญ่ที่สุดในประวัติศาสตร์สโมสร</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2013">
+      <div class="year-label"><span class="year-label__num">2013</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_28.html" class="trophy-entry" data-comp="UEL" data-cat="europe">
+          <div class="trophy-entry__date">15 พฤษภาคม 2013</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">UEFA Europa League</span>
+            <span class="trophy-entry__badge">ยุโรป</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ SL Benfica 2–1 ที่อัมสเตอร์ดัม ด้วยประตูของ อีวาโนวิช ในช่วงทดเวลา — กลายเป็นสโมสรที่สี่ที่คว้า UEFA ครบทุกรายการ</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2015">
+      <div class="year-label"><span class="year-label__num">2015</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_29.html" class="trophy-entry" data-comp="LC" data-cat="lc">
+          <div class="trophy-entry__date">1 มีนาคม 2015</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">League Cup</span>
+            <span class="trophy-entry__badge">ลีกคัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Tottenham Hotspur 2–0 ประตูจาก เทอร์รี่ และ ดิเอโก โกสต้า เป็นนัดสุดท้ายของ เปตร์ เช็ก ในชุดใหญ่ก่อนย้ายไป Arsenal</p>
+        </a>
+        <a href="Trophy_m_30.html" class="trophy-entry" data-comp="PL" data-cat="league">
+          <div class="trophy-entry__date">3 พฤษภาคม 2015</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Premier League</span>
+            <span class="trophy-entry__badge">ลีก</span>
+          </div>
+          <p class="trophy-entry__detail">การันตีแชมป์ก่อนจบฤดูกาล 3 นัด ชนะ Crystal Palace 1–0 ภายใต้ โมรินโญ่ นำตารางตั้งแต่เกมแรกไม่เคยเสียตำแหน่ง</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2017">
+      <div class="year-label"><span class="year-label__num">2017</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_31.html" class="trophy-entry" data-comp="PL" data-cat="league">
+          <div class="trophy-entry__date">12 พฤษภาคม 2017</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">Premier League</span>
+            <span class="trophy-entry__badge">ลีก</span>
+          </div>
+          <p class="trophy-entry__detail">การันตีแชมป์ก่อนจบฤดูกาล 2 นัด ชนะ West Bromwich Albion 1–0 ด้วยประตูของ บัตชวยี ภายใต้ อันโตนิโอ คอนเต้ สถิติชนะ 30 นัด — สถิติสูงสุดใน Premier League</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2018">
+      <div class="year-label"><span class="year-label__num">2018</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_32.html" class="trophy-entry" data-comp="FA" data-cat="fa">
+          <div class="trophy-entry__date">19 พฤษภาคม 2018</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FA Cup</span>
+            <span class="trophy-entry__badge">เอฟเอ คัพ</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Manchester United 1–0 ด้วยจุดโทษของ เอเดน ฮาซาร์ด — นัดชิงสุดท้ายของ คอนเต้ ก่อนถูกปลด</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2019">
+      <div class="year-label"><span class="year-label__num">2019</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_33.html" class="trophy-entry" data-comp="UEL" data-cat="europe">
+          <div class="trophy-entry__date">29 พฤษภาคม 2019</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">UEFA Europa League</span>
+            <span class="trophy-entry__badge">ยุโรป</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Arsenal 4–1 ที่บากู อาเซอร์ไบจัน ประตูจาก โอลิวิเยร์ ฌิรู, ฮาซาร์ด (2) และ เปโดร ฮาซาร์ดคว้ารางวัลผู้เล่นยอดเยี่ยมก่อนย้ายไป Real Madrid</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2021">
+      <div class="year-label"><span class="year-label__num">2021</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_34.html" class="trophy-entry" data-comp="UCL" data-cat="europe">
+          <div class="trophy-entry__date">29 พฤษภาคม 2021</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">UEFA Champions League</span>
+            <span class="trophy-entry__badge">🏆 ยุโรป</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Manchester City 1–0 ที่ Estádio do Dragão, Porto ประตูชัยจาก <strong>Kai Havertz</strong> นาทีที่ 42 — Champions League ครั้งที่สอง ภายใต้ Thomas Tuchel</p>
+        </a>
+        <a href="Trophy_m_35.html" class="trophy-entry" data-comp="USEC" data-cat="europe">
+          <div class="trophy-entry__date">11 สิงหาคม 2021</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">UEFA Super Cup</span>
+            <span class="trophy-entry__badge">🏆 ยุโรป</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Villarreal 6–5 ด้วยการดวลจุดโทษสุดมาราธอน (เสมอ 1–1 หลังต่อเวลา) ที่ Windsor Park, Belfast — <strong>Kepa เซฟสองลูกชัยชนะ!</strong></p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2022">
+      <div class="year-label"><span class="year-label__num">2022</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_36.html" class="trophy-entry" data-comp="CWC" data-cat="world">
+          <div class="trophy-entry__date">12 กุมภาพันธ์ 2022</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FIFA Intercontinental Cup</span>
+            <span class="trophy-entry__badge">🏆 โลก</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Palmeiras 2–1 ช่วงต่อเวลาพิเศษที่ Abu Dhabi ประตูจาก Lukaku และจุดโทษของ Havertz — <strong>Chelsea คว้าถ้วยรางวัลครบทุกรายการ!</strong></p>
+        </a>
+      </div>
+    </div>
+
+    <div class="year-group" data-year="2025">
+      <div class="year-label"><span class="year-label__num">2025</span></div>
+      <div class="year-entries">
+        <a href="Trophy_m_37.html" class="trophy-entry" data-comp="UECL" data-cat="europe">
+          <div class="trophy-entry__date">28 พฤษภาคม 2025</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">UEFA Conference League</span>
+            <span class="trophy-entry__badge">🏆 ยุโรป</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Real Betis 4–1 ที่ Wrocław ประเทศโปแลนด์ ประตูจาก Fernández, Jackson, Sancho และ Caicedo Palmer แอสซิสต์สองลูก — <strong>Conference League ครั้งแรก และทำให้ Chelsea เป็นสโมสรแรกในโลกที่คว้า UEFA ครบทุกรายการ!</strong></p>
+        </a>
+        <a href="Trophy_m_38.html" class="trophy-entry" data-comp="CWC" data-cat="world">
+          <div class="trophy-entry__date">13 กรกฎาคม 2025</div>
+          <div class="trophy-entry__top">
+            <span class="trophy-entry__comp">FIFA Club World Cup</span>
+            <span class="trophy-entry__badge">🏆 โลก</span>
+          </div>
+          <p class="trophy-entry__detail">ชนะ Paris Saint-Germain 3–0 ที่ MetLife Stadium สหรัฐอเมริกา ประตูจาก Cole Palmer (2) และ Joao Pedro ภายใต้ Enzo Maresca — <strong>เชลซีเป็นแชมป์โลก อีกครั้ง!</strong></p>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="legend">
+    <p class="legend__title">สีประจำรายการ</p>
+    <div class="legend__grid">
+      <div class="legend__item"><div class="legend__dot" style="background:#3d0b9e"></div>League / Premier League</div>
+      <div class="legend__item"><div class="legend__dot" style="background:#e11f26"></div>FA Cup</div>
+      <div class="legend__item"><div class="legend__dot" style="background:#f5a623"></div>League Cup</div>
+      <div class="legend__item"><div class="legend__dot" style="background:#034694"></div>UEFA Champions League</div>
+      <div class="legend__item"><div class="legend__dot" style="background:#ff6600"></div>UEFA Europa League</div>
+      <div class="legend__item"><div class="legend__dot" style="background:#00a859"></div>UEFA Conference League</div>
+      <div class="legend__item"><div class="legend__dot" style="background:#8e44ad"></div>UEFA Cup Winners' Cup</div>
+      <div class="legend__item"><div class="legend__dot" style="background:#1abc9c"></div>UEFA Super Cup</div>
+      <div class="legend__item"><div class="legend__dot" style="background:var(--gold)"></div>FIFA Club World Cup / Intercontinental</div>
+      <div class="legend__item"><div class="legend__dot" style="background:#95a5a6"></div>Charity / Community / FMC</div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+      <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="hero__logo" alt="Logo">
+      <span class="site-footer__name">CHELSEA TH FANs</span>
+      <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+  <script>
+    // ---------------------------------
+    // สคริปต์กรองถ้วยรางวัล (Filter)
+    // ---------------------------------
+    function filterTrophies(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const catMap = {
+        all:    null,
+        league: ['league'],
+        fa:     ['fa'],
+        lc:     ['lc'],
+        europe: ['europe'],
+        world:  ['world'],
+      };
+
+      const allowed = catMap[cat];
+
+      document.querySelectorAll('.trophy-entry').forEach(entry => {
+        if (!allowed) {
+          entry.style.display = '';
+        } else {
+          entry.style.display = allowed.includes(entry.dataset.cat) ? '' : 'none';
+        }
+      });
+
+      document.querySelectorAll('.year-group').forEach(group => {
+        const visible = [...group.querySelectorAll('.trophy-entry')]
+          .some(e => e.style.display !== 'none');
+        group.style.display = visible ? '' : 'none';
+      });
+    }
+
+    // ---------------------------------
+    // สคริปต์นาฬิกา (Floating Clocks)
+    // ---------------------------------
+    function updateFloatingClocks() {
+      const now = new Date();
+
+      const applyLionTheme = (str) => {
+        return str.replace(/0/g, '🦁');
+      };
+
+      const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+      const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+
+      const thDateRaw = new Intl.DateTimeFormat('th-TH', { ...dateOptions, timeZone: 'Asia/Bangkok' }).format(now);
+      const thTimeRaw = new Intl.DateTimeFormat('th-TH', { ...timeOptions, timeZone: 'Asia/Bangkok' }).format(now);
+      
+      document.getElementById('th-date').textContent = applyLionTheme(thDateRaw);
+      document.getElementById('th-time').textContent = applyLionTheme(thTimeRaw) + ' น.';
+
+      const ukDateRaw = new Intl.DateTimeFormat('en-GB', { ...dateOptions, timeZone: 'Europe/London' }).format(now);
+      const ukTimeRaw = new Intl.DateTimeFormat('en-GB', { ...timeOptions, timeZone: 'Europe/London' }).format(now);
+      
+      document.getElementById('uk-date').textContent = applyLionTheme(ukDateRaw);
+      document.getElementById('uk-time').textContent = applyLionTheme(ukTimeRaw);
+    }
+
+    updateFloatingClocks();
+    setInterval(updateFloatingClocks, 1000);
+  </script>
+
+</body>
+</html>

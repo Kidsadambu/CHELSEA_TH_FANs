@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — กาลครั้งนั้น Kann Krung Nan News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       RESET & VARIABLES
+    ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue:        #034694;
+      --blue-light:  #1565c0;
+      --gold:        #c8a84b;
+      --gold-light:  #e8c97a;
+      --white:       #f5f2ec;
+      --off-white:   #ede8df;
+      --ink:         #1a1410;
+      --ink-soft:    #3d342a;
+      --ink-muted:   #7a6f63;
+      --rule:        #c5b89a;
+      --paper:       #f9f6f0;
+      --col-max:     740px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============================================
+       HERO / MASTHEAD
+    ============================================ */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://i.imgur.com/d7cGptr.jpeg');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.45) saturate(0.8);
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+
+    .hero:hover .hero__bg { transform: scale(1.06); }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(3,12,30,0.3) 40%,
+        rgba(3,12,30,0.85) 80%,
+        rgba(3,12,30,0.97) 100%
+      );
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 clamp(20px, 6vw, 80px) clamp(48px, 8vh, 90px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero__logo {
+      width: clamp(80px, 12vw, 140px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.5));
+      margin-bottom: 28px;
+      animation: fadeDown 1s ease both;
+    }
+
+    .hero__kicker {
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 600;
+      font-size: clamp(10px, 1.2vw, 13px);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+
+    .hero__title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 6.5vw, 5.5rem);
+      line-height: 1.08;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      max-width: 900px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+
+    .hero__title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero__subtitle {
+      font-size: clamp(14px, 1.8vw, 17px);
+      color: rgba(245,242,236,0.65);
+      margin-top: 22px;
+      letter-spacing: 0.04em;
+      animation: fadeDown 1s 0.35s ease both;
+    }
+
+    .hero__rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 32px auto 0;
+      animation: fadeDown 1s 0.45s ease both;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================
+       SCROLL INDICATOR
+    ============================================ */
+    .scroll-hint {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: float 2.4s ease-in-out infinite;
+    }
+
+    .scroll-hint span {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,242,236,0.4);
+    }
+
+    .scroll-hint__arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg);
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ============================================
+       ARTICLE WRAPPER
+    ============================================ */
+    .article {
+      background: var(--paper);
+      position: relative;
+    }
+
+    /* Top ornament */
+    .article::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+    }
+
+    .article__inner {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 90px) clamp(20px, 5vw, 40px);
+    }
+
+    /* ============================================
+       PULL QUOTE (opening quote)
+    ============================================ */
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding: 24px 32px;
+      margin: 0 0 48px;
+      background: linear-gradient(to right, rgba(200,168,75,0.06), transparent);
+    }
+
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .pull-quote cite {
+      display: block;
+      margin-top: 14px;
+      font-family: 'Sarabun', sans-serif;
+      font-style: normal;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ============================================
+       CHAPTER HEADING
+    ============================================ */
+    .chapter-heading {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .chapter-heading__number {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding: 6px 16px;
+      margin-bottom: 20px;
+    }
+
+    .chapter-heading h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    /* ============================================
+       BODY TEXT
+    ============================================ */
+    .article__inner p {
+      margin-bottom: 1.6em;
+      color: var(--ink-soft);
+    }
+
+    .article__inner p em {
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    /* Drop cap on first paragraph after heading */
+    .drop-cap::first-letter {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2em;
+      line-height: 0.78;
+      margin: 6px 10px 0 0;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    /* ============================================
+       SECTION HEADINGS (h2)
+    ============================================ */
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1.25rem, 2.8vw, 1.7rem);
+      color: var(--blue);
+      margin: 56px 0 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule);
+      letter-spacing: -0.01em;
+    }
+
+    /* ============================================
+       IMAGES
+    ============================================ */
+    .img-block {
+      margin: 40px -20px;
+      text-align: center;
+    }
+
+    .img-block img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: 0 4px 24px rgba(26,20,16,0.15);
+    }
+
+    .img-block figcaption {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+      font-style: italic;
+      line-height: 1.5;
+      padding: 0 20px;
+    }
+
+    /* Wide image variant */
+    .img-block--wide {
+      margin: 48px calc(-1 * clamp(20px,5vw,40px));
+    }
+
+    /* ============================================
+       INLINE BLOCKQUOTE
+    ============================================ */
+    .article__inner blockquote {
+      margin: 36px 0;
+      padding: 24px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    /* ============================================
+       CHAPTER END MARK
+    ============================================ */
+    .chapter-end {
+      text-align: center;
+      margin: 64px 0 0;
+      padding-top: 40px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .chapter-end__ornament {
+      font-size: 28px;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+    }
+
+    .chapter-end__text {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .site-footer {
+      background: var(--ink);
+      color: rgba(245,242,236,0.5);
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+    }
+
+    .site-footer__logo {
+      width: 50px;
+      filter: brightness(0.6);
+      margin-bottom: 16px;
+    }
+
+    .site-footer__name {
+      display: block;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 14px;
+      letter-spacing: 0.15em;
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (min-width: 768px) {
+      .img-block {
+        margin: 48px 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .pull-quote { padding: 18px 20px; }
+    }
+  
+    /* ============================================
+       NAVIGATION MENU STYLES (เมนูนำทาง)
+    ============================================ */
+    .main-nav {
+      background-color: var(--blue, #034694);
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav-list li a {
+      color: var(--white, #f5f2ec);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Sarabun', sans-serif;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 14px;
+    }
+    .nav-list li a:hover {
+      background-color: var(--gold, #c8a84b);
+      color: var(--ink, #1a1410);
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="Chapter1.html">บทที่ 1</a></li>
+      <li><a href="Chapter2.html">บทที่ 2</a></li>
+      <li><a href="Chapter3.html">บทที่ 3</a></li>
+      <li><a href="Chapter4.html">บทที่ 4</a></li>
+      <li><a href="Chapter5.html">บทที่ 5</a></li>
+      <li><a href="Chapter6.html">บทที่ 6</a></li>
+      <li><a href="Chapter7.html">บทที่ 7</a></li>
+      <li><a href="Chapter8.html">บทที่ 8</a></li>
+      <li><a href="Chapter9.html">บทที่ 9</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+      <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+      <p class="hero__kicker">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
+      <p class="hero__subtitle">ผู้เขียน: อิอิแอแอ</p>
+      <div class="hero__rule"></div>
+    </div>
+
+
+  </header>
+
+  <!-- ===================== ARTICLE ===================== -->
+  <main class="article">
+    <div class="article__inner">
+
+      <!-- Chapter heading -->
+      <div class="chapter-heading">
+        <div class="chapter-heading__number">บทที่ ๑</div>
+        <h1>จากจุดเริ่มต้นอันแสนต่ำต้อยของเรา…</h1>
+      </div>
+
+      <!-- Opening quote -->
+      <blockquote class="pull-quote">
+        <p>'สุดท้ายนี้ ผมขอฝากคำพูดสั้นๆ ถึงแฟนบอลทุกคน ขอให้ทุกคนมาชมและให้กำลังใจนักเตะ Chelsea กันอย่างล้นหลาม ผมรับรองว่าคุณจะไม่ผิดหวัง ทุกเส้นทางล้วนนำไปสู่ Stamford Bridge'</p>
+        <cite>— 'Old China,' Football Chat, 5 กันยายน 1905</cite>
+      </blockquote>
+
+      <!-- Section 1 -->
+      <h2>กฎของลอนดอน</h2>
+
+      <p class="drop-cap">ในวันที่ 13 เมษายน ค.ศ. 1906 ท่ามกลางแสงแดดอันสดใส ทีมฟุตบอลที่เพิ่งก่อตั้งขึ้นได้เพียง 12 เดือน ได้ดึงดูดผู้ชมจำนวนมากเป็นประวัติการณ์จากการแข่งขัน Second Division มายังมุมหนึ่งของลอนดอนตะวันตก ซึ่งเดิมทีเป็นที่รู้จักกันเฉพาะสำหรับการแข่งขันกรีฑาและงานกีฬาของบริษัทต่างๆ เท่านั้น</p>
+
+      <p>"แทบจะไม่เคยมีฉากที่น่าตื่นเต้นกว่าสิ่งที่เกิดขึ้นในช่วงท้ายเกมที่ Stamford Bridge แม้แต่ในรอบชิงชนะเลิศ FA Cup ก็ตาม" London Daily News รายงาน หลังจาก Chelsea เสมอกับคู่แข่งแย่งเลื่อนชั้นอย่าง Manchester United 1-1 "ผมเคยเห็นการชิงถ้วย Academy Cup ที่มีทั้งการคว้าและพ่ายแพ้ โดยมีเสียงเชียร์น้อยกว่าที่ได้ยินในลอนดอนตะวันตกเมื่อวานนี้เสียอีก"</p>
+
+      <p>สนามแข่งขันแห่งนี้ได้รับการยกย่องว่าเป็น 'หนึ่งในอัฒจันทร์ฟุตบอลที่สมบูรณ์แบบและกว้างขวางที่สุดในประเทศ' และในช่วง 'เจ็ดนาทีสุดท้ายก่อนหมดเวลา Tommy McDermott ท่ามกลางความกระตือรือร้นอย่างล้นหลาม ยิงประตูตีเสมอได้จากลูกส่งโอเวอร์เฮดที่สวยงามของ Proudfoot'</p>
+
+      <!-- Image 1 -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/site-sections/about-chelsea/history/2021/stamford-bridge/1905-hero-stamford-bridge.jpg"
+             alt="ฝูงชนจำนวนมากเข้าชมการแข่งขันที่สนาม Stamford Bridge ในฤดูกาลแรกของ Chelsea">
+        <figcaption>ฝูงชนจำนวนมากเข้าชมการแข่งขันที่สนาม Stamford Bridge ในฤดูกาลแรกของ Chelsea</figcaption>
+      </figure>
+
+      <p>จำนวนผู้ชม 67,000 คนในวันนั้น มากกว่าค่าเฉลี่ยผู้ชมเกมลีกใน Second Division ถึง 11 เท่า ในวันเดียวกัน ผู้ชม 35,000 คนที่ Anfield ในการแข่งขัน First Division ก็ถือว่ามากแล้ว และ 20,000 คนสำหรับเกมระหว่าง Manchester City กับ Arsenal ก็นับว่าเยอะเช่นกัน แต่ตัวเลขของ Chelsea ทิ้งห่างทั้งหมด</p>
+
+      <p>แม้ว่าผลการแข่งขันจะปิดประตูเลื่อนชั้นของ Chelsea ไปจนถึงฤดูใบไม้ผลิปีถัดไป Evening Standard ก็ยังต้องออกมายกย่องแคมเปญที่ "ทำให้ทีมนี้ติดอันดับทีมที่ดีที่สุดในประเทศ" Daily News กล่าวด้วยความตื่นเต้นว่า "มันเป็นภาพที่งดงาม และเป็นภาพที่แฟนบอลของ Chelsea จะไม่มีวันลืม"</p>
+
+      <p>หนึ่งปีต่อมา ในวันที่ 13 เมษายน 1907 Chelsea เลื่อนชั้นสู่ First Division ด้วยชัยชนะถล่มทลายเหนือ Wolverhampton 4-0 "ไม่ต้องสงสัยเลยว่าประชาชนชาวลอนดอนจะแห่กันมาสนับสนุน Chelsea ในพันธกิจที่ทะเยอทะยานยิ่งขึ้น" Lloyd's Weekly ระบุ</p>
+
+      <blockquote>
+        <p>'ด้วยสนามแข่งขันที่ยอดเยี่ยม — หนึ่งในสนามหญ้าที่ดีที่สุดในประเทศ — อัฒจันทร์ที่งดงามและลาดชันอย่างเหมาะสม สโมสร Chelsea สามารถกล่าวได้ว่ามีสิ่งอำนวยความสะดวกที่ทันสมัยครบครัน'</p>
+      </blockquote>
+
+      <p>ตาม Sporting Life สนาม Stamford Bridge ที่สร้างเสร็จใหม่นั้นเป็นสนามฟุตบอลที่ใหญ่ที่สุดในอังกฤษ เทียบเคียงได้กับสนามของ Crystal Palace และ Hampden Park ความพิเศษของ Chelsea อยู่ที่การผสานสนามระดับโลกเข้ากับสโมสรขนาดใหญ่ที่ไม่แพ้กัน ทำให้พวกเขาโด่งดังขึ้นมาอย่างรวดเร็ว Woolwich Arsenal สโมสรอาชีพอีกแห่งของลอนดอนใช้เวลาถึง 11 ฤดูกาลกว่าจะขึ้นสู่ First Division แต่ทีมน้องใหม่จากลอนดอนตะวันตกทำได้สำเร็จในเวลาเพียง 2 ฤดูกาล</p>
+
+      <p>"ไม่เคยมีทีมใดสร้างฐานแฟนคลับได้รวดเร็วขนาดนี้มาก่อน" Chelsea FC Chronicle ยกย่องในเดือนเมษายน ค.ศ. 1906 กลยุทธ์การตลาดที่ชาญฉลาดสร้างยอดขายโปรแกรมได้ทันที 4,000 ชุดต่อเกม นวัตกรรมอีกชิ้นคือการจ้างเด็กเก็บลูกบอลกลุ่มแรกในวงการฟุตบอล เพื่อช่วยรักษาพลังงานของผู้รักษาประตูร่างยักษ์ Willie Foulke</p>
+
+      <!-- Image 2: Willie Foulke -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/historical/new-history-section/willie-fatty-foulke-chelsea.jpg"
+             alt="Willie Foulke ผู้รักษาประตูคนแรกของ Chelsea">
+        <figcaption>ผู้รักษาประตูคนแรกของ Chelsea — Willie 'Fatty' Foulke ร่างยักษ์</figcaption>
+      </figure>
+
+      <!-- Section 2 -->
+      <h2>บรรพบุรุษผู้ก่อตั้ง</h2>
+
+      <p class="drop-cap">ขอย้อนกลับไปในวันที่ 10 มีนาคม ค.ศ. 1905 และการประชุมก่อตั้งซึ่งจัดขึ้นตรงข้ามทางเข้าสนาม Stamford Bridge ในห้องชั้นบนของผับ Rising Sun ซึ่งบริหารโดย Edwin Hereford Jeans บริษัท Chelsea Football and Athletic Club ได้รับการตั้งชื่ออย่างเป็นทางการ มีการประกาศความทะเยอทะยาน และจำหน่ายหุ้น</p>
+
+      <p>สโมสรแห่งนี้เริ่มต้นจากศูนย์ แต่มีแนวโน้มที่จะเติบโตอย่างมหาศาลในทุกด้าน เมื่อวันพฤหัสบดีที่ 20 เมษายน Chelsea Football Club ได้จดทะเบียนที่ Companies House ด้วยทุนจดทะเบียน 5,000 ปอนด์ จากหุ้นที่จัดสรรไว้ 3,505 หุ้น โดยมีหุ้น 2,500 หุ้นได้รับการจองซื้อทันทีในการประชุมครั้งแรก</p>
+
+      <p>แทนที่จะเป็นบรรดาเจ้าของโรงงานและลูกหลานชนชั้นแรงงานที่มักเป็นผู้บริหารสโมสรทางภาคเหนือและภาคกลาง แรงขับเคลื่อนหลักของ Chelsea กลับมาจากผู้มีฐานะดีและผู้มีเจตนาดี มีทั้งผู้ประกอบการ เจ้าของผับผู้รักสนุก เลขานุการชมรมกีฬา และช่างทำแส้ให้กับชนชั้นสูงในคณะกรรมการ</p>
+
+      <p>บริษัทของพวกเขาได้รับการสนับสนุนจากกองทุนที่ก่อตั้งโดย Joseph Theophilus Mears Senior ผู้เป็นหัวหน้าครอบครัว ซึ่งเสียชีวิตในปี 1894 โดยมีทรัพย์สินมูลค่า 88,207 ปอนด์ Gus ได้กู้ยืมเงินจาก JT Mears Trust เพื่อซื้อกรรมสิทธิ์และสร้างสนาม Stamford Bridge โดยในฐานะผู้ให้เช่า เขาเรียกเก็บค่าเช่าจากสโมสรปีละ 1,500 ปอนด์</p>
+
+      <p>Gus เป็นคนมีจิตใจอิสระ เขาไม่ได้พยายามชำระหนี้คืนก่อนที่จะเสียชีวิตด้วยสาเหตุที่เกี่ยวข้องกับแอลกอฮอล์ในปี 1912 ถึงกระนั้น กองทุนสามารถจ่ายเงินปันผลจำนวนมากให้แก่สมาชิกในครอบครัวได้อย่างสม่ำเสมอเป็นเวลาหลายทศวรรษ ด้วยเหตุนี้ ตระกูล Mears จึงครองอำนาจในคณะกรรมการบริหารของ Chelsea มาจนถึงปี 1980</p>
+
+      <!-- Image 3: Rising Sun Pub -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/news/2020/03/butchers-hook-pub-outside-view.jpg"
+             alt="ผับ Rising Sun จุดกำเนิดของ Chelsea FC">
+        <figcaption>ผับ Rising Sun ซึ่งอยู่ตรงข้ามสนาม Stamford Bridge — จุดกำเนิดของสโมสรในปี 1905</figcaption>
+      </figure>
+
+      <p>George Thomas ชาวลอนดอนตะวันตกที่ลาออกจาก Royal Navy เพื่อก่อตั้งธุรกิจจัดหาเสบียงให้กับเรือเดินสมุทรจนร่ำรวย (บริษัทเดียวกันนี้ต่อมาได้จัดหาอาหารและเครื่องดื่มให้กับเรือ Titanic ในปี 1912) Thomas เป็นผู้สร้างและเจ้าของสนาม The Dell ใน Southampton ดังนั้นความเชี่ยวชาญด้านสนามแข่งขันของเขาจึงมีค่าอย่างมากในปี 1905</p>
+
+      <p>จากนั้นก็มีเสมียนฝ่ายขนส่งสินค้า ทหาร และประธานคนแรกของสโมสร Claude Kirby ผู้มีเส้นสายดีในสังคมชั้นสูงยุค Edwardian Kirby เป็นผู้มีวิสัยทัศน์ด้านกีฬาอีกคนหนึ่ง ผู้ให้สัมภาษณ์นิรนามจาก Chelsea ใน Sporting Life น่าจะเป็นของ Kirby เพราะบทความชิ้นนั้นถูกเก็บไว้ในสมุดบันทึกส่วนตัวของเขา</p>
+
+      <!-- Section 3 -->
+      <h2>การดำเนินการตามแผน</h2>
+
+      <p class="drop-cap">Parker ผู้เชี่ยวชาญด้านตัวเลขและผู้จับเวลาของ London Athletic Club เจ้าของสนาม Stamford Bridge คนก่อน ได้โน้มน้าวให้ Gus Mears สร้างสโมสรและสนามกีฬาร่วมกัน แม้ว่าเหตุการณ์สุนัขกัดอันเลื่องลือจะเป็นตัวพลิกสถานการณ์ก็ตาม</p>
+
+      <p>บุคคลแรกที่เข้ารับตำแหน่งประธานสโมสรคือ Lord Cadogan เจ้าของที่ดินรายใหญ่ที่สุดในพื้นที่ ซึ่งสีน้ำเงินจากโรงเรียน Eton ของเขาเป็นสีประจำทีมแข่งม้าของ Chelsea ในช่วงสองฤดูกาลแรก รองประธานสโมสรในยุคแรกๆ ได้แก่ Charles Burgess Fry บุคคลสำคัญในวงการกีฬา และนักการเมืองท้องถิ่นจากพรรค Conservative และ Liberal</p>
+
+      <!-- Section 4 -->
+      <h2>เหตุการณ์สุนัขกัดอันโด่งดังและการก่อตั้ง Chelsea FC</h2>
+
+      <p>เรื่องราวของ Augustus Mears, Frederick Parker และช่วงเวลาแห่งการเปลี่ยนแปลงประวัติศาสตร์... ความคลั่งไคล้ในกีฬาเป็นสิ่งหนึ่งที่เชื่อมโยงบุคคลสำคัญเหล่านี้เข้าด้วยกัน อีกสิ่งหนึ่งคือฟรีเมสัน: สมาคมลับที่มีลำดับชั้นและลึกลับ เปรียบเสมือน LinkedIn ในยุควิกตอเรีย</p>
+
+      <p>ชิ้นส่วนสุดท้ายในจิ๊กซอว์คือชิ้นส่วนที่สำคัญที่สุด นั่นคือความสามารถ สี่วันหลังจากการประชุมก่อตั้ง Football Chat รายงานว่า 'เลขานุการและผู้จัดการยังไม่ได้รับการแต่งตั้ง แต่จากใบสมัครจำนวนมหาศาล มีสุภาพบุรุษห้าท่านที่ได้รับการคัดเลือกเพื่อพิจารณาในรอบสุดท้าย'</p>
+
+      <p>ภายในวันที่ 23 มีนาคม John Tait Robertson อดีตนักเตะ Rangers และทีมชาติสกอตแลนด์ ได้รับการแต่งตั้งให้ดำรงตำแหน่งผู้เล่น เลขานุการ และผู้จัดการทีม Robertson และ Parker ได้เดินทางไปทั่วประเทศเพื่อสรรหานักฟุตบอลที่ดีที่สุดในราคาสูงลิ่ว มันเป็นการใช้จ่ายที่มหาศาลเทียบได้กับช่วงเดือนแรกๆ ของ Roman Abramovich ในแง่ของขอบเขต</p>
+
+      <!-- Image 4: First Chelsea team -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/blogs-and-columns/2020/3/1905_GettyImages-79661140.jpg"
+             alt="ทีม Chelsea ชุดแรก">
+        <figcaption>ทีม Chelsea ชุดแรก โดยมี John Tait Robertson แถวหลังซ้ายสุด, Gus Mears คนที่สองจากซ้าย และ Fred Parker คนที่สี่จากซ้าย</figcaption>
+      </figure>
+
+      <p>ด้วยทีมที่แข็งแกร่งนี้ Parker นำพา Chelsea ผ่านการลงคะแนนเพื่อเข้าสู่ Second Division ในการประชุมประจำปีของ Football League ที่ Tavistock Hotel เมื่อวันที่ 29 พฤษภาคม 1905 ในขณะที่คนอื่นๆ ดื่มเหล้ากันจนถึงตี 3 ในคืนก่อนหน้า Parker กลับดื่มเบียร์ขิงแบบไม่มีแอลกอฮอล์แทน เพื่อให้การล็อบบี้ของเขาได้ผล</p>
+
+      <p>เขาสรุปว่า <em>'ผมจะไม่ล่วงล้ำคุณไปมากกว่านี้แล้ว นอกจากการแนะนำว่า... คุณจะสรุปได้เองว่าคุณปฏิเสธเราไม่ได้จริงๆ'</em></p>
+
+      <p>สนาม Stamford Bridge แห่งใหม่เปิดตัวอย่างยิ่งใหญ่ด้วยชัยชนะในเกมกระชับมิตรเหนือ Liverpool 4-0 เวลา 17.15 น. ของวันที่ 4 กันยายน ค.ศ. 1905 หนึ่งสัปดาห์ต่อมา ทีมเยือนจาก Second Division ก็ถูกส่งกลับไปยัง Hull ด้วยความพ่ายแพ้ 5-1</p>
+
+      <p>จากเพียงแค่ภาพในจินตนาการเมื่อไม่กี่เดือนก่อน ตอนนี้อัญมณีเม็ดใหม่ได้ถูกเพิ่มเข้าไปในมงกุฎกีฬาของอังกฤษแล้ว และเพียง 13 เดือนกับอีก 3 วันหลังจากการประชุมก่อตั้งที่ Rising Sun การแข่งขันนัดสำคัญระหว่าง Manchester United กับ Chelsea ก็เต็มไปด้วยการยืนยันถึงความทะเยอทะยานและความสำเร็จอันยิ่งใหญ่ของสโมสร</p>
+
+      <p>อย่างไรก็ตาม คำไว้อาลัยของ Lloyd's Weekly กลับแฝงด้วยข้อคิดที่เจ็บปวด: <em>'สิ่งที่เหลืออยู่สำหรับพวกเขาคือการนำพาไปสู่ความสำเร็จ'</em> ซึ่ง <em>'เป็นเป้าหมายที่ค่อนข้างยากจะบรรลุ แม้จะมีความตั้งใจที่ดีที่สุดก็ตาม'</em></p>
+
+      <!-- Section 5 -->
+      <h2>งานฉลองครบรอบ 100 ปี</h2>
+
+      <p>ในปี 2005 Chelsea ได้กลับไปฉลองครบรอบ 100 ปี ณ ผับ Rising Sun อันเป็นจุดกำเนิดของสโมสร เพื่อรำลึกถึงรากเหง้าและเส้นทางอันยาวนานที่ผ่านมา ก่อนจะก้าวเดินต่อไปในอนาคตด้วยความภาคภูมิใจ</p>
+
+      <!-- Section 6 -->
+      <h2>สโมสร London Athletic FC?</h2>
+
+      <!-- Image: Craven Cottage -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/news/2021/04/14/cottage_craven_cottage.jpg"
+             alt="Craven Cottage สนามเหย้าของ Fulham">
+        <figcaption>Craven Cottage อยู่ห่างจาก Stamford Bridge เพียงหนึ่งไมล์ครึ่งเท่านั้น</figcaption>
+      </figure>
+
+      <p class="drop-cap">เรื่องราวของ Chelsea อาจแตกต่างไปอย่างสิ้นเชิง หากเราเชื่อความทรงจำที่สืบทอดมาจาก Dora Bull ภรรยาของ Edwin Hereford Jeans ในวัยเด็ก นานก่อนที่สามีในอนาคตของเธอจะร่วมก่อตั้งสโมสร เธอจำได้ว่าเคยอยู่ในที่ประชุมรอบโต๊ะในห้องนั่งเล่นที่บ้านเลขที่ 31 ถนน Margaretta เพื่อหารือเกี่ยวกับการก่อตั้งสโมสรฟุตบอล</p>
+
+      <p>ที่น่าทึ่งคือ 'นิทานของครอบครัว' เรื่องนี้เป็นเรื่องจริง สนาม Stamford Bridge ถูกเช่าโดย London Athletic Club (LAC) ตั้งแต่ปี 1877 และในวันที่ 9 กุมภาพันธ์ 1881 คณะกรรมการของสโมสรได้ 'มีมติให้จัดการประชุมที่ Stamford Bridge เพื่อหารือว่าควรจัดตั้งสโมสรฟุตบอลร่วมกับ LAC หรือไม่'</p>
+
+      <p>แน่นอนว่าเรื่องนี้ไม่ได้นำไปสู่ผลลัพธ์ใดๆ และถึงอย่างไรก็ตาม สโมสรใหม่นั้นคงจะใช้ชื่อว่า London Athletic FC ไม่ใช่ Chelsea ถึงกระนั้น มันก็เป็นภาพแวบหนึ่งที่น่าสนใจว่าอะไรอาจเกิดขึ้นได้: วันดังกล่าวเป็นเวลาสามเดือนก่อนที่สโมสรที่เก่าแก่เป็นอันดับสองของลอนดอนอย่าง Clapton Orient จะก่อตั้งขึ้นในวันอาทิตย์ที่ 15 พฤษภาคม 1881</p>
+
+      <!-- Chapter End -->
+      <div class="chapter-end">
+        <div class="chapter-end__ornament">⚽</div>
+        <span class="chapter-end__text">— จบบทที่ ๑ —</span>
+      </div>
+
+    </div><!-- /.article__inner -->
+  </main>
+<!-- =========================================
+     CHELSEA FLOATING CLOCK
+========================================= -->
+
+<div class="floating-clock">
+
+  <!-- Thailand -->
+  <div class="floating-clock__section">
+    <div class="floating-clock__label">🇹🇭 ไทย</div>
+    <div class="floating-clock__date" id="th-date">--</div>
+    <div class="floating-clock__time" id="th-time">--:--:--</div>
+  </div>
+
+  <div class="floating-clock__divider"></div>
+
+  <!-- London -->
+  <div class="floating-clock__section">
+    <div class="floating-clock__label">🇬🇧 London</div>
+    <div class="floating-clock__date" id="uk-date">--</div>
+    <div class="floating-clock__time" id="uk-time">--:--:--</div>
+  </div>
+
+</div>
+
+<style>
+  :root{
+    --blue: #034694;
+    --blue-dark: #021f45;
+
+    --gold: #c8a84b;
+    --gold-light: #e8c97a;
+
+    --white: #f5f2ec;
+  }
+
+  /* =========================================
+     FLOATING CLOCK
+  ========================================= */
+
+  .floating-clock{
+    position: fixed;
+
+    top: 72px;
+    right: 18px;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 12px 18px;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(2,31,69,0.95),
+        rgba(3,70,148,0.88)
+      );
+
+    border: 1px solid rgba(200,168,75,0.9);
+
+    border-radius: 10px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+      0 6px 18px rgba(0,0,0,0.45),
+      0 0 18px rgba(3,70,148,0.35);
+
+    overflow: hidden;
+
+    transition:
+      transform .3s ease,
+      box-shadow .3s ease;
+  }
+
+  /* top glow line */
+  .floating-clock::before{
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 2px;
+
+    background:
+      linear-gradient(
+        to right,
+        transparent,
+        var(--gold-light),
+        transparent
+      );
+
+    opacity: .9;
+  }
+
+  .floating-clock:hover{
+    transform: translateY(-4px);
+
+    box-shadow:
+      0 10px 28px rgba(0,0,0,0.55),
+      0 0 24px rgba(3,70,148,0.45);
+  }
+
+  .floating-clock__section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    position: relative;
+    z-index: 2;
+  }
+
+  .floating-clock__divider{
+    width: 1px;
+    height: 58px;
+
+    background:
+      linear-gradient(
+        to bottom,
+        transparent,
+        var(--gold),
+        transparent
+      );
+
+    opacity: .45;
+  }
+
+  .floating-clock__label{
+    font-size: 10px;
+    font-weight: 700;
+
+    color: var(--gold-light);
+
+    text-transform: uppercase;
+    letter-spacing: .18em;
+
+    margin-bottom: 3px;
+
+    text-shadow: 0 0 8px rgba(232,201,122,.25);
+  }
+
+  .floating-clock__date{
+    font-size: 12px;
+    font-weight: 400;
+
+    color: rgba(245,242,236,0.78);
+
+    margin-bottom: 3px;
+
+    letter-spacing: .04em;
+  }
+
+  .floating-clock__time{
+    font-size: 17px;
+    font-weight: 700;
+
+    color: var(--gold);
+
+    font-family:
+      'Sarabun',
+      'Consolas',
+      monospace;
+
+    letter-spacing: .08em;
+
+    text-shadow:
+      0 0 8px rgba(200,168,75,.28),
+      0 0 18px rgba(200,168,75,.18);
+  }
+
+  /* =========================================
+     MOBILE
+  ========================================= */
+
+  @media (max-width: 768px){
+
+    .floating-clock{
+      top: 68px;
+      right: 10px;
+
+      padding: 9px 13px;
+
+      transform: scale(.88);
+      transform-origin: top right;
+    }
+
+    .floating-clock:hover{
+      transform:
+        scale(.88)
+        translateY(-3px);
+    }
+
+    .floating-clock__time{
+      font-size: 15px;
+    }
+
+  }
+</style>
+
+<script>
+
+  function updateFloatingClocks(){
+
+    const now = new Date();
+
+    // Lion Theme
+    const applyLionTheme = (str) => {
+      return str.replace(/0/g, '🦁');
+    };
+
+    const dateOptions = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    };
+
+    const timeOptions = {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    };
+
+    // Thailand
+    const thDateRaw = new Intl.DateTimeFormat(
+      'th-TH',
+      {
+        ...dateOptions,
+        timeZone: 'Asia/Bangkok'
+      }
+    ).format(now);
+
+    const thTimeRaw = new Intl.DateTimeFormat(
+      'th-TH',
+      {
+        ...timeOptions,
+        timeZone: 'Asia/Bangkok'
+      }
+    ).format(now);
+
+    document.getElementById('th-date').textContent =
+      applyLionTheme(thDateRaw);
+
+    document.getElementById('th-time').textContent =
+      applyLionTheme(thTimeRaw) + ' น.';
+
+    // London
+    const ukDateRaw = new Intl.DateTimeFormat(
+      'en-GB',
+      {
+        ...dateOptions,
+        timeZone: 'Europe/London'
+      }
+    ).format(now);
+
+    const ukTimeRaw = new Intl.DateTimeFormat(
+      'en-GB',
+      {
+        ...timeOptions,
+        timeZone: 'Europe/London'
+      }
+    ).format(now);
+
+    document.getElementById('uk-date').textContent =
+      applyLionTheme(ukDateRaw);
+
+    document.getElementById('uk-time').textContent =
+      applyLionTheme(ukTimeRaw);
+  }
+
+  updateFloatingClocks();
+  setInterval(updateFloatingClocks, 1000);
+</script>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

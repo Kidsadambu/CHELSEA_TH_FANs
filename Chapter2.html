@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — บทที่ 2 มุ่งสู่ดวงดาวด้วยดวงดาว</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://i.imgur.com/d7cGptr.jpeg');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.45) saturate(0.8);
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.06); }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(3,12,30,0.3) 40%,
+        rgba(3,12,30,0.85) 80%, rgba(3,12,30,0.97) 100%);
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 clamp(20px,6vw,80px) clamp(48px,8vh,90px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .hero__logo {
+      width: clamp(80px,12vw,140px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.5));
+      margin-bottom: 28px;
+      animation: fadeDown 1s ease both;
+    }
+    .hero__kicker {
+      font-weight: 600;
+      font-size: clamp(10px,1.2vw,13px);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem,6.5vw,5.5rem);
+      line-height: 1.08;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      max-width: 900px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__subtitle {
+      font-size: clamp(14px,1.8vw,17px);
+      color: rgba(245,242,236,0.65);
+      margin-top: 22px;
+      letter-spacing: 0.04em;
+      animation: fadeDown 1s 0.35s ease both;
+    }
+    .hero__rule {
+      width: 60px; height: 2px;
+      background: var(--gold);
+      margin: 32px auto 0;
+      animation: fadeDown 1s 0.45s ease both;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── SCROLL HINT ── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 30px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: float 2.4s ease-in-out infinite;
+    }
+    .scroll-hint span {
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(245,242,236,0.4);
+    }
+    .scroll-hint__arrow {
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg); opacity: 0.7;
+    }
+    @keyframes float {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── ARTICLE ── */
+    .article { background: var(--paper); position: relative; }
+    .article::before {
+      content: ''; display: block; width: 100%; height: 6px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+    }
+    .article__inner {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: clamp(48px,8vw,90px) clamp(20px,5vw,40px);
+    }
+
+    /* ── CHAPTER HEADING ── */
+    .chapter-heading { text-align: center; margin-bottom: 52px; }
+    .chapter-heading__number {
+      display: inline-block;
+      font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+      border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+      padding: 6px 16px; margin-bottom: 20px;
+    }
+    .chapter-heading h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem,4vw,2.8rem);
+      line-height: 1.2; color: var(--ink); letter-spacing: -0.01em;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding: 24px 32px; margin: 0 0 48px;
+      background: linear-gradient(to right, rgba(200,168,75,0.06), transparent);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem,2vw,1.15rem);
+      color: var(--ink-soft); line-height: 1.7;
+    }
+    .pull-quote p strong { font-style: normal; color: var(--blue); font-weight: 700; }
+    .pull-quote cite {
+      display: block; margin-top: 14px;
+      font-family: 'Sarabun', sans-serif; font-style: normal;
+      font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ── BODY ── */
+    .article__inner p { margin-bottom: 1.6em; color: var(--ink-soft); }
+    .article__inner p em { color: var(--ink); font-style: italic; }
+    .drop-cap::first-letter {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2em; line-height: 0.78;
+      margin: 6px 10px 0 0;
+      color: var(--blue); font-weight: 900;
+    }
+
+    /* ── H2 ── */
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1.25rem,2.8vw,1.7rem);
+      color: var(--blue);
+      margin: 56px 0 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule);
+      letter-spacing: -0.01em;
+    }
+
+    /* ── IMAGES ── */
+    .img-block { margin: 40px 0; }
+    .img-block img {
+      width: 100%; height: auto; display: block;
+      object-fit: cover; border-radius: 2px;
+      box-shadow: 0 4px 24px rgba(26,20,16,0.15);
+    }
+    .img-block figcaption {
+      margin-top: 12px; font-size: 12.5px;
+      color: var(--ink-muted); letter-spacing: 0.04em;
+      font-style: italic; line-height: 1.5;
+    }
+    .img-block--wide {
+      margin: 48px calc(-1 * clamp(20px,5vw,40px));
+    }
+    .img-block--wide figcaption { padding: 0 clamp(20px,5vw,40px); }
+
+    /* ── BLOCKQUOTE ── */
+    .article__inner blockquote {
+      margin: 36px 0; padding: 24px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue);
+      color: var(--ink); font-style: italic;
+    }
+
+    /* ── FEATURED QUOTE BOX ── */
+    .quote-box {
+      margin: 40px 0; padding: 28px 32px;
+      background: var(--ink);
+      color: rgba(245,242,236,0.85);
+      border-radius: 2px;
+      font-size: clamp(0.95rem,1.8vw,1.05rem);
+      line-height: 1.75;
+    }
+    .quote-box em {
+      display: block; margin-top: 16px;
+      font-size: 12px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+      font-style: normal;
+    }
+
+    /* ── CHAPTER END ── */
+    .chapter-end {
+      text-align: center; margin: 64px 0 0;
+      padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    .chapter-end__ornament { font-size: 28px; color: var(--gold); letter-spacing: 0.3em; }
+    .chapter-end__text {
+      display: block; margin-top: 12px;
+      font-size: 12px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--ink-muted);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink);
+      color: rgba(245,242,236,0.5);
+      text-align: center; padding: 40px 20px;
+      font-size: 13px; letter-spacing: 0.08em;
+    }
+    .site-footer__logo { width: 50px; filter: brightness(0.6); margin-bottom: 16px; }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 6px; font-size: 14px; letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 500px) { .pull-quote { padding: 18px 20px; } }
+  
+    /* ============================================
+       NAVIGATION MENU STYLES (เมนูนำทาง)
+    ============================================ */
+    .main-nav {
+      background-color: var(--blue, #034694);
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav-list li a {
+      color: var(--white, #f5f2ec);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Sarabun', sans-serif;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 14px;
+    }
+    .nav-list li a:hover {
+      background-color: var(--gold, #c8a84b);
+      color: var(--ink, #1a1410);
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="Chapter1.html">บทที่ 1</a></li>
+      <li><a href="Chapter2.html">บทที่ 2</a></li>
+      <li><a href="Chapter3.html">บทที่ 3</a></li>
+      <li><a href="Chapter4.html">บทที่ 4</a></li>
+      <li><a href="Chapter5.html">บทที่ 5</a></li>
+      <li><a href="Chapter6.html">บทที่ 6</a></li>
+      <li><a href="Chapter7.html">บทที่ 7</a></li>
+      <li><a href="Chapter8.html">บทที่ 8</a></li>
+      <li><a href="Chapter9.html">บทที่ 9</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ══════════ HERO ══════════ -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+      <p class="hero__kicker">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
+      <p class="hero__subtitle">ผู้เขียน: อิอิแอแอ</p>
+      <div class="hero__rule"></div>
+    </div>
+
+  </header>
+
+  <!-- ══════════ ARTICLE ══════════ -->
+  <main class="article">
+    <div class="article__inner">
+
+      <!-- Chapter heading -->
+      <div class="chapter-heading">
+        <div class="chapter-heading__number">บทที่ ๒</div>
+        <h1>มุ่งสู่ดวงดาวด้วยดวงดาว</h1>
+      </div>
+
+      <!-- Opening pull quote (dialogue) -->
+      <blockquote class="pull-quote">
+        <p>
+          <strong>เด็กชายในกลุ่มผู้ชม:</strong> "ใครได้แชมป์ FA Cup ปี 1926?"<br>
+          <strong>Mr. Memory:</strong> 'Cup? Waterloo? Football? หรือจะเป็นชาครับ?'<br>
+          <strong>เด็กชายในกลุ่มผู้ชม:</strong> "ฟุตบอลไงล่ะ"<br>
+          <strong>เสียงจากกลุ่มผู้ชม:</strong> 'Chelsea ได้แชมป์ตั้งแต่เมื่อไหร่?'<br>
+          <strong>Mr. Memory:</strong> '63 ปีก่อนคริสตกาล ต่อหน้าจักรพรรดิ Nero!'
+        </p>
+        <cite>— ภาพยนตร์เรื่อง The 39 Steps (1935)</cite>
+      </blockquote>
+
+      <!-- Section 1 -->
+      <h2>Stamford Bridge ช่างงดงามราวกับสนามแห่งความฝัน</h2>
+
+      <p class="drop-cap">วลีอมตะจากภาพยนตร์เรื่อง Field of Dreams ที่ว่า "สร้างแล้วพวกเขาจะมา" ฟังดูเหมาะกับ Stamford Bridge ยิ่งนัก แก่นแท้ของกีฬาคือการแสวงหาเกียรติยศท่ามกลางความเสี่ยง และด้วยเหตุนี้ กลยุทธ์ในช่วงแรกของ Chelsea ในการดึงดูดผู้ชมจึงตั้งอยู่บนหลักการเดียว: สาธารณชนต้องการเห็นประตูและกองหน้าที่ยิ่งใหญ่ ไม่ใช่แนวรับที่มั่นคง</p>
+
+      <p>ไม่ใช่เรื่องบังเอิญแต่อย่างใดที่ดาวเด่นคนแรกของ The Pensioners อย่าง 'Gatling Gun' George Hilsdon ได้รับการเชิดชูเกียรติด้วยกังหันลมที่จำลองรูปร่างของเขา ซึ่งตั้งตระหง่านอยู่บนอัฒจันทร์ฝั่งตะวันออกเป็นเวลาหลายทศวรรษ เขาทำประตูได้ถึง 5 ประตูในนัดแรกพบ Glossop ด้วยสกอร์ 9-2 เมื่อเดือนกันยายนปี 1906 และ 28 ประตูอันน่าทึ่งของเขาเป็นแรงขับเคลื่อนที่พาสโมสรเลื่อนชั้นเป็นครั้งแรก</p>
+
+      <!-- Image: Hilsdon weathervane -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/news/2022/05/05/stamford_bridge_hilsdon_weather_vane.jpg"
+             alt="กังหันลม Hilsdon บนอัฒจันทร์ฝั่งตะวันออก">
+        <figcaption>กังหันลม Hilsdon บนอัฒจันทร์ฝั่งตะวันออกของสนาม Stamford Bridge</figcaption>
+      </figure>
+
+      <p>ตลอดสามฤดูกาล Hilsdon ทำประตูได้มากกว่า 20 ประตูในแต่ละฤดูกาล แต่คุณภาพการเล่นของทีมโดยรวมกลับไม่สอดคล้องกับศักยภาพที่แท้จริง การจบอันดับที่ 11 ถือเป็นจุดสูงสุดที่น่าผิดหวัง จากนั้นกองหน้าคนนี้ก็พบกับสิ่งล่อใจมากมายในลอนดอนตะวันตกที่คึกคัก และชื่อเสียงของเขาก็ค่อยๆ จางหายไป</p>
+
+      <p>ประสบการณ์ของเขาถือเป็นแบบแผนที่ซ้ำเติมตัวเองต่อเนื่องมาอีกกว่าสามทศวรรษ สโมสร Chelsea เป็นที่รักของมหาชน มีความทะเยอทะยาน และโดดเด่นในวงการฟุตบอล แต่ในปี 1908 หนังสือพิมพ์ Worksop News ก็ตรงไปตรงมาแทนคนจำนวนมาก เมื่อเยาะเย้ยว่า Chelsea เป็นสโมสรที่ยิ่งใหญ่ "ซึ่งก้าวขึ้นมาอยู่แถวหน้าได้ด้วยความร่ำรวยมหาศาลเท่านั้น"</p>
+
+      <p>ผู้ที่ยังคงไปชมเกมที่ Stamford Bridge ได้สร้างฐานแฟนบอลที่ Don Davies นักเขียนฟุตบอลชื่อดังขนานนามว่า "ตามใจตัวเองมากที่สุด" ในวงการฟุตบอลอังกฤษ รูปแบบของแฟนบอล Chelsea จึงถูกกำหนดขึ้นตั้งแต่บัดนั้น</p>
+
+      <!-- Section 2 -->
+      <h2>Andy Wilson กองหน้าตัวกลาง</h2>
+
+      <p class="drop-cap">เป็นหนึ่งในนักเตะที่มีสไตล์การเล่นงดงามที่สุดในวงการฟุตบอลอังกฤษในทศวรรษ 1920 เขาได้รับการทาบทามและเซ็นสัญญาย้ายมาจาก Middlesbrough ด้วยค่าตัวเกือบเป็นสถิติของฟุตบอลอังกฤษที่ 6,000 ปอนด์ในปี 1923</p>
+
+      <p>Wilson อยู่กับทีมนานแปดปี โดยหลายปีดำรงตำแหน่งกัปตันทีม เขาหลงรัก Chelsea และเฝ้าชมเกมจากอัฒจันทร์จนกระทั่งเสียชีวิตในปี 1973 ด้วยวัย 77 ปี "ในสมัยของผม" เขารำลึกถึงช่วงกลางทศวรรษ 1960 "เราเล่นฟุตบอลที่สวยงาม แต่ผลการแข่งขันไม่ใช่สิ่งสำคัญที่สุดในตอนนั้น ซึ่งในปัจจุบันคงไม่เป็นเช่นนั้นอีกแล้ว"</p>
+
+      <!-- Image: Andy Wilson -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/andy_wilson.jpg"
+             alt="Andy Wilson">
+        <figcaption>Andy Wilson กองหน้าผู้ถูกดึงตัวมาจากภาคตะวันออกเฉียงเหนือด้วยค่าตัวก้อนใหญ่</figcaption>
+      </figure>
+
+      <p>เมื่อกฎล้ำหน้าเปลี่ยนแปลงในฤดูกาล 1925/26 ไหวพริบของ Wilson และเพื่อนร่วมทีมทำให้ Chelsea เริ่มต้นฤดูกาลได้อย่างยอดเยี่ยมจนสร้างสถิติไม่แพ้ใครใน 14 นัดแรก ซึ่งนับเป็นช่วงเปิดตัวที่ดีที่สุดเป็นอันดับสามในประวัติศาสตร์ Chelsea</p>
+
+      <p>น่าเสียดายที่คู่แข่งในที่สุดก็รู้ทันกลยุทธ์ดังกล่าว และภาพสะท้อนของ Chelsea ที่เคยยอดเยี่ยมและสร้างสรรค์ก็กลับมาปรากฏในฤดูใบไม้ผลิ: ทีมที่ปืนบรรจุกระสุนพร้อมตลอดเวลา กลับจ่อยิงที่เท้าตัวเอง Chelsea เสียคะแนนสำคัญให้กับทีมที่กำลังดิ้นรนหนีตกชั้น และขบวนรถไฟเลื่อนชั้นก็ออกจากสถานีไปพร้อมกับ The Pensioners ที่ยืนรออยู่บนชานชาลา</p>
+
+      <p>ในขณะนั้น David Calderhead เลขานุการและผู้จัดการทีมชาวสกอตแลนด์ ซึ่งได้ฉายาว่า 'The Sphinx' เนื่องจากบุคลิกเงียบขรึม ดำรงตำแหน่งหัวหน้าทีมมาแล้วถึง 15 ฤดูกาล วาระการดำรงตำแหน่ง 26 ปีของเขา ซึ่งสิ้นสุดลงอย่างเงียบๆ ในปี 1933 ได้ทิ้งรอยประทับไว้บนภาพลักษณ์ของสโมสรยาวนานจนถึงปัจจุบัน</p>
+
+      <!-- Image: Ben Howard Baker -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/historical/new-history-section/ben_howard_baker.jpg"
+             alt="Ben Howard Baker">
+        <figcaption>Ben Howard Baker ผู้รักษาประตูในฐานะตัวแทนสหราชอาณาจักรในการแข่งขัน Olympic Games ปี 1920</figcaption>
+      </figure>
+
+      <p>การปล่อยปละละเลยนี้ยังลุกลามไปไกลกว่านั้น ผู้ชมต่างหัวเราะขบขันเมื่อเห็น Ben Howard Baker ผู้รักษาประตูนิสัยประหลาด อดีตแชมป์กระโดดสูง เล่นลูกบอลไปรอบๆ เขตโทษของตัวเองสบายๆ แม้เรือสำราญสุดหรูลำนี้จะแล่นไปตามเส้นทางที่ถูกต้อง แต่ก็ไม่มีใครรู้สึกว่าจำเป็นต้องเปลี่ยนกัปตัน</p>
+
+      <p>Calderhead นำพา Chelsea สร้างสถิติสำคัญมากมาย ไม่ว่าจะเป็นการเป็นทีมที่ได้อันดับสูงสุดในลอนดอนในฤดูกาลแรกของเขา การเลื่อนชั้นในปี 1912 และการจบอันดับที่สามในฤดูกาล 1919/20 ซึ่งถือเป็นอันดับสูงสุดเท่าที่สโมสรจากเมืองหลวงเคยทำได้ในขณะนั้น ใน FA Cup เขายังพา Chelsea เข้าถึงรอบรองชนะเลิศในฤดูกาล 1910/11 และรอบชิงชนะเลิศอันน่าจดจำในปี 1914/15</p>
+
+      <!-- Section 3 -->
+      <h2>Chelsea 'ถุงเงิน'</h2>
+
+      <p class="drop-cap">นอกสนาม การบริหารงานของ Calderhead ช่วยให้ Chelsea ประสบความสำเร็จทางการเงินอย่างน่าทึ่ง ทุกฤดูกาลตั้งแต่ 1907/08 ถึง 1914/15 Chelsea ทำกำไรได้อย่างต่อเนื่อง โดยมีรายได้ 22,826 ปอนด์ในฤดูกาลแรก ซึ่งเป็นสถิติสูงสุดของสโมสรฟุตบอลใดๆ ในเวลานั้น</p>
+
+      <p>การเป็นเจ้าภาพจัดการแข่งขัน Charity Shield ครั้งแรกที่ Stamford Bridge ในปี 1908 ช่วยเพิ่มรายได้ให้อีก และในปี 1920 หลังจากการปรับปรุงสนามหลายครั้ง Stamford Bridge ก็ได้เป็นเจ้าภาพจัดการแข่งขัน FA Cup Final เป็นครั้งแรก ซึ่งนับเป็นครั้งแรกใน 3 ครั้งที่จะตามมา</p>
+
+      <p>เมื่อ Football League จัดตั้งกองทุนช่วยเหลือเหยื่อเรือ Titanic หลังจากเหตุการณ์น่าสลดใจในเดือนเมษายน 1912 ไม่มีเงินบริจาคจากสโมสรใดเทียบได้กับเงิน 500 ปอนด์ของ Chelsea เลย สโมสรยังเพิ่งก่อตั้งได้ไม่นาน แต่แสดงให้เห็นถึงความรับผิดชอบต่อสังคมที่แข็งแกร่งตั้งแต่ต้น</p>
+
+      <!-- Section 4 -->
+      <h2>เด็กชายในชุดสีกากี เด็กชายในชุดสีน้ำเงิน</h2>
+
+      <p class="drop-cap">รายได้ของ Chelsea มาจากฝูงชนมหาศาลที่หมุนวนผ่านประตูหมุนที่ Stamford Bridge ประชากรของสหราชอาณาจักรเพิ่มขึ้นจาก 14 ล้านคนในปี 1831 เป็น 32.5 ล้านคนในปี 1901 เวลาว่างที่เพิ่มขึ้นดึงดูดผู้ชมชนชั้นแรงงานหน้าใหม่จำนวนหลายพันคน</p>
+
+      <p>ผู้คนจากทั่วทุกสารทิศต่างหลั่งไหลมาชมการแข่งขันในสนามที่เข้าถึงได้สะดวกทั้งทางรถไฟ รถไฟใต้ดิน และรถโดยสารประจำทาง ในฤดูกาลที่สองของสโมสร ขณะที่เรากำลังลุ้นเลื่อนชั้น จำนวนผู้ชมเฉลี่ยที่ Stamford Bridge สูงถึง 30,850 คน ซึ่งเป็นตัวเลขที่น่าทึ่งมาก พิสูจน์ให้เห็นถึงวิสัยทัศน์ของ Fred Parker ที่ต้องการสร้างสโมสรใหม่ยักษ์ใหญ่ในเมืองหลวง</p>
+
+      <p>ตลอดช่วงสงคราม Chelsea รออย่างอดทนให้ Manchester United ชำระเงินกว่า 1,500 ปอนด์ที่ค้างอยู่ The Pensioners แจ้งเตือน Football League เกี่ยวกับหนี้สินนี้เป็นระยะๆ แต่ก็ยินดีที่จะรอต่อไปด้วยความมั่นใจว่าจะได้รับเงินคืนในสักวัน นี่เป็นอีกครั้งที่แสดงให้เห็นว่า Chelsea มุ่งมั่นทำในสิ่งที่ถูกต้อง แม้ในสถานการณ์ที่ยากลำบาก</p>
+
+      <!-- Section 5 -->
+      <h2>ระหว่างเวทีและดวงดาว</h2>
+
+      <p class="drop-cap">หนึ่งในเสน่ห์ของการไปชมเกมที่ Stamford Bridge คือชื่อเสียงในฐานะสถานที่พบปะสังสรรค์ ศิลปิน นักแสดง และเชื้อพระวงศ์ต่างมานั่งเบียดเสียดกันบนอัฒจันทร์ร่วมกับนักร้องประสานเสียง พ่อค้าแม่ค้า และพนักงานบาร์ คนดังรูปแบบแรกในศตวรรษที่ 20 คือเชื้อพระวงศ์ และความสัมพันธ์ทางสังคมของ Chelsea ได้นำพาชื่อเสียงมาสู่สโมสร</p>
+
+      <p>เจ้าชายผู้ซึ่งต่อมาทรงขึ้นครองราชย์เป็น King George VI ทรงเป็นแฟนบอลของ The Pensioners การเสด็จพระราชดำเนินเยือน Stamford Bridge ของพระราชวงศ์อาจเป็นแรงบันดาลใจให้สโมสรเปลี่ยนสีเสื้อจากสีน้ำเงินอ่อนแบบ Eton Blue เป็นสีน้ำเงินเข้มแบบ Royal Blue สำหรับฤดูกาล 1907/08</p>
+
+      <!-- Image: Old Stamford Bridge -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,g_auto,w_1200,ar_16:9,q_90/editorial/historical/stadium/old%20stamford%20bridge%20views%20(1).jpg"
+             alt="Stamford Bridge ในช่วงปลายทศวรรษ 1960">
+        <figcaption>Stamford Bridge ในช่วงปลายทศวรรษ 1960 และต้นทศวรรษ 1970</figcaption>
+      </figure>
+
+      <p>บางครั้งผลประโยชน์เชิงพาณิชย์ดูเหมือนจะมีน้ำหนักมากกว่าความสำเร็จในสนาม โดยมีกลุ่มธุรกิจหลายรายแย่งกันใช้พื้นที่สนาม ทั้งทีมแข่งรถ Speedway Stamford Bridge (1928–32) สมาคมแข่งสุนัขเกรย์ฮาวนด์ (1933–68) และการแข่งรถ Midget Cars (1948) Chelsea กลายเป็นสิ่งรองลงมาจากโชว์ข้างทางในบ้านของตัวเอง</p>
+
+      <!-- Section 6 -->
+      <h2>ความไม่สอดคล้องอันยิ่งใหญ่</h2>
+
+      <p class="drop-cap">ชื่อเสียงของ Chelsea เกิดจากความทะเยอทะยานและความนิยมที่ได้รับการหนุนหลังอย่างดี ซึ่งขัดแย้งกับความล้มเหลวที่ยืดเยื้อมานานกว่า 50 ปี หรืออย่างที่หนังสือพิมพ์ฉบับหนึ่งในปี 1913 กล่าวไว้ว่า พวกเขาถูกมองว่าเป็น "ทีมที่แพงที่สุดและเอาแน่เอานอนไม่ได้ที่สุดในลีก"</p>
+
+      <p>ฉายา "สโมสรเศรษฐี" ยังคงติดตามมาจนถึงทุกวันนี้ ถูกนำมาใช้เพราะตั้งแต่เริ่มแรก Chelsea ลงทุนกับนักเตะที่แฟนบอลรักชื่นชมมาโดยตลอด ในช่วง 50 ปีแรกของประวัติศาสตร์สโมสร มีถ้วยรางวัลสำคัญเพียงสองรายการเท่านั้น</p>
+
+      <div class="quote-box">
+        "นับตั้งแต่ก่อตั้งในปี 1905 สโมสร Chelsea ถูกมองว่าเป็นเวทีแสดงความสามารถระดับแนวหน้าของวงการฟุตบอล และหน้าที่หลักของสโมสรคือการนำเสนอดาวเด่นแห่งวงการฟุตบอลให้สาธารณชนในลอนดอนได้รู้จักมากที่สุดเท่าที่จะเป็นไปได้"
+        <em>— Don Davies นักเขียนฟุตบอลผู้ทรงเกียรติ, 1955</em>
+      </div>
+
+      <p>ความเป็นปัจเจกที่โดดเด่นทำให้ผู้ชมตื่นเต้น แต่ฟุตบอลคือกีฬาประเภททีม และความบ้าระห่ำเกินขีดจำกัดมักสรุปภาพรวมของกลุ่มผู้เล่นของ Calderhead ซึ่งขาดความเป็นเอกภาพมากพอที่จะแข่งขันชิงแชมป์ได้ แม้แต่ในปี 1930 เมื่อ Chelsea ที่เพิ่งเลื่อนชั้นมีนักเตะระดับนานาชาติถึง 9 คน พลังทั้งหมดนั้นก็ไม่อาจจุดประกายความสำเร็จที่แท้จริงได้</p>
+
+      <p>ภายใต้การคุมทีมของ Calderhead ซึ่งดำรงตำแหน่งยาวนานที่สุดในประวัติศาสตร์สโมสร สนามกีฬากลับประสบความสำเร็จมากกว่าทีมเสียอีก อย่างไรก็ตาม สิ่งที่จุดประกายความรักและความคิดถึงในใจของแฟนบอลอย่างแท้จริงไม่ใช่เงินหรือความบันเทิง แต่คือการเอาชนะคู่แข่งและการคว้าถ้วยรางวัล</p>
+
+      <p>เมื่อสิ้นสุดฤดูกาล 1932/33 Calderhead ก็เกษียณอายุ และภายในสองปีถัดมา เขาพร้อมกับคณะกรรมการบริหารชุดเก่าก็เสียชีวิตลง ช่วงกลางทศวรรษ 1930 ถือเป็นจุดสิ้นสุดของบทเปิดในประวัติศาสตร์สโมสร Chelsea และพลังใหม่กำลังรอที่จะถูกปลดปล่อยออกมา</p>
+
+      <!-- Chapter end -->
+      <div class="chapter-end">
+        <div class="chapter-end__ornament">⚽</div>
+        <span class="chapter-end__text">— จบบทที่ ๒ —</span>
+      </div>
+
+    </div><!-- /.article__inner -->
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="site-footer">
+    <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

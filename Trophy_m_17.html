@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premier League 2004/05 — CHELSEA TH FANs</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    800px; 
+    }
+
+    /* RESET & BASE STYLES */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    /* TOP NAVIGATION BAR */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar__arrow {
+      width: 8px; height: 8px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 0.75rem;
+    }
+    .top-bar img { height: 32px; }
+
+    /* ARTICLE STRUCTURE */
+    .article-container {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    header.article-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .article-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 8vw, 3.5rem);
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .article-header .subtitle {
+      font-size: 1.2rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    /* CONTENT COMPONENTS */
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif; 
+      color: var(--blue); 
+      margin: 3rem 0 1.5rem; 
+      font-size: 1.8rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.5rem;
+    }
+
+    .article-img {
+      margin: 2.5rem 0;
+      text-align: center;
+    }
+    .article-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .highlight-box {
+      background-color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .bullet-list {
+      list-style-type: disc;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+    .bullet-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* LEAGUE TABLE STYLES */
+    .league-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      background-color: #fff;
+      white-space: nowrap;
+    }
+    .league-table th, .league-table td {
+      padding: 0.75rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid var(--rule);
+    }
+    .league-table th {
+      background-color: var(--blue-dark);
+      color: var(--gold-light);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .league-table td:nth-child(2) {
+      text-align: left;
+      font-weight: 600;
+    }
+    .league-table tr:hover {
+      background-color: rgba(0,0,0,0.03);
+    }
+    .league-table tr.champ-row {
+      background-color: rgba(200, 168, 75, 0.15);
+      color: var(--blue-dark);
+      font-weight: bold;
+    }
+
+    /* SITE FOOTER */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .site-footer__logo { height: 60px; margin-bottom: 1rem; }
+
+    /* CLOCK WIDGET */
+    #th-time {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--blue-dark);
+      color: var(--gold);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .article-container { padding: 2rem 1.25rem; }
+      .article-header h1 { font-size: 2rem; }
+      .league-table { font-size: 0.85rem; }
+      .league-table th, .league-table td { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-bar">
+    <a href="Trophy.html"><div class="top-bar__arrow"></div> กลับสู่ทำเนียบแชมป์</a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Logo">
+  </nav>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>🏆 Premier League 2004/05</h1>
+      <p class="subtitle">แชมป์สุดพิเศษและฤดูกาลแห่งการทำลายสถิติของ Chelsea</p>
+    </header>
+
+    <figure class="article-img">
+      <img src="https://resources.premierleague.pulselive.com/photo-resources/2022/08/11/d7412952-1411-476d-8dd0-80155c575251/Mourinho-2004-05.jpg?width=1440" alt="Jose Mourinho 2004-05">
+    </figure>
+
+    <div class="article-body">
+      <p><strong>Talking Tactics:</strong> Adrian Clarke อธิบายว่า <strong>Jose Mourinho</strong> เปลี่ยน Blues ให้กลายเป็นทีมจอมทำลายสถิติได้อย่างไร (ส่วนหนึ่งของการเฉลิมฉลองครบรอบ 30 ปีของ Premier League)</p>
+
+      <h2>การเข้ามาของ Jose Mourinho</h2>
+      <p>ทีมชุดแชมป์ปี 2004/05 ของ <strong>Chelsea</strong> คือหนึ่งในทีมที่ยิ่งใหญ่ที่สุดในประวัติศาสตร์ <strong>Premier League</strong> อย่างไม่ต้องสงสัย การคว้า 95 คะแนนภายใต้การนำของคนที่เรียกตัวเองว่า "Special One" ในฤดูกาลแรกของเขาที่ Stamford Bridge ทำให้ The Blues กลายเป็นเครื่องจักรแห่งชัยชนะ</p>
+      
+      <p>ทีมชุดนั้นสร้างสถิติที่น่าประทับใจสองรายการซึ่งยังคงอยู่จนถึงทุกวันนี้: <strong>Chelsea</strong> ชุดแรกของ <strong>Mourinho</strong> เสียไปเพียง 15 ประตูตลอดทั้งฤดูกาล รวมถึงการเสียแค่ 6 ประตูในบ้าน สิ่งนี้ช่วยให้พวกเขาทำได้ถึง 25 clean sheets ซึ่งเป็นสถิติที่ยังไม่มีทีมใดใน <strong>Premier League</strong> ทำลายได้</p>
+
+      <div class="highlight-box">
+        <h3 style="color: var(--blue-dark); font-family: 'Playfair Display', serif; margin-bottom: 0.5rem;">🛡️ Best Defensive Records (Premier League)</h3>
+        <ul class="bullet-list" style="margin-bottom: 0;">
+          <li><strong>Chelsea (2004/05):</strong> 15 Goals Conceded / 25 Clean sheets</li>
+          <li><strong>Arsenal (1998/99):</strong> 17 Goals Conceded / 23 Clean sheets</li>
+          <li><strong>Liverpool (2018/19):</strong> 22 Goals Conceded</li>
+          <li><strong>Man Utd (1994/95, 2008/09):</strong> 24 Clean sheets</li>
+        </ul>
+      </div>
+
+      <h2>การปฏิวัติแทคติก (4-3-3)</h2>
+      <p>ในฤดูกาลก่อนหน้า <strong>Chelsea</strong> มักจะใช้ระบบ 4-4-2 ซึ่งได้รับความนิยมมากที่สุด <strong>Mourinho</strong> เริ่มต้นปี 2004/05 ด้วย 4-4-2 diamond แบบแคบ แต่ก็เปลี่ยนมาเป็น 4-3-3 อย่างรวดเร็ว และตั้งแต่วินาทีนั้น Blues ก็ไม่เคยมองย้อนกลับไปอีกเลย</p>
+      <p>ในระบบนั้น <strong>Claude Makelele</strong> ได้แจ้งเกิดในฐานะ pivot ตัวรับคนเดียว เขาคอยกวาดบอลอยู่หน้า centre-backs อย่าง <strong>John Terry</strong> และ <strong>Ricardo Carvalho</strong> และในตำแหน่งผู้รักษาประตูคือนักเตะใหม่อย่าง <strong>Petr Cech</strong> ที่มีเปอร์เซ็นต์การเซฟสูงถึง 87.3% นำหน้าอันดับสองอย่าง Brad Friedel ถึง 6.2%</p>
+      <p>ด้วยการป้องกันที่ยอดเยี่ยม <strong>Chelsea</strong> เผชิญกับการยิงเข้ากรอบ (shots on target) น้อยที่สุดร่วมกันเพียง 83 ครั้งเท่านั้น</p>
+
+      <h2>การสวนกลับที่เฉียบขาดและการหมุนเวียนแดนหน้า</h2>
+      <p>ทีมมักจะจงใจดูดซับความกดดัน (soaked up pressure) ก่อนจะเล่นงานคู่แข่งด้วยการสวนกลับ ในจังหวะ transitions ปีกอย่าง <strong>Damien Duff</strong> และ <strong>Arjen Robben</strong> มีความรวดเร็วและอันตราย <strong>Robben</strong> ทำไป 7 ประตู 9 assists (1.14 ประตู/แอสซิสต์ต่อ 90 นาที เป็นรองแค่ Thierry Henry) ขณะที่ <strong>Duff</strong> ทำไป 6 ประตู 7 assists และ <strong>Joe Cole</strong> ก็ทำไปถึง 8 ประตูในลีก</p>
+      
+      <p><strong>Frank Lampard</strong> ได้รับอิสระในการเล่นแบบ box-to-box ในระบบ 4-3-3 ทำให้เขาซัดไป 13 ประตูและทำสถิติเป็น top assist provider ด้วยจำนวน 18 ครั้ง นอกจากนี้ กองหน้าอย่าง <strong>Didier Drogba</strong> และ <strong>Eidur Gudjohnsen</strong> ก็มีความคล่องตัว ช่วยเชื่อมเกมและทำประตูได้อย่างต่อเนื่อง</p>
+
+      <h2>เส้นทางสู่ความสำเร็จ 2004/05</h2>
+      <p>ความคาดหวังสูงขึ้นเมื่อแชมป์ยุโรปอย่าง <strong>Mourinho</strong> เข้ามาแทนที่ Claudio Ranieri เราเริ่มต้นอย่างยอดเยี่ยมด้วยการชนะ <strong>Manchester United</strong> 1-0 จุดโทษของ Nicolas Anelka ที่ <strong>Manchester City</strong> ทำให้เราพ่ายแพ้เป็นครั้งแรกและครั้งเดียวของฤดูกาล (campaign) แต่เราก็กลับมาเอาชนะ 6 นัดรวด</p>
+      <p>การตามตีเสมอ <strong>Arsenal</strong> สองครั้งซ้อนที่ Highbury โดย <strong>John Terry</strong> และ <strong>Eidur Gudjohnsen</strong> และการบุกชนะ <strong>Liverpool</strong> ที่ Anfield ในวันปีใหม่ ทำให้เราทิ้งห่างคู่แข่ง 5 คะแนน</p>
+
+      <figure class="article-img">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1440,c_fill,q_90/site-sections/about-chelsea/history/trophy-cabinet/Lampard_Bolton_2005_GettyImages-52739405.jpg" alt="Frank Lampard at Bolton 2005">
+      </figure>
+
+      <p>แม้จะมีการสะดุดเสมอกับ Birmingham และ <strong>Arsenal</strong> แต่ในวันที่ 30 เมษายน ที่ <strong>Bolton</strong> เราต้องการเพียงชัยชนะเพื่อการันตีแชมป์ <strong>Frank Lampard</strong> เหมาสองประตูพาเขาเข้าสู่ตำนานและแตะหลัก 20 ประตู ปิดฉากการรอคอย 50 ปีของ <strong>Chelsea</strong> อย่างสมบูรณ์แบบ</p>
+      <p>ฮีโร่ผู้ปิดทองหลังพระอย่าง <strong>Claude Makelele</strong> เป็นผู้ทำประตูเดียวของเกมจากการซ้ำลูกจุดโทษที่พลาด ขณะที่เราเฉลิมฉลองกันที่ Bridge ในเกมถัดมากับ <strong>Charlton</strong> และ <strong>Tiago</strong> ยิงไกลจากระยะ 35 หลาเพื่อบุกไปชนะ <strong>Man United</strong> ที่ Old Trafford</p>
+
+      <p style="text-align: center; color: var(--blue-dark); font-weight: 600; font-size: 1.1rem; margin-top: 3rem;">
+        สถิติมากมายถูกทำลายด้วย 95 คะแนน และเสียเพียง 15 ประตู... ความท้าทายต่อไปคือการทำมันให้ได้อีกครั้งในปี 2006!
+      </p>
+
+      <figure class="article-img">
+        <img src="https://www.thesun.ie/wp-content/uploads/sites/3/2026/03/holds-barclays-premiership-trophy-aloft-1067956805_a9ab62.jpg?resize=2048,1463&quality=90&strip=all" alt="Chelsea lifting the Premier League Trophy">
+      </figure>
+
+      <h2>ตารางคะแนน Premier League ฤดูกาล 2004/05</h2>
+      <div style='overflow-x:auto; margin: 2.5rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05);'><table class='league-table'>
+<thead>
+<tr><th>Pos</th><th>Club</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>
+</thead>
+<tbody>
+<tr class='champ-row'><td>1</td><td>Chelsea</td><td>38</td><td>29</td><td>8</td><td>1</td><td>72</td><td>15</td><td>+57</td><td>95</td></tr>
+<tr><td>2</td><td>Arsenal</td><td>38</td><td>25</td><td>8</td><td>5</td><td>87</td><td>36</td><td>+51</td><td>83</td></tr>
+<tr><td>3</td><td>Manchester United</td><td>38</td><td>22</td><td>11</td><td>5</td><td>58</td><td>26</td><td>+32</td><td>77</td></tr>
+<tr><td>4</td><td>Everton</td><td>38</td><td>18</td><td>7</td><td>13</td><td>45</td><td>46</td><td>-1</td><td>61</td></tr>
+<tr><td>5</td><td>Liverpool</td><td>38</td><td>17</td><td>7</td><td>14</td><td>52</td><td>41</td><td>+11</td><td>58</td></tr>
+<tr><td>6</td><td>Bolton Wanderers</td><td>38</td><td>16</td><td>10</td><td>12</td><td>49</td><td>44</td><td>+5</td><td>58</td></tr>
+<tr><td>7</td><td>Middlesbrough</td><td>38</td><td>14</td><td>13</td><td>11</td><td>53</td><td>46</td><td>+7</td><td>55</td></tr>
+<tr><td>8</td><td>Manchester City</td><td>38</td><td>13</td><td>13</td><td>12</td><td>47</td><td>39</td><td>+8</td><td>52</td></tr>
+<tr><td>9</td><td>Tottenham Hotspur</td><td>38</td><td>14</td><td>10</td><td>14</td><td>47</td><td>41</td><td>+6</td><td>52</td></tr>
+<tr><td>10</td><td>Aston Villa</td><td>38</td><td>12</td><td>11</td><td>15</td><td>45</td><td>52</td><td>-7</td><td>47</td></tr>
+<tr><td>11</td><td>Charlton Athletic</td><td>38</td><td>12</td><td>10</td><td>16</td><td>42</td><td>58</td><td>-16</td><td>46</td></tr>
+<tr><td>12</td><td>Birmingham City</td><td>38</td><td>11</td><td>12</td><td>15</td><td>40</td><td>46</td><td>-6</td><td>45</td></tr>
+<tr><td>13</td><td>Fulham</td><td>38</td><td>12</td><td>8</td><td>18</td><td>52</td><td>60</td><td>-8</td><td>44</td></tr>
+<tr><td>14</td><td>Newcastle United</td><td>38</td><td>10</td><td>14</td><td>14</td><td>47</td><td>57</td><td>-10</td><td>44</td></tr>
+<tr><td>15</td><td>Blackburn Rovers</td><td>38</td><td>9</td><td>15</td><td>14</td><td>32</td><td>43</td><td>-11</td><td>42</td></tr>
+<tr><td>16</td><td>Portsmouth</td><td>38</td><td>10</td><td>9</td><td>19</td><td>43</td><td>59</td><td>-16</td><td>39</td></tr>
+<tr><td>17</td><td>West Bromwich Albion</td><td>38</td><td>6</td><td>16</td><td>16</td><td>36</td><td>61</td><td>-25</td><td>34</td></tr>
+<tr><td>18</td><td>Crystal Palace</td><td>38</td><td>7</td><td>12</td><td>19</td><td>41</td><td>62</td><td>-21</td><td>33</td></tr>
+<tr><td>19</td><td>Norwich City</td><td>38</td><td>7</td><td>12</td><td>19</td><td>42</td><td>77</td><td>-35</td><td>33</td></tr>
+<tr><td>20</td><td>Southampton</td><td>38</td><td>6</td><td>14</td><td>18</td><td>45</td><td>66</td><td>-21</td><td>32</td></tr>
+</tbody>
+</table></div>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
+    <p>CHELSEA TH FANs — Kann Krung Nan News</p>
+    <p style="font-size: 0.8rem; opacity: 0.7;">ผู้เขียน: อิอิแอแอ</p>
+  </footer>
+
+  <div id="th-time">BKK: --:--:--</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const applyLionTheme = (s) => s.replace(/0/g, '🦁');
+      const timeStr = new Intl.DateTimeFormat('th-TH', { 
+        hour:'2-digit', minute:'2-digit', second:'2-digit', 
+        hour12:false, timeZone:'Asia/Bangkok' 
+      }).format(now);
+      document.getElementById('th-time').textContent = "BKK: " + applyLionTheme(timeStr);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

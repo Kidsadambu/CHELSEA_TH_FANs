@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2009 FA Community Shield — CHELSEA TH FANs</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px; 
+    }
+
+    /* RESET & BASE STYLES */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    /* TOP NAVIGATION BAR */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar__arrow {
+      width: 8px; height: 8px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 0.75rem;
+    }
+    .top-bar img { height: 32px; }
+
+    /* ARTICLE STRUCTURE */
+    .article-container {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    header.article-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .article-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 8vw, 3.5rem);
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .article-header .subtitle {
+      font-size: 1.2rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    /* CONTENT COMPONENTS */
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif; 
+      color: var(--blue); 
+      margin: 3rem 0 1.5rem; 
+      font-size: 1.8rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.5rem;
+    }
+
+    .article-img {
+      margin: 2.5rem 0;
+      text-align: center;
+    }
+    .article-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .highlight-box {
+      background-color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .penalty-box {
+      background: #f0f4f8;
+      border: 1px solid var(--blue);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    .penalty-box h3 {
+      color: var(--blue-dark);
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* SITE FOOTER */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .site-footer__logo { height: 60px; margin-bottom: 1rem; }
+
+    /* CLOCK WIDGET */
+    #th-time {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--blue-dark);
+      color: var(--gold);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .article-container { padding: 2rem 1.25rem; }
+      .article-header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-bar">
+    <a href="Trophy.html"><div class="top-bar__arrow"></div> กลับสู่ทำเนียบแชมป์</a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Logo">
+  </nav>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>🏆 2009 FA Community Shield</h1>
+      <p class="subtitle">โทรฟี่แรกในอังกฤษของ Carlo Ancelotti เหนือ Manchester United</p>
+    </header>
+
+    <figure class="article-img">
+      <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,h_700,g_faces,ar_16:9,q_90/site-sections/about-chelsea/history/2021/trophy-cabinet/thumbnails/Mens_FA_Community_Shield_2009.jpg" alt="2009 FA Community Shield Winners">
+    </figure>
+
+    <div class="article-body">
+      <h2>แมตช์ความบันเทิงที่ Wembley</h2>
+      <p>หลังจากเอาชนะ <strong>Everton</strong> 2-1 ในนัดชิงชนะเลิศ <strong>FA Cup</strong> เมื่อเดือนพฤษภาคมปีก่อน เราต้องโคจรมาพบกับแชมป์ลีกอย่าง <strong>Manchester United</strong> ในรายการ <strong>2009 FA Community Shield</strong> ณ สนาม <strong>Wembley</strong></p>
+
+      <p>ในเกมที่เต็มไปด้วยความบันเทิง <strong>Nani</strong> ช่วยให้ <strong>Man United</strong> ขึ้นนำไปก่อนอย่างรวดเร็วด้วยลูกยิงอันทรงพลังจากนอกเขตโทษ ก่อนที่ <strong>Ricardo Carvalho</strong> จะมาทำประตูตีเสมอให้เราได้ในช่วงเจ็ดนาทีแรกของครึ่งหลัง จากจังหวะตามซ้ำลูกบอลที่กระฉอกออกมาแล้วโหม่งเข้าไป</p>
+
+      <p>หลังจากนั้นไม่นาน เราก็พลิกขึ้นนำเมื่อ <strong>Didier Drogba</strong> ลากบอลจี้เข้าหาแผงหลังคู่แข่ง ก่อนจะไหลบอลถวายพานให้กับ <strong>Frank Lampard</strong> ที่ยืนว่างอยู่ ได้ซัดบอลผ่านมือ <strong>Ben Foster</strong> เช็ดเสาเข้าประตูไปอย่างสวยงาม</p>
+
+      <div class="highlight-box">
+        <p>ขณะที่เวลาใกล้จะหมดลงและชัยชนะดูเหมือนจะเป็นของเรา <strong>Wayne Rooney</strong> ก็ควบตามบอลจากจังหวะจ่ายของ <strong>Ryan Giggs</strong> ในนาทีที่ 92 ก่อนจะยกบอลข้ามตัว <strong>Petr Cech</strong> เข้าไปนิ่มๆ ส่งผลให้เกมต้องตัดสินด้วยการ <strong>penalty shoot-out</strong></p>
+      </div>
+
+      <h2>ชัยชนะจากการดวลจุดโทษ</h2>
+      <p><strong>Lampard</strong> รับหน้าที่สังหารจุดโทษลูกแรกของเราไม่พลาด จากนั้น <strong>Cech</strong> ก็โชว์ฟอร์มเซฟลูกยิงของ <strong>Giggs</strong> ช่วยให้เรากุมความได้เปรียบ <strong>Michael Ballack</strong> และ <strong>Drogba</strong> ต่างก็ทำหน้าที่ของตัวเองได้อย่างยอดเยี่ยมและยิงเข้าทั้งคู่</p>
+
+      <p>ขณะที่ <strong>Michael Carrick</strong> ยิงให้ <strong>United</strong> ได้ แต่ <strong>Patrice Evra</strong> กลับยิงเบาเกินไปจนถูก <strong>Cech</strong> ป้องกันไว้ได้อย่างง่ายดาย สุดท้ายเป็น <strong>Salomon Kalou</strong> ที่รับหน้าที่สังหารจุดโทษตัดสิน และเขาก็ส่งบอลเสียบสามเหลี่ยมเข้าไปอย่างเฉียบคม</p>
+
+      <div class="penalty-box">
+        <h3>ผลการดวลจุดโทษ: Chelsea ชนะ 4-1</h3>
+        <p><strong>Chelsea:</strong> Lampard ✅, Ballack ✅, Drogba ✅, Kalou ✅</p>
+        <p><strong>Man Utd:</strong> Giggs ❌, Carrick ✅, Evra ❌</p>
+      </div>
+
+      <p>ชัยชนะในครั้งนี้ทำให้ผู้จัดการทีมคนใหม่ <strong>Carlo Ancelotti</strong> ประเดิมคว้าถ้วยรางวัลใบแรกในการคุมทีมฟุตบอลอังกฤษได้สำเร็จอย่างสง่างาม</p>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
+    <p>CHELSEA TH FANs — Kann Krung Nan News</p>
+    <p style="font-size: 0.8rem; opacity: 0.7;">ผู้เขียน: อิอิแอแอ</p>
+  </footer>
+
+  <div id="th-time">BKK: --:--:--</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const applyLionTheme = (s) => s.replace(/0/g, '🦁');
+      const timeStr = new Intl.DateTimeFormat('th-TH', { 
+        hour:'2-digit', minute:'2-digit', second:'2-digit', 
+        hour12:false, timeZone:'Asia/Bangkok' 
+      }).format(now);
+      document.getElementById('th-time').textContent = "BKK: " + applyLionTheme(timeStr);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

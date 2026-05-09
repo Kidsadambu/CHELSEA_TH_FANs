@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏆 FA Cup 1999/00: CHELSEA TH FANs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 17px;
+    }
+
+    /* ── TOP NAV ── */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar__arrow {
+      width: 8px; height: 8px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 0.75rem;
+    }
+    .top-bar img { height: 32px; }
+
+    /* ── HERO IMAGE ── */
+    .hero-img {
+      width: 100%;
+      height: clamp(260px, 40vw, 480px);
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    /* ── ARTICLE ── */
+    .article-container {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+
+    /* HEADER */
+    header.article-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .article-header .badge {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+    .article-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 7vw, 3.6rem);
+      color: var(--blue-dark);
+      line-height: 1.12;
+      margin-bottom: 1rem;
+    }
+    .article-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .article-header .divider {
+      width: 50px; height: 3px;
+      background: linear-gradient(to right, var(--blue), var(--gold));
+      margin: 1.8rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* BODY TEXT */
+    .article-body > p {
+      margin-bottom: 1.5rem;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+    .article-body > p:first-child::first-letter {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 0.8;
+      margin: 6px 10px 0 0;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    /* SECTION HEADING */
+    .article-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--blue-dark);
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .round-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--blue);
+      color: var(--gold-light);
+      padding: 3px 10px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    /* MATCH RESULT BOX */
+    .match-box {
+      margin: 1.2rem 0 2rem;
+      background: var(--blue-dark);
+      border-radius: 4px;
+      padding: 1.5rem 1.5rem 1.2rem;
+    }
+    .match-box__date {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .match-box__teams {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .match-box__team {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: rgba(245,242,236,0.75);
+    }
+    .match-box__team.winner { color: var(--gold-light); }
+    .match-box__score {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .match-box__scorers {
+      margin-top: 0.8rem;
+      font-size: 0.82rem;
+      color: rgba(245,242,236,0.45);
+      text-align: center;
+      line-height: 1.7;
+    }
+    .match-box__scorers strong { color: rgba(245,242,236,0.7); }
+
+    /* ARTICLE IMAGE */
+    .article-img {
+      margin: 2.2rem 0;
+      text-align: center;
+    }
+    .article-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(26,20,16,0.14);
+    }
+    .article-img figcaption {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      margin-top: 0.7rem;
+      font-style: italic;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background-color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 1.3rem 1.7rem;
+      margin: 2rem 0;
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+    }
+    .highlight-box p { margin-bottom: 0; font-size: 1rem; color: var(--ink-soft); }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      margin: 2.5rem 0;
+      padding: 2rem 2rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      background-color: rgba(197,184,154,0.06);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--blue-dark);
+      margin-bottom: 0.5rem;
+    }
+    .pull-quote cite {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    /* FINAL GLORY BOX */
+    .glory-box {
+      margin: 2.5rem 0;
+      background: linear-gradient(135deg, var(--blue-dark) 0%, #0a2a5e 100%);
+      border: 1px solid rgba(200,168,75,0.3);
+      border-radius: 4px;
+      padding: 2rem 1.8rem;
+      text-align: center;
+    }
+    .glory-box__trophy {
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .glory-box__title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--gold-light);
+      margin-bottom: 0.6rem;
+    }
+    .glory-box__sub {
+      font-size: 0.9rem;
+      color: rgba(245,242,236,0.5);
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .site-footer__logo { height: 60px; margin-bottom: 0.5rem; }
+    .site-footer__name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+    }
+    .site-footer span { font-size: 0.85rem; color: var(--gold-light); opacity: 0.8; }
+
+    /* CLOCK */
+    #th-time {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      background: var(--blue-dark);
+      color: var(--gold);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      border: 1px solid var(--gold);
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 600px) {
+      .article-container { padding: 2rem 1.25rem 3rem; }
+      .article-header h1 { font-size: 2rem; }
+      .match-box__score { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="top-bar">
+    <a href="Trophy.html">
+      <div class="top-bar__arrow"></div>
+      กลับสู่ทำเนียบแชมป์
+    </a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Logo">
+  </nav>
+
+  <!-- HERO -->
+  <img
+    class="hero-img"
+    src="https://img.chelseafc.com/image/upload/f_auto,c_fill,g_faces,w_1440,h_856,q_90/editorial/news/2020/05/fa-cup-2000-winners.jpg"
+    alt="Chelsea FA Cup Winners 2000">
+
+  <!-- ARTICLE -->
+  <article class="article-container">
+
+    <header class="article-header">
+      <div class="badge">🏆 FA Cup · 1999/00</div>
+      <h1>FA Cup 1999/00</h1>
+      <p class="subtitle">ฉลองครบรอบ 20 ปีชัยชนะ FA Cup ครั้งสุดท้ายในสนาม Wembley เก่าอันยิ่งใหญ่</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="article-body">
+
+      <p>ในวันครบรอบ 20 ปีชัยชนะ FA Cup ในรอบชิงสุดท้ายที่ Wembley เดิม เราขอย้อนรอยเส้นทางสู่ความสำเร็จในปีนั้น มีนักเตะหน้าใหม่ ผู้ยิงประตูหน้าใหม่ ความแปลกประหลาดของถ้วยที่ไม่เคยเกิดขึ้นซ้ำ และหนึ่งในผลงานส่วนตัวที่ยิ่งใหญ่ที่สุดในประวัติ Chelsea</p>
+
+      <p>Chelsea ยก FA Cup ขึ้นเป็นครั้งที่สามในประวัติศาสตร์เมื่อวันที่ 20 พฤษภาคม 2000 รอบชิงชนะเลิศอาจไม่ใช่เกมคลาสสิก แต่ถ้วยรางวัลถือเป็นบทสรุปที่เหมาะสมของแคมเปญอันยิ่งใหญ่ที่รวมถึงการลุยถึงรอบก่อนรองชนะเลิศ Champions League ด้วย</p>
+
+      <!-- ROUND 3 -->
+      <h2><span class="round-badge">รอบ 3</span> Hull City vs Chelsea</h2>
+
+      <div class="match-box">
+        <div class="match-box__date">11 ธันวาคม 1999 · Boothferry Park</div>
+        <div class="match-box__teams">
+          <span class="match-box__team">Hull City</span>
+          <div class="match-box__score">1 – 6</div>
+          <span class="match-box__team winner">🦁 Chelsea</span>
+        </div>
+        <div class="match-box__scorers">
+          <strong>Chelsea:</strong> Wise, Sutton · Poyet (hat-trick) · Harley (3 assists)
+        </div>
+      </div>
+
+      <p>รอบสามถูกจัดขึ้นก่อนคริสต์มาสอย่างขัดแย้ง ท่ามกลางเสียงวิจารณ์มากมาย ยิ่งไปกว่านั้น Manchester United ยังปฏิเสธเข้าร่วมแข่งขันเพื่อป้องกันแชมป์ โดยเลือกไปร่วม FIFA Club World Championship ในบราซิลแทน</p>
+
+      <p>Chelsea เพิ่งเสมอ Lazio แบบไร้สกอรที่ Olympic Stadium ในกรุงโรม ก่อนจะเดินทางมาถล่ม Hull City ถึง 6 ลูก Chris Sutton ยิงประตูที่สามและสุดท้ายในนาม Chelsea, Gus Poyet ยิงแฮตทริกเดียวในนาม Blues และ Jon Harley หนุ่มน้อยทำถึง 3 แอสซิสต์</p>
+
+      <figure class="article-img">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/blogs-and-columns/2019/1/sutton-wise-hull-1999-GettyImages-1203413.jpg" alt="Dennis Wise and Chris Sutton at Hull">
+        <figcaption>Dennis Wise และ Chris Sutton ผู้ยิงประตูที่ Boothferry Park</figcaption>
+      </figure>
+
+      <!-- ROUND 4 -->
+      <h2><span class="round-badge">รอบ 4</span> Chelsea vs Nottingham Forest</h2>
+
+      <div class="match-box">
+        <div class="match-box__date">19 มกราคม 2000 · Stamford Bridge</div>
+        <div class="match-box__teams">
+          <span class="match-box__team winner">🦁 Chelsea</span>
+          <div class="match-box__score">2 – 0</div>
+          <span class="match-box__team">Nottingham Forest</span>
+        </div>
+        <div class="match-box__scorers">
+          <strong>Chelsea:</strong> Leboeuf (header) · Wise (header) | Harley เล่นได้ยอดเยี่ยม
+        </div>
+      </div>
+
+      <p>นัดรอบสี่ถูกเลื่อนมาเล่นกลางสัปดาห์늦ช้ากว่าการแข่งขันส่วนที่เหลือ 10 วัน เนื่องจากนัด replay ของ Forest กับ Oxford ถูกเลื่อนจากสภาพอากาศเลวร้าย ที่ Stamford Bridge Chelseaเก็บชัยชนะจากลูกโหม่งในครึ่งหลังของ Frank Leboeuf และ Dennis Wise</p>
+
+      <figure class="article-img">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/news/2020/05/forest-2000.jpg" alt="Chelsea vs Nottingham Forest 2000">
+        <figcaption>Wise ขอบคุณ Jody Morris ที่ครอสสวยทำให้ยิงประตูปิดท้าย</figcaption>
+      </figure>
+
+      <!-- ROUND 5 -->
+      <h2><span class="round-badge">รอบ 5</span> Chelsea vs Leicester City</h2>
+
+      <div class="match-box">
+        <div class="match-box__date">30 มกราคม 2000 · Stamford Bridge</div>
+        <div class="match-box__teams">
+          <span class="match-box__team winner">🦁 Chelsea</span>
+          <div class="match-box__score">2 – 1</div>
+          <span class="match-box__team">Leicester City</span>
+        </div>
+        <div class="match-box__scorers">
+          <strong>Chelsea:</strong> Poyet (overhead kick) · Weah (first FA Cup goal)
+        </div>
+      </div>
+
+      <p>การถกเถียงก่อนเกมวนเวียนอยู่กับการเผชิญหน้าอย่างดราม่ากับทีมเดิมในรอบเดิมของปี 1997 ระหว่างทางคว้าแชมป์ถ้วย คำตอบคือ "ใช่" — แต่ในสถานการณ์ที่สบายกว่า Gus Poyet เปิดสกอร์ด้วยลูกยิงกระดกสวยงาม จากนั้น George Weah ปิดท้ายอย่างเฉียบขาดในการลงเล่น FA Cup ครั้งแรกหลังเซ็นสัญญา</p>
+
+      <figure class="article-img">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,w_1400,q_90/editorial/news/2020/05/weah-poyet-leicester-2000.jpg" alt="Poyet and Weah vs Leicester 2000">
+        <figcaption>Poyet และ Weah ยิงประตูให้ Chelsea เอาชนะ Leicester 2–1</figcaption>
+      </figure>
+
+      <!-- ROUND 6 -->
+      <h2><span class="round-badge">รอบ 6</span> Chelsea vs Gillingham</h2>
+
+      <div class="match-box">
+        <div class="match-box__date">20 กุมภาพันธ์ 2000 · Stamford Bridge</div>
+        <div class="match-box__teams">
+          <span class="match-box__team winner">🦁 Chelsea</span>
+          <div class="match-box__score">5 – 0</div>
+          <span class="match-box__team">Gillingham</span>
+        </div>
+        <div class="match-box__scorers">
+          <strong>Chelsea:</strong> <strong>Terry (ประตูแรกในชีวิต!)</strong> · Flo · Weah · Zola · Morris
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p>⭐ <strong>John Terry ยิงประตูแรกในชีวิต Chelsea ในนัดนี้</strong> — ลูกโหม่งทรงพลังที่กลายเป็นพาดหัวข่าว Terry จะยิงอีก 66 ลูกให้กับ Blues ในอีก 17 ปีต่อมา</p>
+      </div>
+
+      <p>Chelsea เดินเกมง่ายๆ เหนือ Gillingham ที่กำลังจะเลื่อนชั้นจาก Third Division Tore Andre Flo, George Weah, Gianfranco Zola และ Jody Morris เป็นผู้ยิงประตูอื่นๆ แต่ลูกโหม่งทรงพลังของ Terry คือพาดหัวข่าว</p>
+
+      <!-- SEMI-FINAL -->
+      <h2><span class="round-badge">รอบรองชนะเลิศ</span> Chelsea vs Newcastle United</h2>
+
+      <div class="match-box">
+        <div class="match-box__date">9 เมษายน 2000 · Wembley Stadium</div>
+        <div class="match-box__teams">
+          <span class="match-box__team winner">🦁 Chelsea</span>
+          <div class="match-box__score">2 – 1</div>
+          <span class="match-box__team">Newcastle United</span>
+        </div>
+        <div class="match-box__scorers">
+          <strong>Chelsea:</strong> Poyet 15' (lob) · Poyet 70' (header) | Lee เสมอ
+        </div>
+      </div>
+
+      <p>รอบรองชนะเลิศครั้งที่แปดในเจ็ดปี จัดขึ้นเพียงสี่วันหลังชัยชนะอันน่าจดจำ 3–1 เหนือ Barcelona Vialli ปรับทีมถึงหกตำแหน่ง โดย Poyet เป็นหนึ่งในนักเตะที่ถูกดึงเข้ามา</p>
+
+      <div class="pull-quote">
+        <p>"Poyet เกือบชนะเกมนี้คนเดียว ด้วยลูก lob งดงามในนาทีที่ 15 และลูกโหม่ง looping ในนาทีที่ 70 หลัง Rob Lee ตีเสมอ"</p>
+        <cite>— รอบรองชนะเลิศ Wembley 2000</cite>
+      </div>
+
+      <!-- FINAL -->
+      <h2><span class="round-badge">รอบชิงชนะเลิศ</span> Chelsea vs Aston Villa</h2>
+
+      <div class="match-box">
+        <div class="match-box__date">20 พฤษภาคม 2000 · Wembley Stadium (นัดสุดท้ายของ Wembley เดิม)</div>
+        <div class="match-box__teams">
+          <span class="match-box__team winner">🦁 Chelsea</span>
+          <div class="match-box__score">1 – 0</div>
+          <span class="match-box__team">Aston Villa</span>
+        </div>
+        <div class="match-box__scorers">
+          <strong>ประตูชัย:</strong> Roberto Di Matteo 73' (รับจากลูก free-kick หลัง David James มือเป๋)
+        </div>
+      </div>
+
+      <p>รอบชิงชนะเลิศครั้งแรกของศตวรรษที่ 21 และครั้งสุดท้ายภายใต้ Twin Towers อันเป็นเอกลักษณ์ ประตูของ Roberto Di Matteo 17 นาทีก่อนหมดเวลา ตัดสินนัดที่เต็มไปด้วยความระมัดระวัง</p>
+
+      <p>Chelsea เล่นดีขึ้นอย่างเห็นได้ชัดในครึ่งหลังและสมควรได้รับชัยชนะ ก่อนประตูของ Di Matteo (ประตูที่สามติดต่อกันใน Wembley finals ของเขา), Weah มีสามโอกาส และ Wise มีประตูที่ถูกยกเลิก Marcel Desailly และ Frank Leboeuf ยืนหยัดอย่างมั่นคงในแนวรับ ส่วน Mario Melchiot เล่นได้ยอดเยี่ยมที่ right-back ในเกมที่หกของสโมสร</p>
+
+      <div class="glory-box">
+        <span class="glory-box__trophy">🏆</span>
+        <div class="glory-box__title">Chelsea — FA Cup Champions 2000</div>
+        <div class="glory-box__sub">
+          แชมป์ FA Cup สมัยที่ 3 ในประวัติศาสตร์สโมสร<br>
+          นัดชิงสุดท้ายที่ Wembley เดิม ใต้ Twin Towers อันเป็นตำนาน<br>
+          ชัยชนะรับประกันสิทธิ์ UEFA Cup ฤดูกาลถัดไป
+        </div>
+      </div>
+
+      <figure class="article-img">
+        <img
+          src="https://img.chelseafc.com/image/upload/f_auto,c_fill,g_faces,w_1440,h_856,q_90/editorial/news/2020/05/fa-cup-2000-winners.jpg"
+          alt="Chelsea FA Cup Winners 2000 — ฉลองแชมป์">
+        <figcaption>Chelsea ยก FA Cup ขึ้นเป็นครั้งที่สามในประวัติศาสตร์ · Wembley Stadium · 20 พฤษภาคม 2000</figcaption>
+      </figure>
+
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+  <div id="th-time">BKK: --:--:--</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const applyLionTheme = (s) => s.replace(/0/g, '🦁');
+      const timeStr = new Intl.DateTimeFormat('th-TH', {
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hour12: false, timeZone: 'Asia/Bangkok'
+      }).format(now);
+      document.getElementById('th-time').textContent = 'BKK: ' + applyLionTheme(timeStr);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

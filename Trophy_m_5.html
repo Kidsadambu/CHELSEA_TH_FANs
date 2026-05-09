@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UEFA Cup Winners' Cup 1971 — CHELSEA TH FANs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.85;
+      font-size: 17px;
+    }
+
+    /* ── TOP NAV ── */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar__arrow {
+      width: 8px; height: 8px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 0.75rem;
+    }
+    .top-bar img { height: 32px; }
+
+    /* ── ARTICLE ── */
+    .article-container {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    /* HEADER */
+    header.article-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .article-header .badge {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+    .article-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 7vw, 3.6rem);
+      color: var(--blue-dark);
+      line-height: 1.12;
+      margin-bottom: 1rem;
+    }
+    .article-header .subtitle {
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .article-header .divider {
+      width: 50px; height: 3px;
+      background: linear-gradient(to right, var(--blue), var(--gold));
+      margin: 1.8rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* BODY TEXT */
+    .article-body p {
+      margin-bottom: 1.5rem;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+    .article-body p:first-child::first-letter {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 0.8;
+      margin: 6px 10px 0 0;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    /* SECTION HEADING */
+    .article-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      color: var(--blue-dark);
+      margin: 3rem 0 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ROUND-BY-ROUND BOXES */
+    .rounds-grid {
+      display: grid;
+      gap: 14px;
+      margin: 2rem 0 2.5rem;
+    }
+    .round-card {
+      background: #fff;
+      border-left: 4px solid var(--blue);
+      padding: 1.1rem 1.4rem;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+      border-radius: 0 3px 3px 0;
+    }
+    .round-card__label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .round-card p { margin-bottom: 0; font-size: 0.97rem; }
+
+    /* MATCH RESULT BOX */
+    .match-result {
+      margin: 2.5rem 0;
+      background: var(--blue-dark);
+      border-radius: 4px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--white);
+    }
+    .match-result__date {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .match-result__teams {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
+    }
+    .match-result__team {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .match-result__team.winner { color: var(--gold-light); }
+    .match-result__score {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .match-result__venue {
+      font-size: 0.85rem;
+      color: rgba(245,242,236,0.5);
+      margin-top: 0.5rem;
+    }
+
+    /* MINUTE-BY-MINUTE */
+    .timeline {
+      margin: 1.5rem 0 2.5rem;
+      border-left: 2px solid var(--rule);
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .timeline-item {
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.75rem;
+      top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--paper);
+    }
+    .timeline-item__min {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2px;
+    }
+    .timeline-item p { margin-bottom: 0; font-size: 0.97rem; }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      margin: 3rem 0;
+      padding: 2.2rem 2rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      background-color: rgba(197,184,154,0.06);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--blue-dark);
+      margin-bottom: 0.5rem;
+    }
+    .pull-quote cite {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background-color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 1.4rem 1.8rem;
+      margin: 2.5rem 0;
+      box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+    }
+    .highlight-box p { margin-bottom: 0; font-size: 1rem; }
+
+    /* HERO PLAYERS */
+    .hero-players {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 2rem 0;
+    }
+    .hero-player {
+      background: #fff;
+      border-top: 3px solid var(--blue);
+      padding: 14px 16px;
+      box-shadow: 0 2px 8px rgba(26,20,16,0.06);
+      border-radius: 0 0 3px 3px;
+    }
+    .hero-player__name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .hero-player__detail {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .site-footer__logo { height: 60px; margin-bottom: 0.5rem; }
+    .site-footer__name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+    }
+    .site-footer span { font-size: 0.85rem; color: var(--gold-light); opacity: 0.8; }
+
+    /* CLOCK */
+    #th-time {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      background: var(--blue-dark);
+      color: var(--gold);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      border: 1px solid var(--gold);
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 600px) {
+      .article-container { padding: 2rem 1.25rem; }
+      .article-header h1 { font-size: 2rem; }
+      .match-result__score { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="top-bar">
+    <a href="Trophy.html">
+      <div class="top-bar__arrow"></div>
+      กลับสู่ทำเนียบแชมป์
+    </a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Logo">
+  </nav>
+
+  <!-- ARTICLE -->
+  <article class="article-container">
+
+    <header class="article-header">
+      <div class="badge">🇪🇺 UEFA Cup Winners' Cup · 1971</div>
+      <h1>UEFA Cup Winners' Cup 1971</h1>
+      <p class="subtitle">แชมป์ยุโรปครั้งแรกในประวัติศาสตร์สโมสร — ชัยชนะเหนือ Real Madrid ที่กรีซ</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="article-body">
+
+      <p>หลังจากคว้าแชมป์ FA Cup ในปี 1970 ได้สำเร็จ Chelsea ก็ได้สิทธิ์เข้าร่วมแข่งขันรายการ UEFA Cup Winners' Cup เป็นครั้งแรกในประวัติศาสตร์สโมสร ภายใต้การคุมทีมของ Dave Sexton พวกเขาต้องการพิสูจน์ให้เห็นว่าทีมไม่ได้มีดีแค่ชื่อเสียง แต่มีศักยภาพในระดับท็อปของยุโรป</p>
+
+      <!-- ROUNDS -->
+      <h2>เส้นทางสู่นัดชิงชนะเลิศ</h2>
+
+      <div class="rounds-grid">
+        <div class="round-card">
+          <div class="round-card__label">รอบแรก</div>
+          <p>เริ่มต้นด้วยการบุกไปเยือน <strong>Aris Salonika</strong> ในกรีซ เสมอ 1–1 ก่อนจะกลับมาถล่มคู่แข่งถึงบ้าน <strong>5–1</strong> ผ่านเข้ารอบสองได้อย่างสวยงาม</p>
+        </div>
+        <div class="round-card">
+          <div class="round-card__label">รอบสอง</div>
+          <p>เจอกับ <strong>CSKA Sofia</strong> จากบัลแกเรีย เกมแรกบุกไปชนะ 1–0 กลับมาเล่นในบ้าน David Webb ซูเปอร์ฮีโร่จากนัดชิง FA Cup ก็มาทำประตูชัยอีกครั้ง ส่งทีมเข้ารอบ 8 ทีมสุดท้าย</p>
+        </div>
+        <div class="round-card" style="border-left-color:var(--gold)">
+          <div class="round-card__label">รอบก่อนรองชนะเลิศ</div>
+          <p>เจอกับ <strong>Club Brugge</strong> จากเบลเยียม เกมแรกบุกไปแพ้ 0–2 แต่ในเกมกลับมาที่ Stamford Bridge ทีมโชว์ความใจสู้ ตามตีเสมอ 2–2 ในเวลา ทำให้ต้องต่อเวลาพิเศษ ก่อนที่ <strong>Peter Osgood</strong> และ <strong>Tommy Baldwin</strong> จะมาทำประตูพลิกสถานการณ์ชนะ 4–2 ผ่านเข้ารอบต่อไป</p>
+        </div>
+        <div class="round-card" style="border-left-color:#16a34a">
+          <div class="round-card__label">รอบรองชนะเลิศ</div>
+          <p>ดวลกับคู่รักคู่แค้นจากอังกฤษอย่าง <strong>Manchester City</strong> ชนะไปได้ 2–0 รวมผลสองนัด ผ่านเข้าสู่รอบชิงชนะเลิศได้สำเร็จ ซึ่งฝั่งตรงข้ามคือยักษ์ใหญ่แห่งยุโรป <strong>Real Madrid</strong></p>
+        </div>
+      </div>
+
+      <!-- FINAL -->
+      <h2>นัดชิงชนะเลิศ: การดวลกับตำนาน</h2>
+
+      <div class="highlight-box">
+        <p>📍 นัดชิงชนะเลิศจัดขึ้นที่ <strong>Karaiskakis Stadium</strong> ประเทศกรีซ เมื่อวันที่ <strong>19 พฤษภาคม 1971</strong> ซึ่งเป็นวันเดียวกับวันก่อตั้งสโมสร (1905)</p>
+      </div>
+
+      <p><strong>เกมแรก:</strong> Chelsea เล่นได้ดีและขึ้นนำก่อนจากลูกยิงของ Osgood ในนาทีที่ 56 แต่แล้วในนาทีสุดท้ายก่อนจบเกม เกิดความผิดพลาดเล็กน้อยทำให้ <strong>Ignacio Zoco</strong> ตีเสมอให้ Real Madrid ได้ ต้องต่อเวลาพิเศษแต่ก็ยังไม่มีประตูเพิ่ม ทำให้ต้องมีการเตะนัดรีเพลย์ในอีก 2 วันถัดไป</p>
+
+      <!-- REPLAY -->
+      <h2>นัดรีเพลย์ — คืนแห่งประวัติศาสตร์</h2>
+
+      <p>John Hollins ไม่สามารถลงสนามได้เนื่องจากอาการบาดเจ็บ แต่การปรับแท็คติกของ Sexton และการลงสนามของ <strong>Tommy Baldwin</strong> กลับกลายเป็นดี</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-item__min">⏱ นาทีที่ 31</div>
+          <p><strong>John Dempsey</strong> ซัดไกลสุดสวยจากลูกเตะมุม ให้ Chelsea ขึ้นนำ <strong>1–0</strong></p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-item__min">⏱ นาทีที่ 37</div>
+          <p><strong>Peter Osgood</strong> รับบอลจาก Baldwin ก่อนจะกดด้วยเท้าขวาเสียบเสาไกล ห่างออกมาเป็น <strong>2–0</strong></p>
+        </div>
+        <div class="timeline-item" style="--dot-color:#f87171">
+          <div class="timeline-item__min" style="color:#dc2626">⏱ นาทีที่ 75</div>
+          <p><strong>Sebastián Fleitas</strong> ยิงตีไข่แตกให้ Madrid ตีเสมอ 1–2 ช่วงเวลาที่เหลือเป็นการลุ้นระทึกสุดๆ</p>
+        </div>
+      </div>
+
+      <!-- SCORE BOX -->
+      <div class="match-result">
+        <div class="match-result__date">19 พฤษภาคม 1971 · Karaiskakis Stadium, Athens, Greece</div>
+        <div class="match-result__teams">
+          <span class="match-result__team winner">Chelsea FC 🏆</span>
+          <div>
+            <div class="match-result__score">2 – 1</div>
+          </div>
+          <span class="match-result__team">Real Madrid</span>
+        </div>
+        <div class="match-result__venue">UEFA Cup Winners' Cup Final Replay · ประตู: Dempsey 31', Osgood 37' | Fleitas 75'</div>
+      </div>
+
+      <div class="pull-quote">
+        <p>"แนวรับนำโดย Ron Harris, Dave Webb และ Peter Bonetti สู้สุดใจ ป้องกันประตูไว้ได้สำเร็จ จนกระทั่งเสียงนกหวีดดังขึ้น"</p>
+        <cite>— คืนแห่งประวัติศาสตร์ที่กรีซ</cite>
+      </div>
+
+      <!-- VICTORY -->
+      <h2>ประวัติศาสตร์ถูกสร้างขึ้น</h2>
+
+      <p>Chelsea คว้าแชมป์ <strong>UEFA Cup Winners' Cup 1971</strong> ได้สำเร็จ ด้วยสกอร์ 2–1 กลายเป็น <strong>แชมป์ยุโรปสมัยแรกของสโมสร</strong> และเป็นการเอาชนะยักษ์ใหญ่อย่าง Real Madrid ได้อย่างยิ่งใหญ่</p>
+
+      <p>กัปตัน <strong>Ron Harris</strong> เป็นผู้ยกถ้วยรางวัลนี้ขึ้นอย่างภาคภูมิใจ เป็นความสำเร็จที่ติดต่อมาจากแชมป์ FA Cup เมื่อปีก่อน แม้ว่าหลังจากนั้นสโมสรจะต้องเจอกับช่วงเวลาที่ขึ้นๆ ลงๆ แต่ความทรงจำในคืนนั้นที่กรีซ จะอยู่ในใจแฟนบอลตลอดไป</p>
+
+      <!-- HERO PLAYERS -->
+      <h2>นักแสดงนำแห่งคืนนั้น</h2>
+
+      <div class="hero-players">
+        <div class="hero-player">
+          <div class="hero-player__name">John Dempsey</div>
+          <div class="hero-player__detail">⚽ ประตูแรก นาที 31'<br>ลูกซัดไกลจากเตะมุม</div>
+        </div>
+        <div class="hero-player">
+          <div class="hero-player__name">Peter Osgood</div>
+          <div class="hero-player__detail">⚽ ประตูที่สอง นาที 37'<br>รับบอลจาก Baldwin ยิงเสาไกล</div>
+        </div>
+        <div class="hero-player">
+          <div class="hero-player__name">Peter Bonetti</div>
+          <div class="hero-player__detail">🧤 ผู้รักษาประตู<br>ป้องกันประตูในนาทีระทึก</div>
+        </div>
+        <div class="hero-player">
+          <div class="hero-player__name">Ron Harris</div>
+          <div class="hero-player__detail">🏆 กัปตันทีม<br>ยกถ้วยรางวัลขึ้นสู่ฟ้า</div>
+        </div>
+        <div class="hero-player">
+          <div class="hero-player__name">Dave Webb</div>
+          <div class="hero-player__detail">🛡️ กองหลัง<br>แนวรับที่ยืนหยัดสุดใจ</div>
+        </div>
+        <div class="hero-player">
+          <div class="hero-player__name">Tommy Baldwin</div>
+          <div class="hero-player__detail">🎯 เจ้าของแอสซิสต์<br>เซตอัพ Osgood ทำประตู 2–0</div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+  <div id="th-time">BKK: --:--:--</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const applyLionTheme = (s) => s.replace(/0/g, '🦁');
+      const timeStr = new Intl.DateTimeFormat('th-TH', {
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hour12: false, timeZone: 'Asia/Bangkok'
+      }).format(now);
+      document.getElementById('th-time').textContent = 'BKK: ' + applyLionTheme(timeStr);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — บทที่ 8 การพิชิตของโรมัน และยุคแห่งการเปลี่ยนแปลง</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; width: 100%; height: 100vh;
+      min-height: 600px; overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://e0.365dm.com/22/03/2048x1152/skysports-roman-abramovich_5701079.png?20220310110941');
+      background-size: cover; background-position: center 20%;
+      filter: brightness(0.38) saturate(0.75);
+      transform: scale(1.03); transition: transform 8s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.06); }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(3,12,30,0.3) 40%,
+        rgba(3,12,30,0.88) 80%, rgba(3,12,30,0.97) 100%);
+    }
+    .hero__content {
+      position: relative; z-index: 2; width: 100%;
+      padding: 0 clamp(20px,6vw,80px) clamp(48px,8vh,90px);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+    }
+    .hero__logo {
+      width: clamp(80px,12vw,140px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.5));
+      margin-bottom: 28px; animation: fadeDown 1s ease both;
+    }
+    .hero__kicker {
+      font-weight: 600; font-size: clamp(10px,1.2vw,13px);
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.4rem,6.5vw,5.5rem); line-height: 1.08;
+      color: var(--white); letter-spacing: -0.01em; max-width: 900px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__subtitle {
+      font-size: clamp(14px,1.8vw,17px);
+      color: rgba(245,242,236,0.65); margin-top: 22px;
+      letter-spacing: 0.04em; animation: fadeDown 1s 0.35s ease both;
+    }
+    .hero__rule {
+      width: 60px; height: 2px; background: var(--gold);
+      margin: 32px auto 0; animation: fadeDown 1s 0.45s ease both;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── SCROLL HINT ── */
+    .scroll-hint {
+      position: absolute; bottom: 30px; left: 50%;
+      transform: translateX(-50%); z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: float 2.4s ease-in-out infinite;
+    }
+    .scroll-hint span {
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(245,242,236,0.4);
+    }
+    .scroll-hint__arrow {
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg); opacity: 0.7;
+    }
+    @keyframes float {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── ARTICLE ── */
+    .article { background: var(--paper); position: relative; }
+    .article::before {
+      content: ''; display: block; width: 100%; height: 6px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+    }
+    .article__inner {
+      max-width: var(--col-max); margin: 0 auto;
+      padding: clamp(48px,8vw,90px) clamp(20px,5vw,40px);
+    }
+
+    /* ── CHAPTER HEADING ── */
+    .chapter-heading { text-align: center; margin-bottom: 52px; }
+    .chapter-heading__number {
+      display: inline-block; font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+      padding: 6px 16px; margin-bottom: 20px;
+    }
+    .chapter-heading h1 {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(1.6rem,4vw,2.8rem); line-height: 1.2;
+      color: var(--ink); letter-spacing: -0.01em;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 4px solid var(--gold); padding: 24px 32px;
+      margin: 0 0 48px;
+      background: linear-gradient(to right, rgba(200,168,75,0.06), transparent);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1rem,2vw,1.15rem); color: var(--ink-soft); line-height: 1.7;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 14px; font-family: 'Sarabun', sans-serif;
+      font-style: normal; font-size: 12px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+    }
+
+    /* ── BODY ── */
+    .article__inner p { margin-bottom: 1.6em; color: var(--ink-soft); }
+    .article__inner p em { color: var(--ink); font-style: italic; }
+    .drop-cap::first-letter {
+      float: left; font-family: 'Playfair Display', serif;
+      font-size: 4.2em; line-height: 0.78; margin: 6px 10px 0 0;
+      color: var(--blue); font-weight: 900;
+    }
+
+    /* ── H2 ── */
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(1.25rem,2.8vw,1.7rem); color: var(--blue);
+      margin: 56px 0 24px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule); letter-spacing: -0.01em;
+    }
+
+    /* ── IMAGES ── */
+    .img-block { margin: 40px 0; }
+    .img-block img {
+      width: 100%; height: auto; display: block; object-fit: cover;
+      border-radius: 2px; box-shadow: 0 4px 24px rgba(26,20,16,0.15);
+    }
+    .img-block figcaption {
+      margin-top: 12px; font-size: 12.5px; color: var(--ink-muted);
+      letter-spacing: 0.04em; font-style: italic; line-height: 1.5;
+    }
+    .img-block--wide { margin: 48px calc(-1 * clamp(20px,5vw,40px)); }
+    .img-block--wide figcaption { padding: 0 clamp(20px,5vw,40px); }
+
+    /* ── BLOCKQUOTE ── */
+    .article__inner blockquote {
+      margin: 36px 0; padding: 24px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue); color: var(--ink); font-style: italic;
+    }
+
+    /* ── DARK QUOTE BOX ── */
+    .quote-box {
+      margin: 40px 0; padding: 28px 32px;
+      background: var(--ink); color: rgba(245,242,236,0.85);
+      border-radius: 2px;
+      font-size: clamp(0.95rem,1.8vw,1.05rem); line-height: 1.8;
+    }
+    .quote-box em {
+      display: block; margin-top: 16px; font-size: 12px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); font-style: normal;
+    }
+
+    /* ── DATE BANNER ── */
+    .date-banner {
+      margin: 0 0 48px; padding: 22px 28px;
+      background: linear-gradient(135deg, var(--blue) 0%, #021f45 100%);
+      border-radius: 2px; text-align: center;
+    }
+    .date-banner__date {
+      display: block; font-family: 'Playfair Display', serif;
+      font-weight: 900; font-size: clamp(1.4rem,3vw,2rem);
+      color: var(--gold-light); letter-spacing: 0.02em; margin-bottom: 8px;
+    }
+    .date-banner__label {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: rgba(245,242,236,0.5);
+    }
+
+    /* ── TROPHY GRID ── */
+    .trophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px; margin: 36px 0;
+    }
+    .trophy-card {
+      padding: 16px 12px; text-align: center;
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--gold);
+      background: white;
+    }
+    .trophy-card__icon { font-size: 22px; margin-bottom: 8px; }
+    .trophy-card__name {
+      display: block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 4px;
+    }
+    .trophy-card__year {
+      display: block; font-size: 11.5px; color: var(--ink-muted); line-height: 1.5;
+    }
+
+    /* ── MANAGER TIMELINE ── */
+    .manager-list {
+      margin: 36px 0;
+      border-left: 2px solid var(--rule);
+      padding-left: 24px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .manager-item { position: relative; }
+    .manager-item::before {
+      content: ''; position: absolute;
+      left: -31px; top: 8px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--gold); border: 2px solid var(--paper);
+    }
+    .manager-item__years {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 3px;
+    }
+    .manager-item__name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.05rem; color: var(--blue); margin-bottom: 4px;
+    }
+    .manager-item__desc {
+      font-size: 14px; color: var(--ink-soft); line-height: 1.6;
+    }
+
+    /* ── CHAPTER END ── */
+    .chapter-end {
+      text-align: center; margin: 64px 0 0;
+      padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    .chapter-end__ornament { font-size: 28px; color: var(--gold); letter-spacing: 0.3em; }
+    .chapter-end__text {
+      display: block; margin-top: 12px; font-size: 12px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink); color: rgba(245,242,236,0.5);
+      text-align: center; padding: 40px 20px;
+      font-size: 13px; letter-spacing: 0.08em;
+    }
+    .site-footer__logo { width: 50px; filter: brightness(0.6); margin-bottom: 16px; }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 6px; font-size: 14px; letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 500px) {
+      .pull-quote { padding: 18px 20px; }
+      .quote-box { padding: 20px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="Chapter1.html">บทที่ 1</a></li>
+      <li><a href="Chapter2.html">บทที่ 2</a></li>
+      <li><a href="Chapter3.html">บทที่ 3</a></li>
+      <li><a href="Chapter4.html">บทที่ 4</a></li>
+      <li><a href="Chapter5.html">บทที่ 5</a></li>
+      <li><a href="Chapter6.html">บทที่ 6</a></li>
+      <li><a href="Chapter7.html">บทที่ 7</a></li>
+      <li><a href="Chapter8.html">บทที่ 8</a></li>
+      <li><a href="Chapter9.html">บทที่ 9</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+      <p class="hero__kicker">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
+      <p class="hero__subtitle">ผู้เขียน: อิอิแอแอ</p>
+      <div class="hero__rule"></div>
+    </div>
+
+  </header>
+
+  <!-- ══ ARTICLE ══ -->
+  <main class="article">
+    <div class="article__inner">
+
+      <div class="chapter-heading">
+        <div class="chapter-heading__number">บทที่ ๘</div>
+        <h1>การพิชิตของโรมัน และยุคแห่งการเปลี่ยนแปลง</h1>
+      </div>
+
+      <blockquote class="pull-quote">
+        <p>'เราเล่นฟุตบอลที่ยอดเยี่ยมทั้งรุกและรับ เราทำประตูได้มากมาย เราชนะเกม และเราคลีนชีตสม่ำเสมอ มันเป็นฤดูกาลที่สนุกมากๆ เราสมดุลดี และเราได้รับรางวัลด้วยการคว้าแชมป์ลีกและ Double'</p>
+        <cite>— เปตร์ เช็ก</cite>
+      </blockquote>
+
+      <div class="date-banner">
+        <span class="date-banner__date">1 กรกฎาคม 2003</span>
+        <span class="date-banner__label">วันที่เปลี่ยนเส้นทางประวัติศาสตร์ของเชลซีไปตลอดกาล</span>
+      </div>
+
+      <p class="drop-cap">ในวันอันยิ่งใหญ่นั้น นักธุรกิจชาวรัสเซีย โรมัน อับราโมวิช ซื้อสโมสรจาก เคน เบตส์ ประธานที่อยู่มานาน และยุคใหม่ก็เริ่มต้นขึ้นอย่างแท้จริง ด้วยความทะเยอทะยานและวิสัยทัศน์สู่สิ่งยิ่งใหญ่เช่นเดียวกับที่เป็นเครื่องหมายของเชลซีในยุคก่อตั้งเกือบ 100 ปีก่อน เจ้าของใหม่รีบจัดการชำระหนี้สินทั้งหมดทันที และในช่วงซัมเมอร์นั้นเขาทำการลงทุนในนักเตะครั้งใหญ่ที่สุดในประวัติศาสตร์ฟุตบอลอังกฤษในขณะนั้น</p>
+
+      <p>การเซ็นสัญญาใหม่รวมถึง เดเมียน ดัฟฟ์ และ โจ โคล จาก Premier League รวมถึงดาวเด่นจากต่างประเทศ เอร์นัน เครสโป, คล็อด มาเกเลเล และ เอเดรียน มูตู สร้างความฮือฮาไปทั่ว ในการยกย่องเจ้าของใหม่ เพลงพื้นบ้านรัสเซีย Kalinka ถูกบรรเลงก่อนเกมที่ Stamford Bridge ท่ามกลางการปรบมืออย่างกระตือรือร้น</p>
+
+      <p>แม้จะนำตารางช่วงสั้นๆ ในปลายฤดูใบไม้ร่วง ฤดูกาลแรกของ รานิเอรี ภายใต้เจ้าของใหม่ก็ได้แค่อันดับสองตาม Arsenal ที่ไม่แพ้ใคร แต่นั่นก็ยังเป็นอันดับลีกสูงสุดของเรานับตั้งแต่คว้าแชมป์ดิวิชั่นหนึ่งเกือบครึ่งศตวรรษก่อน แคมเปญ Champions League วิ่งไปถึงรอบรองชนะเลิศ แต่ไม่ก่อนที่เราจะชนะอย่างยิ่งใหญ่ที่ Highbury ในรอบก่อนรองชนะเลิศ ลูกยิงท้ายเกมของ เวย์น บริดจ์ ยุติสถิติไม่ชนะ Arsenal มาอย่างยาวนาน</p>
+
+      <!-- Section 1 -->
+      <h2>โมรินโญ่ — "The Special One" มาถึงแล้ว</h2>
+
+      <p class="drop-cap">การแต่งตั้ง โชเซ่ โมรินโญ่ เป็นผู้จัดการทีมในปี 2004 คือตัวเร่งที่จำเป็นในการยกระดับเดอะบลูส์สู่ทีมที่ดีที่สุดของอังกฤษ โมรินโญ่ที่เพิ่งยก Champions League กับ Porto นำวิถีคิดแชมป์มาสู่ลอนดอน พร้อมบุคลิกที่ทำให้สื่ออังกฤษหลงใหล</p>
+
+      <div class="quote-box">
+        'ผมรักฟุตบอลมาตั้งแต่ที่จำได้ เรามีผู้เล่นระดับท็อป และขอโทษถ้าผมหยิ่ง เรามีผู้จัดการทีมระดับท็อปด้วย ผมเป็นแชมป์ยุโรป และผมคิดว่าผมเป็น Special One'
+        <em>— โชเซ่ โมรินโญ่ ในงานแถลงข่าวเปิดตัว มิถุนายน 2004</em>
+      </div>
+
+      <p>ด้วยรูปแบบ 4-3-3 ที่มีแนวรับแทบแพ้ไม่ได้ กองกลางที่หลากหลาย และปีกที่บินเร็ว เราคว้าแชมป์ลีกเป็นครั้งแรกในรอบ 50 ปี โดยเป่าคู่แข่งออกจากสนามอย่างราบคาบ สถิติที่สร้างไว้ — ชนะมากที่สุด, เสียประตูน้อยที่สุด (15 ลูก ซึ่งยังคงเป็นสถิติอยู่) และแต้มมากที่สุด — บอกเรื่องราวในตัวเอง รวมถึง 1,025 นาทีที่ เช็ก ไม่เสียประตูระหว่างเดือนธันวาคมถึงมีนาคม</p>
+
+      <p>แกนกลางของทีมคือนักเตะก่อนยุคอับราโมวิชที่เกมพัฒนาขึ้นสู่ระดับใหม่: กัปตันทีมที่เพิ่งได้รับแต่งตั้ง จอห์น เทอร์รี่, เครื่องจักรยิงประตูกองกลาง แฟรงก์ แลมพาร์ด, เอยเดอร์ กุดยอห์นเซ่น และ วิลเลียม กัลลาส พวกเขาได้รับการเสริมด้วยผู้นำเข้าชั้นยอดอย่าง เปตร์ เช็ก, ริคาร์โด คาร์วาลโย, อาร์เยน รอบเบ้น และ ดิดิเยร์ ดร็อกบา แกนหลัก เช็ก–เทอร์รี่–แลมพาร์ด–ดร็อกบา จะพิสูจน์ตัวว่าเป็นกาวประสานทีมเกือบหนึ่งทศวรรษ</p>
+
+      <p>บ่ายแห่งชัยชนะแชมป์ที่แฟนเชลซีหลายรุ่นคิดว่าอาจไม่มีวันเห็นมาถึงที่ Bolton โดยแลมพาร์ดยิงสองลูกในครึ่งหลังพาแฟนบอลทั้งบนสนาม ในอัฒจันทร์ และหน้าจอทีวีน้ำตาไหล ก่อนหน้าสองเดือนได้ League Cup ที่คาร์ดิฟฟ์ โดยมีลูกเตะเข้าประตูตัวเองของ สตีเวน เจอร์ราร์ด ตีเสมอก่อนเชลซีจะชนะในช่วงต่อเวลาด้วยประตูของ ดร็อกบา และ มาเตยา เกซมาน</p>
+
+      <!-- Section 2 -->
+      <h2>แชมป์ต่อเนื่อง — Double ในฤดูกาลครบรอบ 100 ปี</h2>
+
+      <p class="drop-cap">ว่าเชลซีเป็นทีมที่ดีที่สุดในแผ่นดินได้รับการยืนยันเมื่อเราคว้าแชมป์ต่อเนื่องในฤดูกาลครบรอบ 100 ปี ลูกทีมของโมรินโญ่พิสูจน์ตัวอีกครั้งว่าเหนือกว่าคนอื่น ฤดูกาลเหย้าที่ไม่แพ้อีกครั้งจบลงด้วยการถล่ม Manchester United 3-0 ในเกมที่สว่างขึ้นด้วยความพยายามเดี่ยวสวยงามของ โจ โคล ฤดูกาล 2006/07 นำ League Cup และ FA Cup มาให้ โดยมีประตูต่อเวลาพิเศษของ ดร็อกบา พบ Man United คว้า FA Cup มา</p>
+
+      <div class="quote-box">
+        'ดร็อกบาทำในสิ่งที่กองหน้าทุกคนควรทำ นั่นคือยิงในเกมใหญ่ที่สุด เขายิงสามประตูชัยใน FA Cup Final ทำประตูสำคัญในสอง League Cup Final และใครจะลืมสิ่งที่เขาทำที่มิวนิกใน Champions League Final ได้? เมื่ออยู่ในฟอร์มสูงสุด เขาหยุดไม่ได้'
+        <em>— เจมี่ คาร์เรเกอร์ อดีตคู่แข่ง</em>
+      </div>
+
+      <!-- Section 3 -->
+      <h2>มุ่งสู่มอสโก — Final ที่เจ็บปวดที่สุด</h2>
+
+      <p class="drop-cap">ในเดือนกันยายน 2007 วงการฟุตบอลตกตะลึงเมื่อรู้ว่า โมรินโญ่ ออกจากตำแหน่งหลังฤดูกาลเริ่มต้นได้ไม่ดีและความเห็นไม่ตรงกันเรื่องนโยบายซื้อขายนักเตะ อัฟราม แกรนท์ ขึ้นมารับตำแหน่ง ช่วยเหลือโดย สตีฟ คลาร์ก เดอะบลูส์ยังคงเป็นพลังที่น่าเกรงขาม พาการแข่งขันลีกไปถึงวันสุดท้าย และรอบชิงชนะเลิศ Champions League ไปถึงการยิงจุดโทษ ในรอบชิงฯ ที่มอสโก แลมพาร์ด ล้างแค้นประตูของ โรนัลโด และนัดที่ดื่มด่ำจบ 1-1 เราอยู่ห่างจากชัยชนะที่ยิ่งใหญ่ที่สุดเพียงการลื่นของ เทอร์รี่ และความกว้างของเสา แต่ Man United ชนะไปได้</p>
+
+      <!-- Section 4 -->
+      <h2>อันเชล็อตติ — Double ที่ทำด้วยสไตล์</h2>
+
+      <p class="drop-cap">คาร์โล อันเชล็อตติ ได้รับแต่งตั้งเป็นหัวหน้าโค้ชในซัมเมอร์ปี 2009 ฤดูกาลเปิดตัวของเขาแทบไม่อาจดีไปกว่านี้ ด้วย ดร็อกบา กลับมาสู่ฟอร์มที่ดีที่สุดและ แลมพาร์ด ในแคมเปญที่สร้างประตูมากที่สุดในอาชีพ ประตูก็ไหลเทอย่างไม่หยุด Liverpool, Arsenal และ Man United ถูกเอาชนะทั้งเหย้าและเยือน โดยรวมเราทำประตูได้เจ็ดหรือมากกว่าถึงสี่ครั้ง แปดลูกที่ยิงใส่ Wigan พาเราสู่สถิติ 103 ประตู ดร็อกบา จบด้วย 29 ลูกในลีก และ แลมพาร์ด 22 ลูก ในปี 2009/10 เชลซีคว้า "Double" — และคว้ามันด้วยสไตล์!</p>
+
+      <!-- Section 5 -->
+      <h2>คืนที่ยิ่งใหญ่ที่สุด — มิวนิก 2012</h2>
+
+      <p class="drop-cap">หลัง อันเชล็อตติ และ วิลลาส-โบอาส ผ่านไป โรแบร์โต ดิ มัตเตโอ รับช่วงต่อ ความสำเร็จใหญ่ครั้งแรกคือการพลิกจากตามหลัง 1-3 พบ Napoli ใน Champions League รอบ 16 ทีม ในคืนหนึ่งที่ยิ่งใหญ่ที่สุดของ Stamford Bridge อีวาโนวิช จบด้วยประตูชัยในช่วงต่อเวลา</p>
+
+      <p>หลังจากเอาชนะ Barcelona 3-2 รวมสองนัดในรอบรองชนะเลิศอย่างน่าอัศจรรย์ โดยมีประตูของ รามิเรส และ ตอร์เรส ที่ Camp Nou เราบุกไปเล่นกับ Bayern Munich ในบ้านของพวกเขา ดร็อกบา จบด้วยประตูตีเสมอในนาทีสุดท้ายและจุดโทษชัยชนะ เช็ก เซฟได้สามจุดโทษ และ แลมพาร์ด นำทีมสู่ชัยชนะ Champions League อันน่าทึ่งในระหว่างที่ เทอร์รี่ ถูกพักการแข่งขัน ยิ่งไปกว่านั้น เรายังยก FA Cup ในฤดูกาลนั้น โดย ดร็อกบา ยิงประตูชัยเป็น Final ที่สี่ในสี่ครั้งที่ลงสนาม</p>
+
+      <!-- Section 6 -->
+      <h2>โมรินโญ่กลับมา — แลมพาร์ดทำลายสถิติ และแชมป์ที่ 5</h2>
+
+      <p class="drop-cap">เดือนถัดจากที่ เบนิเตซ พาทีมคว้า Europa League ด้วย อีวาโนวิช โหม่งชัยพบ Benfica โมรินโญ่ กลับมาอย่างน่าตื่นตะลึง ก่อนหน้าในฤดูกาล แลมพาร์ด ทำลายสถิติประตูสูงสุดตลอดกาลของเชลซีที่เคยเป็นของ บ็อบบี้ แทมบลิ้ง 202 ลูก ด้วยสองลูกท้ายเกมที่ Aston Villa ช่วย 'Lamps' พาตัวเลขขึ้นไปสู่ 203 ประตูและต่อมา 211 ประตูก่อนจากทีมไป</p>
+
+      <p>แอนโตนิโอ คอนเต้ ซึ่งรับหน้าที่ต่อจากโมรินโญ่ในปี 2016 สร้างแผ่นดินไหวด้วยการเปลี่ยนเป็น 3-4-3 กลางฤดูกาลหลังจากพ่าย Arsenal และ Liverpool ชัยชนะติดต่อกัน 13 นัดใน Premier League สร้างสถิติสโมสร และพาเราคว้าแชมป์ Premier League ครั้งที่ 5 ซึ่งน่าจะน้อยคนคาดไว้ที่สุด นักเตะใหม่อย่าง เอ็งโกโล กองเต้ จาก Leicester และ เปโดร เสริมทัพโดยมี ฮาซาร์ด และ ดิเอโก โกสต้า กลับมาสู่ฟอร์มที่ดีที่สุด</p>
+
+      <blockquote>
+        <p>'เขาสามารถเปลี่ยนสิ่งที่คนอื่นไม่มีทางเห็นว่าเป็นประตูให้กลายเป็นประตูได้' — จานฟรังโก โซล่า พูดถึงเวทมนตร์ฉับพลันของ เอเดน ฮาซาร์ด</p>
+      </blockquote>
+
+      <!-- Trophy Grid -->
+      <div class="trophy-grid">
+        <div class="trophy-card">
+          <div class="trophy-card__icon">🏆</div>
+          <span class="trophy-card__name">Premier League</span>
+          <span class="trophy-card__year">2005, 2006, 2010, 2015, 2017</span>
+        </div>
+        <div class="trophy-card">
+          <div class="trophy-card__icon">🏆</div>
+          <span class="trophy-card__name">FA Cup</span>
+          <span class="trophy-card__year">2007, 2009, 2010, 2012, 2018</span>
+        </div>
+        <div class="trophy-card">
+          <div class="trophy-card__icon">🏆</div>
+          <span class="trophy-card__name">League Cup</span>
+          <span class="trophy-card__year">2005, 2007, 2015</span>
+        </div>
+        <div class="trophy-card">
+          <div class="trophy-card__icon">🏆</div>
+          <span class="trophy-card__name">Champions League</span>
+          <span class="trophy-card__year">2012, 2021</span>
+        </div>
+        <div class="trophy-card">
+          <div class="trophy-card__icon">🏆</div>
+          <span class="trophy-card__name">Europa League</span>
+          <span class="trophy-card__year">2013, 2019</span>
+        </div>
+        <div class="trophy-card">
+          <div class="trophy-card__icon">🏆</div>
+          <span class="trophy-card__name">Club World Cup</span>
+          <span class="trophy-card__year">2022, 2025</span>
+        </div>
+      </div>
+
+      <!-- Section 7 -->
+      <h2>ทูเชล และ Champions League ครั้งที่สอง</h2>
+
+      <p class="drop-cap">หลังจากยุค Sarri และ Lampard ผ่านไป โทมัส ทูเชล จากเยอรมนีเข้ามาแทนในเดือนมกราคม 2021 และฟอร์มดีขึ้นโดยมีแนวรับที่เหนียวแน่นเป็นฐาน หลังจากเอาชนะ Atletico Madrid, Porto และ Real Madrid ในรอบน็อคเอาท์ เชลซีคว้าแชมป์ Champions League เป็นครั้งที่สองในประวัติศาสตร์โดยเอาชนะ Manchester City แชมป์ Premier League ที่ Porto ไค ฮาเวิร์ตซ์ นักเตะชาวเยอรมันหนุ่ม ยิงประตูชัย</p>
+
+      <p>ในฤดูกาล 2021/22 เริ่มต้นด้วยการคว้า UEFA Super Cup โดยเอาชนะ Villarreal ด้วยจุดโทษที่เบลฟาสต์ ความสำเร็จ Champions League ยังทำให้เราผ่านเข้า FIFA Club World Cup ครั้งนี้รอบชิงชนะเลิศกับ Palmeiras ชนะ ฮาเวิร์ตซ์ เป็นฮีโร่อีกครั้งด้วยจุดโทษชัยชนะในช่วงต่อเวลาพิเศษ</p>
+
+      <!-- Section 8 -->
+      <h2>ยุคแห่งการเปลี่ยนแปลง — เจ้าของใหม่และแชมป์โลกอีกครั้ง</h2>
+
+      <p class="drop-cap">ไม่กี่วันหลังจากกลับจากอาบูดาบี กองทัพรัสเซียบุกโจมตีประเทศยูเครน และ โรมัน อับราโมวิช ประกาศขายเชลซี ปลายเดือนพฤษภาคม 2022 กลุ่มนำโดย ท็อดด์ โบห์ลี และ Clearlake Capital เสร็จสิ้นการซื้อกิจการ ยุคใหม่เริ่มต้นด้วยการลงทุนอย่างมีนัยสำคัญ ราฮีม สเตอร์ลิ่ง เป็นการซื้อแรก ตามด้วย เอนโซ เฟร์นันเดซ และ มิคาอิโล มุดรีก กลางฤดูกาล</p>
+
+      <!-- Manager Timeline -->
+      <div class="manager-list">
+        <div class="manager-item">
+          <div class="manager-item__years">2022 – 2023</div>
+          <div class="manager-item__name">Graham Potter / Frank Lampard (รักษาการ)</div>
+          <div class="manager-item__desc">ช่วงปรับตัวหลังเปลี่ยนเจ้าของ Potter แทนที่ Tuchel ก่อนที่ Lampard จะรับหน้าที่รักษาการช่วงปลายฤดูกาล</div>
+        </div>
+        <div class="manager-item">
+          <div class="manager-item__years">2023 – 2024</div>
+          <div class="manager-item__name">Mauricio Pochettino</div>
+          <div class="manager-item__desc">ดูแลชุดนักเตะหน้าใหม่ที่ยังรวมตัวกัน จบอันดับหกและเข้า Conference League เป็นครั้งแรก โคล พาลเมอร์ คว้ารางวัลผู้เล่นแห่งปีด้วย 25 ประตู</div>
+        </div>
+        <div class="manager-item">
+          <div class="manager-item__years">2024 – ปัจจุบัน</div>
+          <div class="manager-item__name">Enzo Maresca</div>
+          <div class="manager-item__desc">คว้าแชมป์ Conference League เอาชนะ Real Betis 4-1 ที่โปแลนด์ จบที่สี่ใน Premier League และคว้า FIFA Club World Cup เอาชนะ PSG 3-0</div>
+        </div>
+      </div>
+
+      <p>โคล พาลเมอร์ ได้รับเลือกเป็นผู้เล่นแห่งปีหลังจากยิง 25 ประตูในฤดูกาลเปิดตัว และในปี 2024/25 เชลซีกลับมาชนะถ้วยอีกครั้ง ทีมครองเกมตลอด Conference League และกลับมาจากตามหลังเพื่อเอาชนะ Real Betis 4-1 ในรอบชิงชนะเลิศที่โปแลนด์ โดย เอนโซ เฟร์นันเดซ, นิโคลัส แจ็คสัน, จาดอน แซนโช และผู้เล่นแห่งฤดูกาล โมเซส ไคเซโด ยิงประตู</p>
+
+      <p>จากนั้นในฐานะแชมป์ Champions League ปี 2021 เราได้สิทธิ์เข้าร่วม FIFA Club World Cup รูปแบบใหม่ 32 ทีมในสหรัฐอเมริกา ผ่านรอบกลุ่มและรอบน็อคเอาท์จนได้พบ PSG แชมป์ยุโรปใหม่ในรอบชิงชนะเลิศ การแสดงที่ชนะ 3-0 นั้นยอดเยี่ยม พาลเมอร์ยิงสองลูก และประตูที่สามมาจาก โจเอา เปโดร ผู้เล่นใหม่</p>
+
+      <blockquote>
+        <p>ความทะเยอทะยานและความใฝ่ฝันที่วิ่งผ่านประวัติศาสตร์ทั้งหมดของเชลซีตั้งแต่ปี 1905 ยังคงลุกโชนอยู่ ผู้ก่อตั้งในยุคแรกจะจำสโมสรของตัวเองได้ในศตวรรษที่ 21 นี้ — <em>เชลซีเป็นแชมป์โลก อีกครั้ง!</em></p>
+      </blockquote>
+
+      <div class="chapter-end">
+        <div class="chapter-end__ornament">⚽</div>
+        <span class="chapter-end__text">— จบบทที่ ๘ —</span>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

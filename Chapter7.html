@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA TH FANs — บทที่ 7 สถานที่เดียวที่ต้องมา ทุกสองสัปดาห์</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --ink-muted:  #7a6f63;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Sarabun', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; width: 100%; height: 100vh;
+      min-height: 600px; overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://i.imgur.com/d7cGptr.jpeg');
+      background-size: cover; background-position: center 30%;
+      filter: brightness(0.45) saturate(0.8);
+      transform: scale(1.03); transition: transform 8s ease;
+    }
+    .hero:hover .hero__bg { transform: scale(1.06); }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        transparent 0%, rgba(3,12,30,0.3) 40%,
+        rgba(3,12,30,0.85) 80%, rgba(3,12,30,0.97) 100%);
+    }
+    .hero__content {
+      position: relative; z-index: 2; width: 100%;
+      padding: 0 clamp(20px,6vw,80px) clamp(48px,8vh,90px);
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+    }
+    .hero__logo {
+      width: clamp(80px,12vw,140px);
+      filter: drop-shadow(0 4px 24px rgba(200,168,75,0.5));
+      margin-bottom: 28px; animation: fadeDown 1s ease both;
+    }
+    .hero__kicker {
+      font-weight: 600; font-size: clamp(10px,1.2vw,13px);
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+      animation: fadeDown 1s 0.15s ease both;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(2.4rem,6.5vw,5.5rem); line-height: 1.08;
+      color: var(--white); letter-spacing: -0.01em; max-width: 900px;
+      animation: fadeDown 1s 0.25s ease both;
+    }
+    .hero__title em { font-style: italic; color: var(--gold-light); }
+    .hero__subtitle {
+      font-size: clamp(14px,1.8vw,17px);
+      color: rgba(245,242,236,0.65); margin-top: 22px;
+      letter-spacing: 0.04em; animation: fadeDown 1s 0.35s ease both;
+    }
+    .hero__rule {
+      width: 60px; height: 2px; background: var(--gold);
+      margin: 32px auto 0; animation: fadeDown 1s 0.45s ease both;
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── SCROLL HINT ── */
+    .scroll-hint {
+      position: absolute; bottom: 30px; left: 50%;
+      transform: translateX(-50%); z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      animation: float 2.4s ease-in-out infinite;
+    }
+    .scroll-hint span {
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(245,242,236,0.4);
+    }
+    .scroll-hint__arrow {
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg); opacity: 0.7;
+    }
+    @keyframes float {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── ARTICLE ── */
+    .article { background: var(--paper); position: relative; }
+    .article::before {
+      content: ''; display: block; width: 100%; height: 6px;
+      background: linear-gradient(to right, var(--blue), var(--gold), var(--blue));
+    }
+    .article__inner {
+      max-width: var(--col-max); margin: 0 auto;
+      padding: clamp(48px,8vw,90px) clamp(20px,5vw,40px);
+    }
+
+    /* ── CHAPTER HEADING ── */
+    .chapter-heading { text-align: center; margin-bottom: 52px; }
+    .chapter-heading__number {
+      display: inline-block; font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+      padding: 6px 16px; margin-bottom: 20px;
+    }
+    .chapter-heading h1 {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(1.6rem,4vw,2.8rem); line-height: 1.2;
+      color: var(--ink); letter-spacing: -0.01em;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      border-left: 4px solid var(--gold); padding: 24px 32px;
+      margin: 0 0 48px;
+      background: linear-gradient(to right, rgba(200,168,75,0.06), transparent);
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1rem,2vw,1.15rem); color: var(--ink-soft); line-height: 1.7;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 14px; font-family: 'Sarabun', sans-serif;
+      font-style: normal; font-size: 12px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+    }
+
+    /* ── BODY ── */
+    .article__inner p { margin-bottom: 1.6em; color: var(--ink-soft); }
+    .article__inner p em { color: var(--ink); font-style: italic; }
+    .drop-cap::first-letter {
+      float: left; font-family: 'Playfair Display', serif;
+      font-size: 4.2em; line-height: 0.78; margin: 6px 10px 0 0;
+      color: var(--blue); font-weight: 900;
+    }
+
+    /* ── H2 ── */
+    .article__inner h2 {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: clamp(1.25rem,2.8vw,1.7rem); color: var(--blue);
+      margin: 56px 0 24px; padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule); letter-spacing: -0.01em;
+    }
+
+    /* ── IMAGES ── */
+    .img-block { margin: 40px 0; }
+    .img-block img {
+      width: 100%; height: auto; display: block; object-fit: cover;
+      border-radius: 2px; box-shadow: 0 4px 24px rgba(26,20,16,0.15);
+    }
+    .img-block figcaption {
+      margin-top: 12px; font-size: 12.5px; color: var(--ink-muted);
+      letter-spacing: 0.04em; font-style: italic; line-height: 1.5;
+    }
+    .img-block--wide { margin: 48px calc(-1 * clamp(20px,5vw,40px)); }
+    .img-block--wide figcaption { padding: 0 clamp(20px,5vw,40px); }
+
+    /* ── BLOCKQUOTE ── */
+    .article__inner blockquote {
+      margin: 36px 0; padding: 24px 28px;
+      background: rgba(3,70,148,0.04);
+      border-left: 3px solid var(--blue); color: var(--ink); font-style: italic;
+    }
+
+    /* ── DARK QUOTE BOX ── */
+    .quote-box {
+      margin: 40px 0; padding: 28px 32px;
+      background: var(--ink); color: rgba(245,242,236,0.85);
+      border-radius: 2px;
+      font-size: clamp(0.95rem,1.8vw,1.05rem); line-height: 1.8;
+    }
+    .quote-box em {
+      display: block; margin-top: 16px; font-size: 12px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); font-style: normal;
+    }
+
+    /* ── TROPHY STRIP ── */
+    .trophy-strip {
+      margin: 44px 0; padding: 28px;
+      background: linear-gradient(135deg, var(--blue) 0%, #021f45 100%);
+      border-radius: 2px;
+      display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
+    }
+    .trophy-strip__item {
+      text-align: center; flex: 1; min-width: 120px;
+    }
+    .trophy-strip__icon {
+      font-size: 28px; margin-bottom: 8px;
+    }
+    .trophy-strip__name {
+      display: block; font-size: 12px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold-light); margin-bottom: 4px;
+    }
+    .trophy-strip__year {
+      display: block; font-size: 11px;
+      color: rgba(245,242,236,0.45); letter-spacing: 0.08em;
+    }
+
+    /* ── CHAPTER END ── */
+    .chapter-end {
+      text-align: center; margin: 64px 0 0;
+      padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    .chapter-end__ornament { font-size: 28px; color: var(--gold); letter-spacing: 0.3em; }
+    .chapter-end__text {
+      display: block; margin-top: 12px; font-size: 12px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--ink); color: rgba(245,242,236,0.5);
+      text-align: center; padding: 40px 20px;
+      font-size: 13px; letter-spacing: 0.08em;
+    }
+    .site-footer__logo { width: 50px; filter: brightness(0.6); margin-bottom: 16px; }
+    .site-footer__name {
+      display: block; color: var(--gold); font-weight: 600;
+      margin-bottom: 6px; font-size: 14px; letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 500px) {
+      .pull-quote { padding: 18px 20px; }
+      .quote-box { padding: 20px 18px; }
+      .trophy-strip { gap: 14px; }
+    }
+  
+    /* ============================================
+       NAVIGATION MENU STYLES (เมนูนำทาง)
+    ============================================ */
+    .main-nav {
+      background-color: var(--blue, #034694);
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav-list li a {
+      color: var(--white, #f5f2ec);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Sarabun', sans-serif;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 14px;
+    }
+    .nav-list li a:hover {
+      background-color: var(--gold, #c8a84b);
+      color: var(--ink, #1a1410);
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="Chapter1.html">บทที่ 1</a></li>
+      <li><a href="Chapter2.html">บทที่ 2</a></li>
+      <li><a href="Chapter3.html">บทที่ 3</a></li>
+      <li><a href="Chapter4.html">บทที่ 4</a></li>
+      <li><a href="Chapter5.html">บทที่ 5</a></li>
+      <li><a href="Chapter6.html">บทที่ 6</a></li>
+      <li><a href="Chapter7.html">บทที่ 7</a></li>
+      <li><a href="Chapter8.html">บทที่ 8</a></li>
+      <li><a href="Chapter9.html">บทที่ 9</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+      <p class="hero__kicker">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
+      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
+      <p class="hero__subtitle">ผู้เขียน: อิอิแอแอ</p>
+      <div class="hero__rule"></div>
+    </div>
+
+  </header>
+
+  <!-- ══ ARTICLE ══ -->
+  <main class="article">
+    <div class="article__inner">
+
+      <!-- Chapter heading -->
+      <div class="chapter-heading">
+        <div class="chapter-heading__number">บทที่ ๗</div>
+        <h1>สถานที่เดียวที่ต้องมา ทุกสองสัปดาห์</h1>
+      </div>
+
+      <!-- Opening pull quote -->
+      <blockquote class="pull-quote">
+        <p>'การมาถึงของรุด กุลลิต ก่อให้เกิด "Gullit-mania" ที่ Stamford Bridge แล้ว เชลซีมีสายโทรศัพท์แปดสายในสำนักงานสโมสร และทั้งหมดถูกโทรเข้ามาจนล้นตลอด 48 ชั่วโมงที่ผ่านมาจากแฟนบอลที่ต้องการบัตรฤดูกาล ประธาน เคน เบตส์ คาดการณ์ว่าสามในสี่ของเกมในฤดูกาลหน้าจะขายหมด 27,000 ที่นั่ง และร้านค้าสโมสรก็ถูกสอบถามเรื่องเสื้อแข่งใหม่ที่มีชื่อ Gullit ด้านหลังอย่างท่วมท้นแล้ว'</p>
+        <cite>— Hammersmith &amp; Shepherds Bush Gazette, 2 มิถุนายน 1995</cite>
+      </blockquote>
+
+      <!-- Hero image -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,h_700,g_faces,ar_16:9,q_90/site-sections/about-chelsea/history/2021/story_of_chelsea/History_Chapter7_2870x645_V3.jpg"
+             alt="บทที่ 7 — ยุครุ่งเรืองของเชลซีทศวรรษ 1990">
+      </figure>
+
+      <!-- Intro -->
+      <p class="drop-cap">ในต้นทศวรรษ 1990 ฟุตบอลเปลี่ยนแปลงไปอย่างมหาศาลก่อนจะพัฒนาสู่ประสบการณ์กีฬาสมัยใหม่ที่เราคุ้นเคยในศตวรรษที่ 21 การปรับโครงสร้างหมายถึงการก่อตั้ง Premier League ในฐานะลีกสูงสุดใหม่ของอังกฤษ และทั่วยุโรป Champions League เปิดตัวแทน European Cup เก่า นั่นหมายถึงสโมสรมากขึ้นและเกมมากขึ้น และด้วยความย้อนแย้ง สโมสรต่างๆ ไม่จำเป็นต้องเป็นแชมป์ลีกอีกต่อไปเพื่อจะเข้าร่วม</p>
+
+      <p>ฟุตบอลอังกฤษยังได้เห็นการรื้อถอนอัฒจันทร์ยืนเก่าและอัฒจันทร์ยุควิกตอเรียและเอ็ดเวิร์ด เปิดทางสู่ที่นั่งครบทุกที่หรือในบางกรณีสนามใหม่ทั้งหมด ปัญหาอันธพาลลดลงอย่างมีนัยสำคัญ จำนวนผู้ชมเพิ่มขึ้น รายได้จากทีวีพุ่งสูงขึ้นอย่างเปลี่ยนเกม แต่เชลซีที่มักอยู่แถวหน้าของความนิยมและตั้งอยู่ในทำเลแสนหรูหรา ยังไม่ใช่ "สถานที่ที่ต้องมา" ในเวลานั้น</p>
+
+      <!-- Section 1 -->
+      <h2>กลันน์ ฮ็อดเดิล — ประกายที่จุดไฟ</h2>
+
+      <p class="drop-cap">ผู้ที่ถูกเลือกให้จุดการปฏิวัติเล็กๆ ในด้านผู้เล่นคืออดีตดาวกองกลางทีมชาติอังกฤษ กลันน์ ฮ็อดเดิล ซึ่งได้รับการแต่งตั้งในฐานะผู้เล่น-ผู้จัดการทีม เมล็ดพันธุ์แห่งการเปลี่ยนแปลงนี้ถูกหว่านไว้เมื่อฮ็อดเดิลซึ่งอยู่ระหว่างสโมสรและบาดเจ็บ ใช้โอกาสฝึกซ้อมที่เชลซีเพื่อให้ร่างกายฟิต การแต่งตั้งเขาเป็นหัวหน้าทีมเชลซีในฤดูร้อนปี 1993 พบกับความตื่นเต้นอย่างกว้างขวางในหมู่แฟนเดอะบลูส์</p>
+
+      <!-- Image: Hoddle press conference -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,g_auto,w_1200,ar_16:9,q_90/editorial/historical/new-history-section/hoddle_press_conference_1993.jpg"
+             alt="กลันน์ ฮ็อดเดิล แถลงข่าวปี 1993">
+        <figcaption>ผู้จัดการทีมคนใหม่ถูกเปิดตัวและยุคใหม่เริ่มต้นในปี 1993</figcaption>
+      </figure>
+
+      <p>รวมถึงอุดมคติด้านฟุตบอล ฮ็อดเดิลยังนำแนวทางองค์รวมด้านโภชนาการและการเตรียมเกม ซึ่งได้รับจากการเล่นให้กับ Monaco ของ อาร์แซน เวนเกอร์ แม้จะมีความลำบากในฤดูกาลแรกบนสนาม แต่การแล่น FA Cup ที่น่าตื่นเต้นพาสโมสรสู่รอบชิงชนะเลิศสำคัญครั้งแรกนับตั้งแต่ต้นทศวรรษ 1970</p>
+
+      <!-- Image: Eddie Newton 1994 final -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,g_auto,w_1200,ar_16:9,q_90/editorial/historical/new-history-section/newton_1994_cup_final.jpg"
+             alt="เอ็ดดี้ นิวตัน ที่ Wembley 1994">
+        <figcaption>ความเจ็บปวดสำหรับ เอ็ดดี้ นิวตัน และสโมสรที่ Wembley '94 แต่เวลาของพวกเขาและของเราใกล้มาถึงแล้ว</figcaption>
+      </figure>
+
+      <p>แม้โชว์ที่ Wembley ในเดือนพฤษภาคม 1994 จะพ่ายแพ้อย่างหนักต่อ Man United แต่ความหิวกระหายก็ถูกจุดขึ้น ระดับถูกทวงคืน และสำหรับช่วงที่เหลือของทศวรรษ ความก้าวหน้าเกิดขึ้นทุกฤดูกาล การเป็นรองแชมป์ FA Cup ยังเพียงพอให้เข้าร่วม UEFA Cup Winners' Cup และเดอะบลูส์ผ่านเข้าถึงรอบรองชนะเลิศ แม้จะขาดประสบการณ์ในการเล่นกับสโมสรต่างชาติ และมีกองกำลังถูกจำกัดด้วยกฎผู้เล่นที่ไม่ใช่ชาวอังกฤษรวมถึงบาดเจ็บ</p>
+
+      <!-- Section 2 -->
+      <h2>รุด กุลลิต และ "The Foreign Legion"</h2>
+
+      <p class="drop-cap">แมทธิว ฮาร์ดิ้ง แฟนเชลซีตลอดชีวิตพร้อมกับเป็นนักธุรกิจที่ประสบความสำเร็จสูง กลายมาเป็นส่วนหนึ่งของภาพ โดยให้สโมสรยืมเงินหลายล้านเพื่อจุดประกายการพัฒนา Stamford Bridge ที่เกินกำหนดมานานและรับรองการซื้อนักเตะ</p>
+
+      <!-- Image: Harding & Bates -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,g_auto,w_1200,ar_16:9,q_90/editorial/historical/new-history-section/harding_bates.jpg"
+             alt="แมทธิว ฮาร์ดิ้ง และ เคน เบตส์">
+        <figcaption>แมทธิว ฮาร์ดิ้ง และ เคน เบตส์ กับแผนพัฒนาสนามกีฬาในใจ</figcaption>
+      </figure>
+
+      <p>ในการประชุมเดือนพฤษภาคม 1995 ที่ต่อมาถูกเรียกว่า 'Marriott Accord' ฮาร์ดิ้ง, ประธาน เบตส์, กรรมการผู้จัดการ คอลิน ฮัทชินสัน และ ฮ็อดเดิล ต่างมีความทะเยอทะยานเต็มเปี่ยมห้องประชุม เป้าหมายการเซ็นสัญญาคือ รุด กุลลิต และ พอล กาสคอยน์ เราประสบความสำเร็จกับกุลลิต สามารถคว้าตัวอัจฉริยะชาวดัตช์ได้ฟรีจากกฎ Bosman การเซ็นสัญญาที่ส่งเสียงดังพาเชลซีขึ้นหน้าหนังสือพิมพ์กีฬาทุกฉบับในยุโรป</p>
+
+      <p>กุลลิตเคยถูกพิจารณาว่าเป็นผู้เล่นที่ดีที่สุดในโลก และในงานแถลงข่าวเปิดตัวก็มีการประกาศว่า มาร์ค ฮิวส์ กองหน้าชื่อก้อง จะเซ็นสัญญามาจาก Manchester United ด้วย เชลซีกำลังก้าวไปข้างหน้าจริงๆ</p>
+
+      <!-- Image: Hughes Hoddle Gullit -->
+      <figure class="img-block img-block--wide">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,g_auto,w_1200,ar_16:9,q_90/editorial/news/2018/12/hughes-hoddle-gullit-78952096.jpg"
+             alt="ฮิวส์ ฮ็อดเดิล กุลลิต">
+        <figcaption>ฮิวส์, ฮ็อดเดิล และกุลลิต — เชลซีที่กำลังพุ่งสูงขึ้น</figcaption>
+      </figure>
+
+      <p>เมื่อกุลลิตอยู่ในตำแหน่งแล้ว สถานะของเขาช่วยดึงดูดดาวเด่น Serie A อย่าง จานลูก้า เวียลลี, โรแบร์โต ดิ มัตเตโอ และ จานฟรังโก โซล่า รวมถึงกองหลังชาวฝรั่งเศสผู้สง่างาม แฟรงก์ เลอเบิฟ นักเตะชาวอังกฤษอย่าง เดนนิส ไวส์, สตีฟ คลาร์ก, เอ็ดดี้ นิวตัน และ แฟรงก์ ซินแคลร์ เติบโตเคียงข้างพวกเขา ในฐานะกัปตันทีม ไวส์มีบทบาทสำคัญเป็นพิเศษในการดึงวัฒนธรรมที่หลากหลายเข้าหากัน</p>
+
+      <!-- Image: Di Matteo vs Boro 1996 -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,g_auto,w_1200,ar_16:9,q_90/cfc/Asian_websites/dimatteo-boro-1996--001.jpg"
+             alt="โรแบร์โต ดิ มัตเตโอ ยิงใส่ Middlesbrough">
+        <figcaption>ครั้งแรกแต่ไม่ใช่ครั้งสุดท้ายที่ โรแบร์โต ดิ มัตเตโอ ยิงประตูใส่ Middlesbrough</figcaption>
+      </figure>
+
+      <!-- Section 3 -->
+      <h2>แมทธิว ฮาร์ดิ้ง — จากบอร์ดสู่อมตะ</h2>
+
+      <p class="drop-cap">ยุค Euro '96 ที่จัดขึ้นในอังกฤษพิสูจน์ว่าเป็นงานฉลองฟุตบอลที่มีสีสันซึ่งทีมเจ้าบ้านโกยใจคนทั้งชาติก่อนจะตกรอบรองชนะเลิศ เป็นอีกการฉีดยากระตุ้นให้ฟุตบอลกลับมาเป็นที่นิยม กับนักตลก เดวิด แบดเดียล แฟนเชลซีตัวยงซึ่งโดดเด่นในฐานะผู้ร่วมเขียนและร้องเพลงชาติอังกฤษ 'Three Lions'</p>
+
+      <p>กรรมการ ฮาร์ดิ้ง บุคคลสำคัญในการฟื้นคืนชีพของเชลซี ตกเป็นข่าวพร้อมกับประธาน เบตส์ เมื่อพวกเขาทะเลาะกันอย่างรุนแรงในเรื่องต่างๆ มีการห้ามฮาร์ดิ้งเข้าไดเร็กเตอร์บ็อกซ์ โดยเขาต้องชมเกมพร้อมครอบครัวจากอัฒจันทร์เหนือแทน มีการปรองดองกัน โดยฮาร์ดิ้งขึ้นเป็นรองประธาน แต่แล้วในวันที่ 22 ตุลาคม 1996 หลังจาก League Cup แพ้ที่ Bolton ดิวิชั่นต่ำกว่า ก็เกิดหายนะจริงๆ ไม่ใช่แค่เรื่องกีฬา</p>
+
+      <p>ขณะเดินทางกลับใต้จากเกมในเฮลิคอปเตอร์ ฮาร์ดิ้งและอีกสี่คนเสียชีวิตในอุบัติเหตุตก สโมสรฟุตบอลเชลซีและโลกที่กว้างขึ้นซึ่งรู้จักเรื่องราวของเขาตกอยู่ในภาวะตกตะลึง ทีมยกย่องเขาด้วยวิธีที่เขาจะชื่นชอบในเกมถัดไปด้วยการเอาชนะ Tottenham ที่ The Bridge</p>
+
+      <!-- Section 4 -->
+      <h2>FA Cup 1997 — รอคอยมา 26 ปี</h2>
+
+      <p class="drop-cap">ฟุตบอลยังคงดำเนินต่อไป โซล่าที่เพิ่งเซ็นสัญญาและ ฮิวส์ ผู้มากประสบการณ์กำลังสร้างคู่หน้าที่ได้ผลและสนุกตา และแม้ทีมที่กำลังพัฒนาจะดูเหมือนผู้ท้าชิงหกอันดับแรกมากกว่าผู้ท้าชิงแชมป์จริงๆ พวกเขาก็ออกวิ่ง FA Cup ที่น่าจดจำ</p>
+
+      <p>มีการพลิกกลับที่ไม่มีวันลืมในรอบสี่ แม้ Liverpool จะนำ 2-0 ในครึ่งแรก เดอะบลูส์กลับมาชนะ 4-2 โดย เวียลลี ยิงสองลูก ซึ่งเป็นไฮไลต์ฤดูกาลสำหรับชาวอิตาลีที่ไม่ได้เป็นตัวเลือกแรกในแนวรุกอีกต่อไป Wimbledon ถูกกวาดออกในรอบรองชนะเลิศด้วยประตูที่ยิ่งใหญ่ที่สุดประตูหนึ่งของ โซล่า และนั่นนำไปสู่การพบกับ Middlesbrough ในรอบชิงชนะเลิศ ต่างจากสามปีก่อนที่พบ Man United เชลซีเป็นตัวเก็งและพร้อมที่จะชนะ</p>
+
+      <div class="quote-box">
+        'Blue Day' หนึ่งในเพลงรอบชิงชนะเลิศถ้วยที่ดีที่สุดของเชลซี ขึ้นชาร์ต ร้องโดย Suggs หัวหน้าวง Madness แฟนเชลซีตลอดชีวิต ด้วยสไตล์ Britpop และท่อนเปิดที่ไม่มีวันลืม — <em>'The only place to be every other Saturday, is walking down the Fulham Road'</em> — ยังคงเป็นเพลงโปรดในวันแข่งขันที่ Stamford Bridge
+        <em>— เพลงอมตะแห่ง FA Cup Final 1997</em>
+      </div>
+
+      <p>สถานที่เดียวที่ต้องอยู่ ณ 43 วินาทีหลัง 15.00 น. วันเสาร์ที่ 17 พฤษภาคม 1997 คือ Wembley Stadium ทางตะวันตกเฉียงเหนือของลอนดอน นั่นคือช่วงเวลาที่ลูกยิงดิ่งของ ดิ มัตเตโอ ที่ส่งจากนอกเขตโทษหลังจากวิ่งมาจากครึ่งสนามของตัวเอง สาดกระแทกคานประตูของ Middlesbrough ก่อนจะลงไปในตาข่าย</p>
+
+      <p>ไม่ถึงหนึ่งนาทีจากต้นเกม ด้วยลูกยิงที่เร็วที่สุดในรอบชิงชนะเลิศ FA Cup ในขณะนั้น ชาวอิตาลีผู้สง่างามพาเชลซีขึ้นนำในแบบที่สง่างามที่สุด และความตึงเครียดส่วนใหญ่ก็คลายลง ชัยชนะสำเร็จด้วยประตูท้ายเกมของ เอ็ดดี้ นิวตัน อดีตผู้เล่นเยาวชน และการรอคอยอันเจ็บปวดยาวนาน 26 ปีสำหรับถ้วยรางวัลสำคัญก็สิ้นสุดลง ลอนดอนตะวันตกและพื้นที่โดยรอบฉลองกันทั้งคืน</p>
+
+      <!-- Section 5 -->
+      <h2>Chelsea Village และ Stamford Bridge โฉมใหม่</h2>
+
+      <p class="drop-cap">เพื่อรองรับทีมเชลซีที่ประสบความสำเร็จ Stamford Bridge โฉมใหม่กำลังก่อร่างขึ้น ต้นฤดูกาล 1997/98 อัฒจันทร์ใหม่ทางปลาย Shed End เปิดใช้งาน แทนที่อัฒจันทร์เหย้าเก่า ถูกเพิ่มเข้าไปพร้อมกับอัฒจันทร์ใหม่ทางปลายเหนือ ซึ่งปัจจุบันถูกตั้งชื่อว่า Matthew Harding Stand เพื่อเป็นเกียรติแก่ผู้ที่มีส่วนสำคัญในการจัดหาเงินทุน</p>
+
+      <blockquote>
+        <p>'เคน เบตส์ เรียกพวกเราบางคนเข้าไปในสำนักงานของเขาและแสดงโมเดลวิสัยทัศน์ของเขาสำหรับ Stamford Bridge ที่จะทำให้เชลซีเป็นสโมสรที่ใหญ่ที่สุดในลอนดอน' อดีตผู้เล่น Tony Cascarino เล่าในอัตชีวประวัติ 'เรามองหน้ากัน แล้วก็คิดว่า "โอเค เคน"'</p>
+      </blockquote>
+
+      <p>ด้วยการต่อสู้กับนักพัฒนาอสังหาริมทรัพย์ที่ชนะแล้วในเดือนธันวาคม 1992 เชลซีในที่สุดก็มีอิสระในการพัฒนาทรัพย์สินของเราในแบบของเรา Chelsea Village ถูกตั้งขึ้น มีโรงแรม อพาร์ตเมนต์ คลับสุขภาพ ร้านอาหารและบาร์ สถานที่ท่องเที่ยว และที่จอดรถใต้ดิน ทั้งหมดอยู่ภายในขอบเขต 12 เอเคอร์ของเราบน Fulham Road</p>
+
+      <!-- Section 6 -->
+      <h2>เวียลลี ประสบความสำเร็จ — ยุคทองแห่งถ้วยรางวัล</h2>
+
+      <!-- Trophy strip -->
+      <div class="trophy-strip">
+        <div class="trophy-strip__item">
+          <div class="trophy-strip__icon">🏆</div>
+          <span class="trophy-strip__name">FA Cup</span>
+          <span class="trophy-strip__year">1997, 2000</span>
+        </div>
+        <div class="trophy-strip__item">
+          <div class="trophy-strip__icon">🏆</div>
+          <span class="trophy-strip__name">League Cup</span>
+          <span class="trophy-strip__year">1998</span>
+        </div>
+        <div class="trophy-strip__item">
+          <div class="trophy-strip__icon">🏆</div>
+          <span class="trophy-strip__name">Cup Winners' Cup</span>
+          <span class="trophy-strip__year">1998</span>
+        </div>
+        <div class="trophy-strip__item">
+          <div class="trophy-strip__icon">🏆</div>
+          <span class="trophy-strip__name">UEFA Super Cup</span>
+          <span class="trophy-strip__year">1998</span>
+        </div>
+      </div>
+
+      <p class="drop-cap">สิ่งที่อาจเป็นการสะดุดครั้งใหญ่เมื่อ ฮ็อดเดิล ออกไปเป็นกุนซือทีมชาติอังกฤษในปี 1996 ได้รับการแก้ไขอย่างราบรื่นเมื่อ กุลลิต รับบทบาทผู้เล่น-ผู้จัดการทีม ในรอบชิงชนะเลิศ League Cup ที่ Wembley ปี 1998 พบกับ Middlesbrough อีกครั้ง ผลเหมือนเดิม คือชัยชนะ 2-0 ของเดอะบลูส์ ดิ มัตเตโอ ทำประตูอีกครั้ง โดยมีลูกโหม่งของ แฟรงก์ ซินแคลร์ เป็นลูกแรก</p>
+
+      <p>จำนวนถ้วยรางวัลในฤดูกาล 1997/98 ถูกเพิ่มเป็นสองเท่าพบกับ Stuttgart จากเยอรมนีในรอบชิงชนะเลิศ Cup Winners' Cup ต่อหน้าแฟนเชลซีจำนวนมหาศาลที่เดินทางไปที่สตอกโฮล์ม ประตูเดียวเพียงพอที่จะยก European Trophy ที่สองในประวัติศาสตร์ของเรา และมันเป็นประตูแห่งดราม่าล้วนๆ</p>
+
+      <p>โซล่ากำลังบรรลุสถานะตำนานเชลซีอย่างรวดเร็ว นักเตะระดับอัจฉริยะชาวอิตาลีชนะการแข่งขันกับอาการบาดเจ็บเพื่อให้ทันรอบชิงชนะเลิศ แต่ถูกระบุชื่ออยู่บนม้านั่งสำรองเท่านั้น รอจนถึงนาทีที่ 71 เมื่อโอกาสมาถึง เขาไม่รอช้า เพียง 20 วินาทีหลังจากลงสนาม ตัวเล็กๆ ผู้นี้ฟาดลูกบอลเยี่ยมจาก เดนนิส ไวส์ เข้าตาข่ายของ Stuttgart อย่างสูงและทรงพลัง และการเฉลิมฉลองก็เริ่มขึ้น</p>
+
+      <p>UEFA Super Cup ตามมา โดยเอาชนะ Real Madrid 1-0 ที่โมนาโก และเชลซีผู้มีความหลากหลายนานาชาตินี้ทำประวัติศาสตร์ในวัน Boxing Day ปี 1999 เมื่อกลายเป็นทีมแรกที่ส่งผู้เล่นที่ไม่ใช่ชาวอังกฤษออกสนามทั้ง 11 คนในเกมลีกอังกฤษ</p>
+
+      <!-- Section 7 -->
+      <h2>Champions League และ FA Cup 2000</h2>
+
+      <p class="drop-cap">ในปี 1999/2000 เชลซีเข้าร่วม Champions League เป็นครั้งแรก กว่า 40 ปีหลังจากที่เราถูกปฏิเสธโอกาสในการเป็นส่วนหนึ่งของรุ่นแรกของการแข่งขันนั้น มีคืนที่น่าจดจำพบกับ AC Milan, Galatasaray (ชัยชนะ 5-0 ในสนาม "นรก" ของตุรกี) และ Barcelona ซึ่งนำมาสู่การแข่งขันและคู่แข่งใหม่ที่สำคัญในทัวร์นาเมนต์ เราผ่านเข้าถึงรอบก่อนรองชนะเลิศในการลองครั้งแรก</p>
+
+      <p>ฤดูกาลประวัติศาสตร์นั้นถูกสวมมงกุฎด้วยความสำเร็จ FA Cup อีกครั้ง กษัตริย์แห่งประตูรอบชิงชนะเลิศ ดิ มัตเตโอ ทำได้อีกครั้งในชัยชนะ 1-0 เหนือ Aston Villa ในรอบชิงชนะเลิศสุดท้ายที่จัดที่ Wembley เก่า</p>
+
+      <!-- Image: 6-1 at Tottenham -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,g_auto,ar_16:9,w_800,q_90/cfc/news/latestnews/17/1/GettyImages-1629508.jpg"
+             alt="เชลซีชนะ 6-1 ที่ White Hart Lane">
+        <figcaption>เราชนะ 6-1 ที่ The Lane! — หนึ่งในชัยชนะที่ยิ่งใหญ่ในยุคของเวียลลีและรานิเอรี</figcaption>
+      </figure>
+
+      <!-- Section 8 -->
+      <h2>รานิเอรี — "The Tinkerman" และหนี้สินที่พอกพูน</h2>
+
+      <p class="drop-cap">เชลซีกำลังเล่นฟุตบอลที่ชนะเหมือนไม่เคยมีมาก่อน แม้รอยร้าวเบื้องหลังฉากจะกว้างขึ้นพอที่จะปลด เวียลลี ออกจากตำแหน่ง ยุคของผู้จัดการทีมผู้เล่นที่ขาดประสบการณ์สิ้นสุดลงด้วยการแต่งตั้ง คลอดิโอ รานิเอรี ชาวอิตาลีผู้มากประสบการณ์</p>
+
+      <!-- Image: Ranieri 2002 -->
+      <figure class="img-block">
+        <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,g_auto,ar_16:9,w_800,q_90/editorial/historical/new-history-section/ranieri_2002.jpg"
+             alt="คลอดิโอ รานิเอรี ปี 2002">
+        <figcaption>คลอดิโอ รานิเอรี ออกคำสั่งในปี 2002</figcaption>
+      </figure>
+
+      <p>หลังจาก รานิเอรี รับสายบังเหียน กัปตันทีมผู้ยาวนาน เดนนิส ไวส์ เดินออกไป เช่นเดียวกับ กุสตาโว โปเยต์ ผู้มีอิทธิพลและ แฟรงก์ เลอเบิฟ มาแทนที่ในแนวรับคือ วิลเลียม กัลลาส รวมถึงในกองกลาง เอ็มมานูเอล เปอตี, บ็อบบี้ เซนเดน และสำคัญที่สุดคือนักเตะหนุ่มจากฝั่งลอนดอน — แฟรงก์ แลมพาร์ด</p>
+
+      <p>เวียลลียังพัฒนาเซ็นเตอร์แบ็กจากระบบเยาวชนเชลซีชื่อ จอห์น เทอร์รี่ และภายใต้รานิเอรี ชายจากลอนดอนตะวันออกคนนี้ยิ่งโดดเด่นขึ้น เล่นร่วมกับ กัลลาส และมี คาร์โล คูดิชินี ผู้รักษาประตูคล่องแคล่วอยู่เบื้องหลัง แนวรับที่น่าเกรงขามกำลังก่อตัวขึ้น</p>
+
+      <p>เชลซีเข้าถึงรอบชิงชนะเลิศ FA Cup 2002 ภายใต้รานิเอรีแต่แพ้ Arsenal ที่คาร์ดิฟฟ์ และผู้จัดการทีมของเราได้รับฉายา 'The Tinkerman' จากความถี่ที่เขาเปลี่ยนตัวและรูปแบบ เขาเชื่อว่าทีมที่ยืดหยุ่นคืออนาคตของฟุตบอล</p>
+
+      <!-- Section 9 -->
+      <h2>ประตูของ Gronkjaer — ประตูที่เปลี่ยนโลก</h2>
+
+      <p class="drop-cap">มีเส้นชีวิตในรูปแบบของการผ่านเข้า Champions League และรายได้ที่เกี่ยวข้อง สิ่งที่เราต้องทำคืออยู่หน้า Liverpool ในตารางในวันสุดท้ายของฤดูกาล แต่ตารางการแข่งขันสร้างดราม่าล้วนๆ เมื่อเราต้องพบกับ Liverpool ที่ Stamford Bridge</p>
+
+      <p>ก่อนเตะ ซีอีโอ เทรเวอร์ เบิร์ช บรีฟนักเตะว่าการพ่ายแพ้อาจทำให้ทีมแตกสลาย Liverpool ยิงนำก่อน แต่เร็ว ทำให้มีเวลาเพียงพอในการตอบโต้ เชลซีชนะ 2-1</p>
+
+      <p>ประตูชัยของ เจสเปอร์ กรอนเกียร์ มักถูกอธิบายอย่างผิดๆ ว่าเป็นประตูที่คุ้มค่าหลายล้านปอนด์ แม้ว่าเราต้องการแค่เสมอเพื่ออยู่ในอันดับสี่ ดังนั้นลูกโหม่งตีเสมอของ มาร์เซล เดอซายี่ ก็เพียงพอที่จะเก็บผลประโยชน์ทางการเงินที่มาพร้อม Champions League ได้แล้ว ความจริงแล้วการส่งบอลของ กรอนเกียร์ ให้ เดอซายี่ สำคัญยิ่งกว่าประตูของตัวเอง</p>
+
+      <blockquote>
+        <p>ในขณะที่ประตูเหล่านั้นโถมเข้าตาข่ายของ Liverpool มีน้อยคนนักที่รู้ถึงขอบเขตที่แท้จริงของโชคชะตาของเชลซีที่กำลังขึ้น ไม่เพียงแต่ผลลัพธ์จะรักษาฟุตบอลยุโรปและความมั่นคงทางการเงินไว้ แต่เราอยู่ห่างออกไปเพียงไม่กี่สัปดาห์จากการเปลี่ยนแปลงครั้งสำคัญที่จะเติมพลังความทะเยอทะยาน ศักยภาพ และพลังของสโมสร และส่งคลื่นกระแทกไปทั่วโลกแห่งฟุตบอล <em>ฟุตบอลกำลังจะเปลี่ยนแปลงอีกครั้ง…</em></p>
+      </blockquote>
+
+      <!-- Chapter end -->
+      <div class="chapter-end">
+        <div class="chapter-end__ornament">⚽</div>
+        <span class="chapter-end__text">— จบบทที่ ๗ —</span>
+      </div>
+
+    </div><!-- /.article__inner -->
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="hero__inner">
+  <img src="https://i.postimg.cc/9QCWzTSV/Logo-CHELSEA-TH-FANs.png" class="hero__logo">
+    <span class="site-footer__name">CHELSEA TH FANs</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+  </footer>
+
+</body>
+</html>

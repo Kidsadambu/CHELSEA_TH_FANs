@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>League Cup 2005: จุดเริ่มต้นยุคสมัยของ Jose Mourinho — CHELSEA TH FANs</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --blue:       #034694;
+      --blue-dark:  #021f45;
+      --gold:       #c8a84b;
+      --gold-light: #e8c97a;
+      --white:      #f5f2ec;
+      --ink:        #1a1410;
+      --ink-soft:   #3d342a;
+      --rule:       #c5b89a;
+      --paper:      #f9f6f0;
+      --col-max:    740px; 
+    }
+
+    /* RESET & BASE STYLES */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    /* TOP NAVIGATION BAR */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar__arrow {
+      width: 8px; height: 8px;
+      border-left: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      margin-right: 0.75rem;
+    }
+    .top-bar img { height: 32px; }
+
+    /* ARTICLE STRUCTURE */
+    .article-container {
+      max-width: var(--col-max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    header.article-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .article-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 8vw, 3.5rem);
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .article-header .subtitle {
+      font-size: 1.2rem;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    /* CONTENT COMPONENTS */
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body h2 {
+      font-family: 'Playfair Display', serif; 
+      color: var(--blue); 
+      margin: 3rem 0 1.5rem; 
+      font-size: 1.8rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.5rem;
+    }
+
+    .article-img {
+      margin: 2.5rem 0;
+      text-align: center;
+    }
+    .article-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 2px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* MATCH INFO BOX */
+    .match-info-box {
+      background-color: var(--white);
+      border: 1px solid var(--rule);
+      border-top: 4px solid var(--blue);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+    }
+    .match-details-list {
+      list-style: none;
+      padding: 0;
+    }
+    .match-details-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed var(--rule);
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .highlight-box {
+      background-color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+    }
+
+    /* COMMENTARY SCROLL BOX */
+    .commentary-container {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-top: 4px solid var(--blue);
+      padding: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .commentary-container h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--blue-dark);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .commentary-scroll {
+      max-height: 500px;
+      overflow-y: auto;
+      padding-right: 1rem;
+    }
+    .commentary-item {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 0.95rem;
+    }
+    .commentary-item:last-child { border-bottom: none; }
+    .commentary-time { 
+      color: var(--blue-dark); 
+      font-weight: 700; 
+      margin-right: 0.5rem; 
+      display: inline-block;
+      width: 40px;
+    }
+
+    /* SITE FOOTER */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .site-footer__logo { height: 60px; margin-bottom: 1rem; }
+
+    /* CLOCK WIDGET */
+    #th-time {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--blue-dark);
+      color: var(--gold);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .match-details-list li { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-bar">
+    <a href="Trophy.html"><div class="top-bar__arrow"></div> กลับสู่ทำเนียบแชมป์</a>
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" alt="Logo">
+  </nav>
+
+  <article class="article-container">
+    <header class="article-header">
+      <h1>🏆 2005 League Cup</h1>
+      <p class="subtitle">2004/05 English Carling Cup, Final</p>
+    </header>
+
+    <figure class="article-img">
+      <img src="https://img.chelseafc.com/image/upload/f_auto,c_fill,h_700,g_faces,ar_16:9,q_90/site-sections/about-chelsea/history/2021/trophy-cabinet/thumbnails/Mens_League_Cup_2004-05.jpg" alt="Chelsea League Cup 2005 Victory">
+    </figure>
+
+    <div class="article-body">
+      <p>ในปี 2004 ทีมใหญ่บางทีมเริ่มที่จะหมุนเวียนนักเตะใน Carling Cup แต่ไม่ใช่กับ Chelsea ซึ่งผู้จัดการทีมคนใหม่ Jose Mourinho เล็งเห็นถึงความสำคัญของการได้ถ้วยรางวัลตั้งแต่ต้นฤดูกาล [cite: 194]</p>
+
+      <h2>เส้นทางสู่ Cardiff</h2>
+      <p>ในปลายเดือนตุลาคม ประตูอันยอดเยี่ยมจาก Mateja Kezman พาเราผ่าน West Ham จาก Championship ไปได้ ก่อนที่ประตูในช่วง extra-time จาก Eidur Gudjohnsen และ Arjen Robben ที่ Newcastle จะส่งเราเข้าสู่รอบ 8 ทีมสุดท้าย [cite: 195] ในเกม local derby กับ Fulham Damien Duff ยิงให้ Blues นำไปก่อน ก่อนที่ Brian McBride จะตีเสมอ แต่ในที่สุด Frank Lampard ตัวสำรองก็ยิงประตูชัยให้เราผ่านเข้ารอบในช่วง 2 นาทีสุดท้าย [cite: 196] Manchester United รอเราอยู่ในรอบ semi [cite: 197]</p>
+      
+      <p>ไม่มีทีมไหนยอมใคร Mourinho จัดทีมชุดเต็ม (ยกเว้น Carlo Cudicini ที่ลงเฝ้าเสาใน cup games) และ Sir Alex Ferguson ก็เรียก Wayne Rooney กลับมาหลังจากติดโทษแบน ทั้งสองทีมเกือบทำประตูได้หลายครั้ง แต่สุดท้ายก็จบด้วยผลเสมอแบบไม่มีสกอร์ ทำให้ต้องไปตัดสินกันที่ Old Trafford [cite: 198] Lampard ยิงให้ Chelsea นำไปก่อนในครึ่งชั่วโมงแรก ก่อนที่ Ryan Giggs จะตีเสมอ แต่ 6 นาทีสุดท้าย Duff ปั่นบอลเสียบมุมเป็นประตูชัย พาเราไป Cardiff [cite: 199] ที่นั่น Liverpool รอเราอยู่ และเป็นจุดเริ่มต้นของ rivalry ที่ยังคงเติบโตมาจนถึงทุกวันนี้ [cite: 200]</p>
+
+      <h2>นัดชิงชนะเลิศที่ตึงเครียด</h2>
+      <p>เริ่มต้นไม่ค่อยดีนัก - John Arne Riise วอลเลย์ให้ Reds นำไปก่อนหลังจากผ่านไปเพียง 45 วินาที แต่เมื่อเหลือเวลาอีกเพียง 10 กว่านาที Steven Gerrard กัปตันทีม Liverpool โหม่งเข้าประตูตัวเอง ส่งเราเข้าสู่ extra-time [cite: 201]</p>
+      
+      <div class="highlight-box">
+        <p>Mourinho ถูกไล่ขึ้นไปบนอัฒจันทร์เนื่องจากไปทำท่าจุ๊ปาก แต่ก็ไม่ได้หยุดยั้ง Didier Drogba จากการยิงด้วยข้างเท้าด้านในให้เราขึ้นนำ ก่อนที่ Kezman ที่เคยถูกวิจารณ์ จะมายิงจ่อๆ ทำให้เราคุมเกมไว้ได้อย่างเด็ดขาด [cite: 202]</p>
+      </div>
+
+      <p>ลูกโหม่งของ Antonio Nunez ทำให้เกิดความตึงเครียดในช่วงท้าย แต่เราก็รักษาสกอร์ 3-2 ไว้ได้ เปิดฉากช่วงเวลาที่ประสบความสำเร็จที่สุดในประวัติศาสตร์ของสโมสร [cite: 203] แชมป์ league ตามมาในอีกไม่กี่เดือนต่อมา แต่ไม่ควรประเมินความสำคัญของ silverware ชิ้นแรกสำหรับขุมกำลังที่มีพรสวรรค์และเป็นน้ำหนึ่งใจเดียวกันนี้ต่ำเกินไป [cite: 204]</p>
+
+      <div class="commentary-container">
+        <h3>Match Commentary (การบรรยายเกมสด)</h3>
+        <div class="commentary-scroll">
+          <div class="commentary-item"><span class="commentary-time">122'</span>นี่คือถ้วยรางวัลแรกจากหลายๆ ถ้วยสำหรับ Jose และ Chelsea หรือเปล่า? Stevie Gerrard ดูเศร้าหมอง; [cite: 205] เขาจะเป็น Blue ในฤดูกาลหน้าไหม? [cite: 206]</div>
+          <div class="commentary-item"><span class="commentary-time">122'</span>เขาคงเปลี่ยนใจแล้ว ขณะที่เขาเดินไปแสดงความยินดีกับทีม [cite: 206] เขายังคงดูเยือกเย็นและสงบ [cite: 207]</div>
+          <div class="commentary-item"><span class="commentary-time">122'</span>Mourinho ดูการแข่งขันในช่วง 40 นาทีสุดท้ายในห้องโทรทัศน์ หลังจากถูกไล่ออกเพราะถูกกล่าวหาว่า 'ยั่วยุแฟนบอล' [cite: 207] เขาบอกกับนักข่าวว่าจะไม่กลับลงไปในสนามเพื่อฉลอง [cite: 208]</div>
+          <div class="commentary-item"><span class="commentary-time">122'</span>นักเตะ Chelsea ฉลองกันอย่างกึกก้องและยาวนาน พวกเขาคือผู้ชนะที่สมควรได้รับหลังจากครองเกมไว้ได้ [cite: 209] Abramovic ดูพอใจเล็กน้อยในโซนผู้บริหาร [cite: 210]</div>
+          <div class="commentary-item"><span class="commentary-time">122'</span>FULL TIME: นี่ไง: ถ้วยรางวัลแรกของ Mourinho ใน England [cite: 210] มีรายงานจากสนามระบุว่าเขาจะปฏิเสธโอกาสในการรับถ้วยรางวัลหลังจากถูกไล่ออกช่วงที่ Chelsea ตีเสมอ [cite: 211]</div>
+          <div class="commentary-item"><span class="commentary-time">121'</span>ลูกครอสที่ยอดเยี่ยมจาก Biscan มาถึง Biscan ที่โหม่งตรงไปที่ Cech จากมุมแคบ โอกาสสุดท้ายของ Liverpool? [cite: 212]</div>
+          <div class="commentary-item"><span class="commentary-time">120'</span>ทดเวลาบาดเจ็บ extra time 2 นาที Hyypia ตัดสินใจขึ้นไปเล่นเป็น centre forward [cite: 213]</div>
+          <div class="commentary-item"><span class="commentary-time">119'</span>ไม่มีทีมไหนสามารถเก็บบอลไว้ได้นานพอที่จะสร้างโอกาสช่วงท้ายเกมได้เลย [cite: 214] เป็นการจบเกมที่ตึงเครียด ยุ่งเหยิง และเต็มไปด้วยความกังวล [cite: 215]</div>
+          <div class="commentary-item"><span class="commentary-time">117'</span>Lampard ยิง free-kick ข้ามคาน Liverpool ไปไกล [cite: 216]</div>
+          <div class="commentary-item"><span class="commentary-time">116'</span>Carragher โดนใบเหลืองข้อหาต่อว่าผู้ตัดสิน Bennett เรื่องจังหวะแฮนด์บอลที่ไม่เป็นใจให้ Liverpool [cite: 216] จุดเตะ free-kick ถูกขยับขึ้นมาอีก 10 หลา [cite: 217]</div>
+          <div class="commentary-item"><span class="commentary-time">115'</span>Chelsea ทำได้ดีในการเก็บบอลและดึงเวลา [cite: 217] Liverpool กำลังไล่บอลอย่างสิ้นหวังเพื่อพยายามเปิดเกมบุกใส่ประตู Chelsea เป็นครั้งสุดท้าย [cite: 218]</div>
+          <div class="commentary-item"><span class="commentary-time">114'</span>แฮนด์บอลจาก Kezman มีการเตะ free-kick เร็วไปทาง Riise ซึ่งทำให้ได้ทุ่มตรงมุมธงพอดี [cite: 219]</div>
+          <div class="commentary-item"><span class="commentary-time">112'</span>GOAL! [cite: 219] Gerrard เปิด free-kick เข้ามา Lampard โหม่งลอยโด่งขึ้นไป และ Nunez กระโดดสูงที่สุดเหนือกลุ่มผู้เล่น โหม่งเข้าประตูโล่งๆ ไป [cite: 220] เป็นการจบเกมที่เหลือเชื่อจริงๆ [cite: 221]</div>
+          <div class="commentary-item"><span class="commentary-time">111'</span>GOAL! Lampard เปิด free-kick เข้ามา Dudek รับบอลไม่อยู่ และ Kezman อยู่ถูกที่ถูกเวลาพอดีซ้ำเข้าไป [cite: 221]</div>
+          <div class="commentary-item"><span class="commentary-time">110'</span>Drogba เรียก free-kick ได้อีกครั้งใกล้ๆ มุมธงหลังจากปะทะกับ Finnan [cite: 222] กองหน้าร่างใหญ่รายนี้กำลังทำผลงานได้ยอดเยี่ยมเพื่อทีมในขณะนี้ [cite: 223]</div>
+          <div class="commentary-item"><span class="commentary-time">108'</span>มีการกระทบกระทั่งกันเล็กน้อยที่กลางสนามเมื่อ Hamann พุ่งเข้าเสียบ Makalele ก่อนที่จะมีการเตะ free-kick [cite: 224]</div>
+          <div class="commentary-item"><span class="commentary-time">107'</span>Drogba เรียก free-kick สำคัญได้หลังโดน Hyypia ทำฟาวล์ที่เส้นกลางสนาม [cite: 225] Chelsea จะพยายามครองบอลไว้ให้มากที่สุด [cite: 226]</div>
+          <div class="commentary-item"><span class="commentary-time">106'</span>GOAL! [cite: 226] ลูกทุ่มไกลของ Johnson ถูก Drogba ซัดเข้าไป นักเตะค่าตัว £24million ได้รับประโยชน์จากการที่ Hyypia โหม่งสกัดลูกทุ่มของ Johnson ไม่ได้ [cite: 227]</div>
+          <div class="commentary-item"><span class="commentary-time">105'</span>Hamann ทำฟาวล์ Kezman เปิดโอกาสให้ Chelsea ดัน Terry ขึ้นมา [cite: 228] Dudek ทำได้ดีในการชกบอลโด่งออกไปเป็นลูกทุ่ม [cite: 229]</div>
+          <div class="commentary-item"><span class="commentary-time">105'</span>HALF TIME, EXTRA TIME: Chelsea กำลังกดดันอย่างหนัก แต่ Liverpool ยังคงดูมีอันตรายและพร้อมที่จะขโมยประตูจากการโต้กลับ [cite: 230]</div>
+          <div class="commentary-item"><span class="commentary-time">104'</span>ในที่สุด Kezman ก็โชว์คลาสให้เห็น เขาตัดเข้าในจากปีกขวาและปั่นด้วยซ้ายเลียดกรอบประตู [cite: 231] Dudek พุ่งเซฟต่ำไปทางขวา [cite: 232]</div>
+          <div class="commentary-item"><span class="commentary-time">103'</span>Luis Garcia วิ่งทำทางฉลาดเพื่อรับบอลสั้นจาก free-kick [cite: 232] เขายกบอลเข้าไปในกรอบเขตโทษ แต่ Biscan โหม่งข้ามคานจากระยะ 6 หลา [cite: 233]</div>
+          <div class="commentary-item"><span class="commentary-time">102'</span>Lampard จ่ายบอลให้ Kezman ที่หน้ากรอบเขตโทษ แต่ลูกยิงด้วยซ้ายของเขาแป้กอย่างน่าเกลียดออกหลังเป็น goal kick [cite: 234]</div>
+          <div class="commentary-item"><span class="commentary-time">101'</span>มีคนคอยสนับสนุน Baros ในแดนหน้าน้อยมาก Liverpool ไม่ค่อยแสดงความทะเยอทะยานนัก โดยมี Hamann, Biscan และ Gerrard ยืนคุมอยู่หน้าแผงหลัง 4 คน [cite: 235]</div>
+          <div class="commentary-item"><span class="commentary-time">99'</span>บอลสวยๆ จาก Lampard หา Nunez ทางกราบขวา ลูกครอสลึกของเขาถูก Garcia วอลเลย์แต่ Johnsen บล็อคลูกยิงไว้ได้ [cite: 236]</div>
+          <div class="commentary-item"><span class="commentary-time">97'</span>Terry พาบอลลุยขึ้นมาจากแดนหลัง แต่การสื่อสารที่ผิดพลาดกับ Drogba ทำให้จ่ายบอลพลาด [cite: 237]</div>
+          <div class="commentary-item"><span class="commentary-time">96'</span>Duff พักบอลได้ดีและจ่ายสั้นๆ ให้ Makalele [cite: 238] มิดฟิลด์ชาวฝรั่งเศสมองเห็น Lampard ยืนว่างอยู่ในเขตโทษ แต่เขาจ่ายแรงเกินไป [cite: 239]</div>
+          <div class="commentary-item"><span class="commentary-time">95'</span>ลูกครอสลึกของ Glen Johnsen ถูก Dudek รับไว้ได้อย่างง่ายดาย Liverpool คงไม่อยากแค่ตั้งรับไปตลอด 30 นาทีแน่ๆ; [cite: 240] พวกเขาคงอยากสร้างความอันตรายให้ Chelsea ผมมั่นใจ [cite: 241]</div>
+          <div class="commentary-item"><span class="commentary-time">93'</span>Nunez เปิดบอลไปติด Ferreira ทำให้ Liverpool ได้เตะมุม [cite: 241] Hyypia วิ่งเติมขึ้นมา แต่ Chelsea โต้กลับหลังจากเคลียร์ลูกเตะมุมสั้นของ Liverpool ออกมาได้สวย [cite: 242]</div>
+          <div class="commentary-item"><span class="commentary-time">92'</span>การวิ่งที่แข็งแกร่งและมุ่งมั่นของ Baros ทำให้ Liverpool ได้ทุ่มลึกเข้าไปในแดนของ Chelsea [cite: 243]</div>
+          <div class="commentary-item"><span class="commentary-time">91'</span>โอ้โห! [cite: 243] Drogba ก้มตัวโหม่งชนเสาหลังจากการประสานงานที่ยอดเยี่ยมของ Gudjohnsen และ Duff โชคร้ายจริงๆ [cite: 244]</div>
+          <div class="commentary-item"><span class="commentary-time">90'</span>Drogba เกือบทำประตูได้ถึงสองครั้งใน 30 วินาทีแรก แต่ติดการป้องกันที่แข็งแกร่งของ Liverpool จาก Carragher ก่อน แล้วตามด้วย Finnan [cite: 245]</div>
+          <div class="commentary-item"><span class="commentary-time">90'</span>ดังนั้น Liverpool เขี่ยบอลเริ่มช่วง extra time 30 นาที หากสกอร์ยังคงเสมอกัน เราจะต้องดวลจุดโทษ [cite: 246]</div>
+          <div class="commentary-item"><span class="commentary-time">96'</span>FULL TIME: ต้องเล่น extra time หลังจากที่ Own goal ของ Gerrard ช่วยให้ Chelsea ตีเสมอได้อย่างสมควร [cite: 247]</div>
+          <div class="commentary-item"><span class="commentary-time">94'</span>Drogba เอาบอลลงจากลูกครอสของ Kezman ไม่ได้ และ Liverpool ก็เคลียร์ทิ้ง [cite: 248] Chelsea ได้ free-kick อันตรายหลังจาก Duff ถูกทำฟาวล์ในระยะ 35 หลา [cite: 249]</div>
+          <div class="commentary-item"><span class="commentary-time">93'</span>Biscan ตวัดบอลทะลุช่องให้ Baros แต่สัมผัสแรกของกองหน้าแรงเกินไปจนมุมแคบลง [cite: 250] ลูกยิงของเขาโด่งและหลุดกรอบ โอกาสทองของ Liverpool เลย [cite: 251]</div>
+          <div class="commentary-item"><span class="commentary-time">92'</span>ขาของใครจะแข็งแกร่งกว่ากันในการเข้าสู่ช่วง extra time? [cite: 252] Liverpool มีเวลาเตรียมตัวมากกว่าหนึ่งวัน โดยเล่นนัด Champions League ในวันอังคารตรงข้ามกับวันพุธ [cite: 253]</div>
+          <div class="commentary-item"><span class="commentary-time">91'</span>Chelsea สมควรที่จะตีเสมอได้จริงๆ เมื่อพิจารณาจากการครองบอลที่พวกเขามีมาตลอดทั้งเกม [cite: 254]</div>
+          <div class="commentary-item"><span class="commentary-time">90'</span>มีทดเวลาบาดเจ็บถึง หก นาที Lampard ยิงหลุดกรอบไปนิดเดียวจากระยะ 20 หลา [cite: 255] Dudek ต้องผวาเลยทีเดียว [cite: 256]</div>
+          <div class="commentary-item"><span class="commentary-time">89'</span>Kezman จ่ายให้ Duff ที่ยิงเลียดจากระยะ 25 หลา [cite: 256] ลูกยิงของเขาแฉลบ Carragher ที่ทิ้งตัวบล็อคออกหลังไปนิดเดียว [cite: 257]</div>
+          <div class="commentary-item"><span class="commentary-time">88'</span>Gudjohnsen ตวัดบอลเข้าไปในเขตโทษให้ Kezman วิ่งเข้าใส่ แต่กองหน้าชาวเซอร์เบียวอลเลย์โด่งหลุดกรอบออกไปไกล [cite: 258]</div>
+          <div class="commentary-item"><span class="commentary-time">87'</span>ในที่สุดเกมก็กลับมาดำเนินต่อหลังจาก Dudek ปฐมพยาบาลเสร็จ เขาดูพร้อมที่จะเล่นต่อได้โดยไม่เป็นอุปสรรค [cite: 259]</div>
+          <div class="commentary-item"><span class="commentary-time">85'</span>Dudek ดูเหมือนจะมีแผลแตกที่หน้าแข้งจากการเข้าปะทะกับ Duff แย่งบอลจังหวะสอง หลังจากที่เขาเซฟลูกเลียดเมื่อสักครู่นี้ [cite: 260]</div>
+          <div class="commentary-item"><span class="commentary-time">84'</span>Dudek ล้มเจ็บและกำลังได้รับการปฐมพยาบาล นี่อาจเป็นปัญหาสำหรับพวกเขาเพราะเปลี่ยนตัวครบ 3 คนไปแล้ว [cite: 261]</div>
+          <div class="commentary-item"><span class="commentary-time">83'</span>Lampard จ่ายบอลให้ Duff ในกรอบเขตโทษได้อย่างยอดเยี่ยม แต่ลูกยิงเลียดจากระยะ 6 หลาของเขาถูก Dudek เซฟไว้ได้เยี่ยม [cite: 262] ผู้รักษาประตูชาวเช็กเล่นได้ดีจริงๆ ในบ่ายวันนี้ [cite: 263]</div>
+          <div class="commentary-item"><span class="commentary-time">82'</span>Drogba พักอกรับบอลจาก Gudjohnsen แล้ววอลเลย์ไปที่ประตู แต่ Carragher ทิ้งตัวขวางทางและบล็อคลูกยิงนั้นไว้ [cite: 263]</div>
+          <div class="commentary-item"><span class="commentary-time">81'</span>Mourinho ถูกไล่ออกจากสนามเพราะท่าดีใจของเขา และจะต้องดูเกมที่เหลือผ่านโทรทัศน์ [cite: 264] หรือถ้าเขาหาคอมพิวเตอร์ได้ ก็ดูผ่านการบรรยายสดบน soccernet.com [cite: 265]</div>
+          <div class="commentary-item"><span class="commentary-time">80'</span>SUB: Glen Johnsen ลงมาแทน Cole [cite: 265] การแก้เกมของ Mourinho เพื่อแพ็คเกมรับหลังจากเปลี่ยนตัวรุกไปหลายคน [cite: 266]</div>
+          <div class="commentary-item"><span class="commentary-time">79'</span>ภาพช้าแสดงให้เห็น Mourinho ฉลองประตูโดยการเอานิ้วแตะริมฝีปากและหันไปทางแฟนบอล Liverpool ที่อยู่ด้านหลังเขา [cite: 267] ความโกรธและความรุนแรงบนใบหน้าของแฟนบอลดูน่ากลัวทีเดียว [cite: 268]</div>
+          <div class="commentary-item"><span class="commentary-time">78'</span>GOAL! A Gerrard own goal! [cite: 268] ลูก free-kick ของ Ferreira โยนเข้าไปในกรอบเขตโทษ Gerrard กระโดดสูงที่สุดแต่กลับโหม่งเช็ดเสาเข้าประตูตัวเอง [cite: 269]</div>
+          <div class="commentary-item"><span class="commentary-time">77'</span>ผู้ตัดสิน Bennett หยุดเกมเพื่อแจกใบเหลืองให้ Hamann หลังจากที่เขาไปชน Lampard ที่กำลังพาบอลทะลุทะลวง [cite: 270] ผู้เล่น Chelsea โกรธมากที่เขาไม่ยอมปล่อยเป็นจังหวะได้เปรียบ [cite: 271]</div>
+          <div class="commentary-item"><span class="commentary-time">76'</span>แฟนบอล Liverpool เริ่มเชื่อแล้วว่าถ้วยรางวัลอาจจะเป็นของพวกเขา [cite: 271] Roman Abramovic ดูวิตกกังวลในโซนผู้บริหาร [cite: 272]</div>
+          <div class="commentary-item"><span class="commentary-time">75'</span>Kezman โชว์ความแข็งแกร่งบังบอลจาก Carragher ไว้ได้ ก่อนจะพยายามยิงจักรยานอากาศจากระยะ 16 หลา [cite: 272] บอลข้ามคาน Dudek ไปนิดเดียว [cite: 273]</div>
+          <div class="commentary-item"><span class="commentary-time">74'</span>Biscan กระชากบอลขึ้นไปทางขวาแล้วเปิดลูกเรียดเข้ากลาง Gerrard และ Ferreira เบียดแย่งกันที่กรอบ 6 หลา [cite: 273] บอลผ่าน Cech และกลิ้งเฉี่ยวเสาออกไปนิดเดียว เป็น goal kick [cite: 274]</div>
+          <div class="commentary-item"><span class="commentary-time">73'</span>SUB: Morientes ออก Baros เข้า [cite: 274] Kezman เข้า Gallas ออก เปลี่ยนตัวฝั่งละคนจาก Benitez และ Mourinho ตอนนี้ Chelsea เปิดเกมบุกเต็มสูบแล้ว [cite: 275]</div>
+          <div class="commentary-item"><span class="commentary-time">71'</span>Liverpool จัดการครองบอลได้ดีขึ้นเล็กน้อยในตอนนี้; [cite: 276] พวกเขากำลังกินเวลาและขยับเข้าใกล้ตำแหน่งแชมป์ [cite: 277]</div>
+          <div class="commentary-item"><span class="commentary-time">70'</span>Gudjohnsen แทงบอลเข้าไปในเขตโทษ [cite: 277] Gallas บังคู่แข่งและงัดบอลอันตรายข้าม Dudek แต่ Riise เคลียร์ทิ้งที่เสาไกลได้ทัน [cite: 278]</div>
+          <div class="commentary-item"><span class="commentary-time">70'</span>Liverpool โต้กลับหลังจากที่ Chelsea ดันคนขึ้นไป Biscan ปฏิเสธการจ่ายบอลออกกว้างให้ Nunez และเลือกที่จะยิงจากระยะ 30 หลาแทน [cite: 279] มันทั้งโด่ง หลุดกรอบ และแย่มาก [cite: 280]</div>
+          <div class="commentary-item"><span class="commentary-time">69'</span>Chelsea โต้กลับด้วยความเร็ว; [cite: 280] Gudjohnsen งัดบอลไปในที่ว่างให้ Cole วิ่งเข้าใส่ เขารับบอลและชิพเข้าเขตโทษ แต่ Liverpool ก็เคลียร์ได้ [cite: 281]</div>
+          <div class="commentary-item"><span class="commentary-time">67'</span>Duff กระชากหนี Riise แล้วเปิดบอลโด่งด้วยเท้าขวา แต่ Dudek ออกมารับได้อย่างสบายๆ [cite: 282]</div>
+          <div class="commentary-item"><span class="commentary-time">66'</span>Morientes แย่งบอลจาก Ferriera ได้ทางกราบซ้ายของ Liverpool แต่บอลที่จ่ายให้ Gerrard ที่วิ่งเติมตรงกลางนั้นไม่ดีพอ และ Terry ก็สกัดทิ้งได้ [cite: 283]</div>
+          <div class="commentary-item"><span class="commentary-time">65'</span>SUB: Traore ออก Biscan เข้า Traore มีอาการบาดเจ็บและเดินกะเผลกออกไป [cite: 284] Riise จะถอยไปเล่นแบ็คซ้าย โดยมี Biscan คุมแดนกลาง [cite: 285]</div>
+          <div class="commentary-item"><span class="commentary-time">64'</span>Ferreira เปิดบอลได้ดีไปยังพื้นที่อันตรายมาก แต่ Dudek พุ่งออกมาจากเส้นเพื่อชกบอลเคลียร์อันตรายออกจากกรอบเขตโทษ Liverpool [cite: 286]</div>
+          <div class="commentary-item"><span class="commentary-time">63'</span>Igor Biscan กำลังจะลงมาให้ Liverpool; เขากำลังวอร์มอัพอยู่ที่ข้างสนาม [cite: 287]</div>
+          <div class="commentary-item"><span class="commentary-time">63'</span>การโต้กลับสุดยอดจาก Liverpool [cite: 287] Garcia รับบอลทางซ้ายจาก Morientes; ลูกเรียดของเขาถูก Hamann ยิงจังหวะแรกทันที แต่ลูกยิงเลียดจากระยะ 20 หลาถูก Cech เซฟไว้ได้อย่างสุดยอด [cite: 288] เป็นฟุตบอลที่ยอดเยี่ยมมาก [cite: 289]</div>
+          <div class="commentary-item"><span class="commentary-time">61'</span>Liverpool ไม่ได้ช่วยตัวเองเลยเมื่อพวกเขาเสียบอลอย่างง่ายดายเมื่อได้ครอบครองมัน [cite: 289] การจ่ายบอลบางจังหวะจากหลังไปหน้าเข้าขั้นแย่มาก [cite: 290]</div>
+          <div class="commentary-item"><span class="commentary-time">60'</span>Traore เกือบประสานงานกับ Riise และ Gerrard ในจังหวะโต้กลับที่หาได้ยากของ Liverpool แต่บอลก็หลุดออกหลังไป [cite: 291]</div>
+          <div class="commentary-item"><span class="commentary-time">59'</span>Chelsea ครองเกมเบ็ดเสร็จในครึ่งหลังนี้ แต่เพิ่งสร้างโอกาสที่แท้จริงได้แค่ครั้งเดียว นั่นคือลูกโหม่งของ Gudjohnsen [cite: 292]</div>
+          <div class="commentary-item"><span class="commentary-time">57'</span>Stevie Gerrard ล้มลงด้วยอาการตะคริว เขาได้รับการปฐมพยาบาลในสนาม และได้รับความห่วงใยจากผู้เล่นทั้ง Liverpool และ Chelsea หลายคน [cite: 293]</div>
+          <div class="commentary-item"><span class="commentary-time">56'</span>Lampard พยายามจ่ายทะลุช่องสวยๆ ให้ Gallas แต่ Nunez ตัวสำรองอ่านจังหวะอันตรายได้ดีและเคลียร์ทิ้ง [cite: 294]</div>
+          <div class="commentary-item"><span class="commentary-time">55'</span>SUB: Nunez เข้าแทน Kewell นักเตะออสเตรเลียรายนี้ใส่ใจเรื่องความฟิตของตัวเองมากและบ่นเรื่องอาการเจ็บข้อเท้าด้วย [cite: 295]</div>
+          <div class="commentary-item"><span class="commentary-time">54'</span>Joe Cole ตัดเข้าในด้วยขวาและโยนบอลสวยๆ ให้ Gudjohnsen [cite: 296] ลูกโหม่งของกองหน้ารายนี้พุ่งต่ำและกำลังจะเสียบมุมล่าง แต่ Dudek โชว์การเซฟที่ยอดเยี่ยมปฏิเสธมันไว้ [cite: 297]</div>
+          <div class="commentary-item"><span class="commentary-time">54'</span>Drogba ไม่ล้ำหน้าจากการจ่ายของ Cole แต่บอลตกไม่ทันเวลาให้เขาง้างเท้ายิง [cite: 298]</div>
+          <div class="commentary-item"><span class="commentary-time">53'</span>Ferreira ครอสบอลอันตรายจากทางขวา แต่ Carragher เคลียร์ด้วยลูกโหม่ง [cite: 298] ครึ่งนี้คงยาวนานน่าดูสำหรับ Liverpool ถ้าพวกเขายังคงตั้งรับลึกขนาดนี้ [cite: 299]</div>
+          <div class="commentary-item"><span class="commentary-time">51'</span>Harry Kewell น่าจะถูกเปลี่ยนตัวออกเร็วๆ นี้หลังจากส่งสัญญาณว่าเขามีปัญหาอาการบาดเจ็บที่ขาหนีบ [cite: 300]</div>
+          <div class="commentary-item"><span class="commentary-time">50'</span>Liverpool ตอนนี้ต้องเล่นภายใต้ความกดดันอย่างหนักในแดนตัวเอง [cite: 301] พวกเขาหาทางจ่ายบอลออกจากแผงกองกลางไม่ได้เลย ซึ่งเป็นการเชิญชวนให้ Chelsea กดดันเข้าใส่ [cite: 302]</div>
+          <div class="commentary-item"><span class="commentary-time">49'</span>Mourinho และผู้ช่วยผู้จัดการทีม Steve Clarke เดือดดาลอยู่ข้างสนามใส่ Jamie Carragher [cite: 303] ทั้งสามคนมีการปะทะคารมกันและต้องให้ผู้ตัดสิน Bennett มาห้ามปราม [cite: 304]</div>
+          <div class="commentary-item"><span class="commentary-time">48'</span>Lampard จ่ายบอลให้ Cole ได้หลังจากจังหวะพลิกบอลสวยๆ ของ Gudjohnsen [cite: 305] Cole ตัดเข้าในจากทางซ้าย แต่ลูกยิงระยะ 20 หลาของเขาถูกบล็อคไว้ [cite: 306]</div>
+          <div class="commentary-item"><span class="commentary-time">47'</span>Dudek ออกมาชกบอลเตะมุมของ Duff และถูกทำฟาวล์ในจังหวะนั้น [cite: 307]</div>
+          <div class="commentary-item"><span class="commentary-time">46'</span>Chelsea เริ่มครึ่งหลังด้วยความมุ่งมั่นและเต็มไปด้วยพลังงาน [cite: 308] Drogba เกือบหาพื้นที่ในกรอบเขตโทษที่ผู้เล่นยืนกันแน่นได้ แต่ถูกเบียดแย่งบอลไป [cite: 309]</div>
+          <div class="commentary-item"><span class="commentary-time">45'</span>Cole กระชากผ่าน Hyypia ซึ่งดึงผู้เล่น Chelsea รายนี้ล้มลง [cite: 310] ผู้ตัดสินเอื้อมมือไปที่กระเป๋า ปรึกษากับไลน์แมน แล้วเป่าให้เป็น free-kick [cite: 311] Hyypia ซึ่งมีใบเหลืองติดตัวอยู่แล้ว รอดตัวจากใบเหลืองที่สองไปได้ [cite: 312]</div>
+          <div class="commentary-item"><span class="commentary-time">45'</span>SUB: Gudjohnsen เข้าแทน Jarosik [cite: 312] กองหน้าลงมาแทนกองกลางในขณะที่ Chelsea กำลังมองหาทางกลับเข้าสู่เกม [cite: 313]</div>
+          <div class="commentary-item"><span class="commentary-time">45'</span>HALF TIME: ประตูสุดสวยใน 45 วินาทีแรกของ Riise ทำให้ Liverpool ได้เปรียบ 1 ประตูเมื่อจบครึ่งแรก [cite: 314] Chelsea ครองบอลได้มากกว่า แต่ล้มเหลวในการสร้างโอกาสดีๆ [cite: 315]</div>
+          <div class="commentary-item"><span class="commentary-time">44'</span>Duff ฉีกหนี Riise และตวัดครอสด้วยเท้าซ้ายจากฝั่งขวา [cite: 316] Drogba กระโดด แต่ถูก Hyypia เอาชนะไปได้อีกครั้ง [cite: 317]</div>
+          <div class="commentary-item"><span class="commentary-time">42'</span>มีการฟาวล์จุกจิกเยอะมากในตอนนี้ซึ่งกำลังทำลายความลื่นไหลของเกม [cite: 317] แน่นอนว่ามันจะเข้าทาง Liverpool ที่เกมถูกหยุดบ่อยขนาดนี้ [cite: 318]</div>
+          <div class="commentary-item"><span class="commentary-time">41'</span>Gerrard เสีย free-kick จากการเข้าสกัด Cole [cite: 319] ผู้ตัดสิน Bennett ต้องเรียกผู้เล่นหลายคนจากทั้งสองฝ่ายมาเตือน เพื่อขอให้พวกเขาใจเย็นลง [cite: 320]</div>
+          <div class="commentary-item"><span class="commentary-time">40'</span>Duff ปั่นลูกเตะมุมให้ Chelsea อีกครั้ง แต่ลูกโหม่งของ Terry ถูก Dudek รับไว้ได้อย่างสบายๆ [cite: 321] Liverpool ป้องกันลูกเซ็ตพีซได้ดีมาก [cite: 322]</div>
+          <div class="commentary-item"><span class="commentary-time">38'</span>Lampard จ่ายบอลให้ Duff วิ่งเติมขึ้นมาทางซ้าย แต่ Traore พุ่งเสียบสกัดบอลเคลียร์อันตรายไปได้ในจังหวะสุดท้าย [cite: 322]</div>
+          <div class="commentary-item"><span class="commentary-time">37'</span>ประตูของ Riise คือโอกาสทำประตูครั้งเดียวของ Liverpool จนถึงตอนนี้ [cite: 323] พวกเขาดิ้นรนอย่างหนักในพื้นที่สุดท้ายในการหาจังหวะจ่ายบอลดีๆ [cite: 324]</div>
+          <div class="commentary-item"><span class="commentary-time">35'</span>Gerrard พยายามจ่ายชิพเข้าเขตโทษให้ Morientes แต่น้ำหนักแรงเกินไป [cite: 325] Liverpool ถอยมารับลึกเพื่อรักษาสกอร์นำ จัดตัวลงไปตั้งรับกันเพียบ [cite: 326]</div>
+          <div class="commentary-item"><span class="commentary-time">34'</span>Chelsea ได้ครอบครองบอลค่อนข้างเยอะในตอนนี้ Traore โดนใบเหลืองข้อหาทำฟาวล์ Ferreira [cite: 327] ลูก free-kick ของ Lampard เปิดลึกเกินไป [cite: 328]</div>
+          <div class="commentary-item"><span class="commentary-time">33'</span>Duff หาช่องว่างให้ Cole ยิงไกลได้ แต่ดาวรุ่งทีมชาติอังกฤษรายนี้ยิงแป้ก บอลค่อยๆ กลิ้งไปหา Dudek [cite: 328]</div>
+          <div class="commentary-item"><span class="commentary-time">32'</span>Duff เปิดลูกวอลเลย์สวยๆ ขวางไปหา Drogba แต่ Traora ขยับมาเปลี่ยนทางบอลพ้นอันตรายจากกองหน้า Chelsea ไปได้ [cite: 329]</div>
+          <div class="commentary-item"><span class="commentary-time">31'</span>Lampard ปั่น free-kick เข้าไปในกรอบเขตโทษ แต่ Dudek ก็รับไว้ได้อย่างง่ายดาย [cite: 330] Gallas และ Duff ประสานงานกันทางซ้ายและเรียกการทุ่มได้ [cite: 331]</div>
+          <div class="commentary-item"><span class="commentary-time">30'</span>Cole หา Gudjohnsen เจอในกรอบเขตโทษ เขาตัดบอลกลับไปทาง Drogba [cite: 332] แต่ Carragher ยืนถูกที่ ถูกเวลา เพื่อสกัดบอลทิ้งไปได้ [cite: 333]</div>
+          <div class="commentary-item"><span class="commentary-time">28'</span>จากลูกเตะมุม Carvalho โหม่งชงไปที่ Terry ซึ่งโหม่งเปลี่ยนทางข้าม Dudek พุ่งตรงเข้าหาประตู [cite: 334] แต่ Garcia ที่ยืนเฝ้าเสาอยู่วอลเลย์ทิ้งออกมาได้ [cite: 335]</div>
+          <div class="commentary-item"><span class="commentary-time">27'</span>Drogba ทะลุทะลวงขึ้นมาตรงกลางแล้วจิ้มบอลไปยังประตู แต่ Dudek เอื้อมมือปัดทำให้ลูกยิงเฉี่ยวหลุดกรอบไปนิดเดียว [cite: 335]</div>
+          <div class="commentary-item"><span class="commentary-time">27'</span>Gerrard ล้มลงในเขตโทษ Chelsea หลังโดน Makalele เข้าสกัดหนัก [cite: 336] จังหวะนี้อาจจะให้จุดโทษได้ง่ายๆ เลย; กองกลางชาวฝรั่งเศสพัวพัน Gerrard หนักมาก [cite: 337]</div>
+          <div class="commentary-item"><span class="commentary-time">26'</span>Lampard รับใบเหลืองจากผู้ตัดสิน Bennett ข้อหาเข้าสกัด Garcia อย่างรุนแรง ซึ่งดูเหมือนว่าจะแกล้งเจ็บเกินจริงจากการเสียบนั้น [cite: 338]</div>
+          <div class="commentary-item"><span class="commentary-time">25'</span>การประสานงานที่ดีทางฝั่งขวาจาก Finnan และเขาจ่ายบอลเจอ Garcia ที่บริเวณหน้ากรอบเขตโทษ [cite: 339] เขาพยายามหาพื้นที่เล่นต่อ แต่ถูก Makalele ขโมยบอลไป [cite: 340]</div>
+          <div class="commentary-item"><span class="commentary-time">24'</span>Carvalho ทำฟาวล์ Morientes ทำให้ Liverpool ได้ free-kick [cite: 340] บอลโยนไปหา Morientes แต่ Kewell ดูเหมือนจะไม่ได้ให้ความสนใจในการเข้าไปเล่นบอลต่อจากการโหม่งชงของดาวเตะสเปนเลย [cite: 341]</div>
+          <div class="commentary-item"><span class="commentary-time">23'</span>การต่อบอลหน้ากรอบเขตโทษจาก Cole สร้างพื้นที่ให้เขายิงได้ แต่ก็ถูกแผงหลังหงส์แดงบล็อคไว้ได้ดี [cite: 342]</div>
+          <div class="commentary-item"><span class="commentary-time">22'</span>Hyypia ชนะการดวลกลางอากาศกับ Drogba ทุกครั้ง; Chelsea ต้องคิดหาอะไรแปลกใหม่เพื่อดึง Drogba เข้ามามีส่วนร่วมในเกมให้ได้ [cite: 343]</div>
+          <div class="commentary-item"><span class="commentary-time">21'</span>Lampard พาบอลลุยทะลุกลางขึ้นมา และถูก Gerrard ตัดฟาวล์ในระยะ 30 หลาจากปากประตู ซึ่งถือว่าโชคดีที่เขาไม่ได้รับใบเหลือง [cite: 344] Lampard ซัดเต็มข้อบอลพุ่งตรงกรอบ แต่ Dudek รับไว้ได้ [cite: 345]</div>
+          <div class="commentary-item"><span class="commentary-time">20'</span>Cole ล้มลงจากการสกัดของ Traore แต่ไม่ได้ free-kick [cite: 346] เขาแสดงสีหน้ารังเกียจ และสบถคำพูดบางอย่างที่ผมเอามาพิมพ์ตรงนี้ไม่ได้เลยล่ะ [cite: 347]</div>
+          <div class="commentary-item"><span class="commentary-time">19'</span>Luis Garcia พยายามจ่ายให้ Riise หลุดขึ้นไปทางซ้าย แต่ Carvalho วิ่งเร็วกว่ากองกลางชาวลิเวอร์พูลรายนี้ [cite: 348] เกมหยุดชะงักเพราะโดนเป่าฟาวล์ย้อนหลังจากจังหวะก่อนหน้าไปแล้ว [cite: 349]</div>
+          <div class="commentary-item"><span class="commentary-time">17'</span>Kewell กระชากด้วยความเร็วลุยมาทางกราบขวาของ Liverpool พยายามมองหา Riise ซึ่งมีพื้นที่ว่างทางฝั่งซ้ายของกรอบเขตโทษ Chelsea อีกแล้ว [cite: 349] ลูกครอสของเขาถูกตัดได้ และ Chelsea ก็เปิดเกมโต้กลับ [cite: 350]</div>
+          <div class="commentary-item"><span class="commentary-time">17'</span>Lampard ได้เตะ free-kick ระยะ 40 หลา [cite: 350] Ferreira เป็นคนเปิด แต่ทำได้แย่และ Liverpool เคลียร์ทิ้งได้ง่ายๆ [cite: 351]</div>
+          <div class="commentary-item"><span class="commentary-time">16'</span>ผู้จัดการทีมทั้งสองฝ่ายกำลังเดินพล่านอยู่ใน 'เขตเทคนิค' พยายามสั่งการลูกทีม [cite: 352]</div>
+          <div class="commentary-item"><span class="commentary-time">14'</span>Liverpool ปล่อยให้ Chelsea เคาะบอลกันในแดนหลัง แต่เข้าบีบกองกลางคู่แข่งอย่างรวดเร็ว [cite: 353] ถือเป็นแท็คติกที่ได้ผลดีทีเดียวจนถึงตอนนี้ [cite: 354]</div>
+          <div class="commentary-item"><span class="commentary-time">13'</span>Gerrard โยนบอลยาวหกสิบหลาไปหา Riise ซึ่งเอาชนะ Ferreira กลางอากาศได้ [cite: 354] แต่ Morientes โฉบมาเก็บบอลจังหวะสองไม่ทัน [cite: 355]</div>
+          <div class="commentary-item"><span class="commentary-time">12'</span>การกลับตัวอันยอดเยี่ยมของ Drogba หลอก Hyypia ซะจนเสียหลัก กองหลังร่างโย่งชาวฟินแลนด์เลยทำฟาวล์สกัดขากองหน้ารายนี้ในจังหวะกระชากหนี [cite: 355] เขาโดนใบเหลืองจากจังหวะนี้ไปเลย [cite: 356]</div>
+          <div class="commentary-item"><span class="commentary-time">10'</span>ทั้ง Lampard และ Gerrard ต่างพุ่งเข้าเสียบแย่งบอลกันในแดนกลาง; [cite: 356] เป็นการปะทะที่ดุดันแต่ขาวสะอาดระหว่างสองมิดฟิลด์ที่ดีที่สุดในโลก [cite: 357]</div>
+          <div class="commentary-item"><span class="commentary-time">9'</span>ยังไม่มีโอกาสที่แท้จริงนับตั้งแต่ได้ประตู; [cite: 357] ผมว่าทั้งสองทีมน่าจะแค่กำลังปรับตัวเข้ากับช่วงเริ่มต้นเกมที่รวดเร็วปานสายฟ้าแลบนี้อยู่ [cite: 358]</div>
+          <div class="commentary-item"><span class="commentary-time">8'</span>Joe Cole เรียกฟาวล์จาก Traore ได้เมื่อเขาพยายามตัดเข้าในจากกราบขวา [cite: 359] โอกาสทองของ Chelsea ในการเปิดลูกตั้งเตะ แต่ Carvalho กลับเสีย free-kick ไปซะเองจากการทำฟาวล์ตอนแย่งตำแหน่ง [cite: 360]</div>
+          <div class="commentary-item"><span class="commentary-time">7'</span>Liverpool ลงสนามในระบบ 4-5-1 โดยให้ Kewell ยืนเป็นตัวทำเกมอยู่หลัง Morientes [cite: 361] ในขณะที่ Chelsea ยังยึดมั่นในระบบ 4-3-3 ที่พวกเขาทำได้ดีมากในฤดูกาลนี้ [cite: 362]</div>
+          <div class="commentary-item"><span class="commentary-time">5'</span>Carragher โหม่งบอลพ้นอันตรายจากลูกเตะมุมของ Duff ได้ Chelsea ดันผู้เล่นเติมขึ้นหน้าเต็มที่เพื่อตามหาประตูตีเสมอ [cite: 363]</div>
+          <div class="commentary-item"><span class="commentary-time">4'</span>Lampard ฉกบอลจาก Kewell แล้วจ่ายบอลเรียบเส้นสวยๆ ให้ Drogba วิ่งควบไปเอาบอล [cite: 364] เขาเปิดบอลไปติด Hyypia ทำให้ได้เตะมุม [cite: 365]</div>
+          <div class="commentary-item"><span class="commentary-time">4'</span>ต้องให้เครดิตฝ่าย Chelsea พวกเขาดูไม่ได้ท้อแท้เลย; [cite: 365] พวกเขาดูจะพยายามรักษาความนิ่งและเริ่มเคาะบอลต่อกันจากแนวรับอย่างใจเย็น [cite: 366]</div>
+          <div class="commentary-item"><span class="commentary-time">3'</span>Liverpool กำลังเล่นด้วยอิสระที่น่าตื่นเต้น Garcia วางบอลขวางสนามอย่างสวยงามไปยังปีกซ้าย Riise วิ่งเข้าใส่ Ferreira และได้ลูกทุ่ม [cite: 367]</div>
+          <div class="commentary-item"><span class="commentary-time">2'</span>การเริ่มต้นที่เหลือเชื่อจาก Liverpool Paulo Ferreira หลุดตำแหน่งและประกบพลาด แต่มันก็เป็นการจบสกอร์ที่ยอดเยี่ยมจากตำนานแข้งหัวแดงเพลิง [cite: 368]</div>
+          <div class="commentary-item"><span class="commentary-time">1'</span>GOAL! Riise ซัดวอลเลย์สุดสวยจากมุมแคบ เสียบมุมบนเข้าไป [cite: 369] ลูกครอสที่ยอดเยี่ยมจาก Morientes ไปถึงนักเตะชาวนอร์เวย์ที่ยืนว่างอยู่ในพื้นที่กว้างขวางบริเวณฝั่งซ้ายของกรอบเขตโทษ [cite: 370] ประตูนี้ใช้เวลาแค่ 45 วินาที [cite: 371]</div>
+          <div class="commentary-item"><span class="commentary-time">1'</span>Chelsea เขี่ยบอลเริ่มเกมท่ามกลางเสียงเชียร์กึกก้อง; [cite: 371] หลังคาสนามถูกปิด ทำให้บรรยากาศกระหึ่มคึกคัก สนามหญ้าดูเขียวขจีและสมบูรณ์แบบ [cite: 372]</div>
+          
+          <div class="commentary-item" style="border-top: 2px solid var(--gold); padding-top: 1rem; margin-top: 1rem;">
+            <strong>บรรยากาศก่อนเกม:</strong><br>
+            - Catherine Jenkins นักร้องเสียงโซปราโนชาวเวลส์ ร้องเพลงชาติ เธอมีน้ำเสียงที่ไพเราะมาก; ราวกับนกบลูเบิร์ดที่กำลังโบยบิน [cite: 373]<br>
+            - Sepp Blatter ประธาน FIFA เป็นแขกผู้มีเกียรติ และถูกแนะนำให้รู้จักกับนักเตะทั้งสองทีม งานนี้จัดใหญ่อลังการมาก; บางทีอาจจะคล้ายๆ ซูเปอร์โบวล์เลยทีเดียว [cite: 374, 375]<br>
+            - Jose Mourinho หลีกทางให้ Carlo Cudicini นำลูกทีม Chelsea ลงสู่สนาม; Cudicini คงจะได้เฝ้าเสาให้ The Blues ในช่วงบ่ายวันนี้หากเขาไม่ติดโทษแบน [cite: 375, 376]<br>
+            - การต้อนรับที่น่าทึ่งสำหรับทั้งสองทีม ขณะเดินลงสู่สนามท่ามกลางพลุไฟและเสียงดนตรีแดนซ์จังหวะหนักๆ ไม่มีเชียร์ลีดเดอร์นุ่งน้อยห่มน้อยหรอกนะ แต่คุณก็ไม่สามารถมีทุกอย่างได้นี่ [cite: 377, 378]<br>
+            - Team news: Jarosik ลงตัวจริงแทน Tiago สำหรับ Chelsea ส่วน Liverpool ได้ Morientes และ Gerrard กลับมา [cite: 378]<br>
+            - ดังนั้น ถ้วยรางวัลแรกของฤดูกาลกำลังเปิดให้ชิงกัน [cite: 379] จะเป็น Liverpool ของ Rafa หรือ Chelsea ของ Jose ที่จะได้ฉลองตอน 16:50 น.? [cite: 380] อยู่ที่นี่แล้วรอดูกัน... [cite: 381]<br>
+            - มาร่วมกับเราในวันอาทิตย์นี้สำหรับ Carling Cup Final - นัดชิง League Cup ครั้งที่ 45 [cite: 381] Cardiff รับหน้าเสื่อเป็นเจ้าภาพ ขณะที่ Chelsea และ Liverpool ประจัญบานกันเพื่อคว้าสิทธิ์ในการชูถ้วยเงินรางวัลใบแรกของฤดูกาล! [cite: 382] ถ่ายทอดสดตั้งแต่เวลา 15.00 ตามเวลาในสหราชอาณาจักร [cite: 383]
+          </div>
+        </div>
+      </div>
+      
+      <div class="match-info-box">
+        <h3 style="text-align: center; margin-bottom: 1rem;">Key Events</h3>
+        <ul class="match-details-list">
+          <li><strong>120'</strong> End Extra Time</li>
+          <li><strong>113'</strong> Antonio Nunez Goal</li>
+          <li><strong>112'</strong> Mateja Kezman Goal</li>
+          <li><strong>107'</strong> Didier Drogba Goal</li>
+          <li><strong>90'</strong> End Regular Time</li>
+          <li><strong>81'</strong> On: Glen Johnson | Off: Joe Cole [cite: 383, 384]</li>
+          <li><strong>79'</strong> Steven Gerrard (OG)</li>
+          <li><strong>74'</strong> On: Mateja Kezman | Off: William Gallas</li>
+          <li><strong>74'</strong> On: Milan Baros | Off: Fernando Sanchez Morientes [cite: 384, 385]</li>
+          <li><strong>67'</strong> On: Igor Biscan | Off: Djimi Traoré</li>
+          <li><strong>56'</strong> On: Antonio Nunez | Off: Harry Kewell</li>
+          <li><strong>45'</strong> Halftime</li>
+          <li><strong>45'</strong> On: Eidur Gudjohnsen | Off: Jiri Jarosik [cite: 385, 386]</li>
+          <li><strong>1'</strong> John Arne Riise Goal</li>
+        </ul>
+      </div>
+
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
+    <p>CHELSEA TH FANs — Kann Krung Nan News</p>
+    <p style="font-size: 0.8rem; opacity: 0.7;">ผู้เขียน: อิอิแอแอ</p>
+  </footer>
+
+  <div id="th-time">BKK: --:--:--</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const applyLionTheme = (s) => s.replace(/0/g, '🦁');
+      const timeStr = new Intl.DateTimeFormat('th-TH', { 
+        hour:'2-digit', minute:'2-digit', second:'2-digit', 
+        hour12:false, timeZone:'Asia/Bangkok' 
+      }).format(now);
+      document.getElementById('th-time').textContent = "BKK: " + applyLionTheme(timeStr);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>
