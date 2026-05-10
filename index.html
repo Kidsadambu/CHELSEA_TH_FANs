@@ -23,7 +23,7 @@
     html { scroll-behavior: smooth; scroll-padding-top: 60px; }
     body { background: var(--paper); color: var(--ink); font-family: 'Sarabun', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
 
-    /* ── CLOCK (คงเดิม) ── */
+    /* ── CLOCK ── */
     .floating-clock { position: fixed; top: 60px; right: 20px; z-index: 9999; background: rgba(2,31,69,0.85); border: 1px solid var(--gold); border-radius: 8px; padding: 12px 18px; display: flex; gap: 16px; backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0,0,0,0.5); color: var(--white); transition: transform 0.3s ease; }
     .floating-clock:hover { transform: translateY(-3px); }
     .floating-clock__section { display: flex; flex-direction: column; align-items: flex-end; }
@@ -57,9 +57,20 @@
     .hero__tagline { font-size: clamp(14px,1.6vw,17px); color: rgba(245,242,236,0.55); margin-top: 16px; letter-spacing: 0.05em; animation: riseIn 1s 0.3s ease both; }
 
     /* live ticker */
-    .hero__ticker { margin-top: 32px; animation: riseIn 1s 0.45s ease both; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-    .ticker-pill { background: rgba(200,168,75,0.12); border: 1px solid rgba(200,168,75,0.35); border-radius: 24px; padding: 6px 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--gold-light); white-space: nowrap; }
-    .ticker-pill span { color: rgba(245,242,236,0.55); font-weight: 300; margin-right: 5px; }
+    .hero__ticker { margin-top: 32px; animation: riseIn 1s 0.45s ease both; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    
+    /* ปรับพื้นหลังให้ทึบ และเพิ่มเงาให้ลอยเด่น */
+    .ticker-pill { background: var(--blue-dark); border: 1px solid var(--gold); border-radius: 24px; padding: 8px 20px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; color: var(--gold-light); white-space: nowrap; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.6); }
+    
+    /* ปรับเส้นกั้นระหว่าง Label กับ ข้อความ */
+    .ticker-pill span { color: var(--white); font-weight: 400; padding-right: 8px; border-right: 1px solid rgba(200,168,75,0.4); display: flex; align-items: center; gap: 6px;}
+    
+    /* คลาสพิเศษสำหรับแมตช์ที่ต้องการเน้น (FA Cup) */
+    .ticker-pill--highlight { background: linear-gradient(135deg, var(--gold), #e8c97a); color: var(--blue-dark); border-color: var(--white); transform: scale(1.05); box-shadow: 0 0 20px rgba(200,168,75,0.5); }
+    .ticker-pill--highlight span { color: var(--blue-dark); font-weight: 700; border-right-color: rgba(2,31,69,0.3); }
+    
+    /* จัดการขนาดโลโก้สโมสรใน Ticker */
+    .ticker-logo { height: 18px; width: auto; vertical-align: middle; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
 
     /* hero CTA buttons */
     .hero__ctas { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; animation: riseIn 1s 0.55s ease both; }
@@ -85,7 +96,7 @@
     .stat-card__sub { display: block; margin-top: 5px; font-size: 12px; color: rgba(200,168,75,0.5); }
 
     /* ── WIN RATE BAR ── */
-    .wdl-wrap { max-width: 640px; margin: 0 auto; }
+    .wdl-wrap { max-width: 800px; margin: 0 auto; }
     .wdl-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
     .wdl-label span:nth-child(1) { color: #4ade80; }
     .wdl-label span:nth-child(2) { color: var(--gold); }
@@ -167,7 +178,6 @@
 </head>
 <body>
 
-  <!-- ══ NAV ══ -->
   <nav class="main-nav">
     <ul class="nav-list">
       <li><a href="Trophy.html">🏆 ทำเนียบแชมป์</a></li>
@@ -179,7 +189,6 @@
     </ul>
   </nav>
 
-  <!-- ══ CLOCK (คงเดิม) ══ -->
   <div class="floating-clock">
     <div class="floating-clock__section">
       <div class="floating-clock__label">🇹🇭 ไทย</div>
@@ -194,231 +203,47 @@
     </div>
   </div>
 
-  <!-- ══ HERO ══ -->
   <header class="hero">
     <div class="hero__bg"></div>
     <div class="hero__overlay"></div>
     <div class="hero__inner">
-      <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="hero__logo" alt="Chelsea TH Fans Logo">
-      <p class="hero__eyebrow">Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News</p>
-      <h1 class="hero__title">กาลครั้งนั้น<br><em>Kann Krung Nan News!</em></h1>
-      <p class="hero__tagline">ประวัติศาสตร์อันยาวนานของสโมสร Chelsea FC ฉบับภาษาไทย ตั้งแต่ปี 1905</p>
-
-      <div class="hero__ticker">
-        <div class="ticker-pill"><span>League Matches</span>4,412 นัด</div>
-        <div class="ticker-pill"><span>Win Rate</span>42.6%</div>
-        <div class="ticker-pill"><span>League Titles</span>8 สมัย</div>
-        <div class="ticker-pill"><span>Goals Scored</span>6,966 ประตู</div>
-      </div>
+      <img id="hero-logo" src="" class="hero__logo" alt="Chelsea TH Fans Logo">
+      <p id="hero-eyebrow" class="hero__eyebrow"></p>
+      <h1 id="hero-title" class="hero__title"></h1>
+      <p id="hero-tagline" class="hero__tagline"></p>
+      
+      <div id="hero-ticker" class="hero__ticker">
+        </div>
+    </div>
   </header>
 
-  <!-- ══ STATS BAND ══ -->
-  <section class="stats-band">
-    <p class="stats-band__label">สถิติ League ตลอดกาล (1905–2025)</p>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <span class="stat-card__num">109</span>
-        <span class="stat-card__label">ฤดูกาล</span>
-        <span class="stat-card__sub">League 1905–2025</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__num">4,412</span>
-        <span class="stat-card__label">นัดที่ลงเล่น</span>
-        <span class="stat-card__sub">Played</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__num" style="color:#4ade80">1,878</span>
-        <span class="stat-card__label">นัดที่ชนะ</span>
-        <span class="stat-card__sub">Won · 42.6%</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__num" style="color:var(--gold)">1,134</span>
-        <span class="stat-card__label">นัดที่เสมอ</span>
-        <span class="stat-card__sub">Drawn · 25.7%</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__num" style="color:#f87171">1,400</span>
-        <span class="stat-card__label">นัดที่แพ้</span>
-        <span class="stat-card__sub">Lost · 31.7%</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__num">6,966</span>
-        <span class="stat-card__label">ประตูที่ยิงได้</span>
-        <span class="stat-card__sub">Goals For</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__num">6,096</span>
-        <span class="stat-card__label">ประตูที่เสีย</span>
-        <span class="stat-card__sub">Goals Against</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__num">+870</span>
-        <span class="stat-card__label">ผลต่างประตู</span>
-        <span class="stat-card__sub">Goal Difference</span>
-      </div>
-    </div>
-
-    <!-- W/D/L bar -->
-    <div class="wdl-wrap">
-      <div class="wdl-label">
-        <span>ชนะ 42.6%</span>
-        <span>เสมอ 25.7%</span>
-        <span>แพ้ 31.7%</span>
-      </div>
-      <div class="wdl-bar">
-        <div class="wdl-bar__w" style="width:42.6%"></div>
-        <div class="wdl-bar__d" style="width:25.7%"></div>
-        <div class="wdl-bar__l" style="width:31.7%"></div>
-      </div>
-      <div class="wdl-nums">
-        <span>1,878 W</span>
-        <span>1,134 D</span>
-        <span>1,400 L</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ INTERACTIVE CHART ══ -->
-  <section class="chart-section">
-    <div class="chart-section__header">
-      <p class="chart-section__label">Data Visualisation</p>
-      <h2 class="chart-section__title">ผลงาน League ทุกฤดูกาล</h2>
-      <p class="chart-section__sub">คลิกแถบเพื่อดูรายละเอียดแต่ละฤดูกาล | เส้นแดงคือตำแหน่ง 1 (แชมป์)</p>
-    </div>
-    <div class="chart-tabs">
-      <button class="chart-tab active" onclick="setMode('wins')">จำนวนชนะ</button>
-      <button class="chart-tab" onclick="setMode('pts')">คะแนน</button>
-      <button class="chart-tab" onclick="setMode('goals')">ประตู</button>
-      <button class="chart-tab" onclick="setMode('pos')">อันดับ</button>
-    </div>
-    <div class="chart-canvas-wrap">
-      <canvas id="leagueChart" height="280"></canvas>
-    </div>
-    <div class="chart-tooltip" id="chartTooltip"></div>
-  </section>
-
-  <!-- ══ LEAGUE TITLES ══ -->
-  <section class="titles-section">
-    <div class="titles-section__header">
-      <p class="titles-section__label">Champions Premier League</p>
-      <h2 class="titles-section__title">Champions Premier League 8 สมัย</h2>
-    </div>
-    <div class="titles-row">
-      <div class="title-badge">
-        <span class="title-badge__num">🏆</span>
-        <span class="title-badge__season">1954/55</span>
-        <span class="title-badge__pts">52 pts</span>
-      </div>
-      <div class="title-badge">
-        <span class="title-badge__num">🏆</span>
-        <span class="title-badge__season">1983/84</span>
-        <span class="title-badge__pts">88 pts</span>
-      </div>
-      <div class="title-badge">
-        <span class="title-badge__num">🏆</span>
-        <span class="title-badge__season">1988/89</span>
-        <span class="title-badge__pts">99 pts ★</span>
-      </div>
-      <div class="title-badge">
-        <span class="title-badge__num">🏆</span>
-        <span class="title-badge__season">2004/05</span>
-        <span class="title-badge__pts">95 pts</span>
-      </div>
-      <div class="title-badge">
-        <span class="title-badge__num">🏆</span>
-        <span class="title-badge__season">2005/06</span>
-        <span class="title-badge__pts">91 pts</span>
-      </div>
-      <div class="title-badge">
-        <span class="title-badge__num">🏆</span>
-        <span class="title-badge__season">2009/10</span>
-        <span class="title-badge__pts">86 pts</span>
-      </div>
-      <div class="title-badge">
-        <span class="title-badge__num">🏆</span>
-        <span class="title-badge__season">2014/15</span>
-        <span class="title-badge__pts">87 pts</span>
-      </div>
-      <div class="title-badge">
-        <span class="title-badge__num">🏆</span>
-        <span class="title-badge__season">2016/17</span>
-        <span class="title-badge__pts">93 pts</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ TOP SCORERS ══ -->
-  <section class="scorers-section">
-    <p class="scorers-section__label">Leading Scorers</p>
-    <h2 class="scorers-section__title">ดาวซัลโวสูงสุดตลอดกาล (League)</h2>
-    <div class="scorer-list">
-      <div class="scorer-card">
-        <div class="scorer-card__rank">1</div>
-        <div class="scorer-card__info">
-          <div class="scorer-card__name">Bobby Tambling</div>
-          <div class="scorer-card__goals">164 ประตู League (ทุกรายการ)</div>
-        </div>
-      </div>
-      <div class="scorer-card">
-        <div class="scorer-card__rank">2</div>
-        <div class="scorer-card__info">
-          <div class="scorer-card__name">Frank Lampard</div>
-          <div class="scorer-card__goals">211 ประตู (ทุกรายการ)</div>
-        </div>
-      </div>
-      <div class="scorer-card">
-        <div class="scorer-card__rank">3</div>
-        <div class="scorer-card__info">
-          <div class="scorer-card__name">Jimmy Greaves</div>
-          <div class="scorer-card__goals">124 ประตู League · 1957–61</div>
-        </div>
-      </div>
-      <div class="scorer-card">
-        <div class="scorer-card__rank">4</div>
-        <div class="scorer-card__info">
-          <div class="scorer-card__name">Kerry Dixon</div>
-          <div class="scorer-card__goals">193 ประตู (ทุกรายการ)</div>
-        </div>
-      </div>
-      <div class="scorer-card">
-        <div class="scorer-card__rank">5</div>
-        <div class="scorer-card__info">
-          <div class="scorer-card__name">Roy Bentley</div>
-          <div class="scorer-card__goals">125 ประตู League · 1948–56</div>
-        </div>
-      </div>
-      <div class="scorer-card">
-        <div class="scorer-card__rank">6</div>
-        <div class="scorer-card__info">
-          <div class="scorer-card__name">George Hilsdon</div>
-          <div class="scorer-card__goals">108 ประตู League · 1906–12</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ INTRO ══ -->
   <section class="intro">
-    <p class="intro__label">เกี่ยวกับซีรีส์นี้</p>
-    <p class="intro__text">ซีรีส์ที่เล่าเรื่องราวประวัติศาสตร์อันยาวนานของ Chelsea FC ตั้งแต่วันก่อตั้งในปี 1905 จนถึงยุคสมัยใหม่ ผ่านมุมมองของแฟนบอลชาวไทยผู้รักและติดตามสโมสรมาโดยตลอด</p>
+    <p class="intro__label">Calum McFarlane</p>
+    <p class="intro__text">แมคฟาร์เลนสะท้อนมุมมองต่อ "ผลงานที่ยอดเยี่ยมจริงๆ" ในเกมเยือนลิเวอร์พูล
+คาลัม แมคฟาร์เลน รู้สึกว่าทัพ "สิงห์บลูส์" สมควรได้รับหนึ่งแต้มจากแอนฟิลด์ในวันนี้ และอาจถึงขั้นชนะได้เลยหากรายละเอียดเล็กๆ น้อยๆ เป็นใจให้ทีมมากกว่านี้ เราเสียประตูไปก่อนในช่วงต้นเกมจากลูกยิงสุดสวยของ ไรอัน กราเวนเบิร์ช นักเตะลิเวอร์พูล แต่ลูกทีมก็ไม่ได้เสียขวัญ หลังจาก มาร์ก กูกูเรญ่า มีลุ้นทำประตูถึงสองครั้ง ในที่สุด เอ็นโซ เฟร์นานเดซ ก็มาทำประตูตีเสมอได้ในนาทีที่ 35 จากลูกฟรีคิกที่พุ่งเข้าไปซุกก้นตาข่าย
+ในช่วงครึ่งหลัง โคล พาลเมอร์ ส่งบอลเข้าประตูไปได้แต่ถูกริบคืนเพราะล้ำหน้าจากการเช็ก VAR และทั้งสองฝ่ายต่างก็มีโอกาสที่จะเป็นผู้ชนะ นอกจากนี้เรายังมีจังหวะประท้วงเรียกจุดโทษในช่วงท้ายเกมหลังจาก เจา เปโดร ถูกทำฟาวล์ล้มลงในเขตโทษ แต่ผู้ตัดสินกลับนิ่งเฉย
+ในบทสรุปหลังจบเกม เฮดโค้ชชั่วคราวของเราได้ชี้ถึงการตัดสินดังกล่าวและจังหวะ "ถ้าหาก" อื่นๆ ซึ่งในวันอื่นมันอาจจะกลายเป็นชัยชนะที่ยิ่งใหญ่ไปแล้ว
+"มันเป็นผลงานที่ดีจริงๆ ครับ" แมคฟาร์เลนกล่าว
+"จริงๆ แล้วผลการแข่งขันสามารถออกได้ทั้งสองหน้าในบางช่วงของเกม หากให้พูดแบบเข้าข้างตัวเองหน่อย ผมคิดว่าเราน่าจะเป็นฝ่ายชนะได้เลย เรามีจังหวะที่ดีหลายครั้ง"
+"ผมจำจังหวะของเอ็นโซในครึ่งแรกได้ กูกูเรญ่าก็พาตัวเองเข้าไปอยู่ในพื้นที่อันตรายและจังหวะเปิดบอลได้ดี มีลูกล้ำหน้าแบบเฉียดฉิว และจุดโทษที่ผมมองว่า—ซึ่งผมรู้ดีว่างานผู้ตัดสินมันยาก—แต่นั่นควรเป็นจุดโทษชัดเจน ดังนั้นเราอาจจะโต้แย้งได้ว่าเราควรได้สามแต้มกลับไป"
+แมคฟาร์เลนตระหนักว่าการเล่นที่ดีขึ้นและแต้มที่ได้มาอย่างสมศักดิ์ศรีในการเจอกับทีมอันดับ 4 ของตาราง (เมื่อเริ่มสัปดาห์) ช่วยเสริมสร้างความมั่นใจที่ทัพ "สิงห์บลูส์" กำลังต้องการอย่างมาก ก่อนจะมุ่งหน้าสู่รอบชิงชนะเลิศ เอฟเอ คัพ ในสุดสัปดาห์หน้า
+"สโมสรแห่งนี้จำเป็นต้องเก็บชัยชนะให้ได้ ซึ่งวันนี้เราทำไม่สำเร็จ เราไม่พอใจกับฟอร์มการเล่นและผลงานในช่วงหลังๆ ดังนั้นการที่โชว์ฟอร์มได้ดีและครบเครื่องแบบนี้จึงเป็นเรื่องที่น่าประทับใจ"
+"ถ้าชนะมันจะดีกว่านี้มาก แต่การมาเยือนสถานที่แบบนี้ (แอนฟิลด์) มันยากเสมอ ดังนั้นนี่ถือเป็นวันที่น่าพอใจครับ"</p>
     <div class="intro__rule"></div>
   </section>
 
-  <!-- ══ ABOUT ══ -->
   <section class="about">
     <img src="https://i.postimg.cc/Y0YTcy8f/Kann-Krung-Nan-News.png" class="about__logo" alt="Kann Krung Nan News Logo">
     <p class="about__label">ผู้เขียน</p>
     <p class="about__author">อิอิแอแอ</p>
-    <p class="about__text">ซีรีส์นี้เขียนขึ้นด้วยความรัก ความภาคภูมิใจ และการวิจัยอย่างละเอียดถี่ถ้วน เพื่อถ่ายทอดเรื่องราวของสโมสรที่เราทุกคนรักและผูกพันมายาวนาน ให้แฟนบอลชาวไทยได้รับรู้และสัมผัสประวัติศาสตร์อันยิ่งใหญ่ของ Chelsea FC</p>
   </section>
 
-  <!-- ══ FOOTER ══ -->
   <footer class="site-footer">
-    <img src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png" class="site-footer__logo" alt="Logo">
-    <span class="site-footer__name">CHELSEA TH FANs</span>
-    <span>Kann Krung Nan News &nbsp;·&nbsp; ผู้เขียน: อิอิแอแอ</span>
+    <img src="https://i.postimg.cc/Y0YTcy8f/Kann-Krung-Nan-News.png" class="site-footer__logo" alt="Logo">
+    <span class="site-footer__name">ผู้เขียน: อิอิแอแอ</span>
+    <span>Kann Krung Nan News &nbsp;·&nbsp; CHELSEA TH FANs</span>
   </footer>
-
+    
   <script>
     /* ══ CLOCK ══ */
     function updateFloatingClocks() {
@@ -434,262 +259,58 @@
     updateFloatingClocks();
     setInterval(updateFloatingClocks, 1000);
 
-    /* ══ CHART DATA ══ */
-    const SEASONS = [
-      {s:"1905/06",w:22,d:9,l:7,f:90,a:37,pos:3,pts:53},
-      {s:"1906/07",w:26,d:5,l:7,f:80,a:34,pos:2,pts:57},
-      {s:"1907/08",w:14,d:8,l:16,f:53,a:62,pos:13,pts:36},
-      {s:"1908/09",w:14,d:9,l:15,f:56,a:61,pos:11,pts:37},
-      {s:"1909/10",w:11,d:7,l:20,f:47,a:70,pos:19,pts:29},
-      {s:"1910/11",w:20,d:9,l:9,f:71,a:35,pos:3,pts:49},
-      {s:"1911/12",w:24,d:6,l:8,f:64,a:34,pos:2,pts:54},
-      {s:"1912/13",w:11,d:6,l:21,f:51,a:73,pos:18,pts:28},
-      {s:"1913/14",w:16,d:7,l:15,f:46,a:55,pos:8,pts:39},
-      {s:"1914/15",w:8,d:13,l:17,f:51,a:65,pos:19,pts:29},
-      {s:"1919/20",w:22,d:5,l:15,f:56,a:51,pos:3,pts:49},
-      {s:"1920/21",w:13,d:13,l:16,f:48,a:58,pos:18,pts:39},
-      {s:"1921/22",w:17,d:12,l:13,f:40,a:43,pos:9,pts:46},
-      {s:"1922/23",w:9,d:18,l:15,f:45,a:53,pos:19,pts:36},
-      {s:"1923/24",w:9,d:14,l:19,f:31,a:53,pos:21,pts:32},
-      {s:"1924/25",w:16,d:15,l:11,f:51,a:37,pos:5,pts:47},
-      {s:"1925/26",w:19,d:14,l:9,f:76,a:49,pos:3,pts:52},
-      {s:"1926/27",w:20,d:12,l:10,f:62,a:52,pos:4,pts:52},
-      {s:"1927/28",w:23,d:8,l:11,f:75,a:45,pos:3,pts:54},
-      {s:"1928/29",w:17,d:10,l:15,f:64,a:65,pos:9,pts:44},
-      {s:"1929/30",w:22,d:11,l:9,f:74,a:46,pos:2,pts:55},
-      {s:"1930/31",w:15,d:10,l:17,f:64,a:67,pos:12,pts:40},
-      {s:"1931/32",w:16,d:8,l:18,f:69,a:73,pos:12,pts:40},
-      {s:"1932/33",w:14,d:7,l:21,f:63,a:73,pos:18,pts:35},
-      {s:"1933/34",w:14,d:8,l:20,f:67,a:69,pos:19,pts:36},
-      {s:"1934/35",w:16,d:9,l:17,f:73,a:82,pos:12,pts:41},
-      {s:"1935/36",w:15,d:13,l:14,f:65,a:72,pos:8,pts:43},
-      {s:"1936/37",w:14,d:13,l:15,f:52,a:55,pos:13,pts:41},
-      {s:"1937/38",w:14,d:13,l:15,f:65,a:65,pos:10,pts:41},
-      {s:"1938/39",w:12,d:9,l:21,f:64,a:80,pos:20,pts:33},
-      {s:"1946/47",w:16,d:7,l:19,f:69,a:84,pos:15,pts:39},
-      {s:"1947/48",w:14,d:9,l:19,f:53,a:71,pos:18,pts:37},
-      {s:"1948/49",w:12,d:14,l:16,f:69,a:68,pos:13,pts:38},
-      {s:"1949/50",w:12,d:16,l:14,f:58,a:65,pos:13,pts:40},
-      {s:"1950/51",w:12,d:8,l:22,f:53,a:65,pos:20,pts:32},
-      {s:"1951/52",w:14,d:8,l:20,f:52,a:72,pos:19,pts:36},
-      {s:"1952/53",w:12,d:11,l:19,f:56,a:66,pos:19,pts:35},
-      {s:"1953/54",w:16,d:12,l:14,f:74,a:68,pos:8,pts:44},
-      {s:"1954/55",w:20,d:12,l:10,f:81,a:57,pos:1,pts:52},
-      {s:"1955/56",w:14,d:11,l:17,f:64,a:77,pos:16,pts:39},
-      {s:"1956/57",w:13,d:13,l:16,f:73,a:73,pos:13,pts:39},
-      {s:"1957/58",w:15,d:12,l:15,f:83,a:79,pos:11,pts:42},
-      {s:"1958/59",w:18,d:4,l:20,f:77,a:98,pos:14,pts:40},
-      {s:"1959/60",w:14,d:9,l:19,f:76,a:91,pos:18,pts:37},
-      {s:"1960/61",w:15,d:7,l:20,f:98,a:100,pos:12,pts:37},
-      {s:"1961/62",w:9,d:10,l:23,f:63,a:94,pos:22,pts:28},
-      {s:"1962/63",w:24,d:4,l:14,f:81,a:42,pos:2,pts:52},
-      {s:"1963/64",w:20,d:10,l:12,f:68,a:74,pos:5,pts:50},
-      {s:"1964/65",w:24,d:8,l:10,f:83,a:75,pos:3,pts:56},
-      {s:"1965/66",w:22,d:7,l:13,f:62,a:72,pos:5,pts:51},
-      {s:"1966/67",w:15,d:14,l:13,f:66,a:73,pos:9,pts:44},
-      {s:"1967/68",w:18,d:12,l:12,f:77,a:73,pos:6,pts:48},
-      {s:"1968/69",w:20,d:10,l:12,f:69,a:74,pos:5,pts:50},
-      {s:"1969/70",w:21,d:13,l:8,f:68,a:73,pos:3,pts:55},
-      {s:"1970/71",w:18,d:15,l:9,f:55,a:72,pos:6,pts:51},
-      {s:"1971/72",w:18,d:12,l:12,f:70,a:68,pos:7,pts:48},
-      {s:"1972/73",w:13,d:14,l:15,f:59,a:62,pos:12,pts:40},
-      {s:"1973/74",w:12,d:13,l:17,f:67,a:66,pos:17,pts:37},
-      {s:"1974/75",w:9,d:15,l:18,f:63,a:64,pos:21,pts:33},
-      {s:"1975/76",w:12,d:16,l:14,f:53,a:54,pos:11,pts:40},
-      {s:"1976/77",w:21,d:13,l:8,f:73,a:53,pos:2,pts:55},
-      {s:"1977/78",w:11,d:14,l:17,f:46,a:69,pos:16,pts:36},
-      {s:"1978/79",w:5,d:10,l:27,f:44,a:92,pos:22,pts:20},
-      {s:"1979/80",w:23,d:7,l:12,f:66,a:52,pos:4,pts:53},
-      {s:"1980/81",w:14,d:12,l:16,f:46,a:41,pos:12,pts:40},
-      {s:"1981/82",w:15,d:12,l:15,f:60,a:60,pos:12,pts:57},
-      {s:"1982/83",w:11,d:14,l:17,f:51,a:61,pos:18,pts:47},
-      {s:"1983/84",w:25,d:13,l:4,f:90,a:40,pos:1,pts:88},
-      {s:"1984/85",w:18,d:12,l:12,f:63,a:48,pos:6,pts:66},
-      {s:"1985/86",w:20,d:11,l:11,f:57,a:56,pos:6,pts:71},
-      {s:"1986/87",w:13,d:13,l:16,f:53,a:64,pos:14,pts:52},
-      {s:"1987/88",w:9,d:15,l:16,f:50,a:68,pos:18,pts:42},
-      {s:"1988/89",w:29,d:12,l:5,f:96,a:50,pos:1,pts:99},
-      {s:"1989/90",w:16,d:12,l:10,f:58,a:50,pos:5,pts:60},
-      {s:"1990/91",w:13,d:10,l:15,f:58,a:69,pos:11,pts:49},
-      {s:"1991/92",w:13,d:14,l:15,f:50,a:60,pos:14,pts:53},
-      {s:"1992/93",w:14,d:14,l:14,f:51,a:54,pos:11,pts:56},
-      {s:"1993/94",w:13,d:12,l:17,f:49,a:53,pos:14,pts:51},
-      {s:"1994/95",w:13,d:15,l:14,f:50,a:55,pos:11,pts:54},
-      {s:"1995/96",w:12,d:14,l:12,f:46,a:44,pos:11,pts:50},
-      {s:"1996/97",w:16,d:11,l:11,f:58,a:55,pos:6,pts:59},
-      {s:"1997/98",w:20,d:3,l:15,f:71,a:43,pos:4,pts:63},
-      {s:"1998/99",w:20,d:15,l:3,f:57,a:30,pos:3,pts:75},
-      {s:"1999/00",w:18,d:11,l:9,f:53,a:34,pos:5,pts:65},
-      {s:"2000/01",w:17,d:10,l:11,f:68,a:45,pos:6,pts:61},
-      {s:"2001/02",w:17,d:13,l:8,f:66,a:38,pos:6,pts:64},
-      {s:"2002/03",w:19,d:10,l:9,f:68,a:38,pos:4,pts:67},
-      {s:"2003/04",w:24,d:7,l:7,f:67,a:31,pos:2,pts:79},
-      {s:"2004/05",w:29,d:8,l:1,f:72,a:15,pos:1,pts:95},
-      {s:"2005/06",w:29,d:4,l:5,f:72,a:22,pos:1,pts:91},
-      {s:"2006/07",w:24,d:11,l:3,f:64,a:24,pos:2,pts:83},
-      {s:"2007/08",w:25,d:10,l:3,f:65,a:26,pos:2,pts:85},
-      {s:"2008/09",w:25,d:8,l:5,f:68,a:24,pos:3,pts:83},
-      {s:"2009/10",w:27,d:5,l:6,f:103,a:32,pos:1,pts:86},
-      {s:"2010/11",w:21,d:8,l:9,f:69,a:33,pos:2,pts:71},
-      {s:"2011/12",w:18,d:10,l:10,f:65,a:46,pos:6,pts:64},
-      {s:"2012/13",w:22,d:9,l:7,f:75,a:39,pos:3,pts:75},
-      {s:"2013/14",w:25,d:7,l:6,f:71,a:27,pos:3,pts:82},
-      {s:"2014/15",w:26,d:9,l:3,f:73,a:32,pos:1,pts:87},
-      {s:"2015/16",w:12,d:14,l:12,f:59,a:53,pos:10,pts:50},
-      {s:"2016/17",w:30,d:3,l:5,f:85,a:33,pos:1,pts:93},
-      {s:"2017/18",w:21,d:7,l:10,f:62,a:38,pos:5,pts:70},
-      {s:"2018/19",w:21,d:9,l:8,f:63,a:39,pos:3,pts:72},
-      {s:"2019/20",w:20,d:6,l:12,f:69,a:54,pos:4,pts:66},
-      {s:"2020/21",w:19,d:10,l:9,f:58,a:36,pos:4,pts:67},
-      {s:"2021/22",w:21,d:11,l:6,f:76,a:33,pos:3,pts:74},
-      {s:"2022/23",w:11,d:11,l:16,f:38,a:47,pos:12,pts:44},
-      {s:"2023/24",w:18,d:9,l:11,f:77,a:63,pos:6,pts:63},
-      {s:"2024/25",w:20,d:9,l:9,f:64,a:43,pos:4,pts:69}
-    ];
+    /* ══ DYNAMIC HERO DATA ══ */
+    const heroData = {
+      logoSrc: "https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png",
+      eyebrow: "Chelsea TH FANs &nbsp;·&nbsp; Kann Krung Nan News",
+      title: "กาลครั้งนั้น<br><em>Kann Krung Nan News!</em>",
+      tagline: "ประวัติศาสตร์อันยาวนานของสโมสร Chelsea FC ฉบับภาษาไทย ตั้งแต่ปี 1905",
+      tickers: [
+        { 
+          // แมตช์สำคัญ: FA Cup Final
+          label: "🏆 16 พ.ค. | FA Cup Final (Wembley)", 
+          text: `<img src="https://i.postimg.cc/yNs5vXxg/CHELSEA.png" class="ticker-logo" alt="CHE"> 21:00 น. <img src="https://i.postimg.cc/PqTc2zJY/Manchester-City.png" class="ticker-logo" alt="MCI">`,
+          isHighlight: true // <--- ตัวนี้จะสั่งให้กล่องนี้เป็นสีทองโดดเด่น
+        },
+        { 
+          // แมตช์ที่ 37: เจอสเปอร์ส (ขยับวันเป็น 20 พ.ค. ตามเวลาไทย)
+          label: "20 พ.ค. | PL Match Week 37", 
+          text: `<img src="https://i.postimg.cc/yNs5vXxg/CHELSEA.png" class="ticker-logo" alt="CHE"> 02:15 น. <img src="https://i.postimg.cc/bvpM3Hr2/Tottenham-Hotspur.png" class="ticker-logo" alt="TOT">`,
+          isHighlight: false
+        },
+        { 
+          // แมตช์ที่ 38: เจอซันเดอร์แลนด์
+          label: "24 พ.ค. | PL Match Week 38", 
+          text: `<img src="https://i.postimg.cc/mrBq8NkP/Sunderland.png" class="ticker-logo" alt="SUN"> 22:00 น. <img src="https://i.postimg.cc/yNs5vXxg/CHELSEA.png" class="ticker-logo" alt="CHE">`,
+          isHighlight: false
+        }
+      ]
+    };
 
-    /* ══ CHART ══ */
-    let chartMode = 'wins';
-    const canvas = document.getElementById('leagueChart');
-    const tooltip = document.getElementById('chartTooltip');
+    function renderHeroData(data) {
+      document.getElementById('hero-logo').src = data.logoSrc;
+      document.getElementById('hero-eyebrow').innerHTML = data.eyebrow;
+      document.getElementById('hero-title').innerHTML = data.title;
+      document.getElementById('hero-tagline').innerHTML = data.tagline;
 
-    function setMode(mode) {
-      chartMode = mode;
-      document.querySelectorAll('.chart-tab').forEach(t => t.classList.remove('active'));
-      event.target.classList.add('active');
-      drawChart();
+      const tickerContainer = document.getElementById('hero-ticker');
+      tickerContainer.innerHTML = ''; 
+
+      data.tickers.forEach(item => {
+        const pillDiv = document.createElement('div');
+        
+        // เช็คว่าถ้า isHighlight เป็น true ให้ใส่คลาสพิเศษเพิ่มเข้าไป
+        pillDiv.className = item.isHighlight ? 'ticker-pill ticker-pill--highlight' : 'ticker-pill';
+        
+        pillDiv.innerHTML = `<span>${item.label}</span>${item.text}`;
+        tickerContainer.appendChild(pillDiv);
+      });
     }
 
-    function drawChart() {
-      const dpr = window.devicePixelRatio || 1;
-      const container = canvas.parentElement;
-      const W = container.clientWidth;
-      const H = 280;
-      canvas.width  = W * dpr;
-      canvas.height = H * dpr;
-      canvas.style.width  = W + 'px';
-      canvas.style.height = H + 'px';
-
-      const ctx = canvas.getContext('2d');
-      ctx.scale(dpr, dpr);
-
-      const PAD = { top: 20, right: 20, bottom: 44, left: 46 };
-      const cW = W - PAD.left - PAD.right;
-      const cH = H - PAD.top - PAD.bottom;
-      const n = SEASONS.length;
-      const barW = Math.max(2, cW / n - 1);
-
-      // Get values
-      const vals = SEASONS.map(s => {
-        if (chartMode === 'wins') return s.w;
-        if (chartMode === 'pts')  return s.pts;
-        if (chartMode === 'goals') return s.f;
-        if (chartMode === 'pos')  return s.pos === 99 ? 0 : s.pos;
-        return 0;
-      });
-      const maxVal = Math.max(...vals);
-      const minVal = Math.min(...vals.filter(v => v > 0));
-
-      // Background
-      ctx.fillStyle = '#f9f6f0';
-      ctx.fillRect(0, 0, W, H);
-
-      // Grid lines
-      ctx.strokeStyle = 'rgba(197,184,154,0.3)';
-      ctx.lineWidth = 1;
-      for (let g = 0; g <= 4; g++) {
-        const y = PAD.top + cH * (1 - g/4);
-        ctx.beginPath();
-        ctx.moveTo(PAD.left, y);
-        ctx.lineTo(PAD.left + cW, y);
-        ctx.stroke();
-        ctx.fillStyle = '#7a6f63';
-        ctx.font = `10px Sarabun`;
-        ctx.textAlign = 'right';
-        const label = chartMode === 'pos' ? Math.round(maxVal * (1 - g/4)) : Math.round(maxVal * g/4);
-        ctx.fillText(label, PAD.left - 4, y + 3);
-      }
-
-      // Bars
-      SEASONS.forEach((s, i) => {
-        const v = vals[i];
-        if (!v) return;
-        const x = PAD.left + i * (cW / n);
-        const barH = chartMode === 'pos'
-          ? cH * (1 - (v - 1) / (maxVal - 1 || 1)) * 0.85 + cH * 0.1
-          : cH * (v / maxVal);
-        const y = PAD.top + cH - barH;
-
-        // Color
-        let color;
-        if (chartMode === 'pos') {
-          color = s.pos === 1 ? '#f59e0b' : s.pos <= 4 ? '#34d399' : s.pos <= 10 ? '#60a5fa' : '#94a3b8';
-        } else {
-          color = s.pos === 1 ? '#f59e0b' : '#034694';
-        }
-
-        ctx.fillStyle = color;
-        ctx.globalAlpha = 0.85;
-        ctx.beginPath();
-        ctx.roundRect(x, y, barW, barH, [2, 2, 0, 0]);
-        ctx.fill();
-        ctx.globalAlpha = 1;
-
-        // Title star
-        if (s.pos === 1 && chartMode !== 'pos') {
-          ctx.fillStyle = '#f59e0b';
-          ctx.font = `bold 10px Sarabun`;
-          ctx.textAlign = 'center';
-          ctx.fillText('★', x + barW/2, y - 3);
-        }
-      });
-
-      // X-axis labels (every ~10 seasons)
-      ctx.fillStyle = '#7a6f63';
-      ctx.font = `10px Sarabun`;
-      ctx.textAlign = 'center';
-      const step = Math.ceil(n / 15);
-      SEASONS.forEach((s, i) => {
-        if (i % step !== 0) return;
-        const x = PAD.left + i * (cW / n) + barW/2;
-        ctx.save();
-        ctx.translate(x, PAD.top + cH + 8);
-        ctx.rotate(-Math.PI/4);
-        ctx.fillText(s.s.slice(0,7), 0, 0);
-        ctx.restore();
-      });
-
-      // Legend
-      ctx.fillStyle = '#f59e0b';
-      ctx.fillRect(PAD.left, 6, 10, 10);
-      ctx.fillStyle = '#7a6f63';
-      ctx.font = `10px Sarabun`;
-      ctx.textAlign = 'left';
-      ctx.fillText('แชมป์', PAD.left + 14, 15);
-    }
-
-    // Hover tooltip
-    canvas.addEventListener('mousemove', e => {
-      const rect = canvas.getBoundingClientRect();
-      const mx = e.clientX - rect.left;
-      const PAD = { top:20, right:20, bottom:44, left:46 };
-      const cW = canvas.offsetWidth - PAD.left - PAD.right;
-      const n = SEASONS.length;
-      const i = Math.floor((mx - PAD.left) / (cW / n));
-      if (i < 0 || i >= n) { tooltip.style.opacity='0'; return; }
-      const s = SEASONS[i];
-      tooltip.innerHTML = `<strong style="color:var(--gold)">${s.s}</strong><br>
-        ชนะ ${s.w} · เสมอ ${s.d} · แพ้ ${s.l}<br>
-        ประตู ${s.f}–${s.a}<br>
-        คะแนน <strong>${s.pts}</strong> · อันดับ <strong>${s.pos}</strong>
-        ${s.pos===1?'<br><span style="color:#f59e0b">★ แชมป์!</span>':''}`;
-      tooltip.style.opacity = '1';
-      tooltip.style.left = (e.clientX + 10) + 'px';
-      tooltip.style.top  = (e.clientY - 20) + 'px';
+    document.addEventListener('DOMContentLoaded', () => {
+      renderHeroData(heroData);
     });
-    canvas.addEventListener('mouseleave', () => { tooltip.style.opacity='0'; });
 
-    drawChart();
-    window.addEventListener('resize', drawChart);
   </script>
 </body>
 </html>
