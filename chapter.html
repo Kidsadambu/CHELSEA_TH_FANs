@@ -2,21 +2,26 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>CHELSEA TH FANs | Chapters</title>
 
   <!-- SEO -->
-  <meta name="description" content="รวม Chapter เนื้อหา Chelsea TH FANs ตั้งแต่ Chapter 1 - Chapter 9">
-  <meta name="keywords" content="Chelsea, Chelsea FC, ฟุตบอล, พรีเมียร์ลีก, Chapter">
+  <meta name="description" content="CHELSEA TH FANs Chapters รวมเนื้อหา Chapter 1 - Chapter 9">
+  <meta name="keywords" content="Chelsea FC, Chelsea TH FANs, พรีเมียร์ลีก, ฟุตบอล">
   <meta name="author" content="CHELSEA TH FANs">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="CHELSEA TH FANs Chapters">
-  <meta property="og:description" content="รวม Chapter เนื้อหา Chelsea TH FANs">
+  <meta property="og:title" content="CHELSEA TH FANs">
+  <meta property="og:description" content="รวม Chapters ของ CHELSEA TH FANs">
   <meta property="og:type" content="website">
 
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <style>
+
     :root {
       --blue:       #034694;
       --blue-dark:  #021f45;
@@ -36,13 +41,18 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Segoe UI", Tahoma, sans-serif;
-      background: linear-gradient(
-        180deg,
-        var(--blue-dark),
-        var(--blue)
-      );
+      background:
+        linear-gradient(
+          180deg,
+          var(--blue-dark),
+          var(--blue)
+        );
       color: var(--white);
       min-height: 100vh;
       overflow-x: hidden;
@@ -58,6 +68,10 @@
       display: block;
     }
 
+    button {
+      font-family: inherit;
+    }
+
     /* =========================
        HEADER
     ========================== */
@@ -65,16 +79,19 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
 
-      backdrop-filter: blur(12px);
-      background: rgba(2, 31, 69, 0.88);
+      backdrop-filter: blur(10px);
 
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background:
+        rgba(2, 31, 69, 0.88);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
     }
 
     .header-container {
-      width: min(1200px, 92%);
+      width: min(1280px, 92%);
       margin: auto;
 
       display: flex;
@@ -82,13 +99,22 @@
       justify-content: space-between;
 
       padding: 18px 0;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
+      font-size: 1.7rem;
+      font-weight: 900;
       letter-spacing: 1px;
+      cursor: pointer;
+
       color: var(--gold-light);
+
+      transition: 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.03);
     }
 
     .logo span {
@@ -97,28 +123,34 @@
 
     nav {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
     }
 
-    .nav-btn {
-      padding: 10px 18px;
+    .nav-link {
+      padding: 11px 18px;
+
       border-radius: 12px;
 
-      border: 1px solid rgba(255,255,255,0.12);
+      background:
+        rgba(255,255,255,0.06);
 
-      background: rgba(255,255,255,0.05);
+      border:
+        1px solid rgba(255,255,255,0.08);
 
       color: var(--white);
 
-      transition: 0.25s ease;
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 700;
+
+      transition: 0.25s ease;
     }
 
-    .nav-btn:hover {
+    .nav-link:hover {
       background: var(--gold);
       color: var(--blue-dark);
+
       transform: translateY(-2px);
     }
 
@@ -127,37 +159,58 @@
     ========================== */
 
     .hero {
-      width: min(1200px, 92%);
-      margin: 80px auto 40px;
-
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
+      width: min(1280px, 92%);
+      margin: 70px auto 40px;
     }
 
     .hero-card {
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 30px;
+
+      padding: 70px 50px;
+
       background:
         linear-gradient(
           135deg,
           rgba(255,255,255,0.08),
-          rgba(255,255,255,0.02)
+          rgba(255,255,255,0.03)
         );
 
-      border: 1px solid rgba(255,255,255,0.08);
-
-      border-radius: 28px;
-
-      padding: 50px 40px;
+      border:
+        1px solid rgba(255,255,255,0.08);
 
       box-shadow:
-        0 10px 30px rgba(0,0,0,0.35);
+        0 10px 40px rgba(0,0,0,0.35);
+    }
+
+    .hero-card::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,255,255,0.12),
+          transparent 40%
+        );
+
+      pointer-events: none;
     }
 
     .hero-title {
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      position: relative;
+
+      font-size: clamp(2.5rem, 6vw, 5rem);
+
       line-height: 1.1;
-      margin-bottom: 18px;
       font-weight: 900;
+
+      margin-bottom: 20px;
     }
 
     .hero-title span {
@@ -165,89 +218,116 @@
     }
 
     .hero-text {
-      max-width: 720px;
-      color: rgba(255,255,255,0.82);
+      position: relative;
+
+      max-width: 760px;
+
+      line-height: 1.9;
+
+      color:
+        rgba(255,255,255,0.84);
 
       font-size: 1.05rem;
-      line-height: 1.8;
     }
 
     /* =========================
-       CHAPTER GRID
+       MAIN
     ========================== */
 
     main {
-      width: min(1200px, 92%);
+      width: min(1280px, 92%);
       margin: auto;
-      padding-bottom: 100px;
+      padding-bottom: 120px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 28px;
     }
 
     .section-title {
       font-size: 2rem;
-      margin-bottom: 28px;
+      font-weight: 900;
+
       color: var(--gold-light);
-      font-weight: 800;
     }
 
     .chapter-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
       gap: 24px;
     }
 
     .chapter-card {
+
       position: relative;
+
+      overflow: hidden;
+
+      border-radius: 26px;
 
       background:
         linear-gradient(
-          160deg,
+          180deg,
           rgba(255,255,255,0.08),
           rgba(255,255,255,0.03)
         );
 
-      border-radius: 24px;
-      overflow: hidden;
-
-      border: 1px solid rgba(255,255,255,0.08);
+      border:
+        1px solid rgba(255,255,255,0.08);
 
       transition: 0.3s ease;
-
-      min-height: 260px;
 
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      min-height: 320px;
     }
 
     .chapter-card:hover {
       transform: translateY(-8px);
+
       box-shadow:
-        0 16px 32px rgba(0,0,0,0.35);
+        0 20px 40px rgba(0,0,0,0.35);
     }
 
     .chapter-top {
-      padding: 28px 24px 10px;
+      padding: 30px 26px 18px;
     }
 
     .chapter-number {
-      color: var(--gold-light);
       font-size: 0.9rem;
       letter-spacing: 1px;
-      margin-bottom: 12px;
-      font-weight: 700;
+
+      color: var(--gold-light);
+
+      margin-bottom: 14px;
+
+      font-weight: 800;
     }
 
     .chapter-title {
-      font-size: 1.5rem;
-      font-weight: 800;
+      font-size: 1.7rem;
       line-height: 1.3;
+
       margin-bottom: 14px;
+
+      font-weight: 900;
     }
 
     .chapter-desc {
-      color: rgba(255,255,255,0.75);
-      line-height: 1.7;
-      font-size: 0.95rem;
+      color:
+        rgba(255,255,255,0.78);
+
+      line-height: 1.8;
+      font-size: 0.96rem;
     }
 
     .chapter-bottom {
@@ -256,23 +336,29 @@
 
     .chapter-btn {
       width: 100%;
+
       border: none;
+      outline: none;
+
       cursor: pointer;
 
+      padding: 15px 18px;
+
+      border-radius: 16px;
+
       background: var(--gold);
+
       color: var(--blue-dark);
 
-      padding: 14px 18px;
-      border-radius: 14px;
-
-      font-weight: 800;
       font-size: 1rem;
+      font-weight: 900;
 
       transition: 0.25s ease;
     }
 
     .chapter-btn:hover {
       background: var(--gold-light);
+
       transform: scale(1.02);
     }
 
@@ -281,39 +367,61 @@
     ========================== */
 
     footer {
-      border-top: 1px solid rgba(255,255,255,0.08);
 
-      padding: 30px 20px;
+      border-top:
+        1px solid rgba(255,255,255,0.08);
+
+      background:
+        rgba(0,0,0,0.15);
+
+      padding: 35px 20px;
+
       text-align: center;
 
-      color: rgba(255,255,255,0.7);
+      color:
+        rgba(255,255,255,0.68);
 
-      background: rgba(0,0,0,0.15);
+      font-size: 0.95rem;
     }
 
     /* =========================
-       MOBILE
+       RESPONSIVE
     ========================== */
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
 
       .header-container {
         flex-direction: column;
-        gap: 18px;
-      }
-
-      nav {
-        justify-content: center;
       }
 
       .hero-card {
-        padding: 36px 24px;
+        padding: 50px 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .hero-title {
+        font-size: 2.3rem;
+      }
+
+      .hero-text {
+        font-size: 0.98rem;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
       }
 
       .chapter-title {
-        font-size: 1.3rem;
+        font-size: 1.45rem;
+      }
+
+      .chapter-card {
+        min-height: auto;
       }
     }
+
   </style>
 </head>
 
@@ -324,27 +432,61 @@
   ========================== -->
 
   <header>
+
     <div class="header-container">
 
-      <div class="logo">
+      <!-- LOGO -->
+      <a href="index.html" class="logo">
         CHELSEA <span>TH FANs</span>
-      </div>
+      </a>
 
+      <!-- NAVIGATION -->
       <nav>
 
-        <a class="nav-btn" href="Chapter1.html">Chapter 1</a>
-        <a class="nav-btn" href="Chapter2.html">Chapter 2</a>
-        <a class="nav-btn" href="Chapter3.html">Chapter 3</a>
-        <a class="nav-btn" href="Chapter4.html">Chapter 4</a>
-        <a class="nav-btn" href="Chapter5.html">Chapter 5</a>
-        <a class="nav-btn" href="Chapter6.html">Chapter 6</a>
-        <a class="nav-btn" href="Chapter7.html">Chapter 7</a>
-        <a class="nav-btn" href="Chapter8.html">Chapter 8</a>
-        <a class="nav-btn" href="Chapter9.html">Chapter 9</a>
+        <a href="index.html" class="nav-link">
+          HOME
+        </a>
+
+        <a href="Chapter1.html" class="nav-link">
+          Chapter 1
+        </a>
+
+        <a href="Chapter2.html" class="nav-link">
+          Chapter 2
+        </a>
+
+        <a href="Chapter3.html" class="nav-link">
+          Chapter 3
+        </a>
+
+        <a href="Chapter4.html" class="nav-link">
+          Chapter 4
+        </a>
+
+        <a href="Chapter5.html" class="nav-link">
+          Chapter 5
+        </a>
+
+        <a href="Chapter6.html" class="nav-link">
+          Chapter 6
+        </a>
+
+        <a href="Chapter7.html" class="nav-link">
+          Chapter 7
+        </a>
+
+        <a href="Chapter8.html" class="nav-link">
+          Chapter 8
+        </a>
+
+        <a href="Chapter9.html" class="nav-link">
+          Chapter 9
+        </a>
 
       </nav>
 
     </div>
+
   </header>
 
   <!-- =========================
@@ -356,15 +498,14 @@
     <div class="hero-card">
 
       <h1 class="hero-title">
-        CHELSEA <span>CHAPTERS</span>
+        CHELSEA <span>TH FANs</span>
       </h1>
 
       <p class="hero-text">
-        ศูนย์รวมเนื้อหา Chelsea TH FANs
-        พร้อมระบบนำทาง Chapter 1 - Chapter 9
-        รองรับ Responsive Design,
-        SEO Optimization และโครงสร้างเว็บไซต์สมัยใหม่
-        สำหรับเว็บฟุตบอลระดับ Production
+        ระบบรวม Chapters สำหรับเว็บไซต์ฟุตบอล
+        Chelsea TH FANs รองรับการเชื่อมต่อกับ
+        index.html และสามารถขยายเป็นระบบข่าวฟุตบอล
+        ระดับ Production ได้ในอนาคต
       </p>
 
     </div>
@@ -377,233 +518,318 @@
 
   <main>
 
-    <h2 class="section-title">
-      เลือก Chapter
-    </h2>
+    <div class="section-header">
+
+      <h2 class="section-title">
+        Chapters Navigation
+      </h2>
+
+    </div>
 
     <section class="chapter-grid">
 
-      <!-- Chapter 1 -->
+      <!-- CHAPTER 1 -->
       <article class="chapter-card">
 
         <div class="chapter-top">
-          <div class="chapter-number">CHAPTER 01</div>
+
+          <div class="chapter-number">
+            CHAPTER 01
+          </div>
 
           <h3 class="chapter-title">
             Chapter 1
           </h3>
 
           <p class="chapter-desc">
-            เปิดอ่านเนื้อหา Chapter 1
+            เปิดหน้าเนื้อหา Chapter 1
             ของระบบ CHELSEA TH FANs
           </p>
+
         </div>
 
         <div class="chapter-bottom">
-          <button class="chapter-btn"
-            onclick="goToChapter('Chapter1.html')">
-            เปิด Chapter
+
+          <button
+            class="chapter-btn"
+            onclick="goToPage('Chapter1.html')">
+
+            OPEN CHAPTER
+
           </button>
+
         </div>
 
       </article>
 
-      <!-- Chapter 2 -->
+      <!-- CHAPTER 2 -->
       <article class="chapter-card">
 
         <div class="chapter-top">
-          <div class="chapter-number">CHAPTER 02</div>
+
+          <div class="chapter-number">
+            CHAPTER 02
+          </div>
 
           <h3 class="chapter-title">
             Chapter 2
           </h3>
 
           <p class="chapter-desc">
-            เปิดอ่านเนื้อหา Chapter 2
+            เปิดหน้าเนื้อหา Chapter 2
             ของระบบ CHELSEA TH FANs
           </p>
+
         </div>
 
         <div class="chapter-bottom">
-          <button class="chapter-btn"
-            onclick="goToChapter('Chapter2.html')">
-            เปิด Chapter
+
+          <button
+            class="chapter-btn"
+            onclick="goToPage('Chapter2.html')">
+
+            OPEN CHAPTER
+
           </button>
+
         </div>
 
       </article>
 
-      <!-- Chapter 3 -->
+      <!-- CHAPTER 3 -->
       <article class="chapter-card">
 
         <div class="chapter-top">
-          <div class="chapter-number">CHAPTER 03</div>
+
+          <div class="chapter-number">
+            CHAPTER 03
+          </div>
 
           <h3 class="chapter-title">
             Chapter 3
           </h3>
 
           <p class="chapter-desc">
-            เปิดอ่านเนื้อหา Chapter 3
+            เปิดหน้าเนื้อหา Chapter 3
             ของระบบ CHELSEA TH FANs
           </p>
+
         </div>
 
         <div class="chapter-bottom">
-          <button class="chapter-btn"
-            onclick="goToChapter('Chapter3.html')">
-            เปิด Chapter
+
+          <button
+            class="chapter-btn"
+            onclick="goToPage('Chapter3.html')">
+
+            OPEN CHAPTER
+
           </button>
+
         </div>
 
       </article>
 
-      <!-- Chapter 4 -->
+      <!-- CHAPTER 4 -->
       <article class="chapter-card">
 
         <div class="chapter-top">
-          <div class="chapter-number">CHAPTER 04</div>
+
+          <div class="chapter-number">
+            CHAPTER 04
+          </div>
 
           <h3 class="chapter-title">
             Chapter 4
           </h3>
 
           <p class="chapter-desc">
-            เปิดอ่านเนื้อหา Chapter 4
+            เปิดหน้าเนื้อหา Chapter 4
             ของระบบ CHELSEA TH FANs
           </p>
+
         </div>
 
         <div class="chapter-bottom">
-          <button class="chapter-btn"
-            onclick="goToChapter('Chapter4.html')">
-            เปิด Chapter
+
+          <button
+            class="chapter-btn"
+            onclick="goToPage('Chapter4.html')">
+
+            OPEN CHAPTER
+
           </button>
+
         </div>
 
       </article>
 
-      <!-- Chapter 5 -->
+      <!-- CHAPTER 5 -->
       <article class="chapter-card">
 
         <div class="chapter-top">
-          <div class="chapter-number">CHAPTER 05</div>
+
+          <div class="chapter-number">
+            CHAPTER 05
+          </div>
 
           <h3 class="chapter-title">
             Chapter 5
           </h3>
 
           <p class="chapter-desc">
-            เปิดอ่านเนื้อหา Chapter 5
+            เปิดหน้าเนื้อหา Chapter 5
             ของระบบ CHELSEA TH FANs
           </p>
+
         </div>
 
         <div class="chapter-bottom">
-          <button class="chapter-btn"
-            onclick="goToChapter('Chapter5.html')">
-            เปิด Chapter
+
+          <button
+            class="chapter-btn"
+            onclick="goToPage('Chapter5.html')">
+
+            OPEN CHAPTER
+
           </button>
+
         </div>
 
       </article>
 
-      <!-- Chapter 6 -->
+      <!-- CHAPTER 6 -->
       <article class="chapter-card">
 
         <div class="chapter-top">
-          <div class="chapter-number">CHAPTER 06</div>
+
+          <div class="chapter-number">
+            CHAPTER 06
+          </div>
 
           <h3 class="chapter-title">
             Chapter 6
           </h3>
 
           <p class="chapter-desc">
-            เปิดอ่านเนื้อหา Chapter 6
+            เปิดหน้าเนื้อหา Chapter 6
             ของระบบ CHELSEA TH FANs
           </p>
+
         </div>
 
         <div class="chapter-bottom">
-          <button class="chapter-btn"
-            onclick="goToChapter('Chapter6.html')">
-            เปิด Chapter
+
+          <button
+            class="chapter-btn"
+            onclick="goToPage('Chapter6.html')">
+
+            OPEN CHAPTER
+
           </button>
+
         </div>
 
       </article>
 
-      <!-- Chapter 7 -->
+      <!-- CHAPTER 7 -->
       <article class="chapter-card">
 
         <div class="chapter-top">
-          <div class="chapter-number">CHAPTER 07</div>
+
+          <div class="chapter-number">
+            CHAPTER 07
+          </div>
 
           <h3 class="chapter-title">
             Chapter 7
           </h3>
 
           <p class="chapter-desc">
-            เปิดอ่านเนื้อหา Chapter 7
+            เปิดหน้าเนื้อหา Chapter 7
             ของระบบ CHELSEA TH FANs
           </p>
+
         </div>
 
         <div class="chapter-bottom">
-          <button class="chapter-btn"
-            onclick="goToChapter('Chapter7.html')">
-            เปิด Chapter
+
+          <button
+            class="chapter-btn"
+            onclick="goToPage('Chapter7.html')">
+
+            OPEN CHAPTER
+
           </button>
+
         </div>
 
       </article>
 
-      <!-- Chapter 8 -->
+      <!-- CHAPTER 8 -->
       <article class="chapter-card">
 
         <div class="chapter-top">
-          <div class="chapter-number">CHAPTER 08</div>
+
+          <div class="chapter-number">
+            CHAPTER 08
+          </div>
 
           <h3 class="chapter-title">
             Chapter 8
           </h3>
 
           <p class="chapter-desc">
-            เปิดอ่านเนื้อหา Chapter 8
+            เปิดหน้าเนื้อหา Chapter 8
             ของระบบ CHELSEA TH FANs
           </p>
+
         </div>
 
         <div class="chapter-bottom">
-          <button class="chapter-btn"
-            onclick="goToChapter('Chapter8.html')">
-            เปิด Chapter
+
+          <button
+            class="chapter-btn"
+            onclick="goToPage('Chapter8.html')">
+
+            OPEN CHAPTER
+
           </button>
+
         </div>
 
       </article>
 
-      <!-- Chapter 9 -->
+      <!-- CHAPTER 9 -->
       <article class="chapter-card">
 
         <div class="chapter-top">
-          <div class="chapter-number">CHAPTER 09</div>
+
+          <div class="chapter-number">
+            CHAPTER 09
+          </div>
 
           <h3 class="chapter-title">
             Chapter 9
           </h3>
 
           <p class="chapter-desc">
-            เปิดอ่านเนื้อหา Chapter 9
+            เปิดหน้าเนื้อหา Chapter 9
             ของระบบ CHELSEA TH FANs
           </p>
+
         </div>
 
         <div class="chapter-bottom">
-          <button class="chapter-btn"
-            onclick="goToChapter('Chapter9.html')">
-            เปิด Chapter
+
+          <button
+            class="chapter-btn"
+            onclick="goToPage('Chapter9.html')">
+
+            OPEN CHAPTER
+
           </button>
+
         </div>
 
       </article>
@@ -617,7 +843,10 @@
   ========================== -->
 
   <footer>
-    © 2026 CHELSEA TH FANs — All Rights Reserved
+
+    © 2026 CHELSEA TH FANs
+    — Football Website System
+
   </footer>
 
   <!-- =========================
@@ -625,9 +854,33 @@
   ========================== -->
 
   <script>
-    function goToChapter(page) {
+
+    function goToPage(page) {
       window.location.href = page;
     }
+
+    // Active Navigation
+    const currentPage =
+      window.location.pathname.split("/").pop();
+
+    document
+      .querySelectorAll(".nav-link")
+      .forEach(link => {
+
+        const href =
+          link.getAttribute("href");
+
+        if (href === currentPage) {
+
+          link.style.background =
+            "var(--gold)";
+
+          link.style.color =
+            "var(--blue-dark)";
+        }
+
+      });
+
   </script>
 
 </body>
