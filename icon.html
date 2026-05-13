@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHELSEA TH FANs | Chelsea Legends</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    :root{
+      --blue:#034694;
+      --blue-dark:#021f45;
+      --gold:#c8a84b;
+      --paper:#f9f6f0;
+      --ink:#1a1410;
+      --white:#f5f2ec;
+    }
+
+    body{
+      background:var(--paper);
+      color:var(--ink);
+      font-family:'Sarabun',sans-serif;
+      line-height:1.7;
+    }
+
+    .main-nav{
+      background:var(--blue);
+      position:sticky;
+      top:0;
+      z-index:10000;
+      border-bottom:2px solid var(--gold);
+      box-shadow:0 4px 10px rgba(0,0,0,.25);
+    }
+
+    .nav-list{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:8px;
+      list-style:none;
+      padding:10px 20px;
+    }
+
+    .nav-list a{
+      color:var(--white);
+      text-decoration:none;
+      padding:10px 15px;
+      border-radius:5px;
+      font-weight:600;
+      transition:.25s;
+      display:block;
+    }
+
+    .nav-list a:hover,
+    .nav-list a.active{
+      background:var(--gold);
+      color:var(--blue-dark);
+    }
+
+    .hero{
+      position:relative;
+      min-height:500px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+      color:white;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(2,31,69,.78),rgba(0,0,0,.7)),
+        url('https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1400&auto=format&fit=crop') center/cover;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:1;
+      padding:40px 20px;
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.4rem,6vw,5rem);
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      font-size:1.1rem;
+      color:rgba(255,255,255,.82);
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:60px 20px;
+    }
+
+    .section-title{
+      font-family:'Playfair Display',serif;
+      font-size:2.3rem;
+      color:var(--blue);
+      border-left:6px solid var(--gold);
+      padding-left:15px;
+      margin-bottom:35px;
+    }
+
+    .legend-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:28px;
+    }
+
+    .legend-card{
+      background:white;
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow:0 4px 18px rgba(0,0,0,.08);
+      border-top:4px solid var(--gold);
+      transition:.3s;
+    }
+
+    .legend-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .legend-card img{
+      width:100%;
+      height:340px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .legend-content{
+      padding:24px;
+    }
+
+    .legend-content h3{
+      color:var(--blue-dark);
+      margin-bottom:10px;
+      font-size:1.5rem;
+    }
+
+    .legend-role{
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:12px;
+      letter-spacing:.05em;
+    }
+
+    .legend-content p{
+      color:#3d342a;
+      font-size:15px;
+    }
+
+    footer{
+      background:#111;
+      color:rgba(255,255,255,.55);
+      text-align:center;
+      padding:30px 20px;
+      font-size:13px;
+      letter-spacing:.08em;
+    }
+
+    @media(max-width:768px){
+      .nav-list{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .nav-list a{
+        text-align:center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 หน้าหลัก</a></li>
+      <li><a href="latest.html">📰 ข่าวล่าสุด</a></li>
+      <li><a href="squad.html">👥 รายชื่อนักเตะ</a></li>
+      <li><a href="Managers.html">👔 ผู้จัดการทีม</a></li>
+      <li><a href="icon.html" class="active">👑 ตำนาน</a></li>
+      <li><a href="chapter.html">📖 Chapter Story</a></li>
+      <li><a href="Trophy.html">🏆 ทำเนียบแชมป์</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>👑 Chelsea Legends</h1>
+      <p>
+        รวมตำนานนักเตะผู้สร้างประวัติศาสตร์ให้กับ Chelsea Football Club
+        ตั้งแต่ยุคคลาสสิกจนถึงยุคทองแห่ง Stamford Bridge
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <h2 class="section-title">Hall of Legends</h2>
+
+    <section class="legend-grid">
+
+      <article class="legend-card">
+        <img src="https://images.unsplash.com/photo-1570498839593-e565b39455fc?q=80&w=1200&auto=format&fit=crop" alt="Frank Lampard">
+
+        <div class="legend-content">
+          <h3>Frank Lampard</h3>
+          <div class="legend-role">Midfielder</div>
+
+          <p>
+            ดาวยิงสูงสุดตลอดกาลของ Chelsea และหนึ่งในกองกลางที่ดีที่สุดในประวัติศาสตร์พรีเมียร์ลีก
+            เป็นหัวใจสำคัญของยุคประสบความสำเร็จภายใต้ José Mourinho
+          </p>
+        </div>
+      </article>
+
+      <article class="legend-card">
+        <img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?q=80&w=1200&auto=format&fit=crop" alt="Didier Drogba">
+
+        <div class="legend-content">
+          <h3>Didier Drogba</h3>
+          <div class="legend-role">Striker</div>
+
+          <p>
+            กองหน้าระดับตำนาน เจ้าของประตูสำคัญในค่ำคืน UEFA Champions League 2012
+            เป็นนักเตะที่มีอิทธิพลสูงสุดคนหนึ่งในยุคสมัยใหม่ของสโมสร
+          </p>
+        </div>
+      </article>
+
+      <article class="legend-card">
+        <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?q=80&w=1200&auto=format&fit=crop" alt="John Terry">
+
+        <div class="legend-content">
+          <h3>John Terry</h3>
+          <div class="legend-role">Defender</div>
+
+          <p>
+            กัปตันทีมระดับสัญลักษณ์ของ Chelsea ผู้นำเกมรับที่แข็งแกร่ง
+            และเป็นแกนหลักในยุคคว้าแชมป์พรีเมียร์ลีกหลายสมัย
+          </p>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    CHELSEA TH FANs · Chelsea Legends Archive
+  </footer>
+
+</body>
+</html>
