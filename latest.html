@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHELSEA TH FANs — ข่าวล่าสุด</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue:#034694; --blue-dark:#021f45; --gold:#c8a84b; --gold-light:#e8c97a; --white:#f5f2ec; --ink:#1a1410; --ink-soft:#3d342a; --ink-muted:#7a6f63; --rule:#c5b89a; --paper:#f9f6f0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: 'Sarabun', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+    .main-nav{ background:var(--blue); position:sticky; top:0; z-index:10000; box-shadow:0 4px 10px rgba(0,0,0,.3); border-bottom:2px solid var(--gold); }
+    .nav-list{ display:flex; justify-content:center; align-items:center; flex-wrap:wrap; list-style:none; gap:8px; padding:10px 20px; margin:0; }
+    .nav-list li a{ color:var(--white); text-decoration:none; padding:8px 14px; border-radius:4px; font-weight:600; font-size:13.5px; letter-spacing:.04em; display:block; transition:.3s; }
+    .nav-list li a:hover,.nav-list li a.active{ background:var(--gold); color:var(--blue-dark); box-shadow:0 2px 8px rgba(200,168,75,.4); }
+    .hero{ position:relative; min-height:520px; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; color:var(--white); }
+    .hero::before{ content:""; position:absolute; inset:0; background:linear-gradient(160deg,rgba(2,31,69,.82),rgba(3,12,30,.72)),url('https://i.postimg.cc/ncWtDQsq/CHELSEA-TH-FANs.png') center/cover; transform:scale(1.03); }
+    .hero__inner{ position:relative; z-index:1; padding:70px 20px; max-width:900px; }
+    .hero__eyebrow{ color:var(--gold-light); font-weight:600; letter-spacing:.28em; text-transform:uppercase; font-size:12px; margin-bottom:18px; }
+    .hero h1{ font-family:'Playfair Display',serif; font-size:clamp(2.3rem,6vw,5rem); line-height:1.05; margin-bottom:18px; }
+    .hero p{ color:rgba(245,242,236,.75); font-size:clamp(15px,2vw,18px); line-height:1.8; }
+    .container{ max-width:1180px; margin:0 auto; padding:56px 20px 72px; }
+    .section-title{ font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.4rem); color:var(--blue); margin-bottom:30px; border-left:6px solid var(--gold); padding-left:16px; }
+    .news-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+    .news-card{ background:white; border:1px solid rgba(197,184,154,.45); border-radius:3px; overflow:hidden; box-shadow:0 4px 18px rgba(26,20,16,.08); transition:.25s; }
+    .news-card:hover{ transform:translateY(-4px); box-shadow:0 8px 28px rgba(26,20,16,.14); }
+    .news-card img{ width:100%; height:210px; object-fit:cover; display:block; filter:saturate(.85); }
+    .news-content{ padding:22px; }
+    .news-date{ color:var(--gold); font-weight:600; font-size:12px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    .news-content h3{ color:var(--blue-dark); font-size:1.2rem; margin-bottom:10px; line-height:1.35; }
+    .news-content p{ color:var(--ink-soft); line-height:1.75; font-size:15px; }
+    .site-footer{ background:var(--ink); color:rgba(245,242,236,.45); text-align:center; padding:36px 20px; font-size:12px; letter-spacing:.1em; }
+    @media(max-width:768px){ .nav-list{ flex-direction:column; align-items:stretch; } .nav-list li a{ text-align:center; } }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">🏠 หน้าหลัก</a></li>
+      <li><a href="latest.html" class="active">📰 ข่าวล่าสุด</a></li>
+      <li><a href="squad.html">👥 รายชื่อนักเตะ</a></li>
+      <li><a href="Managers.html">👔 ผู้จัดการทีม</a></li>
+      <li><a href="icon.html">👑 ตำนาน</a></li>
+      <li><a href="chapter.html">📖 Chapter Story</a></li>
+      <li><a href="Trophy.html">🏆 ทำเนียบแชมป์</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <div class="hero__inner">
+      <div class="hero__eyebrow">Chelsea TH FANs · Latest News</div>
+      <h1>ข่าวล่าสุด<br><em style="color:var(--gold-light)">Chelsea FC</em></h1>
+      <p>ศูนย์รวมข่าวสารของสิงห์บลูส์ ทั้งทีมชาย ทีมหญิง อะคาเดมี ตลาดซื้อขาย โปรแกรมแข่งขัน และบทวิเคราะห์สำหรับแฟนเชลซีชาวไทย</p>
+    </div>
+  </header>
+  <main class="container">
+    <h2 class="section-title">Latest News</h2>
+    <section class="news-grid">
+      <article class="news-card"><img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1200&auto=format&fit=crop" alt="Football news"><div class="news-content"><div class="news-date">14 May 2026</div><h3>Chelsea เตรียมแผนเสริมทัพก่อนฤดูกาลใหม่</h3><p>สโมสรเดินหน้าวางโครงสร้างทีมระยะยาว พร้อมประเมินผู้เล่นในตำแหน่งหลักเพื่อยกระดับการแข่งขันทั้งในประเทศและเวทียุโรป</p></div></article>
+      <article class="news-card"><img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop" alt="Chelsea Women"><div class="news-content"><div class="news-date">13 May 2026</div><h3>Chelsea Women เดินหน้าสร้างมาตรฐานใหม่</h3><p>ทีมหญิงยังเป็นหนึ่งในแกนหลักของโปรเจกต์สโมสร ด้วยผลงานต่อเนื่องและโครงสร้างทีมที่แข็งแรงในทุกตำแหน่ง</p></div></article>
+      <article class="news-card"><img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?q=80&w=1200&auto=format&fit=crop" alt="Academy"><div class="news-content"><div class="news-date">12 May 2026</div><h3>อะคาเดมีดันดาวรุ่งขึ้นซ้อมทีมชุดใหญ่</h3><p>นักเตะเยาวชนหลายรายได้รับโอกาสเรียนรู้กับทีมชุดใหญ่ หลังทำผลงานโดดเด่นในระบบพัฒนาเยาวชนของสโมสร</p></div></article>
+    </section>
+  </main>
+  <footer class="site-footer">CHELSEA TH FANs · Kann Krung Nan News</footer>
+</body>
+</html>
