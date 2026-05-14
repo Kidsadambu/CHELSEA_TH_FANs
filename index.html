@@ -8,28 +8,74 @@
     *{margin:0;padding:0;box-sizing:border-box}
     :root{--blue:#034694;--dark:#021f45;--gold:#d4af37;--bg:#f4f7fb;--text:#1d2433;--white:#fff}
     body{font-family:Segoe UI,Tahoma,sans-serif;background:var(--bg);color:var(--text)}
-    .navbar{position:sticky;top:0;z-index:1000;background:var(--blue);box-shadow:0 4px 14px rgba(0,0,0,.18)}
-    .nav-inner{max-width:1200px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:800;letter-spacing:.04em}.brand img{width:42px;height:42px;object-fit:contain}.nav-links{display:flex;gap:12px;list-style:none;flex-wrap:wrap}.nav-links a{color:white;text-decoration:none;font-weight:600;padding:9px 12px;border-radius:8px;transition:.25s}.nav-links a:hover{background:rgba(255,255,255,.16)}
-    .hero{min-height:72vh;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:70px 22px;background:linear-gradient(135deg,rgba(3,70,148,.94),rgba(2,31,69,.88)),url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600&auto=format&fit=crop') center/cover}.hero-content{max-width:900px}.hero-logo{width:120px;height:120px;object-fit:contain;margin-bottom:22px;filter:drop-shadow(0 10px 22px rgba(0,0,0,.35))}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}.hero h1{font-size:clamp(2.4rem,6vw,5rem);line-height:1.05;margin-bottom:18px}.hero p{font-size:clamp(1rem,2vw,1.35rem);opacity:.9;margin-bottom:30px}.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.btn{display:inline-block;text-decoration:none;padding:14px 22px;border-radius:12px;font-weight:800;transition:.25s}.btn-primary{background:var(--gold);color:var(--dark)}.btn-secondary{background:white;color:var(--blue)}.btn:hover{transform:translateY(-4px)}
-    .section{max-width:1200px;margin:auto;padding:64px 22px}.section-title{font-size:clamp(1.8rem,3vw,2.5rem);color:var(--blue);margin-bottom:28px;border-left:7px solid var(--gold);padding-left:14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}.card{background:white;border-radius:18px;padding:24px;box-shadow:0 6px 18px rgba(0,0,0,.08);transition:.25s}.card:hover{transform:translateY(-5px)}.club-card{text-align:center}.club-card img{width:110px;height:110px;object-fit:contain;margin-bottom:15px}.club-card h3{color:var(--blue);margin-bottom:8px}.club-card p{color:#64748b}
-    .fixtures-list{display:flex;flex-direction:column;gap:18px}.fixture-card{background:white;border-radius:18px;padding:20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 18px rgba(0,0,0,.08)}.team{display:flex;align-items:center;gap:12px;width:36%;font-weight:800}.team img{width:58px;height:58px;object-fit:contain}.away-team{justify-content:flex-end;text-align:right}.match-time{font-size:1.25rem;font-weight:900;color:var(--blue);background:#eef5ff;padding:10px 16px;border-radius:12px}
-    .quick-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.quick-link{display:block;text-decoration:none;background:var(--dark);color:white;padding:22px;border-radius:18px;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.12);transition:.25s}.quick-link:hover{transform:translateY(-4px);background:var(--blue)}.quick-link span{display:block;color:var(--gold);font-size:.9rem;margin-top:6px;font-weight:600}
-    footer{background:var(--dark);color:white;text-align:center;padding:28px;margin-top:40px}.footer-small{opacity:.7;margin-top:6px;font-size:.9rem}
-    @media(max-width:760px){.nav-inner{flex-direction:column}.nav-links{justify-content:center}.fixture-card{flex-direction:column;gap:16px}.team{width:100%;justify-content:center}.away-team{justify-content:center;text-align:center}.hero{min-height:68vh}}
+
+    .navbar{position:sticky;top:0;z-index:1000;background:rgba(2,31,69,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav-inner{max-width:1200px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;font-weight:900;font-size:1.05rem;letter-spacing:.04em}
+    .brand img{width:46px;height:46px;object-fit:contain}
+
+    .nav-links{display:flex;align-items:center;gap:10px;list-style:none;flex-wrap:wrap}
+    .nav-links a{color:#fff;text-decoration:none;font-weight:700;padding:10px 14px;border-radius:10px;transition:.25s;font-size:.95rem}
+    .nav-links a:hover{background:rgba(255,255,255,.12)}
+    .nav-highlight{background:var(--gold)!important;color:var(--dark)!important}
+
+    .hero{min-height:72vh;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:70px 22px;background:linear-gradient(135deg,rgba(3,70,148,.94),rgba(2,31,69,.88)),url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600&auto=format&fit=crop') center/cover}
+    .hero-content{max-width:900px}
+    .hero-logo{width:120px;height:120px;object-fit:contain;margin-bottom:22px;filter:drop-shadow(0 10px 22px rgba(0,0,0,.35))}
+    .eyebrow{color:var(--gold);font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+    .hero h1{font-size:clamp(2.4rem,6vw,5rem);line-height:1.05;margin-bottom:18px}
+    .hero p{font-size:clamp(1rem,2vw,1.35rem);opacity:.9;margin-bottom:30px}
+    .hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+    .btn{display:inline-block;text-decoration:none;padding:14px 22px;border-radius:12px;font-weight:800;transition:.25s}
+    .btn-primary{background:var(--gold);color:var(--dark)}
+    .btn-secondary{background:white;color:var(--blue)}
+    .btn:hover{transform:translateY(-4px)}
+
+    .section{max-width:1200px;margin:auto;padding:64px 22px}
+    .section-title{font-size:clamp(1.8rem,3vw,2.5rem);color:var(--blue);margin-bottom:28px;border-left:7px solid var(--gold);padding-left:14px}
+
+    .fixtures-list{display:flex;flex-direction:column;gap:18px}
+    .fixture-card{background:white;border-radius:18px;padding:20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .team{display:flex;align-items:center;gap:12px;width:36%;font-weight:800}
+    .team img{width:58px;height:58px;object-fit:contain}
+    .away-team{justify-content:flex-end;text-align:right}
+    .match-time{font-size:1.25rem;font-weight:900;color:var(--blue);background:#eef5ff;padding:10px 16px;border-radius:12px}
+
+    .quick-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .quick-link{display:block;text-decoration:none;background:var(--dark);color:white;padding:22px;border-radius:18px;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.12);transition:.25s}
+    .quick-link:hover{transform:translateY(-4px);background:var(--blue)}
+    .quick-link span{display:block;color:var(--gold);font-size:.9rem;margin-top:6px;font-weight:600}
+
+    footer{background:var(--dark);color:white;text-align:center;padding:28px;margin-top:40px}
+    .footer-small{opacity:.7;margin-top:6px;font-size:.9rem}
+
+    @media(max-width:760px){
+      .nav-inner{flex-direction:column;align-items:flex-start}
+      .nav-links{width:100%;justify-content:center}
+      .fixture-card{flex-direction:column;gap:16px}
+      .team{width:100%;justify-content:center}
+      .away-team{justify-content:center;text-align:center}
+      .hero{min-height:68vh}
+    }
   </style>
 </head>
 <body>
+
   <nav class="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="brand"><img src="https://i.postimg.cc/yNs5vXxg/CHELSEA.png" alt="Chelsea Logo"><span>CHELSEA TH FANs</span></a>
+      <a href="index.html" class="brand">
+        <img src="https://i.postimg.cc/yNs5vXxg/CHELSEA.png" alt="Chelsea Logo">
+        <span>CHELSEA TH FANs</span>
+      </a>
+
       <ul class="nav-links">
-        <li><a href="#clubs">Clubs</a></li>
-        <li><a href="#fixtures">Fixtures</a></li>
-        <li><a href="club-logos-demo.html">Logo System</a></li>
-        <li><a href="fixtures-demo.html">Match Cards</a></li>
-        <li><a href="latest.html">News</a></li>
-        <li><a href="admin-news.html">Admin</a></li>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="latest.html">ข่าวเชลซี</a></li>
+        <li><a href="#fixtures">โปรแกรมแข่ง</a></li>
+        <li><a href="fixtures-demo.html">ผลบอล</a></li>
+        <li><a href="squad.html">Squad</a></li>
+        <li><a class="nav-highlight" href="latest.html">ข่าวล่าสุด</a></li>
       </ul>
     </div>
   </nav>
@@ -37,21 +83,18 @@
   <header class="hero">
     <div class="hero-content">
       <img class="hero-logo" src="https://i.postimg.cc/yNs5vXxg/CHELSEA.png" alt="Chelsea Logo">
-      <div class="eyebrow">Football News Platform</div>
+      <div class="eyebrow">Chelsea Football News</div>
       <h1>CHELSEA TH FANs</h1>
-      <p>ศูนย์กลางข่าวฟุตบอล Chelsea, โปรแกรมแข่งขัน, โลโก้สโมสร และระบบ Match Card สำหรับต่อยอดเป็นเว็บฟุตบอลจริง</p>
+      <p>อัปเดตข่าวเชลซี พรีเมียร์ลีก ตลาดนักเตะ โปรแกรมแข่งขัน และคอนเทนต์ฟุตบอลสำหรับแฟนสิงห์บลูส์แบบครบทุกวัน</p>
+
       <div class="hero-actions">
         <a class="btn btn-primary" href="latest.html">อ่านข่าวล่าสุด</a>
-        <a class="btn btn-secondary" href="admin-news.html">เขียนข่าว Admin</a>
+        <a class="btn btn-secondary" href="#fixtures">ดูโปรแกรมแข่ง</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section" id="clubs">
-      <h2 class="section-title">Featured Clubs</h2>
-      <div id="homepage-clubs" class="grid"></div>
-    </section>
 
     <section class="section" id="fixtures">
       <h2 class="section-title">Latest Fixtures</h2>
@@ -60,35 +103,28 @@
 
     <section class="section">
       <h2 class="section-title">Quick Access</h2>
+
       <div class="quick-links">
-        <a class="quick-link" href="club-logos-demo.html">Club Logo System<span>ระบบแสดงโลโก้อัตโนมัติ</span></a>
-        <a class="quick-link" href="fixtures-demo.html">Fixtures Match Cards<span>ระบบโปรแกรมแข่งขัน</span></a>
-        <a class="quick-link" href="latest.html">Latest News<span>ข่าวล่าสุด Chelsea</span></a>
-        <a class="quick-link" href="squad.html">Squad<span>รายชื่อนักเตะ</span></a>
-        <a class="quick-link" href="admin-news.html">Admin News<span>เขียน แก้ไข และเผยแพร่ข่าว</span></a>
+        <a class="quick-link" href="latest.html">Latest News<span>ข่าวล่าสุด Chelsea และพรีเมียร์ลีก</span></a>
+
+        <a class="quick-link" href="fixtures-demo.html">Fixtures & Results<span>โปรแกรมแข่งและผลการแข่งขัน</span></a>
+
+        <a class="quick-link" href="squad.html">Chelsea Squad<span>รายชื่อนักเตะชุดปัจจุบัน</span></a>
+
+        <a class="quick-link" href="club-logos-demo.html">Club Logo System<span>ระบบแสดงโลโก้สโมสรอัตโนมัติ</span></a>
       </div>
     </section>
   </main>
 
   <footer>
     <strong>CHELSEA TH FANs</strong>
-    <div class="footer-small">© 2026 Football News Platform</div>
+    <div class="footer-small">© 2026 Chelsea Thailand Football News Platform</div>
   </footer>
 
-  <script src="clubs.js"></script>
   <script src="fixtures.js"></script>
   <script>
-    const homepageTeams = ['Chelsea','Manchester City','Tottenham Hotspur','Sunderland'];
-
-    document.getElementById('homepage-clubs').innerHTML = homepageTeams.map(team => `
-      <article class="card club-card">
-        <img src="${getClubLogo(team)}" alt="${team}">
-        <h3>${team}</h3>
-        <p>Football Club</p>
-      </article>
-    `).join('');
-
     renderFixtures('homepage-fixtures');
   </script>
+
 </body>
 </html>
