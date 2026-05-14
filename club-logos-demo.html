@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Club Logos</title>
+
+  <style>
+    body{
+      margin:0;
+      padding:30px;
+      background:#f4f7fb;
+      font-family:Segoe UI,Tahoma,sans-serif;
+    }
+
+    h1{
+      text-align:center;
+      color:#034694;
+      margin-bottom:40px;
+    }
+
+    #teams-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .team-card{
+      background:white;
+      border-radius:18px;
+      padding:25px;
+      text-align:center;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .team-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .team-card img{
+      width:110px;
+      height:110px;
+      object-fit:contain;
+      margin-bottom:18px;
+    }
+
+    .team-card h3{
+      color:#034694;
+      font-size:1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>⚽ ระบบแสดงโลโก้อัตโนมัติ</h1>
+
+  <div id="teams-container"></div>
+
+  <script src="clubs.js"></script>
+
+  <script>
+    const teams = [
+      "Chelsea",
+      "Manchester City",
+      "Tottenham Hotspur",
+      "Sunderland"
+    ];
+
+    renderTeams("teams-container", teams);
+  </script>
+
+</body>
+</html>
