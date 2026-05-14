@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin News | CHELSEA TH FANs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}:root{--blue:#034694;--dark:#021f45;--gold:#d4af37;--bg:#eef3fb;--text:#1d2433;--muted:#64748b;--line:#d8e1ef;--white:#fff;--danger:#dc2626;--success:#16a34a}body{font-family:'Sarabun',Segoe UI,sans-serif;background:var(--bg);color:var(--text)}.topbar{background:linear-gradient(135deg,var(--blue),var(--dark));color:#fff}.topbar-inner{max-width:1240px;margin:auto;padding:22px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.brand{font-weight:800;font-size:1.25rem;letter-spacing:.03em}.top-actions{display:flex;gap:10px;flex-wrap:wrap}.top-actions a,.top-actions button{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.1);color:#fff;text-decoration:none;border-radius:999px;padding:9px 14px;font:inherit;font-weight:700;cursor:pointer}.top-actions a:hover,.top-actions button:hover{background:var(--gold);color:var(--dark)}.wrap{max-width:1240px;margin:0 auto;padding:32px 20px 60px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:22px}.stat{background:#fff;border-radius:18px;padding:20px;box-shadow:0 8px 24px rgba(15,23,42,.08);border:1px solid var(--line)}.stat small{color:var(--muted);font-weight:700}.stat strong{display:block;font-size:2rem;color:var(--blue);margin-top:4px}.layout{display:grid;grid-template-columns:minmax(320px,440px) 1fr;gap:22px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 8px 24px rgba(15,23,42,.08);overflow:hidden}.panel-head{padding:20px 22px;border-bottom:1px solid var(--line);background:#fbfdff}.panel-head h1,.panel-head h2{color:var(--dark);font-size:1.35rem}.panel-body{padding:22px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}.field label{font-weight:700;color:var(--dark)}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;color:var(--text);outline:0;background:#fff}textarea{min-height:96px;resize:vertical}.check-row{display:flex;align-items:center;gap:10px;margin:12px 0 18px}.check-row input{width:auto}.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:11px 15px;font:inherit;font-weight:800;cursor:pointer}.btn-primary{background:var(--blue);color:#fff}.btn-secondary{background:#e2e8f0;color:var(--dark)}.btn-danger{background:var(--danger);color:#fff}.btn-success{background:var(--success);color:#fff}.toolbar{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}.toolbar input,.toolbar select{max-width:260px}.table-wrap{overflow-x:auto}.news-table{width:100%;border-collapse:collapse;min-width:760px}.news-table th,.news-table td{border-bottom:1px solid var(--line);padding:13px 10px;text-align:left;vertical-align:top}.news-table th{font-size:.9rem;color:var(--muted);background:#f8fafc}.title-cell{font-weight:800;color:var(--dark)}.pill{display:inline-block;border-radius:999px;padding:4px 9px;font-size:.8rem;font-weight:800}.published{background:#dcfce7;color:#166534}.draft{background:#fee2e2;color:#991b1b}.featured{background:#fef3c7;color:#92400e}.row-actions{display:flex;gap:8px;flex-wrap:wrap}.row-actions button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 9px;cursor:pointer;font:inherit;font-weight:700}.row-actions button:hover{border-color:var(--blue);color:var(--blue)}.preview{margin-top:18px;border:1px dashed var(--line);border-radius:16px;padding:16px;background:#f8fafc}.preview img{width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:12px}.hint{color:var(--muted);font-size:.92rem;margin-top:6px}.toast{position:fixed;right:18px;bottom:18px;background:var(--dark);color:#fff;padding:12px 16px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.22);opacity:0;transform:translateY(8px);transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:980px){.layout{grid-template-columns:1fr}.toolbar input,.toolbar select{max-width:none;flex:1 1 220px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div class="brand">CHELSEA TH FANs · Admin News</div>
+        <p class="hint" style="color:rgba(255,255,255,.76)">หลังบ้านสำหรับเขียนข่าว แก้ไข ลบ เผยแพร่ และจัดข่าวเด่น</p>
+      </div>
+      <div class="top-actions">
+        <a href="latest.html">ดูหน้าข่าว</a>
+        <a href="index.html">กลับหน้าหลัก</a>
+        <button id="export-json" type="button">Export JSON</button>
+        <button id="reset-news" type="button">Reset</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="stats" aria-label="ภาพรวมข่าว">
+      <div class="stat"><small>ข่าวทั้งหมด</small><strong id="total-count">0</strong></div>
+      <div class="stat"><small>เผยแพร่แล้ว</small><strong id="published-count">0</strong></div>
+      <div class="stat"><small>ฉบับร่าง</small><strong id="draft-count">0</strong></div>
+      <div class="stat"><small>ข่าวเด่น</small><strong id="featured-count">0</strong></div>
+    </section>
+
+    <section class="layout">
+      <form id="news-form" class="panel">
+        <div class="panel-head"><h1 id="form-title">เขียนข่าวใหม่</h1></div>
+        <div class="panel-body">
+          <input id="article-id" type="hidden">
+          <div class="field"><label for="title">หัวข้อข่าว</label><input id="title" required placeholder="เช่น Chelsea เปิดตัวนักเตะใหม่"></div>
+          <div class="field"><label for="category">หมวดหมู่</label><input id="category" required placeholder="ทีมชาย / ทีมหญิง / ตลาดซื้อขาย"></div>
+          <div class="field"><label for="author">ผู้เขียน</label><input id="author" required value="Admin CHELSEA TH FANs"></div>
+          <div class="field"><label for="date">วันที่เผยแพร่</label><input id="date" type="date" required></div>
+          <div class="field"><label for="image">URL รูปภาพ</label><input id="image" type="url" placeholder="https://..."></div>
+          <div class="field"><label for="summary">คำโปรย</label><textarea id="summary" required placeholder="สรุปประเด็นข่าวแบบสั้น"></textarea></div>
+          <div class="field"><label for="content">เนื้อหาข่าว</label><textarea id="content" required placeholder="เขียนเนื้อหาข่าวฉบับเต็ม"></textarea></div>
+          <div class="field"><label for="status">สถานะ</label><select id="status"><option value="published">เผยแพร่</option><option value="draft">ฉบับร่าง</option></select></div>
+          <label class="check-row"><input id="featured" type="checkbox"> ตั้งเป็นข่าวเด่น</label>
+          <div class="buttons">
+            <button class="btn btn-primary" type="submit">บันทึกข่าว</button>
+            <button id="clear-form" class="btn btn-secondary" type="button">ล้างฟอร์ม</button>
+          </div>
+          <div id="form-preview" class="preview" aria-live="polite"></div>
+        </div>
+      </form>
+
+      <section class="panel">
+        <div class="panel-head"><h2>รายการข่าว</h2></div>
+        <div class="panel-body">
+          <div class="toolbar">
+            <input id="admin-search" type="search" placeholder="ค้นหาข่าว">
+            <select id="admin-status"><option value="all">ทุกสถานะ</option><option value="published">เผยแพร่</option><option value="draft">ฉบับร่าง</option></select>
+          </div>
+          <div class="table-wrap">
+            <table class="news-table">
+              <thead><tr><th>หัวข้อ</th><th>หมวดหมู่</th><th>วันที่</th><th>สถานะ</th><th>จัดการ</th></tr></thead>
+              <tbody id="admin-news-list"></tbody>
+            </table>
+          </div>
+          <p class="hint">ข้อมูลถูกเก็บใน LocalStorage ของเบราว์เซอร์นี้ เหมาะสำหรับเว็บไซต์ static และนำ JSON ไปต่อยอดกับฐานข้อมูลจริงได้</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="news-store.js"></script>
+  <script>
+    const form = document.getElementById('news-form');
+    const formTitle = document.getElementById('form-title');
+    const articleIdInput = document.getElementById('article-id');
+    const titleInput = document.getElementById('title');
+    const categoryInput = document.getElementById('category');
+    const authorInput = document.getElementById('author');
+    const dateInput = document.getElementById('date');
+    const imageInput = document.getElementById('image');
+    const summaryInput = document.getElementById('summary');
+    const contentInput = document.getElementById('content');
+    const statusInput = document.getElementById('status');
+    const featuredInput = document.getElementById('featured');
+    const preview = document.getElementById('form-preview');
+    const list = document.getElementById('admin-news-list');
+    const searchInput = document.getElementById('admin-search');
+    const adminStatus = document.getElementById('admin-status');
+    const toast = document.getElementById('toast');
+
+    dateInput.value = new Date().toISOString().slice(0, 10);
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      window.setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+
+    function getFormArticle() {
+      return {
+        id: articleIdInput.value || `${createNewsSlug(titleInput.value)}-${Date.now()}`,
+        title: titleInput.value,
+        category: categoryInput.value,
+        author: authorInput.value,
+        date: dateInput.value,
+        image: imageInput.value,
+        summary: summaryInput.value,
+        content: contentInput.value,
+        status: statusInput.value,
+        featured: featuredInput.checked
+      };
+    }
+
+    function renderStats(articles) {
+      document.getElementById('total-count').textContent = articles.length;
+      document.getElementById('published-count').textContent = articles.filter(article => article.status === 'published').length;
+      document.getElementById('draft-count').textContent = articles.filter(article => article.status === 'draft').length;
+      document.getElementById('featured-count').textContent = articles.filter(article => article.featured).length;
+    }
+
+    function renderPreview() {
+      const article = normalizeArticle(getFormArticle());
+      preview.innerHTML = `
+        <img src="${escapeNewsHtml(article.image)}" alt="${escapeNewsHtml(article.title)}">
+        <strong>${escapeNewsHtml(article.title)}</strong>
+        <p class="hint">${escapeNewsHtml(formatNewsDate(article.date))} · ${escapeNewsHtml(article.category)} · ${escapeNewsHtml(article.status)}</p>
+        <p>${escapeNewsHtml(article.summary)}</p>`;
+    }
+
+    function renderAdminList() {
+      const keyword = searchInput.value.trim().toLowerCase();
+      const status = adminStatus.value;
+      const articles = loadNewsArticles(true);
+      const filteredArticles = articles.filter(article => {
+        const matchesKeyword = [article.title, article.category, article.author, article.summary].join(' ').toLowerCase().includes(keyword);
+        const matchesStatus = status === 'all' || article.status === status;
+        return matchesKeyword && matchesStatus;
+      });
+
+      renderStats(articles);
+      list.innerHTML = filteredArticles.map(article => `
+        <tr>
+          <td><div class="title-cell">${escapeNewsHtml(article.title)}</div>${article.featured ? '<span class="pill featured">ข่าวเด่น</span>' : ''}</td>
+          <td>${escapeNewsHtml(article.category)}</td>
+          <td>${escapeNewsHtml(formatNewsDate(article.date))}</td>
+          <td><span class="pill ${article.status}">${article.status === 'published' ? 'เผยแพร่' : 'ฉบับร่าง'}</span></td>
+          <td>
+            <div class="row-actions">
+              <button type="button" data-action="edit" data-id="${escapeNewsHtml(article.id)}">แก้ไข</button>
+              <button type="button" data-action="toggle" data-id="${escapeNewsHtml(article.id)}">${article.status === 'published' ? 'เก็บร่าง' : 'เผยแพร่'}</button>
+              <button type="button" data-action="delete" data-id="${escapeNewsHtml(article.id)}">ลบ</button>
+            </div>
+          </td>
+        </tr>`).join('') || '<tr><td colspan="5">ยังไม่มีข่าวในระบบ</td></tr>';
+    }
+
+    function fillForm(article) {
+      formTitle.textContent = 'แก้ไขข่าว';
+      articleIdInput.value = article.id;
+      titleInput.value = article.title;
+      categoryInput.value = article.category;
+      authorInput.value = article.author;
+      dateInput.value = article.date;
+      imageInput.value = article.image;
+      summaryInput.value = article.summary;
+      contentInput.value = article.content;
+      statusInput.value = article.status;
+      featuredInput.checked = article.featured;
+      renderPreview();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function clearForm() {
+      formTitle.textContent = 'เขียนข่าวใหม่';
+      form.reset();
+      articleIdInput.value = '';
+      authorInput.value = 'Admin CHELSEA TH FANs';
+      dateInput.value = new Date().toISOString().slice(0, 10);
+      statusInput.value = 'published';
+      renderPreview();
+    }
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const article = getFormArticle();
+      upsertNewsArticle(article);
+      showToast('บันทึกข่าวเรียบร้อย');
+      clearForm();
+      renderAdminList();
+    });
+
+    document.getElementById('clear-form').addEventListener('click', clearForm);
+    [titleInput, categoryInput, authorInput, dateInput, imageInput, summaryInput, contentInput, statusInput, featuredInput].forEach(input => {
+      input.addEventListener('input', renderPreview);
+      input.addEventListener('change', renderPreview);
+    });
+    searchInput.addEventListener('input', renderAdminList);
+    adminStatus.addEventListener('change', renderAdminList);
+
+    list.addEventListener('click', event => {
+      const button = event.target.closest('button');
+      if (!button) return;
+
+      const articles = loadNewsArticles(true);
+      const article = articles.find(item => item.id === button.dataset.id);
+      if (!article) return;
+
+      if (button.dataset.action === 'edit') {
+        fillForm(article);
+      }
+
+      if (button.dataset.action === 'toggle') {
+        article.status = article.status === 'published' ? 'draft' : 'published';
+        upsertNewsArticle(article);
+        showToast('อัปเดตสถานะข่าวแล้ว');
+        renderAdminList();
+      }
+
+      if (button.dataset.action === 'delete') {
+        deleteNewsArticle(article.id);
+        showToast('ลบข่าวแล้ว');
+        renderAdminList();
+      }
+    });
+
+    document.getElementById('export-json').addEventListener('click', () => {
+      const json = JSON.stringify(loadNewsArticles(true), null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'chelsea-th-fans-news.json';
+      link.click();
+      URL.revokeObjectURL(url);
+      showToast('Export JSON แล้ว');
+    });
+
+    document.getElementById('reset-news').addEventListener('click', () => {
+      resetNewsArticles();
+      clearForm();
+      renderAdminList();
+      showToast('รีเซ็ตข้อมูลตัวอย่างแล้ว');
+    });
+
+    renderPreview();
+    renderAdminList();
+  </script>
+</body>
+</html>
