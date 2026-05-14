@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHELSEA TH FANs | Men's Results</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--blue:#034694;--blue-dark:#021f45;--gold:#c8a84b;--paper:#f9f6f0;--ink:#1a1410;--white:#f5f2ec}
+    body{background:var(--paper);font-family:'Sarabun',sans-serif;color:var(--ink)}
+    .main-nav{background:var(--blue);position:sticky;top:0;z-index:10000;border-bottom:2px solid var(--gold)}
+    .nav-list{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;list-style:none;padding:10px 20px}.nav-list a{display:block;color:var(--white);text-decoration:none;padding:10px 15px;border-radius:5px;font-weight:600;transition:.25s}.nav-list a:hover,.nav-list a.active{background:var(--gold);color:var(--blue-dark)}
+    .hero{background:linear-gradient(rgba(2,31,69,.82),rgba(2,31,69,.78)),url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1600&auto=format&fit=crop') center/cover;color:white;text-align:center;padding:110px 20px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,5rem);margin-bottom:15px}.hero p{max-width:760px;margin:auto;color:rgba(255,255,255,.82)}
+    .container{max-width:1300px;margin:auto;padding:60px 20px}.section-title{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--blue);border-left:6px solid var(--gold);padding-left:16px;margin-bottom:30px}
+    .timeline{display:grid;gap:25px}.result-card{background:white;border-left:5px solid var(--gold);padding:25px;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,.08)}.year{font-size:1.6rem;font-weight:700;color:var(--blue-dark);margin-bottom:10px}.match{font-size:1.1rem;font-weight:600;margin-bottom:8px}.competition{color:var(--gold);font-weight:700;margin-bottom:10px}.description{color:#3d342a;line-height:1.7}
+    footer{background:#111;color:rgba(255,255,255,.55);text-align:center;padding:30px 20px;margin-top:40px}
+    @media(max-width:768px){.nav-list{flex-direction:column}.nav-list a{text-align:center}}
+  </style>
+</head>
+<body>
+<nav class="main-nav">
+  <ul class="nav-list">
+    <li><a href="index.html">🏠 หน้าหลัก</a></li>
+    <li><a href="latest.html">📰 ข่าวล่าสุด</a></li>
+    <li><a href="squad.html">👥 รายชื่อนักเตะ</a></li>
+    <li><a href="Managers.html">👔 ผู้จัดการทีม</a></li>
+    <li><a href="icon.html">👑 ตำนาน</a></li>
+    <li><a href="chapter.html">📖 Chapter Story</a></li>
+    <li><a href="Trophy.html">🏆 ทำเนียบแชมป์</a></li>
+  </ul>
+</nav>
+<header class="hero">
+  <h1>✅ Men's Results</h1>
+  <p>บันทึกผลการแข่งขันย้อนหลังของ Chelsea Football Club ตั้งแต่ก่อตั้งสโมสรในปี 1905</p>
+</header>
+<main class="container">
+  <h2 class="section-title">Historical Match Archive</h2>
+  <section class="timeline">
+    <article class="result-card">
+      <div class="year">1905</div>
+      <div class="match">Chelsea 1-0 Liverpool</div>
+      <div class="competition">Football League</div>
+      <div class="description">หนึ่งในฤดูกาลแรกของ Chelsea หลังการก่อตั้งสโมสรอย่างเป็นทางการ ณ Stamford Bridge</div>
+    </article>
+    <article class="result-card">
+      <div class="year">1955</div>
+      <div class="match">Chelsea 3-0 Sheffield Wednesday</div>
+      <div class="competition">First Division</div>
+      <div class="description">ชัยชนะสำคัญในฤดูกาลที่ Chelsea คว้าแชมป์ลีกสูงสุดอังกฤษเป็นครั้งแรก</div>
+    </article>
+    <article class="result-card">
+      <div class="year">2012</div>
+      <div class="match">Bayern Munich 1-1 Chelsea (3-4 Pens)</div>
+      <div class="competition">UEFA Champions League Final</div>
+      <div class="description">ค่ำคืนประวัติศาสตร์ที่ Chelsea คว้าแชมป์ UEFA Champions League สมัยแรก</div>
+    </article>
+    <article class="result-card">
+      <div class="year">2021</div>
+      <div class="match">Manchester City 0-1 Chelsea</div>
+      <div class="competition">UEFA Champions League Final</div>
+      <div class="description">ประตูชัยของ Kai Havertz ส่ง Chelsea คว้าแชมป์ยุโรปสมัยที่สอง</div>
+    </article>
+  </section>
+</main>
+<footer>CHELSEA TH FANs · Men's Results Archive Since 1905</footer>
+</body>
+</html>
