@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Fixtures | CHELSEA TH FANs</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#034694;--dark:#021f45;--gold:#d4af37;--bg:#eef3fb;--white:#fff;--line:#d9e2f0}
+body{font-family:'Sarabun',sans-serif;background:var(--bg);color:#1d2433}
+.header{background:linear-gradient(135deg,var(--blue),var(--dark));padding:24px;color:white}
+.header-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.header a{color:white;text-decoration:none;font-weight:700;padding:10px 14px;border-radius:10px;background:rgba(255,255,255,.12)}
+.wrap{max-width:1200px;margin:auto;padding:30px 20px}
+.grid{display:grid;grid-template-columns:420px 1fr;gap:24px}
+.card{background:white;border-radius:20px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.card-head{padding:18px 22px;border-bottom:1px solid var(--line)}
+.card-body{padding:22px}
+.field{margin-bottom:14px}
+.field label{display:block;font-weight:700;margin-bottom:7px}
+input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;font:inherit}
+button{border:0;background:var(--blue);color:white;padding:12px 16px;border-radius:12px;font:inherit;font-weight:800;cursor:pointer}
+button:hover{opacity:.92}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:14px;border-bottom:1px solid var(--line);text-align:left}
+.fixture-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px;border-bottom:1px solid var(--line)}
+.fixture-row:last-child{border-bottom:none}
+.match{font-weight:800}
+.meta{color:#64748b;font-size:.92rem;margin-top:4px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.actions button{padding:9px 12px;font-size:.9rem}
+.delete{background:#dc2626}
+.status{display:inline-block;padding:4px 10px;border-radius:999px;font-size:.8rem;font-weight:800;background:#dbeafe;color:#1d4ed8}
+@media(max-width:920px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div>
+      <h1>Admin Fixtures</h1>
+      <p>ระบบจัดการโปรแกรมการแข่งขัน</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="index.html">หน้าหลัก</a>
+      <a href="fixtures-demo.html">Fixtures</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+
+    <section class="card">
+      <div class="card-head">
+        <h2>เพิ่มโปรแกรมแข่งขัน</h2>
+      </div>
+
+      <div class="card-body">
+        <form id="fixture-form">
+          <input type="hidden" id="fixture-id">
+
+          <div class="field">
+            <label>ทีมเหย้า</label>
+            <input id="home" required placeholder="Chelsea">
+          </div>
+
+          <div class="field">
+            <label>ทีมเยือน</label>
+            <input id="away" required placeholder="Liverpool">
+          </div>
+
+          <div class="field">
+            <label>เวลาแข่งขัน</label>
+            <input id="time" required placeholder="22:30">
+          </div>
+
+          <div class="field">
+            <label>วันที่แข่งขัน</label>
+            <input id="date" type="date" required>
+          </div>
+
+          <div class="field">
+            <label>รายการแข่งขัน</label>
+            <input id="competition" placeholder="Premier League">
+          </div>
+
+          <div class="field">
+            <label>สนาม</label>
+            <input id="stadium" placeholder="Stamford Bridge">
+          </div>
+
+          <div class="field">
+            <label>สถานะ</label>
+            <select id="status">
+              <option value="upcoming">Upcoming</option>
+              <option value="live">Live</option>
+              <option value="finished">Finished</option>
+            </select>
+          </div>
+
+          <button type="submit">บันทึกโปรแกรม</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>รายการแข่งขันทั้งหมด</h2>
+      </div>
+
+      <div class="card-body" id="fixtures-list"></div>
+    </section>
+
+  </div>
+</main>
+
+<script>
+const STORAGE_KEY='chelsea-fixtures';
+
+const defaultFixtures=[
+  {
+    id:'1',
+    home:'Chelsea',
+    away:'Manchester City',
+    time:'22:30',
+    date:'2026-05-20',
+    competition:'Premier League',
+    stadium:'Stamford Bridge',
+    status:'upcoming'
+  }
+];
+
+function loadFixtures(){
+  const data=localStorage.getItem(STORAGE_KEY);
+  if(!data){
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(defaultFixtures));
+    return defaultFixtures;
+  }
+  return JSON.parse(data);
+}
+
+function saveFixtures(fixtures){
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(fixtures));
+}
+
+const form=document.getElementById('fixture-form');
+const list=document.getElementById('fixtures-list');
+
+function renderFixtures(){
+  const fixtures=loadFixtures();
+
+  list.innerHTML=fixtures.map(match=>`
+    <div class="fixture-row">
+      <div>
+        <div class="match">${match.home} vs ${match.away}</div>
+        <div class="meta">${match.date} · ${match.time}</div>
+        <div class="meta">${match.competition} · ${match.stadium}</div>
+        <span class="status">${match.status}</span>
+      </div>
+
+      <div class="actions">
+        <button onclick="editFixture('${match.id}')">แก้ไข</button>
+        <button class="delete" onclick="deleteFixture('${match.id}')">ลบ</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+
+  const fixtures=loadFixtures();
+
+  const fixture={
+    id:document.getElementById('fixture-id').value||Date.now().toString(),
+    home:document.getElementById('home').value,
+    away:document.getElementById('away').value,
+    time:document.getElementById('time').value,
+    date:document.getElementById('date').value,
+    competition:document.getElementById('competition').value,
+    stadium:document.getElementById('stadium').value,
+    status:document.getElementById('status').value
+  };
+
+  const existingIndex=fixtures.findIndex(item=>item.id===fixture.id);
+
+  if(existingIndex>=0){
+    fixtures[existingIndex]=fixture;
+  }else{
+    fixtures.unshift(fixture);
+  }
+
+  saveFixtures(fixtures);
+  form.reset();
+  document.getElementById('fixture-id').value='';
+  renderFixtures();
+});
+
+function editFixture(id){
+  const fixture=loadFixtures().find(item=>item.id===id);
+  if(!fixture)return;
+
+  document.getElementById('fixture-id').value=fixture.id;
+  document.getElementById('home').value=fixture.home;
+  document.getElementById('away').value=fixture.away;
+  document.getElementById('time').value=fixture.time;
+  document.getElementById('date').value=fixture.date;
+  document.getElementById('competition').value=fixture.competition;
+  document.getElementById('stadium').value=fixture.stadium;
+  document.getElementById('status').value=fixture.status;
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function deleteFixture(id){
+  const fixtures=loadFixtures().filter(item=>item.id!==id);
+  saveFixtures(fixtures);
+  renderFixtures();
+}
+
+renderFixtures();
+</script>
+
+</body>
+</html>
