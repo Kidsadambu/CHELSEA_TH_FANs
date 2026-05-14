@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHELSEA Admin Panel</title>
+
+  <style>
+    body{
+      font-family:Segoe UI,sans-serif;
+      background:#f4f7fb;
+      padding:30px;
+    }
+
+    .admin-container{
+      max-width:700px;
+      margin:auto;
+      background:white;
+      padding:30px;
+      border-radius:14px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1{
+      color:#034694;
+      margin-bottom:25px;
+    }
+
+    input,textarea,select{
+      width:100%;
+      padding:14px;
+      margin-bottom:18px;
+      border:1px solid #ccc;
+      border-radius:8px;
+    }
+
+    button{
+      background:#034694;
+      color:white;
+      border:none;
+      padding:14px 20px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    button:hover{
+      background:#0a58ca;
+    }
+  </style>
+</head>
+<body>
+
+<div class="admin-container">
+
+  <h1>CHELSEA Admin Panel</h1>
+
+  <form id="newsForm">
+
+    <input type="text" id="title" placeholder="หัวข้อข่าว" required>
+
+    <textarea id="content" placeholder="เนื้อหาข่าว" rows="6" required></textarea>
+
+    <select id="category">
+      <option value="Men">Men Team</option>
+      <option value="Women">Women Team</option>
+    </select>
+
+    <input type="text" id="image" placeholder="ลิงก์รูปภาพข่าว">
+
+    <button type="submit">โพสต์ข่าว</button>
+
+  </form>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>
