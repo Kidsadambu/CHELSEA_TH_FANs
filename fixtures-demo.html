@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Fixtures</title>
+
+  <style>
+    body{
+      margin:0;
+      padding:30px;
+      background:#f4f7fb;
+      font-family:Segoe UI,Tahoma,sans-serif;
+    }
+
+    h1{
+      text-align:center;
+      color:#034694;
+      margin-bottom:40px;
+    }
+
+    #fixtures-container{
+      max-width:1000px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .fixture-card{
+      background:white;
+      border-radius:18px;
+      padding:20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .fixture-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .team{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      width:35%;
+      font-weight:600;
+      color:#222;
+    }
+
+    .away-team{
+      justify-content:flex-end;
+      text-align:right;
+    }
+
+    .team img{
+      width:60px;
+      height:60px;
+      object-fit:contain;
+    }
+
+    .match-time{
+      font-size:1.3rem;
+      font-weight:bold;
+      color:#034694;
+    }
+
+    @media(max-width:768px){
+      .fixture-card{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .team{
+        width:100%;
+        justify-content:center;
+      }
+
+      .away-team{
+        justify-content:center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>⚽ Football Fixtures</h1>
+
+<div id="fixtures-container"></div>
+
+<script src="clubs.js"></script>
+<script src="fixtures.js"></script>
+
+<script>
+  renderFixtures('fixtures-container');
+</script>
+
+</body>
+</html>
