@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>รายละเอียดข่าว | CHELSEA TH FANs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0} :root{--blue:#034694;--dark:#021f45;--gold:#c8a84b;--paper:#f9f6f0;--ink:#1a1410;--muted:#6b6258;--white:#fff}
+    body{font-family:'Sarabun',sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}.nav{background:var(--blue);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:10}.nav ul{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;list-style:none;padding:10px 20px}.nav a{display:block;color:#fff;text-decoration:none;font-weight:700;padding:8px 14px;border-radius:6px}.nav a:hover,.nav a.active{background:var(--gold);color:var(--dark)}
+    .article{max-width:920px;margin:0 auto;padding:42px 20px 70px}.back{display:inline-block;color:var(--blue);font-weight:700;text-decoration:none;margin-bottom:22px}.hero-img{width:100%;max-height:480px;object-fit:cover;border-radius:18px;box-shadow:0 20px 50px rgba(26,20,16,.13);margin:26px 0}.meta{color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.article h1{color:var(--dark);font-size:clamp(2rem,5vw,3.7rem);line-height:1.15;margin:12px 0 18px}.summary{font-size:1.15rem;color:var(--muted);border-left:5px solid var(--gold);padding-left:18px;margin-bottom:26px}.body{background:#fff;border:1px solid rgba(200,168,75,.35);border-radius:18px;padding:30px;font-size:1.05rem;white-space:pre-line;box-shadow:0 10px 30px rgba(26,20,16,.08)}.empty{background:#fff;border:1px dashed var(--gold);border-radius:16px;padding:30px;text-align:center;color:var(--muted)}footer{background:var(--dark);color:rgba(255,255,255,.75);text-align:center;padding:28px}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">🏠 หน้าหลัก</a></li>
+      <li><a href="latest.html" class="active">📰 ข่าวล่าสุด</a></li>
+      <li><a href="admin-news.html">🛠️ Admin</a></li>
+    </ul>
+  </nav>
+
+  <main id="article-view" class="article"></main>
+  <footer>CHELSEA TH FANs · News Detail</footer>
+
+  <script src="news-store.js"></script>
+  <script>
+    const articleView = document.getElementById('article-view');
+    const params = new URLSearchParams(window.location.search);
+    const articleId = params.get('id');
+
+    async function renderArticleDetail() {
+      let article = null;
+      try {
+        article = articleId ? await loadNewsArticle(articleId, false) : null;
+      } catch (error) {
+        articleView.innerHTML = `<div class="empty">${escapeNewsHtml(error.message)}</div>`;
+        return;
+      }
+
+      if (!article) {
+        articleView.innerHTML = `
+          <a class="back" href="latest.html">← กลับหน้าข่าวล่าสุด</a>
+          <div class="empty">ไม่พบข่าวนี้ หรือข่าวยังไม่ถูกเผยแพร่</div>`;
+        return;
+      }
+
+      document.title = `${article.title} | CHELSEA TH FANs`;
+      articleView.innerHTML = `
+        <a class="back" href="latest.html">← กลับหน้าข่าวล่าสุด</a>
+        <div class="meta">${escapeNewsHtml(formatNewsDate(article.date))} · ${escapeNewsHtml(article.category)} · ${escapeNewsHtml(article.author)}</div>
+        <h1>${escapeNewsHtml(article.title)}</h1>
+        <p class="summary">${escapeNewsHtml(article.summary)}</p>
+        <img class="hero-img" src="${escapeNewsHtml(article.image)}" alt="${escapeNewsHtml(article.title)}">
+        <article class="body">${escapeNewsHtml(article.content)}</article>`;
+    }
+
+    articleView.innerHTML = '<div class="empty">กำลังโหลดข่าวจากฐานข้อมูลกลาง...</div>';
+    renderArticleDetail();
+  </script>
+</body>
+</html>
