@@ -1,1 +1,505 @@
-Chelsea preseason 2026
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chelsea Pre-Season On Tour 2026 — Chelsea TH FANs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Sarabun:wght@300;400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #034694;
+      --blue-mid:   #0552b0;
+      --blue-dark:  #021f45;
+      --blue-deep:  #010e20;
+      --gold:       #c8a84b;
+      --gold-lt:    #e8c97a;
+      --gold-dim:   rgba(200,168,75,0.15);
+      --white:      #f5f2ec;
+      --gray:       #b0aaa0;
+      --rule:       rgba(200,168,75,0.2);
+      --card-bg:    rgba(2,20,50,0.82);
+      --radius:     6px;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background: var(--blue-deep);
+      color: var(--white);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── GLOBAL BG TEXTURE ─────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 130% 70% at 10% 0%,   rgba(3,70,148,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 80%  60% at 90% 100%, rgba(200,168,75,0.08) 0%, transparent 55%);
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: repeating-linear-gradient(
+        -55deg, transparent, transparent 44px,
+        rgba(200,168,75,0.018) 44px, rgba(200,168,75,0.018) 45px
+      );
+    }
+
+    /* ── NAV ───────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(1,14,32,0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 24px;
+    }
+    .nav__inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; gap: 16px;
+    }
+    .nav__brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav__logo {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 2px solid rgba(200,168,75,0.5);
+      object-fit: contain; background: var(--blue);
+      flex-shrink: 0; padding: 3px;
+    }
+    .nav__title { line-height: 1.1; }
+    .nav__title h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem; letter-spacing: 0.06em; color: var(--white);
+    }
+    .nav__title p { font-size: 11px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
+
+    .nav__links { display: flex; gap: 6px; flex-wrap: wrap; }
+    .nav__link {
+      font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em;
+      color: rgba(245,242,236,0.55); text-decoration: none;
+      padding: 6px 11px; border-radius: 4px;
+      transition: var(--transition);
+    }
+    .nav__link:hover { background: var(--gold-dim); color: var(--gold-lt); }
+
+    /* ── HERO ──────────────────────────────────── */
+    .hero {
+      position: relative; z-index: 1;
+      min-height: 480px; display: flex; align-items: center; justify-content: center;
+      text-align: center; overflow: hidden; padding: 60px 24px;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://img.chelseafc.com/image/upload/f_auto,w_1920,q_90/editorial/match-reports/2023-24/Pre-Season/Newcastle%20friendly/Players_celebrate_Jackson_goal.jpg');
+      background-size: cover; background-position: center 30%;
+      opacity: 0.12;
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(1,14,32,0.7) 70%, var(--blue-deep) 100%);
+    }
+    .hero__content { position: relative; z-index: 1; max-width: 820px; }
+
+    .hero__eyebrow {
+      font-size: 11px; letter-spacing: 0.35em; font-weight: 700;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 16px;
+      opacity: 0; animation: fadeUp 0.7s 0.1s ease both;
+    }
+    .hero__title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      line-height: 0.92; letter-spacing: 0.04em;
+      color: var(--white); margin-bottom: 6px;
+      opacity: 0; animation: fadeUp 0.7s 0.2s ease both;
+    }
+    .hero__title span { color: var(--gold); }
+    .hero__sub {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1.3rem, 3.5vw, 2rem);
+      color: var(--gold-lt); margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.7s 0.35s ease both;
+    }
+    .hero__desc {
+      font-size: 15px; line-height: 1.7; max-width: 600px; margin: 0 auto;
+      color: rgba(245,242,236,0.65);
+      opacity: 0; animation: fadeUp 0.7s 0.5s ease both;
+    }
+    .hero__line {
+      width: 60px; height: 2px; background: var(--gold);
+      margin: 20px auto; opacity: 0; animation: fadeUp 0.7s 0.42s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── FILTERS ───────────────────────────────── */
+    .filters-wrap {
+      position: relative; z-index: 1;
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 20px; margin-top: -1px;
+    }
+    .filters {
+      background: rgba(2,20,50,0.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filters__label {
+      font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+      font-weight: 700; color: var(--gold); white-space: nowrap;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .filters__label svg { width: 14px; height: 14px; fill: var(--gold); flex-shrink: 0; }
+    .filters__btns { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-btn {
+      padding: 7px 16px; border-radius: 20px; border: 1px solid rgba(200,168,75,0.22);
+      background: transparent; color: rgba(245,242,236,0.5);
+      font-family: 'Sarabun', sans-serif; font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: var(--transition); white-space: nowrap;
+    }
+    .filter-btn:hover { border-color: var(--gold); color: var(--gold-lt); }
+    .filter-btn.active {
+      background: var(--gold); color: var(--blue-deep);
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px rgba(200,168,75,0.3);
+    }
+
+    /* ── GRID ──────────────────────────────────── */
+    .main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 20px 80px; }
+
+    .count-bar {
+      font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(245,242,236,0.3); font-weight: 600; margin-bottom: 24px;
+    }
+    .count-bar strong { color: var(--gold); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    /* ── CARD ──────────────────────────────────── */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(200,168,75,0.12);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      animation: cardIn 0.5s ease both;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(200,168,75,0.3);
+      border-color: rgba(200,168,75,0.35);
+    }
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* image */
+    .card__img-wrap { position: relative; height: 220px; overflow: hidden; background: var(--blue-dark); flex-shrink: 0; }
+    .card__img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .card:hover .card__img { transform: scale(1.06); }
+
+    .card__tour-logo {
+      position: absolute; top: 12px; left: 12px;
+      background: rgba(255,255,255,0.93); backdrop-filter: blur(8px);
+      padding: 5px 8px; border-radius: 5px;
+      display: flex; align-items: center; max-height: 36px;
+    }
+    .card__tour-logo img { height: 24px; width: auto; object-fit: contain; display: block; }
+
+    .card__badge {
+      position: absolute; top: 12px; right: 12px;
+      font-size: 10px; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; padding: 5px 11px;
+      border-radius: 20px;
+    }
+    .card__badge--match    { background: var(--blue); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .card__badge--training { background: rgba(200,168,75,0.9); color: var(--blue-deep); }
+    .card__badge--women    { background: rgba(180,80,180,0.85); color: #fff; }
+
+    /* body */
+    .card__body { padding: 20px 22px; display: flex; flex-direction: column; flex-grow: 1; }
+
+    .card__tour-name {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+    }
+    .card__title {
+      font-family: 'Playfair Display', serif; font-weight: 700;
+      font-size: 1.1rem; line-height: 1.3;
+      color: var(--white); margin-bottom: 16px;
+    }
+
+    .card__meta { display: flex; flex-direction: column; gap: 9px; flex-grow: 1; margin-bottom: 18px; }
+    .card__meta-row { display: flex; align-items: flex-start; gap: 9px; font-size: 13.5px; color: rgba(245,242,236,0.7); }
+    .card__meta-icon { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; fill: var(--gold); }
+
+    /* expandable info */
+    .card__footer { border-top: 1px solid rgba(200,168,75,0.12); padding-top: 14px; }
+    .card__toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; background: none; border: none; cursor: pointer;
+      font-family: 'Sarabun', sans-serif; font-size: 12.5px; font-weight: 700;
+      letter-spacing: 0.1em; color: var(--gold);
+      padding: 0; transition: color var(--transition);
+    }
+    .card__toggle:hover { color: var(--gold-lt); }
+    .card__toggle-icon { font-size: 16px; transition: transform 0.3s; }
+    .card__toggle-icon.open { transform: rotate(180deg); }
+
+    .card__info {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .card__info.open { max-height: 600px; opacity: 1; }
+    .card__info-inner {
+      font-size: 13px; line-height: 1.75;
+      color: rgba(245,242,236,0.6); white-space: pre-wrap;
+      background: rgba(1,9,20,0.5); border: 1px solid rgba(200,168,75,0.08);
+      border-radius: 4px; padding: 14px; margin-top: 12px;
+    }
+
+    /* ── EMPTY STATE ───────────────────────────── */
+    .empty {
+      text-align: center; padding: 80px 24px;
+      border: 1px dashed rgba(200,168,75,0.2); border-radius: var(--radius);
+      color: rgba(245,242,236,0.3);
+    }
+    .empty p { font-size: 16px; margin-bottom: 16px; }
+    .empty button {
+      background: none; border: 1px solid var(--gold); color: var(--gold);
+      padding: 10px 24px; border-radius: 4px; cursor: pointer;
+      font-family: 'Sarabun', sans-serif; font-size: 13px; font-weight: 700;
+      transition: var(--transition);
+    }
+    .empty button:hover { background: var(--gold-dim); }
+
+    /* ── FOOTER ────────────────────────────────── */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid rgba(200,168,75,0.1);
+      text-align: center; padding: 28px 24px;
+      font-size: 12px; letter-spacing: 0.08em;
+      color: rgba(245,242,236,0.22);
+    }
+    footer span { color: var(--gold); opacity: 0.6; }
+
+    /* ── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 600px) {
+      .nav__links { display: none; }
+      .hero__title { font-size: clamp(2.5rem, 12vw, 4rem); }
+      .grid { grid-template-columns: 1fr; }
+      .filters { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="index.html">
+        <img class="nav__logo"
+          src="https://i.postimg.cc/j2PBVkvv/Logo_CHELSEA_TH_FANs.png"
+          alt="Chelsea TH FANs"
+          onerror="this.style.display='none'">
+        <div class="nav__title">
+          <h1>CHELSEA TH FANs &amp; karnkrungnan</h1>
+          <p>Pre-Season On Tour 2026</p>
+        </div>
+      </a>
+      <nav class="nav__links">
+        <a class="nav__link" href="index.html">🏠 หน้าหลัก</a>
+        <a class="nav__link" href="Trophy.html">🏆 แชมป์</a>
+        <a class="nav__link" href="squad.html">👥 นักเตะ</a>
+        <a class="nav__link" href="auth.html">🔐 เข้าสู่ระบบ</a>
+      </nav>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Chelsea TH FANs &amp; Karnkrungnan News</p>
+      <h2 class="hero__title">CHELSEA<br><span>&amp; CHELSEA WOMEN</span></h2>
+      <p class="hero__sub">Pre-Season On Tour 2026</p>
+      <div class="hero__line"></div>
+      <p class="hero__desc">
+        ติดตามตารางการแข่งขันและการฝึกซ้อมของทีมสิงโตน้ำเงินคราม ทั้งทีมชายและทีมหญิง
+        ตลอดทัวร์ช่วงปรีซีซั่นปี 2026 — ออสเตรเลีย · ฮ่องกง · อินโดนีเซีย · นิวซีแลนด์ · มาเลเซีย
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="filters-wrap">
+    <div class="filters">
+      <span class="filters__label">
+        <svg viewBox="0 0 20 20"><path d="M3 5h14a1 1 0 000-2H3a1 1 0 000 2zm2 4h10a1 1 0 000-2H5a1 1 0 000 2zm3 4h4a1 1 0 000-2H8a1 1 0 000 2z"/></svg>
+        กรองกิจกรรม
+      </span>
+      <div class="filters__btns">
+        <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
+        <button class="filter-btn" data-filter="men">👨 ทีมชาย (Men)</button>
+        <button class="filter-btn" data-filter="women">👩 ทีมหญิง (Women)</button>
+        <button class="filter-btn" data-filter="match">⚽ การแข่งขัน (Matches)</button>
+        <button class="filter-btn" data-filter="training">🏃 ฝึกซ้อม (Training)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <main class="main">
+    <div class="count-bar" id="count-bar">แสดง <strong id="count-num">10</strong> กิจกรรม</div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" style="display:none">
+      <p>ไม่พบกิจกรรมที่ตรงกับตัวกรองของคุณ</p>
+      <button onclick="setFilter('all')">แสดงกิจกรรมทั้งหมด</button>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 <span>CHELSEA TH FANs</span> &amp; karnkrungnan · Unofficial Fan Page · อิอิแอแอ
+  </footer>
+
+  <script>
+  const FALLBACK = "https://img.chelseafc.com/image/upload/f_auto,w_1000,q_90/editorial/match-reports/2023-24/Pre-Season/Newcastle%20friendly/PL_Summer_Series_Generic_logo.png";
+
+  const events = [
+    { id:1, tour:"SYDNEY SUPER CUP 2026", tourLogo:"https://www.austadiums.com/sport/comps/SYDNEY-SUPER-CUP-2026.svg", image:"https://s1.ticketm.net/tm/en-au/tmimages/venue/maps/au2/111604s.jpg", title:"Chelsea Open Training", date:"อาทิตย์ 26 กรกฎาคม 2026, 18:00 น.", venue:"Allianz Stadium, Sydney, NSW", info:"บัตรเข้าชมแบบ General Admission เท่านั้น\n\nขอเชิญแฟนๆ Chelsea F.C. ทุกท่าน!\n\nอย่าพลาดโอกาสในการชมการฝึกซ้อมของทีมก่อนการปะทะกับ Western Sydney Wanderers นี่คือโอกาสที่ดีที่สุดของคุณที่จะได้เห็นทีมแบบใกล้ชิดขณะที่พวกเขาอยู่ใน Sydney และสัมผัสพลังงานของสัปดาห์การแข่งขันแบบสดๆ\n\nโปรดทราบ: ระยะเวลาของเซสชันอาจแตกต่างกันไป อาจมีโอกาสขอลายเซ็นและถ่ายรูปสั้นๆ ในช่วงท้ายของเซสชัน ขึ้นอยู่กับ Manager & Team\n\n*เริ่มงานเวลา 18.00 น.*", type:"training", team:"men" },
+    { id:2, tour:"SYDNEY SUPER CUP 2026", tourLogo:"https://www.austadiums.com/sport/comps/SYDNEY-SUPER-CUP-2026.svg", image:"https://cdn.prod.website-files.com/692ccb9663850aa95d33ffe4/69363a910c4897712056b9f7_teg-match-LARGE-chels-vs-westsyd.jpg", title:"Chelsea 🆚 Western Sydney Wanderers FC", date:"อังคาร 28 กรกฎาคม 2026, 19:45 น.", venue:"Accor Stadium, Sydney Olympic Park, NSW", info:"มหาอำนาจจาก EPL มาเยือนแล้ว Chelsea FC ปะทะ Western Sydney Wanderers ในแมตช์ที่ไม่เคยมีใครเห็นมาก่อน West London ปะทะ Western Sydney นี่คือ Blue ปะทะ Red แต่ไม่ใช่อย่างที่คุณเคยรู้จัก\n\nเตรียมพร้อมสำหรับคืนวันอังคารระดับบล็อกบัสเตอร์! Chelsea FC ลงสนามที่ Accor Stadium เพื่อดวลกับ Western Sydney Wanderers บนผืนหญ้า และกำแพงสี Red and Black บนอัฒจันทร์ นี่คืองานที่คุณไม่ควรพลาด", type:"match", team:"men" },
+    { id:3, tour:"SYDNEY SUPER CUP 2026", tourLogo:"https://www.austadiums.com/sport/comps/SYDNEY-SUPER-CUP-2026.svg", image:"https://d35kvm5iuwjt9t.cloudfront.net/dbimages/sfx354131.jpg", title:"Chelsea 🆚 Tottenham Hotspur", date:"เสาร์ 1 สิงหาคม 2026, 19:45 น.", venue:"Accor Stadium, Sydney Olympic Park, NSW", info:"London Derby บุก Sydney!\n\nวันเสาร์ใน Sydney สองทีมยักษ์ใหญ่ระดับโลก คู่ปรับสุดคลาสสิก Chelsea และ Tottenham จะมาดวลกันใน London Derby แบบเต็มสูบ ประวัติศาสตร์ แพสชัน ฟุตบอลระดับโลก SYDNEY SUPER CUP อยู่ที่นี่แล้ว!", type:"match", team:"men" },
+    { id:4, tour:"Hong Kong Football Festival (HKFF) 2026", tourLogo:"https://i.postimg.cc/L6qMf95n/hkff-logo.png", image:"https://img.chelseafc.com/image/upload/f_auto,dpr_2.0,w_1000,q_90/editorial/venue/Hospo/Club_Chelsea_PRE-SEASON_TOUR_Hong_Kong_Creative.jpg", title:"Chelsea Open Training", date:"อังคาร 4 สิงหาคม 2026, 19:30 น. (HKT)", venue:"Kai Tak Stadium", info:"Chelsea FC Open Training\n19.30 น. วันที่ 4 สิงหาคม 2026 ที่ Kai Tak Stadium", type:"training", team:"men" },
+    { id:5, tour:"Hong Kong Football Festival (HKFF) 2026", tourLogo:"https://i.postimg.cc/L6qMf95n/hkff-logo.png", image:"https://img.chelseafc.com/image/upload/f_auto,dpr_2.0,w_1000,q_90/editorial/venue/Hospo/Club_Chelsea_PRE-SEASON_TOUR_Hong_Kong_Creative.jpg", title:"Chelsea 🆚 Juventus", date:"พุธ 5 สิงหาคม 2026, 19:30 น. (HKT)", venue:"Kai Tak Stadium", info:"2 แมตช์. 4 แชมป์ยุโรป. 1 เมือง.\n\nการกลับมาครั้งยิ่งใหญ่ที่สร้างสถิติของ Hong Kong Football Festival (HKFF) 2026 เป็นการรวบรวม 4 สโมสรที่ประสบความสำเร็จมากที่สุดในประวัติศาสตร์กีฬา: Manchester City, FC Internazionale Milano, Chelsea FC และ Juventus\n\nตั้งแต่วันที่ 31 กรกฎาคม ถึง 5 สิงหาคม 2026 แฟนฟุตบอลจะได้เป็นพยานในสองแมตช์สุดตื่นเต้นที่สนาม Kai Tak Stadium ความจุ 50,000 ที่นั่งสุดล้ำสมัย\n\nสำหรับแมตช์ไฮไลต์ที่สองชิงถ้วย The Herbalgy Trophy จะเป็นการพบกันระหว่าง Chelsea FC และ Juventus โดย Chelsea FC ยังคงเป็นสโมสรเดียวในโลกที่กวาดถ้วยรางวัลใหญ่ทุกรายการในยุคปัจจุบัน", type:"match", team:"men" },
+    { id:6, tour:"Pre-Season Tour", tourLogo:"https://i.postimg.cc/brs4QgyY/Chat-GPT-Image-May-23-2026-03-59-26-AM.png", image:"https://i.postimg.cc/Jn2RVGt7/1777993639-p-DSPkp-MKf-SDK63kbwjv-ZXZ41J1j-PTXqu.jpg", title:"Chelsea 🆚 AC Milan", date:"เสาร์ 8 สิงหาคม 2026, 19:00 น. (WIB)", venue:"GBK Stadium Jakarta, Indonesia", info:"เตรียมพบกับแมตช์กระชับมิตรปรีซีซั่นในเอเชียสุดเดือด", type:"match", team:"men" },
+    { id:7, tour:"New Zealand International Football Festival", tourLogo:"https://i.postimg.cc/pXczH2zw/INTERNATIONAL_FOOTBALL_FESTIVAL_NEW_ZEALAND_2026.png", image:"https://d19py84rdi4j91.cloudfront.net/dbimages/sfx100830.jpg", title:"Chelsea Women 🆚 Auckland FC Women", date:"เสาร์ 8 สิงหาคม 2026, 16:00 น. (KO)", venue:"Eden Park, Mt Eden, Auckland", info:"การประเดิมสนามแบบแพ็กคู่ใน Auckland\n\nChelsea FC Women ทีมแชมป์ WSL แปดสมัยสุดแข็งแกร่ง จะเผชิญหน้ากับ Auckland FC Women's Invitational XI ในช่วงเวลาแห่งประวัติศาสตร์ของฟุตบอล New Zealand นับเป็นครั้งแรกที่ดาวเด่นในท้องถิ่นจะได้ลงสนามปะทะกับหนึ่งในสโมสรที่ทรงพลังที่สุดในโลก\n\nนี่คือโอกาสที่หาได้ยากที่จะได้เห็นยักษ์ใหญ่ระดับโลกมาทดสอบฝีมือกับทีมที่ยอดเยี่ยมที่สุดของ New Zealand แบบสดๆ ที่ Eden Park", type:"match", team:"women" },
+    { id:8, tour:"SYDNEY SUPER CUP 2026", tourLogo:"https://www.austadiums.com/sport/comps/SYDNEY-SUPER-CUP-2026.svg", image:"https://s1.ticketm.net/tm/en-au/tmimages/venue/maps/au2/111599s.jpg", title:"Chelsea Women Open Training", date:"อังคาร 11 สิงหาคม 2026, 18:00 น.", venue:"Allianz Stadium, Sydney, NSW", info:"บัตรเข้าชมแบบ General Admission เท่านั้น\n\nขอเชิญแฟนๆ Chelsea F.C. ทุกท่าน!\n\nอย่าพลาดโอกาสชมทีมฝึกซ้อมก่อนการแข่งขันกับ A-League All Stars Women นี่คือโอกาสที่ดีที่สุดที่จะได้เห็นทีมอย่างใกล้ชิดขณะอยู่ใน Sydney และสัมผัสพลังงานในสัปดาห์แข่งขันแบบสดๆ", type:"training", team:"women" },
+    { id:9, tour:"Pre-Season Tour", tourLogo:"https://i.postimg.cc/brs4QgyY/Chat-GPT-Image-May-23-2026-03-59-26-AM.png", image:"https://media.megatix.com.au/e/68503/BdYY8wxRM96mt02gflSnHStm2GvH8sPPr1Ggfo5V.png", title:"Chelsea 🆚 Johor Darul Ta'z", date:"อังคาร 11 สิงหาคม 2026, 20:00 น.", venue:"Stadium Sultan Ibrahim", info:"Chelsea เคยลงเล่นใน Malaysia หลายครั้งระหว่างปี 2003 ถึง 2013 แต่การกลับมาเยือนที่นี่หลังจากห่างหายไป 13 ปี จะเป็นแมตช์แรกของเราที่จัดขึ้นนอก Kuala Lumpur\n\nคู่แข่งของเราในปี 2026 อย่าง Johor Darul Ta'z ยึดครองความยิ่งใหญ่ในวงการฟุตบอล Malaysia อย่างเบ็ดเสร็จตั้งแต่ครั้งสุดท้ายที่เราไปเยือน และได้รับการยอมรับอย่างกว้างขวางว่าเป็นหนึ่งในสโมสรชั้นนำของทวีปเอเชีย พวกเขาได้รับฉายาว่า Southern Tigers", type:"match", team:"men" },
+    { id:10, tour:"SYDNEY SUPER CUP 2026", tourLogo:"https://www.austadiums.com/sport/comps/SYDNEY-SUPER-CUP-2026.svg", image:"https://cms.entertainmentquarter.com.au/wp-content/uploads/2026/01/SSC_ALLIANZ_CHELW_V_WSTARS_1920x1080.webp", title:"Chelsea Women 🆚 A-League All Stars Women", date:"พุธ 12 สิงหาคม 2026, 19:45 น.", venue:"Allianz Stadium, Sydney, NSW", info:"SYDNEY SUPER CUP ปูทางมาสู่สิ่งนี้! Chelsea F.C Women's ซึ่งมีไอคอนระดับทีมชาติอย่าง Sam Kerr และ Ellie Carpenter จะลงสนามพบกับทีมที่ดีที่สุดจาก A-League Women's นั่นคือ A-League Women's All-Stars\n\nChelsea FC Women ที่เต็มไปด้วยนักเตะพรสวรรค์ระดับโลก รวมถึง Sam Kerr และ Ellie Carpenter ขวัญใจชาว Australia จะดวลกับ A-League Women's All-Stars ใน Sydney เวทีถูกจัดเตรียมไว้โดยมีฉากหลังเป็นหนึ่งในเมืองที่โดดเด่นที่สุดในโลก", type:"match", team:"women" }
+  ];
+
+  // ── RENDER ─────────────────────────────────────────────────
+  let currentFilter = 'all';
+
+  function badgeLabel(e) {
+    if (e.team === 'women' && e.type === 'training') return { cls: 'card__badge--women', txt: 'Women Training' };
+    if (e.team === 'women') return { cls: 'card__badge--women', txt: 'Women Match' };
+    if (e.type === 'training') return { cls: 'card__badge--training', txt: 'Open Training' };
+    return { cls: 'card__badge--match', txt: 'Match' };
+  }
+
+  function renderCard(e, idx) {
+    const badge = badgeLabel(e);
+    const delay = (idx % 9) * 0.05;
+    return `
+      <article class="card" style="animation-delay:${delay}s" data-id="${e.id}">
+        <div class="card__img-wrap">
+          <img class="card__img" src="${e.image}" alt="${e.title}"
+            onerror="this.src='${FALLBACK}'">
+          <div class="card__tour-logo">
+            <img src="${e.tourLogo}" alt="${e.tour}" onerror="this.parentElement.style.display='none'">
+          </div>
+          <span class="card__badge ${badge.cls}">${badge.txt}</span>
+        </div>
+        <div class="card__body">
+          <div class="card__tour-name">${e.tour}</div>
+          <h3 class="card__title">${e.title}</h3>
+          <div class="card__meta">
+            <div class="card__meta-row">
+              <svg class="card__meta-icon" viewBox="0 0 20 20"><path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5h8v1H6V7zm-2 4h12v5H4v-5z"/></svg>
+              <span>${e.date}</span>
+            </div>
+            <div class="card__meta-row">
+              <svg class="card__meta-icon" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+              <span>${e.venue}</span>
+            </div>
+          </div>
+          <div class="card__footer">
+            <button class="card__toggle" onclick="toggleInfo(${e.id}, this)">
+              <span>อ่านรายละเอียดเพิ่มเติม</span>
+              <span class="card__toggle-icon">▾</span>
+            </button>
+            <div class="card__info" id="info-${e.id}">
+              <div class="card__info-inner">${e.info}</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function render() {
+    const filtered = events.filter(e => {
+      if (currentFilter === 'all')      return true;
+      if (currentFilter === 'men')      return e.team === 'men';
+      if (currentFilter === 'women')    return e.team === 'women';
+      if (currentFilter === 'match')    return e.type === 'match';
+      if (currentFilter === 'training') return e.type === 'training';
+      return true;
+    });
+
+    const grid = document.getElementById('grid');
+    const empty = document.getElementById('empty');
+    const countNum = document.getElementById('count-num');
+
+    countNum.textContent = filtered.length;
+
+    if (filtered.length === 0) {
+      grid.style.display = 'none';
+      empty.style.display = 'block';
+    } else {
+      grid.style.display = 'grid';
+      empty.style.display = 'none';
+      grid.innerHTML = filtered.map((e, i) => renderCard(e, i)).join('');
+    }
+  }
+
+  function setFilter(val) {
+    currentFilter = val;
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.filter === val);
+    });
+    render();
+  }
+
+  function toggleInfo(id, btn) {
+    const box = document.getElementById('info-' + id);
+    const icon = btn.querySelector('.card__toggle-icon');
+    const label = btn.querySelector('span:first-child');
+    const isOpen = box.classList.toggle('open');
+    icon.classList.toggle('open', isOpen);
+    label.textContent = isOpen ? 'ซ่อนรายละเอียด' : 'อ่านรายละเอียดเพิ่มเติม';
+  }
+
+  // Bind filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => setFilter(btn.dataset.filter));
+  });
+
+  // Initial render
+  render();
+  </script>
+</body>
+</html>
